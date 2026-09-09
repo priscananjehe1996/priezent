@@ -251,82 +251,75 @@
 
     const STATUS_ICONS = ['💭','🎵','✨','🔮','💫','🌟','🎧','🎨','🎹','🧘','📡','🌀','⚡','🦋','🌸'];
 
-    // Load humanoid models and instance 1,000 characters from them
+    // Create 1,000 3D Humanoid Characters synchronously
     function buildCharacters() {
-      var loader = new THREE.GLTFLoader();
-      var modelPaths = ['models/astronaut.glb', 'models/robot.glb'];
-      var loadedGeometries = [];
-      var loadedCount = 0;
+      var geo = createHumanoidGeo();
+      createCharacterInstances([geo]);
 
-      modelPaths.forEach(function(path, idx) {
-        loader.load(path, function(gltf) {
-          // Extract and merge all mesh geometries from the model
+      // Attempt to upgrade to GLTF astronaut model asynchronously if loaded
+      try {
+        var loader = new THREE.GLTFLoader();
+        loader.load('models/astronaut.glb', function(gltf) {
           var meshes = [];
           gltf.scene.traverse(function(child) {
-            if (child.isMesh && child.geometry) {
-              meshes.push(child.geometry);
-            }
+            if (child.isMesh && child.geometry) meshes.push(child.geometry);
           });
-
           if (meshes.length > 0) {
-            // Use the first significant mesh geometry
-            var bestGeo = meshes[0];
-            for (var m = 0; m < meshes.length; m++) {
-              if (meshes[m].attributes.position && meshes[m].attributes.position.count > bestGeo.attributes.position.count) {
-                bestGeo = meshes[m];
-              }
-            }
-            loadedGeometries[idx] = bestGeo.clone();
-          }
+            var bestGeo = meshes[0].clone();
+            bestGeo.computeBoundingBox();
+            var box = bestGeo.boundingBox;
+            var height = box.max.y - box.min.y;
+            var scale = 0.6 / Math.max(height, 0.01);
+            bestGeo.scale(scale, scale, scale);
+            bestGeo.computeBoundingBox();
+            bestGeo.translate(0, -bestGeo.boundingBox.min.y, 0);
 
-          loadedCount++;
-          if (loadedCount === modelPaths.length) {
-            createCharacterInstances(loadedGeometries);
+            if (charMesh) {
+              charMesh.geometry.dispose();
+              charMesh.geometry = bestGeo;
+            }
           }
-        }, undefined, function(err) {
-          // Fallback: use a simple humanoid-shaped geometry if model fails to load
-          console.warn('Model load failed for ' + path + ', using fallback');
-          loadedGeometries[idx] = createHumanoidGeo();
-          loadedCount++;
-          if (loadedCount === modelPaths.length) {
-            createCharacterInstances(loadedGeometries);
-          }
-        });
-      });
+        }, undefined, function() {});
+      } catch(e) {}
     }
 
-    // Procedural humanoid shape as fallback
+    // Procedural 3D Humanoid Geometry (Head, Visor, Torso, Arms, Legs)
     function createHumanoidGeo() {
-      // Head + torso + legs combined shape
-      var head = new THREE.SphereGeometry(0.08, 8, 6);
-      head.translate(0, 0.38, 0);
-      var torso = new THREE.BoxGeometry(0.16, 0.2, 0.1);
-      torso.translate(0, 0.24, 0);
-      var legL = new THREE.BoxGeometry(0.06, 0.2, 0.06);
-      legL.translate(-0.04, 0.1, 0);
-      var legR = new THREE.BoxGeometry(0.06, 0.2, 0.06);
-      legR.translate(0.04, 0.1, 0);
-      var armL = new THREE.BoxGeometry(0.05, 0.18, 0.05);
-      armL.translate(-0.12, 0.24, 0);
-      var armR = new THREE.BoxGeometry(0.05, 0.18, 0.05);
-      armR.translate(0.12, 0.24, 0);
+      var head = new THREE.SphereGeometry(0.12, 10, 8);
+      head.translate(0, 0.72, 0);
 
-      // Merge all parts using BufferGeometryUtils-like manual merge
-      var merged = mergeGeometries([head, torso, legL, legR, armL, armR]);
-      return merged;
+      var visor = new THREE.SphereGeometry(0.07, 8, 6);
+      visor.scale(1.2, 0.6, 0.8);
+      visor.translate(0, 0.74, 0.08);
+
+      var torso = new THREE.CylinderGeometry(0.14, 0.11, 0.35, 8);
+      torso.translate(0, 0.45, 0);
+
+      var armL = new THREE.CylinderGeometry(0.04, 0.035, 0.28, 6);
+      armL.rotateZ(0.2);
+      armL.translate(-0.18, 0.45, 0);
+
+      var armR = new THREE.CylinderGeometry(0.04, 0.035, 0.28, 6);
+      armR.rotateZ(-0.2);
+      armR.translate(0.18, 0.45, 0);
+
+      var legL = new THREE.CylinderGeometry(0.05, 0.04, 0.3, 6);
+      legL.translate(-0.07, 0.15, 0);
+
+      var legR = new THREE.CylinderGeometry(0.05, 0.04, 0.3, 6);
+      legR.translate(0.07, 0.15, 0);
+
+      return mergeGeometries([head, visor, torso, armL, armR, legL, legR]);
     }
 
     function mergeGeometries(geos) {
-      var totalVerts = 0, totalIdx = 0;
-      geos.forEach(function(g) {
-        totalVerts += g.attributes.position.count;
-        totalIdx += (g.index ? g.index.count : g.attributes.position.count);
-      });
+      var totalVerts = 0;
+      geos.forEach(function(g) { totalVerts += g.attributes.position.count; });
 
       var positions = new Float32Array(totalVerts * 3);
       var normals = new Float32Array(totalVerts * 3);
       var indices = [];
-      var vOffset = 0, iOffset = 0;
+      var vOffset = 0;
 
       geos.forEach(function(g) {
         var pos = g.attributes.position;
@@ -361,78 +354,47 @@
     }
 
     function createCharacterInstances(geometries) {
-      // Normalize geometry sizes: compute bounding box and scale to uniform height
-      var validGeos = geometries.filter(function(g) { return g; });
-      if (validGeos.length === 0) {
-        validGeos = [createHumanoidGeo()];
-      }
-
-      // Normalize each geometry to ~0.5 units tall
-      validGeos.forEach(function(geo) {
-        geo.computeBoundingBox();
-        var box = geo.boundingBox;
-        var height = box.max.y - box.min.y;
-        var scale = 0.5 / Math.max(height, 0.01);
-        geo.scale(scale, scale, scale);
-        geo.computeBoundingBox();
-        // Center at bottom
-        var newBox = geo.boundingBox;
-        geo.translate(0, -newBox.min.y, 0);
-      });
-
+      var geo = geometries[0];
       var palette = [0xf472b6, 0xa78bfa, 0x38bdf8, 0x34d399, 0xfbbf24, 0xfb923c, 0xf87171, 0x818cf8, 0x22d3ee, 0xc084fc];
 
-      // Split characters across available geometries
-      var perGeo = Math.ceil(CHAR_COUNT / validGeos.length);
+      var mat = new THREE.MeshStandardMaterial({ color: 0xa855f7, emissive: 0x6b21a8, emissiveIntensity: 0.4, roughness: 0.3 });
+      charMesh = new THREE.InstancedMesh(geo, mat, CHAR_COUNT);
 
-      validGeos.forEach(function(geo, gIdx) {
-        var start = gIdx * perGeo;
-        var count = Math.min(perGeo, CHAR_COUNT - start);
-        if (count <= 0) return;
+      chars.length = 0;
+      window._charMeshes = [{ mesh: charMesh, startIdx: 0 }];
 
-        var mat = new THREE.MeshStandardMaterial({ color: 0xc084fc, emissive: 0x7e22ce, emissiveIntensity: 0.3, roughness: 0.4 });
-        var mesh = new THREE.InstancedMesh(geo, mat, count);
+      for (var i = 0; i < CHAR_COUNT; i++) {
+        var rng = mulberry32(i * 7 + 31);
+        var radius = 5 + rng() * 16;
+        var angle = rng() * Math.PI * 2;
+        var x = Math.cos(angle) * radius;
+        var z = Math.sin(angle) * radius;
 
-        for (var i = 0; i < count; i++) {
-          var ci = start + i; // character index
-          var rng = mulberry32(ci * 7 + 31);
-          var radius = 5 + rng() * 16;
-          var angle = rng() * Math.PI * 2;
-          var x = Math.cos(angle) * radius;
-          var z = Math.sin(angle) * radius;
+        chars.push({
+          seed: i * 7 + 31,
+          pos: new THREE.Vector3(x, -1.8, z),
+          heading: rng() * Math.PI * 2,
+          speed: 0.4 + rng() * 0.6,
+          state: 'idle',
+          idleT: 1 + rng() * 4,
+          statusIcon: null,
+          statusTimer: 2 + rng() * 5,
+          meshRef: charMesh,
+          localIdx: i
+        });
 
-          chars.push({
-            seed: ci * 7 + 31,
-            pos: new THREE.Vector3(x, -2, z),
-            heading: rng() * Math.PI * 2,
-            speed: 0.3 + rng() * 0.6,
-            state: 'idle',
-            idleT: 1 + rng() * 4,
-            statusIcon: null,
-            statusTimer: 2 + rng() * 5,
-            meshRef: mesh,
-            localIdx: i
-          });
+        dummy.position.set(x, -1.8, z);
+        dummy.rotation.y = chars[i].heading;
+        dummy.updateMatrix();
+        charMesh.setMatrixAt(i, dummy.matrix);
 
-          dummy.position.set(x, -2, z);
-          dummy.rotation.y = chars[ci].heading;
-          dummy.updateMatrix();
-          mesh.setMatrixAt(i, dummy.matrix);
+        var c = new THREE.Color(palette[Math.floor(rng() * palette.length)]);
+        charMesh.setColorAt(i, c);
+      }
 
-          var c = new THREE.Color(palette[Math.floor(rng() * palette.length)]);
-          mesh.setColorAt(i, c);
-        }
-
-        mesh.instanceMatrix.needsUpdate = true;
-        mesh.instanceColor.needsUpdate = true;
-        scene.add(mesh);
-
-        // Store first mesh as primary for raycasting
-        if (gIdx === 0) charMesh = mesh;
-        // Store all meshes for raycasting
-        if (!window._charMeshes) window._charMeshes = [];
-        window._charMeshes.push({ mesh: mesh, startIdx: start });
-      });
+      charMesh.instanceMatrix.needsUpdate = true;
+      if (charMesh.instanceColor) charMesh.instanceColor.needsUpdate = true;
+      scene.add(charMesh);
 
       totalModelCount += CHAR_COUNT;
       document.getElementById('total-3d-count').innerText = totalModelCount.toLocaleString() + ' Models';
