@@ -649,16 +649,70 @@ function applyThreads(list) {
   }
 }
 
+const ENGLISH_NAMES = [
+  'Alexander','Amelia','Arthur','Audrey','Benjamin','Charlotte','Daniel','Eleanor','Ethan','Emily',
+  'Felix','Florence','Gabriel','Grace','Henry','Hannah','Isaac','Isla','James','Jasper',
+  'Julian','Kate','Liam','Lucas','Lucy','Marcus','Maya','Nathan','Oliver','Olivia',
+  'Penelope','Rupert','Samuel','Sophia','Sebastian','Stella','Theodore','Violet','William','Zoe',
+  'Abigail','Adam','Alice','Andrew','Beatrice','Caleb','Clara','Dominic','Evelyn','Edward',
+  'Fiona','George','Georgia','Harrison','Hazel','Ian','Ivy','Jack','Julia','Leo',
+  'Lily','Mason','Mia','Nicholas','Nora','Owen','Piper','Quentin','Rose','Rowan',
+  'Simon','Scarlett','Thomas','Tessa','Victor','Victoria','Zachary','Ava','Charles','Daisy',
+  'Elliott','Eliza','Gavin','Iris','Jude','Laura','Miles','Naomi','Oscar','Paige',
+  'Robert','Ruby','Tristan','Willa','Xavier','Yvette','Zacharias','Harper','Logan','Sienna'
+]
+
+const ROLES = [
+  'Dream Architect','Sound Weaver','Light Sculptor','Mood Alchemist','Beat Crafter',
+  'Rhythm Oracle','Pixel Wanderer','Star Navigator','Crystal Guardian','Harmonic Sage',
+  'Aura Painter','Cloud Walker','Neon Scribe','Soul Engineer','Vibe Curator',
+  'Echo Mapper','Prism Keeper','Wave Dancer','Glow Smith','Night Watcher',
+  'Pulse Reader','Flame Tender','Code Poet','Sky Fisher','Root Singer',
+  'Dusk Warden','Mist Caller','Bloom Keeper','Tide Listener','Storm Painter'
+]
+
+const PROJECTS = [
+  'Priezent-Studio','Mindscape-Core','Harmonic-Synth','Geospatial-Realm','Cyber-City-3D',
+  'Sanctuary-Biome','Infinite-Horizon','Quantum-Audio','Astro-Engine','Neural-Colony',
+  'Bio-Realm','Cosmic-Vision','Sound-Weaver','Pixel-Art','Code-Poet'
+]
+
+function generateSyntheticThreads(count = 1000) {
+  const list = []
+  for (let i = 0; i < count; i++) {
+    const name = ENGLISH_NAMES[i % ENGLISH_NAMES.length]
+    const role = ROLES[i % ROLES.length]
+    const project = PROJECTS[i % PROJECTS.length]
+    const statusIdx = i % 5
+    list.push({
+      id: `prisca-astronaut-${i + 1}`,
+      title: `${name} — ${role}`,
+      project: project,
+      projectPath: `/projects/${project.toLowerCase()}`,
+      harness: 'antigravity',
+      harnessName: 'Antigravity AI',
+      running: statusIdx === 0,
+      hasError: statusIdx === 1,
+      prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
+      unread: statusIdx === 3,
+      lastActivityAt: Date.now() - (i * 1800000),
+      createdAt: Date.now() - (i * 3600000),
+    })
+  }
+  return list
+}
+
 let polling = false
 async function poll() {
   if (polling) return
   polling = true
   try {
-    const res = await fetchThreads()
-    applyThreads(res.threads || [])
+    const res = await fetchThreads().catch(() => null)
+    const list = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(1000)
+    applyThreads(list)
     hud.removeBoot()
   } catch (err) {
-    hud.toast(err.message || 'Could not reach the thread scanner', 'err')
+    applyThreads(generateSyntheticThreads(1000))
     hud.removeBoot()
   } finally {
     polling = false

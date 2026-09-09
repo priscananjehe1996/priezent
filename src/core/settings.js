@@ -31,7 +31,7 @@ export const PRESETS = {
       textureQuality: 'low',
       scatterDensity: 0.15,
       groundDetail: 'low',
-      maxAgents: 40,
+      maxAgents: 1000,
       stars: false,
       ibl: false,
       tiltShift: false,
@@ -49,7 +49,7 @@ export const PRESETS = {
       textureQuality: 'low',
       scatterDensity: 0.35,
       groundDetail: 'low',
-      maxAgents: 60,
+      maxAgents: 1000,
       stars: true,
       ibl: false,
       tiltShift: false,
@@ -67,7 +67,7 @@ export const PRESETS = {
       textureQuality: 'medium',
       scatterDensity: 0.6,
       groundDetail: 'medium',
-      maxAgents: 90,
+      maxAgents: 1000,
       stars: true,
       ibl: true,
       tiltShift: true,
@@ -85,7 +85,7 @@ export const PRESETS = {
       textureQuality: 'high',
       scatterDensity: 0.85,
       groundDetail: 'high',
-      maxAgents: 140,
+      maxAgents: 1000,
       stars: true,
       ibl: true,
       tiltShift: true,
@@ -103,7 +103,7 @@ export const PRESETS = {
       textureQuality: 'ultra',
       scatterDensity: 1,
       groundDetail: 'high',
-      maxAgents: 200,
+      maxAgents: 1000,
       stars: true,
       ibl: true,
       tiltShift: true,
@@ -116,11 +116,9 @@ const TEXTURE_SIZES = { low: 256, medium: 512, high: 1024, ultra: 1024 }
 const PARTICLE_BUDGET = { off: 0, low: 900, full: 3000 }
 
 /**
- * The largest `maxAgents` any preset asks for. Anything sized once at boot — the badge buffers,
- * which are never rebuilt — allocates against this rather than against whatever preset happened
- * to be active, so raising quality later cannot outrun a buffer.
+ * The largest `maxAgents` any preset asks for. Sized to 1000 for full character support.
  */
-export const MAX_AGENT_CAP = Math.max(...Object.values(PRESETS).map((p) => p.values.maxAgents || 0))
+export const MAX_AGENT_CAP = 1000
 
 const DEFAULTS = {
   preset: 'balanced',
