@@ -673,54 +673,64 @@ const ROLES = [
 
 const PLANET_CITIZENS = {
   mercury: {
-    culture: 'Vulcan Guild',
-    projects: ['Vulcan Iron Forge', 'Solar Shield Metropolis', 'Caloris Citadel', 'Hermes Research Outpost', 'Sunforge Valley'],
-    roles: ['Solar Flare Diver', 'Thermal Shield Weaver', 'Iron Magnetometer', 'Shadow Catcher', 'Magma Sculptor']
+    culture: 'dTIMS & Heavy Pavement AI Guild',
+    projects: ['UNRA Asset Management System', 'dTIMS Investment Strategy', 'HDM-4 Deterioration Models', 'Heavy Traffic Load Analysis', 'Polypave Pavement Lab'],
+    roles: ['dTIMS Model Analyst', 'Pavement Life-Cycle AI', 'Structural Load Optimizer', 'HDM-4 Calibration Engine', 'Asphalt Fatigue Specialist'],
+    tasks: ['Optimizing dTIMS 10-Year Maintenance Investment Strategy', 'Modeling HDM-4 Pavement Roughness (IRI) Deterioration', 'Calibrating Polypave Heavy Axle Stress Curves', 'Simulating UNRA Network Investment Scenarios']
   },
   venus: {
-    culture: 'Cytherean Alliance',
-    projects: ['Ishtar Cloud City', 'Aphrodite Sulfuric Spire', 'Cytherean Sky Haven', 'Phosphorus Outpost', 'Acid Lake Refuge'],
-    roles: ['Acid Fog Navigator', 'Pressure Suit Engineer', 'Golden Haze Pilot', 'Volcano Monitor', 'Sulfur Crystal Smith']
+    culture: 'OPRC Contract Performance AI Alliance',
+    projects: ['OPRC Contract Management', 'Contract Performance Appraisal', 'Procurements & Bids Engine', 'DNPE Technical Briefs', 'NERAMP Maintenance Plan'],
+    roles: ['OPRC Performance Auditor', 'Contract Compliance AI', 'Procurement Strategy Analyst', 'NERAMP Network Inspector', 'Risk Mitigation Specialist'],
+    tasks: ['Auditing OPRC Contract Performance Service Levels', 'Analyzing National Road Maintenance Expenditure', 'Reviewing Procurement & Bid Technical Criteria', 'Synthesizing DNPE Technical Performance Briefs']
   },
   terra: {
-    culture: 'Gaian Union',
-    projects: ['Prisca Capital City', 'Harmonic Music Village', 'Sanctuary Nature Village', 'Emerald Eco Metropolis', 'Sunset Coast Haven'],
-    roles: ['Ocean Explorer', 'Forest Warden', 'Acoustic Sculptor', 'Biomimicry Poet', 'Sky Weaver']
+    culture: 'UNRA National Road Network AI Directorate',
+    projects: ['Uganda National Road Network', 'KCCA Urban Corridor', 'KJE Expressway Corridor', 'National Bridge Inventory', 'Departmental Infrastructure'],
+    roles: ['National Network Strategist', 'Corridor Capacity Planner', 'Bridge Structural Auditor', 'Traffic Flow Optimizer', 'Infrastructure AI Director'],
+    tasks: ['Mapping Uganda National Road Network Spatial Inventory', 'Analyzing KJE Expressway Traffic Capacity Models', 'Evaluating National Bridge Inspection Reports', 'Optimizing Urban Traffic Corridors']
   },
   moon: {
-    culture: 'Lunar Commonwealth',
-    projects: ['Sea of Tranquility Base', 'Tycho Observatory City', 'Lunar Gateway Station', 'Regolith Domes', 'Shackleton Haven'],
-    roles: ['Vacuum Surveyor', 'Lunar Dust Engineer', 'Mass Driver Operator', 'Starlight Oracle', 'Ice Drill Specialist']
+    culture: 'LCMS & Laser Geodesy AI Observatory',
+    roles: ['LCMS 3D Laser Analyst', 'Crack Depth AI Inspector', 'GRIP Tester Friction Engine', 'GSSI Ground Radar Specialist', 'Pavement Rutting Surveyor'],
+    projects: ['LCMS Laser Crack System', 'ROMDAS Road Inspection', 'GRIP Tester Friction Base', 'GSSI Ground Penetrating Radar', 'Roadroid Mobile Survey'],
+    tasks: ['Processing LCMS 3D High-Speed Laser Crack Scans', 'Analyzing ROMDAS Pavement Roughness Data', 'Calculating GRIP Tester Surface Friction Index', 'Inspecting GSSI Subsurface Radar Layers']
   },
   mars: {
-    culture: 'Martian Republic',
-    projects: ['Valles Marineris Capital', 'Olympus Mons Heights', 'Utopia Planitia Colony', 'Red Sand Oasis', 'Phobos Sky Port'],
-    roles: ['Terraforming Specialist', 'Dust Storm Navigator', 'Atmosphere Harvester', 'Red Soil Botanist', 'Subsurface Water Diver']
+    culture: '2026 ATC & Traffic Intelligence AI Republic',
+    roles: ['Automated Traffic Count AI', 'Origin-Destination Analyst', 'Axle Load Weighbridge AI', 'Corridor Volume Modeler', 'Traffic Station Inspector'],
+    projects: ['2026 ATC Data Repository', 'ADB Traffic Count System', 'KJE-NOWO Origin-Destination', 'Weighbridge System Reports', 'Traffic Count Stations'],
+    tasks: ['Processing 2026 Automated Traffic Count (ATC) Datasets', 'Modeling Origin-Destination (OD) Travel Matrices', 'Auditing Axle Load Weighbridge Overload Violations', 'Analyzing ADB Traffic Corridor Growth Rates']
   },
   jupiter: {
-    culture: 'Jovian Oceanids',
-    projects: ['Europa Subsurface Ocean City', 'Ganymede Magneto Haven', 'Io Thermal Outpost', 'Jovian Aurora Citadel', 'Callisto Ice Spire'],
-    roles: ['Subsurface Ocean Diver', 'Radiation Shield Tech', 'Cryo-Geyser Operator', 'Magnetosphere Pilot', 'Tidal Energy Crafter']
+    culture: 'Bridge Engineering & Subsurface AI',
+    roles: ['Bridge Structure Auditor', 'Subsurface Geophysics AI', 'KUAB FWD Deflection Analyst', 'Abutment Integrity Inspector', 'Scour Protection Engineer'],
+    projects: ['National Bridge Inventory', 'KUAB FWD Deflection Base', 'GSSI Subsurface Geophysics', 'Bridge Maintenance System', 'Structure Repair Hub'],
+    tasks: ['Inspecting National Bridge Bearing & Expansion Joints', 'Analyzing KUAB Heavy Deflectometer Basin Curves', 'Evaluating Subsurface Foundation Integrity', 'Modeling Bridge Scour & Hydraulic Risks']
   },
   saturn: {
-    culture: 'Saturnian Ring-Sails',
-    projects: ['Titan Methane Sea Port', 'Enceladus Plume Outpost', 'Ringside Station', 'Chronos Cloud Citadel', 'Hyperion Haven'],
-    roles: ['Methane Sea Sailor', 'Ring Dust Collector', 'Hydrocarbon Refinery Master', 'Plume Diver', 'Cold Smog Navigator']
+    culture: 'FWD Deflection & Structural AI',
+    roles: ['FWD Deflection Specialist', 'Pavement Layer Stiffness AI', 'Subgrade Modulus Engineer', 'Bearing Capacity Analyst', 'Structural Overlay Modeler'],
+    projects: ['FWD Structural Deflection', 'KUAB FWD Testing Base', 'Pavement Layer Modulus Lab', 'Overlay Design Center', 'Structural Rating Hub'],
+    tasks: ['Calculating FWD Pavement Structural Deflection Baselines', 'Back-calculating Subgrade Resilient Modulus', 'Designing Pavement Overlay Thickness Requirements', 'Rating Heavy Vehicle Pavement Structural Capacity']
   },
   uranus: {
-    culture: 'Titania Cryo-Guards',
-    projects: ['Titania Ice Spire', 'Oberon Frost City', 'Aquamarine Cloud Station', 'Miranda Rift Colony', 'Umbriel Void Base'],
-    roles: ['Cryo-Miner', 'Diamond Rain Harvester', 'Frost Crystal Weaver', 'Tilt-Orbit Navigator', 'Deep Chill Engineer']
+    culture: 'GIS & Mobile Mapping AI Directorate',
+    roles: ['ArcGIS Field App Developer', 'Survey123 Form Specialist', 'Mobile Mapping AI Operator', 'Google Earth Spatial Analyst', 'Geodatabase Architect'],
+    projects: ['ArcGIS Field Apps System', 'Survey123 Data Collection', 'Mobile Mapping Sample Data', 'Google Earth Spatial Repository', 'Map Layouts Engine'],
+    tasks: ['Building Survey123 Mobile Inspection Forms', 'Processing Mobile Mapping Point Clouds & Imagery', 'Updating UNRA ArcGIS Spatial Geodatabase', 'Rendering National Road Network Map Layouts']
   },
   neptune: {
-    culture: 'Poseidon Deep-Divers',
-    projects: ['Triton Cryovolcano Port', 'Great Dark Spot Citadel', 'Azure Methane Haven', 'Poseidon Ocean Station', 'Proteus Outpost'],
-    roles: ['Cryovolcano Tender', 'Dark Spot Storm Chaser', 'Cobalt Ice Sculptor', 'Deep Methane Diver', 'Supersonic Wind Pilot']
+    culture: 'Drainage & Road Reserve AI',
+    roles: ['Road Reserve Inspector', 'Hydraulic Drainage Modeler', 'Culvert Structural Auditor', 'Encroachment Control AI', 'Erosion Protection Engineer'],
+    projects: ['Road Reserve Management', 'Hydraulic & Drainage Systems', 'Culvert & Catchment Hub', 'Corridor Protection Base', 'Environmental Reserve'],
+    tasks: ['Auditing Road Reserve Encroachment Boundaries', 'Simulating Culvert Catchment Runoff & Discharge', 'Inspecting Drainage Channel Hydraulic Capacities', 'Modeling Environmental Road Corridor Buffers']
   },
   pluto: {
-    culture: 'Hades Kuiper-Pioneers',
-    projects: ['Tombaugh Regio Capital', 'Charon Binary Citadel', 'Sputnik Planitia Base', 'Edge of Void Haven', 'Kuiper Rim Outpost'],
-    roles: ['Kuiper Belt Explorer', 'Nitrogen Glacier Guide', 'Binary Orbit Pilot', 'Deep Void Chronicler', 'Absolute Zero Alchemist']
+    culture: 'DNPE National Performance & Strategy AI',
+    roles: ['Annual Performance Auditor', 'NERAMP Strategy Analyst', 'Competence Training AI', 'Research Project Data Analyst', 'Executive Briefing Director'],
+    projects: ['Annual Network Performance', 'NERAMP Executive Strategy', 'DNPE Technical Briefing', 'Research Project Raw Data', 'Graduate Competence Hub'],
+    tasks: ['Evaluating Annual National Road Performance Indicators', 'Synthesizing NERAMP Long-Term Maintenance Strategy', 'Processing Research Project Raw Datasets', 'Generating Executive Technical Briefs']
   }
 }
 
@@ -731,14 +741,16 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
     const name = ENGLISH_NAMES[i % ENGLISH_NAMES.length]
     const role = pData.roles[i % pData.roles.length]
     const project = pData.projects[i % pData.projects.length]
+    const task = pData.tasks[i % pData.tasks.length]
     const statusIdx = i % 5
     list.push({
-      id: `${planetKey}-citizen-${i + 1}`,
-      title: `${name} — ${role} (${pData.culture})`,
+      id: `${planetKey}-ai-agent-${i + 1}`,
+      title: `${name} — ${role} [AI Agent]`,
       project: project,
-      projectPath: `/projects/${project.toLowerCase().replace(/\s+/g, '-')}`,
-      harness: 'antigravity',
-      harnessName: `${planetKey.toUpperCase()} Guild`,
+      projectPath: `D:\\OneDrive\\${project}`,
+      harness: 'antigravity-ai',
+      harnessName: `AI Agent (Trained on D:\\OneDrive)`,
+      task: task,
       running: statusIdx === 0,
       hasError: statusIdx === 1,
       prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
