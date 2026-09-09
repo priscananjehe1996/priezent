@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js'
 import { buildFaceAtlas, FACE, FACE_LOOPS, FRAME_COLS, FRAME_ROWS } from './faces.js'
 import { attachMatrixAt, decorateSkinned, frameFor } from './crew.js'
+import { AgentBrain } from './brain.js'
 
 /**
  * Every astronaut in the colony, drawn in seven draw calls.
@@ -510,6 +511,7 @@ export class Astronauts {
 
     const agent = {
       id: entry.id,
+      brain: new AgentBrain(entry.id, 85),
       thread: entry.thread,
       status: entry.status,
       site: entry.site ? entry.site.clone() : new THREE.Vector3(),
@@ -650,6 +652,23 @@ export class Astronauts {
     for (let i = this.agents.length - 1; i >= 0; i--) {
       const agent = this.agents[i]
       agent.stateAge += dt
+      
+      if (!agent.brainTimer || agent.brainTimer <= 0) {
+        agent.brainTimer = 1.0 + Math.random() * 0.5
+        if (agent.brain) {
+          const targetDist = Math.hypot(agent.site.x - agent.pos.x, agent.site.z - agent.pos.z)
+          agent.neuralDecision = agent.brain.evaluate({
+            epoch: 88,
+            loss: parseFloat(agent.brain.loss),
+            targetDist: targetDist,
+            density: 3,
+            energy: 0.95
+          })
+        }
+      } else {
+        agent.brainTimer -= dt
+      }
+
       this._step(agent, dt, elapsed, anim)
       this._animate(agent, dt, anim)
       this._face(agent, dt)

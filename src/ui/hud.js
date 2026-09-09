@@ -595,6 +595,12 @@ export class Hud {
     if (thread.gitBranch) bits.push(`<span class="tag">${escapeHtml(thread.gitBranch)}</span>`)
     if (thread.model) bits.push(`<span class="tag">${escapeHtml(shortModel(thread.model))}</span>`)
     if (thread.trainingState) bits.push(`<div class="training-tag" style="width:100%;font-size:11px;color:#34d399;margin-top:3px">🧠 <b>Model State:</b> ${escapeHtml(thread.trainingState)}</div>`)
+    if (agent.brain) {
+      const dec = agent.neuralDecision || agent.brain.evaluate()
+      bits.push(`<div class="brain-tag" style="width:100%;font-size:11px;color:#c084fc;margin-top:3px">🤖 <b>Neural Decision:</b> [${dec.action}] (${dec.confidence})</div>`)
+      bits.push(`<div class="rank-tag" style="width:100%;font-size:10px;color:#f59e0b;margin-top:2px">🏆 <b>Growth Rank:</b> Level ${dec.level} ${escapeHtml(agent.brain.getRankTitle())} (${dec.xp} XP)</div>`)
+      bits.push(`<div class="nn-tag" style="width:100%;font-size:10px;color:#a7f3d0;margin-top:2px;font-family:monospace">🧬 <b>Architecture:</b> 8 Inputs → 16 Hidden (ReLU) → 4 Softmax</div>`)
+    }
     if (thread.task) bits.push(`<div class="task-tag" style="width:100%;font-size:11px;color:#9ec8e8;margin-top:4px;white-space:normal;line-height:1.3">⚡ <b>AI Task:</b> ${escapeHtml(thread.task)}</div>`)
     if (thread.projectPath) bits.push(`<div class="path-tag" style="width:100%;font-size:10px;color:#8aa0c4;margin-top:2px;font-family:monospace">📁 <b>Data:</b> ${escapeHtml(thread.projectPath)}</div>`)
     meta.innerHTML = bits.join('')
