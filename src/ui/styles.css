@@ -1374,29 +1374,48 @@ kbd {
 
 @media (max-width: 820px) {
   .settings {
-    width: min(306px, calc(100vw - 28px));
+    width: min(320px, calc(100vw - 20px));
+    right: 10px;
+    top: 10px;
+    max-height: calc(100vh - 80px);
   }
   .side {
-    width: min(320px, calc(100vw - 28px));
+    width: min(320px, calc(100vw - 20px));
+    max-height: calc(100vh - 80px);
   }
-  /* No room to sit beside it — the sidebar just covers that corner. */
   .hud {
     --side: 0px;
   }
   .side.shifted {
     transform: translateX(0);
   }
+  /* Convert rail into a sleek mobile bottom bar */
   .rail {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    width: auto;
+    padding: 6px 12px;
+    gap: 8px;
+    z-index: 40;
+  }
+  .rail .sep {
+    width: 1px;
+    height: 20px;
+    background: var(--line);
+    margin: 0 4px;
   }
   .stats {
     gap: 5px;
+    flex-wrap: wrap;
   }
   .stat .lbl {
-    display: none;
-  }
-  .legend {
-    max-width: calc(100vw - 28px);
+    display: inline-block;
+    font-size: 10px;
   }
 }
 
@@ -1405,9 +1424,40 @@ kbd {
     height: 46px;
     padding: 0 6px 0 12px;
   }
+  .brand {
+    font-size: 13px;
+  }
   .brand span,
   .stats .stat .lbl {
     display: none;
+  }
+  /* Convert selection inspector popup into a responsive bottom card on mobile screens */
+  .thread-pop {
+    position: fixed !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 16px !important;
+    top: auto !important;
+    width: auto !important;
+    transform: none !important;
+    max-height: 55vh;
+    overflow-y: auto;
+    z-index: 45;
+  }
+  .thread-pop .nib {
+    display: none;
+  }
+  .help .sheet {
+    width: calc(100vw - 24px);
+    padding: 16px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  .help .cols {
+    grid-template-columns: 1fr;
+  }
+  .planets {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

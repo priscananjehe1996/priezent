@@ -38,21 +38,26 @@
       </div>
     </div>
 
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-2 sm:space-x-3">
+      <!-- Mobile Sidebar Toggle -->
+      <button onclick="toggleSidebar()" class="md:hidden px-3 py-1.5 rounded-xl bg-purple-600/80 text-white text-xs font-bold border border-purple-400">
+        🗺️ Explorer
+      </button>
+
       <!-- Real-Time Local Clock Indicator -->
-      <div class="px-3 py-1.5 rounded-xl bg-purple-950/80 border border-purple-500/40 text-xs font-mono text-purple-300 flex items-center space-x-2">
+      <div class="hidden sm:flex px-3 py-1.5 rounded-xl bg-purple-950/80 border border-purple-500/40 text-xs font-mono text-purple-300 items-center space-x-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span id="local-clock">Syncing...</span>
       </div>
 
-      <button onclick="toggleMusic()" id="btn-audio" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-amber-500 text-white text-xs font-bold shadow-lg hover:opacity-90 transition">
+      <button onclick="toggleMusic()" id="btn-audio" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-purple-600 to-amber-500 text-white text-xs font-bold shadow-lg hover:opacity-90 transition">
         <span id="audio-label">▶️ Play Afro Synth</span>
       </button>
     </div>
   </header>
 
   <!-- Left Sidebar Explorer -->
-  <aside class="absolute top-24 left-4 z-10 w-96 glass-card rounded-2xl p-4 shadow-2xl space-y-4 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scroll">
+  <aside id="sidebar" class="absolute top-24 left-4 right-4 md:right-auto z-20 w-auto md:w-96 glass-card rounded-2xl p-4 shadow-2xl space-y-4 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scroll hidden md:block">
     <!-- View Modes -->
     <div>
       <h3 class="text-xs font-bold text-purple-300 uppercase tracking-wider mb-2">Modern 3D View Modes</h3>
@@ -139,6 +144,11 @@
   </aside>
 
   <script>
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      sb.classList.toggle('hidden');
+    }
+
     let scene, camera, renderer, controls, worldMesh;
     let viewMode = 'orbit';
     let audioCtx, isPlaying = false;
