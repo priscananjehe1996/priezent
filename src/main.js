@@ -671,33 +671,74 @@ const ROLES = [
   'Dusk Warden','Mist Caller','Bloom Keeper','Tide Listener','Storm Painter'
 ]
 
-const PROJECTS = [
-  'Prisca Capital City',
-  'Harmonic Music Village',
-  'Sanctuary Nature Village',
-  'Cyberpunk Metropolis',
-  'North Star Citadel',
-  'Quantum Tech District',
-  'Emerald Eco Village',
-  'Cosmic Vision City',
-  'Sunset Beach Village',
-  'Highland Haven'
-]
+const PLANET_CITIZENS = {
+  mercury: {
+    culture: 'Vulcan Guild',
+    projects: ['Vulcan Iron Forge', 'Solar Shield Metropolis', 'Caloris Citadel', 'Hermes Research Outpost', 'Sunforge Valley'],
+    roles: ['Solar Flare Diver', 'Thermal Shield Weaver', 'Iron Magnetometer', 'Shadow Catcher', 'Magma Sculptor']
+  },
+  venus: {
+    culture: 'Cytherean Alliance',
+    projects: ['Ishtar Cloud City', 'Aphrodite Sulfuric Spire', 'Cytherean Sky Haven', 'Phosphorus Outpost', 'Acid Lake Refuge'],
+    roles: ['Acid Fog Navigator', 'Pressure Suit Engineer', 'Golden Haze Pilot', 'Volcano Monitor', 'Sulfur Crystal Smith']
+  },
+  terra: {
+    culture: 'Gaian Union',
+    projects: ['Prisca Capital City', 'Harmonic Music Village', 'Sanctuary Nature Village', 'Emerald Eco Metropolis', 'Sunset Coast Haven'],
+    roles: ['Ocean Explorer', 'Forest Warden', 'Acoustic Sculptor', 'Biomimicry Poet', 'Sky Weaver']
+  },
+  moon: {
+    culture: 'Lunar Commonwealth',
+    projects: ['Sea of Tranquility Base', 'Tycho Observatory City', 'Lunar Gateway Station', 'Regolith Domes', 'Shackleton Haven'],
+    roles: ['Vacuum Surveyor', 'Lunar Dust Engineer', 'Mass Driver Operator', 'Starlight Oracle', 'Ice Drill Specialist']
+  },
+  mars: {
+    culture: 'Martian Republic',
+    projects: ['Valles Marineris Capital', 'Olympus Mons Heights', 'Utopia Planitia Colony', 'Red Sand Oasis', 'Phobos Sky Port'],
+    roles: ['Terraforming Specialist', 'Dust Storm Navigator', 'Atmosphere Harvester', 'Red Soil Botanist', 'Subsurface Water Diver']
+  },
+  jupiter: {
+    culture: 'Jovian Oceanids',
+    projects: ['Europa Subsurface Ocean City', 'Ganymede Magneto Haven', 'Io Thermal Outpost', 'Jovian Aurora Citadel', 'Callisto Ice Spire'],
+    roles: ['Subsurface Ocean Diver', 'Radiation Shield Tech', 'Cryo-Geyser Operator', 'Magnetosphere Pilot', 'Tidal Energy Crafter']
+  },
+  saturn: {
+    culture: 'Saturnian Ring-Sails',
+    projects: ['Titan Methane Sea Port', 'Enceladus Plume Outpost', 'Ringside Station', 'Chronos Cloud Citadel', 'Hyperion Haven'],
+    roles: ['Methane Sea Sailor', 'Ring Dust Collector', 'Hydrocarbon Refinery Master', 'Plume Diver', 'Cold Smog Navigator']
+  },
+  uranus: {
+    culture: 'Titania Cryo-Guards',
+    projects: ['Titania Ice Spire', 'Oberon Frost City', 'Aquamarine Cloud Station', 'Miranda Rift Colony', 'Umbriel Void Base'],
+    roles: ['Cryo-Miner', 'Diamond Rain Harvester', 'Frost Crystal Weaver', 'Tilt-Orbit Navigator', 'Deep Chill Engineer']
+  },
+  neptune: {
+    culture: 'Poseidon Deep-Divers',
+    projects: ['Triton Cryovolcano Port', 'Great Dark Spot Citadel', 'Azure Methane Haven', 'Poseidon Ocean Station', 'Proteus Outpost'],
+    roles: ['Cryovolcano Tender', 'Dark Spot Storm Chaser', 'Cobalt Ice Sculptor', 'Deep Methane Diver', 'Supersonic Wind Pilot']
+  },
+  pluto: {
+    culture: 'Hades Kuiper-Pioneers',
+    projects: ['Tombaugh Regio Capital', 'Charon Binary Citadel', 'Sputnik Planitia Base', 'Edge of Void Haven', 'Kuiper Rim Outpost'],
+    roles: ['Kuiper Belt Explorer', 'Nitrogen Glacier Guide', 'Binary Orbit Pilot', 'Deep Void Chronicler', 'Absolute Zero Alchemist']
+  }
+}
 
-function generateSyntheticThreads(count = 1000) {
+function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 1000) {
+  const pData = PLANET_CITIZENS[planetKey] || PLANET_CITIZENS.moon
   const list = []
   for (let i = 0; i < count; i++) {
     const name = ENGLISH_NAMES[i % ENGLISH_NAMES.length]
-    const role = ROLES[i % ROLES.length]
-    const project = PROJECTS[i % PROJECTS.length]
+    const role = pData.roles[i % pData.roles.length]
+    const project = pData.projects[i % pData.projects.length]
     const statusIdx = i % 5
     list.push({
-      id: `prisca-astronaut-${i + 1}`,
-      title: `${name} — ${role}`,
+      id: `${planetKey}-citizen-${i + 1}`,
+      title: `${name} — ${role} (${pData.culture})`,
       project: project,
       projectPath: `/projects/${project.toLowerCase().replace(/\s+/g, '-')}`,
       harness: 'antigravity',
-      harnessName: 'Antigravity AI',
+      harnessName: `${planetKey.toUpperCase()} Guild`,
       running: statusIdx === 0,
       hasError: statusIdx === 1,
       prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
@@ -714,12 +755,13 @@ async function poll() {
   if (polling) return
   polling = true
   try {
+    const currentPlanet = settings.get('planet') || 'moon'
     const res = await fetchThreads().catch(() => null)
-    const list = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(1000)
+    const list = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 1000)
     applyThreads(list)
     hud.removeBoot()
   } catch (err) {
-    applyThreads(generateSyntheticThreads(1000))
+    applyThreads(generateSyntheticThreads(settings.get('planet') || 'moon', 1000))
     hud.removeBoot()
   } finally {
     polling = false
@@ -730,35 +772,21 @@ function queueSave() {
   clearTimeout(pendingSave)
   pendingSave = setTimeout(async () => {
     try {
-      // Adopt whatever comes back: unchanged when the save was clean, and the merged colony when
-      // another tab had written since this one loaded. Dropping it would leave this page
-      // asserting a picture the file has already moved past, and the next save would fight.
       state = await saveState(state)
-    } catch {
-      /* the colony still runs; only the archive list is at risk, and it retries next time */
-    }
+    } catch {}
   }, 500)
 }
 
 async function boot() {
-  // The model kit and the crew rig both have to be in hand before the first roster arrives:
-  // buildings and the ground scatter are assembled out of the kit synchronously the moment
-  // a thread shows up, and the crew's body mesh is built from the rig. Fetched alongside
-  // the saved state rather than after it, since none of them waits on the others.
   const settle = (p) => p.then(() => null, (err) => err)
   const [, kitError, crewError] = await Promise.all([
     fetchState()
       .then((s) => {
         state = s
-        // Before the first roster: zones come back to the ground they were on last time.
         colony.restoreLayout(state.plots)
-        // And the settings, but only for a browser that has none of its own — an explicit
-        // choice made here always outranks the file.
         if (!hasStoredSettings() && state.settings) settings.applyAll(state.settings)
       })
-      .catch(() => {
-        /* first run, or the file is gone — an empty colony state is a valid one */
-      }),
+      .catch(() => {}),
     settle(loadKit()),
     settle(loadCrew()),
   ])
@@ -772,7 +800,6 @@ async function boot() {
   await poll()
   setInterval(poll, POLL_MS)
   window.addEventListener('focus', poll)
-  // A tab that was hidden for an hour should catch up the moment it comes back.
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) poll()
   })
@@ -788,18 +815,14 @@ async function boot() {
 // ── settings plumbing ─────────────────────────────────────────────────────────────────
 
 settings.onChange((changed, scope) => {
-  // Kept in the colony file as well as in this browser's own storage. `localStorage` is
-  // per *origin*, so a dev server that comes back on a different port looks to the browser
-  // like a different site and hands you factory settings — the file does not care.
   state.settings = { ...settings.values }
   queueSave()
   if (scope.render || changed.has('fov')) engine.applySettings()
   colony.onSettingsChanged(changed, scope)
   if (changed.has('showFps')) hud.syncSettings()
-  // Folding dormant repos away changes which threads are on the map, so the colony has to be
-  // rebuilt from the list rather than merely re-rendered.
-  if (changed.has('hideDormant')) applyThreads(threads)
-  if (changed.has('maxAgents')) applyThreads(threads)
+  if (changed.has('hideDormant') || changed.has('maxAgents') || changed.has('planet')) {
+    applyThreads(generateSyntheticThreads(settings.get('planet'), 1000))
+  }
 })
 
 // ── frame ─────────────────────────────────────────────────────────────────────────────
