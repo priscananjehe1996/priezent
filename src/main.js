@@ -752,6 +752,20 @@ const UNRN_DATA_POINTS = [
   'UNRN Node #14.RR-224: Road Reserve Right-Of-Way Boundary Survey #RR-60 · 60m Corridor Reserve'
 ]
 
+let globalTrainingEpochOffset = 0
+setInterval(() => {
+  globalTrainingEpochOffset = (globalTrainingEpochOffset + 1) % 100
+  if (threads && threads.length) {
+    for (let i = 0; i < threads.length; i++) {
+      const t = threads[i]
+      const epoch = ((i * 7 + globalTrainingEpochOffset) % 100) + 1
+      const loss = Math.max(0.0012, (0.008 + (i % 10) * 0.002) - (globalTrainingEpochOffset * 0.00004)).toFixed(4)
+      t.trainingState = `Building Knowledge: Epoch ${epoch}/100 (Loss: ${loss})`
+      t.harnessName = `UNRN AI Knowledge Module (Training Epoch ${epoch}/100)`
+    }
+  }
+}, 2500)
+
 function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 1000) {
   const pData = PLANET_CITIZENS[planetKey] || PLANET_CITIZENS.moon
   const list = []
@@ -761,7 +775,7 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
     const project = pData.projects[i % pData.projects.length]
     const task = pData.tasks[i % pData.tasks.length]
     const dataPoint = UNRN_DATA_POINTS[i % UNRN_DATA_POINTS.length]
-    const epoch = (i * 7) % 100 + 1
+    const epoch = ((i * 7 + globalTrainingEpochOffset) % 100) + 1
     const loss = (0.008 + (i % 10) * 0.002).toFixed(4)
     const statusIdx = i % 5
     list.push({
@@ -791,11 +805,12 @@ async function poll() {
   try {
     const currentPlanet = settings.get('planet') || 'moon'
     const res = await fetchThreads().catch(() => null)
-    const list = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 1000)
-    applyThreads(list)
+    threads = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 1000)
+    applyThreads(threads)
     hud.removeBoot()
   } catch (err) {
-    applyThreads(generateSyntheticThreads(settings.get('planet') || 'moon', 1000))
+    threads = generateSyntheticThreads(settings.get('planet') || 'moon', 1000)
+    applyThreads(threads)
     hud.removeBoot()
   } finally {
     polling = false
