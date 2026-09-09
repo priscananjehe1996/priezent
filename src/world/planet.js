@@ -18,7 +18,7 @@ export const PLANETS = {
     rock: 0x4a443e,
     horizon: 0x1f140e,
     sky: { top: 0x080402, bottom: 0x261408 },
-    fog: { color: 0x0d0805, near: 110, far: 250 },
+    fog: { color: 0x0d0805, near: 150, far: 950 },
     sun: { color: 0xffe0b0, intensity: 3.5, night: 0.03 },
     ambient: { sky: 0x5a4838, ground: 0x3a2818, intensity: 0.8 },
     atmosphere: 0,
@@ -36,7 +36,7 @@ export const PLANETS = {
     rock: 0x774015,
     horizon: 0x50300a,
     sky: { top: 0x3a2005, bottom: 0xe8a030 },
-    fog: { color: 0x603c0c, near: 75, far: 180 },
+    fog: { color: 0x603c0c, near: 120, far: 850 },
     sun: { color: 0xffc860, intensity: 2.0, night: 0.15 },
     ambient: { sky: 0xd08c28, ground: 0x502808, intensity: 0.85 },
     atmosphere: 0.9,
@@ -54,7 +54,7 @@ export const PLANETS = {
     rock: 0x6b6f63,
     horizon: 0x6fa8d8,
     sky: { top: 0x1d4d8f, bottom: 0x9ec8e8 },
-    fog: { color: 0x6b8fa8, near: 92, far: 230 },
+    fog: { color: 0x6b8fa8, near: 180, far: 1100 },
     sun: { color: 0xfff0d4, intensity: 2.4, night: 0.13 },
     ambient: { sky: 0x88bfe8, ground: 0x3f5a30, intensity: 0.95 },
     atmosphere: 1,
@@ -72,7 +72,7 @@ export const PLANETS = {
     rock: 0x6d6a70,
     horizon: 0x14141c,
     sky: { top: 0x05060c, bottom: 0x101018 },
-    fog: { color: 0x07080e, near: 100, far: 235 },
+    fog: { color: 0x07080e, near: 180, far: 1150 },
     sun: { color: 0xfff4e2, intensity: 2.6, night: 0.05 },
     ambient: { sky: 0x3a4258, ground: 0x4a423a, intensity: 0.7 },
     atmosphere: 0,
@@ -90,7 +90,7 @@ export const PLANETS = {
     rock: 0x8a4a2c,
     horizon: 0x3a2118,
     sky: { top: 0x2b1a1e, bottom: 0xc4703c },
-    fog: { color: 0x50301f, near: 82, far: 205 },
+    fog: { color: 0x50301f, near: 150, far: 950 },
     sun: { color: 0xffd9b0, intensity: 2.2, night: 0.09 },
     ambient: { sky: 0xc07a52, ground: 0x4a2418, intensity: 0.75 },
     atmosphere: 0.55,
@@ -108,7 +108,7 @@ export const PLANETS = {
     rock: 0x4d667d,
     horizon: 0x20354a,
     sky: { top: 0x0a1624, bottom: 0x386088 },
-    fog: { color: 0x16283d, near: 90, far: 220 },
+    fog: { color: 0x16283d, near: 160, far: 1050 },
     sun: { color: 0x88c0ff, intensity: 1.8, night: 0.1 },
     ambient: { sky: 0x4078a8, ground: 0x203850, intensity: 0.8 },
     atmosphere: 0.4,
@@ -126,7 +126,7 @@ export const PLANETS = {
     rock: 0x786430,
     horizon: 0x403010,
     sky: { top: 0x281c08, bottom: 0xc49c38 },
-    fog: { color: 0x4a3814, near: 70, far: 190 },
+    fog: { color: 0x4a3814, near: 120, far: 900 },
     sun: { color: 0xffd880, intensity: 1.6, night: 0.12 },
     ambient: { sky: 0xb89030, ground: 0x483410, intensity: 0.85 },
     atmosphere: 0.8,
@@ -144,7 +144,7 @@ export const PLANETS = {
     rock: 0x306062,
     horizon: 0x103032,
     sky: { top: 0x051416, bottom: 0x206064 },
-    fog: { color: 0x0d282a, near: 95, far: 230 },
+    fog: { color: 0x0d282a, near: 170, far: 1100 },
     sun: { color: 0x80e8ff, intensity: 1.4, night: 0.06 },
     ambient: { sky: 0x30888c, ground: 0x184042, intensity: 0.7 },
     atmosphere: 0.3,
@@ -162,7 +162,7 @@ export const PLANETS = {
     rock: 0x203470,
     horizon: 0x0c1438,
     sky: { top: 0x04081c, bottom: 0x182c68 },
-    fog: { color: 0x0a1230, near: 90, far: 220 },
+    fog: { color: 0x0a1230, near: 160, far: 1050 },
     sun: { color: 0x70a0ff, intensity: 1.3, night: 0.05 },
     ambient: { sky: 0x2848b0, ground: 0x101a48, intensity: 0.65 },
     atmosphere: 0.35,
@@ -180,7 +180,7 @@ export const PLANETS = {
     rock: 0x483c48,
     horizon: 0x181018,
     sky: { top: 0x060206, bottom: 0x181018 },
-    fog: { color: 0x0e080e, near: 105, far: 240 },
+    fog: { color: 0x0e080e, near: 180, far: 1200 },
     sun: { color: 0xd0c0ff, intensity: 1.0, night: 0.02 },
     ambient: { sky: 0x483848, ground: 0x281828, intensity: 0.5 },
     atmosphere: 0.1,
@@ -192,9 +192,9 @@ export const PLANETS = {
   },
 }
 
-const GROUND_SIZE = 340
+const GROUND_SIZE = 1200
 /** Everything inside this radius is the buildable colony, and is kept nearly flat. */
-export const COLONY_RADIUS = 46
+export const COLONY_RADIUS = 180
 const DETAIL_SEGMENTS = { low: 72, medium: 128, high: 190 }
 
 /**

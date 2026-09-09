@@ -4,8 +4,8 @@ const ISO_POLAR = THREE.MathUtils.degToRad(56)
 const MIN_POLAR = THREE.MathUtils.degToRad(6)
 const MAX_POLAR = THREE.MathUtils.degToRad(84)
 const MIN_DIST = 4
-const MAX_DIST = 150
-const WORLD_LIMIT = 82
+const MAX_DIST = 550
+const WORLD_LIMIT = 350
 /** Orbit mode's rate: about two minutes a revolution, slow enough to watch. */
 const ORBIT_RATE = 0.055
 /** How long after you stop working the camera before the sweep picks itself back up. */
