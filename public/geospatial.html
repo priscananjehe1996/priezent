@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive 3D Geospatial World</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
+    #canvas-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 0; }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+    .pulse-marker {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+    }
+  </style>
+</head>
+<body class="h-full text-slate-100 antialiased overflow-hidden">
+  <!-- 3D Canvas -->
+  <div id="canvas-container"></div>
+
+  <!-- Top Navigation Header -->
+  <header class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between glass-panel rounded-2xl p-4 shadow-2xl">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V11a2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+      <div>
+        <h1 class="font-bold text-lg leading-tight tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">GEOSPATIAL 3D WORLD</h1>
+        <p class="text-xs text-cyan-400 font-mono">Interactive WebGL Globe & Free 3D Models</p>
+      </div>
+    </div>
+
+    <!-- Quick Location Fly-to Preset Buttons -->
+    <div class="hidden lg:flex items-center space-x-2 bg-slate-900/60 p-1.5 rounded-xl border border-slate-800">
+      <button onclick="flyToLocation(35.6762, 139.6503, 'Tokyo')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🗼 Tokyo</button>
+      <button onclick="flyToLocation(40.7128, -74.0060, 'New York')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🗽 New York</button>
+      <button onclick="flyToLocation(48.8566, 2.3522, 'Paris')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🥐 Paris</button>
+      <button onclick="flyToLocation(-33.8688, 151.2093, 'Sydney')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🦘 Sydney</button>
+      <button onclick="flyToLocation(30.0444, 31.2357, 'Cairo')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🐪 Cairo</button>
+      <button onclick="flyToLocation(27.9881, 86.9250, 'Everest')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">🏔️ Everest</button>
+    </div>
+
+    <!-- Mode Selector & Stats -->
+    <div class="flex items-center space-x-3">
+      <div class="text-right font-mono text-xs hidden sm:block">
+        <div id="latlon-display" class="text-cyan-300 font-bold">LAT: 0.00° | LON: 0.00°</div>
+        <div id="fps-display" class="text-slate-400">ALT: 12,450 km</div>
+      </div>
+      <button onclick="resetCamera()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Reset Camera View">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Sidebar Controls Panel -->
+  <aside class="absolute top-24 left-4 z-10 w-80 glass-panel rounded-2xl p-5 shadow-2xl space-y-6 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+    <!-- View Options -->
+    <div>
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Globe Render Layers</h3>
+      <div class="space-y-2">
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="text-xs font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Atmosphere Glow
+          </span>
+          <input type="checkbox" id="toggle-atmosphere" checked class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="text-xs font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Lat/Lon Grid Lines
+          </span>
+          <input type="checkbox" id="toggle-grid" checked class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="text-xs font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Cloud Layer Animation
+          </span>
+          <input type="checkbox" id="toggle-clouds" checked class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="text-xs font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Orbiting Satellites
+          </span>
+          <input type="checkbox" id="toggle-satellites" checked class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+      </div>
+    </div>
+
+    <!-- Day/Night & Lighting Slider -->
+    <div>
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sun Position (Day/Night)</h3>
+        <span id="sun-time-text" class="text-xs font-mono text-cyan-400">12:00 UTC</span>
+      </div>
+      <input type="range" id="sun-slider" min="0" max="360" value="180" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500">
+      <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+        <span>00:00</span>
+        <span>06:00</span>
+        <span>12:00</span>
+        <span>18:00</span>
+        <span>24:00</span>
+      </div>
+    </div>
+
+    <!-- 3D Model Spawner Palette -->
+    <div>
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">3D Model Spawner Palette</h3>
+      <p class="text-[11px] text-slate-400 mb-3">Select a 3D GLTF model, then click anywhere on the globe to place it at that latitude & longitude!</p>
+      
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="selectSpawnModel('duck')" id="btn-model-duck" class="model-select-btn p-3 rounded-xl bg-blue-600/30 border border-blue-500 text-left hover:bg-blue-600/40 transition">
+          <div class="text-xl mb-1">🦆</div>
+          <div class="text-xs font-bold text-white">Duck GLB</div>
+          <div class="text-[10px] text-blue-300 font-mono">Khronos 3D Asset</div>
+        </button>
+
+        <button onclick="selectSpawnModel('fox')" id="btn-model-fox" class="model-select-btn p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left hover:bg-slate-800 transition">
+          <div class="text-xl mb-1">🦊</div>
+          <div class="text-xs font-bold text-slate-200">Fox GLB</div>
+          <div class="text-[10px] text-slate-400 font-mono">Rigged & Animated</div>
+        </button>
+
+        <button onclick="selectSpawnModel('astronaut')" id="btn-model-astronaut" class="model-select-btn p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left hover:bg-slate-800 transition">
+          <div class="text-xl mb-1">👨‍🚀</div>
+          <div class="text-xs font-bold text-slate-200">CesiumMan</div>
+          <div class="text-[10px] text-slate-400 font-mono">Astronaut Model</div>
+        </button>
+
+        <button onclick="selectSpawnModel('milktruck')" id="btn-model-milktruck" class="model-select-btn p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left hover:bg-slate-800 transition">
+          <div class="text-xl mb-1">🚚</div>
+          <div class="text-xs font-bold text-slate-200">Rover / Truck</div>
+          <div class="text-[10px] text-slate-400 font-mono">Vehicle Model</div>
+        </button>
+
+        <button onclick="selectSpawnModel('fish')" id="btn-model-fish" class="model-select-btn p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left hover:bg-slate-800 transition">
+          <div class="text-xl mb-1">🐟</div>
+          <div class="text-xs font-bold text-slate-200">Barramundi</div>
+          <div class="text-[10px] text-slate-400 font-mono">Ocean Asset</div>
+        </button>
+
+        <button onclick="selectSpawnModel('beacon')" id="btn-model-beacon" class="model-select-btn p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left hover:bg-slate-800 transition">
+          <div class="text-xl mb-1">📡</div>
+          <div class="text-xs font-bold text-slate-200">Holo-Beacon</div>
+          <div class="text-[10px] text-slate-400 font-mono">Procedural Marker</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Active 3D Assets Count -->
+    <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between text-xs">
+      <span class="text-slate-400">Placed 3D Objects:</span>
+      <span id="active-count-badge" class="px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 font-mono font-bold">5 Assets</span>
+    </div>
+  </aside>
+
+  <!-- Right Floating Selected Object Inspector -->
+  <div id="object-inspector" class="hidden absolute top-24 right-4 z-10 w-80 glass-panel rounded-2xl p-5 shadow-2xl space-y-4">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+      <div class="flex items-center space-x-2">
+        <span id="insp-icon" class="text-2xl">📍</span>
+        <div>
+          <h3 id="insp-title" class="font-bold text-sm text-white">Tokyo Signal Tower</h3>
+          <p id="insp-type" class="text-[10px] text-cyan-400 font-mono">GLTF Model Asset</p>
+        </div>
+      </div>
+      <button onclick="closeInspector()" class="text-slate-400 hover:text-white p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="space-y-2 text-xs font-mono">
+      <div class="flex justify-between p-2 rounded-lg bg-slate-900/60">
+        <span class="text-slate-400">Latitude:</span>
+        <span id="insp-lat" class="text-white font-bold">35.6762° N</span>
+      </div>
+      <div class="flex justify-between p-2 rounded-lg bg-slate-900/60">
+        <span class="text-slate-400">Longitude:</span>
+        <span id="insp-lon" class="text-white font-bold">139.6503° E</span>
+      </div>
+      <div class="flex justify-between p-2 rounded-lg bg-slate-900/60">
+        <span class="text-slate-400">Elevation:</span>
+        <span id="insp-alt" class="text-emerald-400 font-bold">120 m</span>
+      </div>
+    </div>
+
+    <div class="pt-2 flex gap-2">
+      <button id="btn-focus-obj" class="flex-1 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium text-xs transition">Focus Camera</button>
+      <button id="btn-delete-obj" class="py-2 px-3 bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/30 rounded-xl font-medium text-xs transition">Delete</button>
+    </div>
+  </div>
+
+  <!-- Bottom Interactive Status Bar -->
+  <footer class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between glass-panel rounded-xl px-5 py-3 text-xs">
+    <div class="flex items-center space-x-4">
+      <span class="flex items-center gap-1.5 text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live WebGL 3D World Active
+      </span>
+      <span class="text-slate-500">|</span>
+      <span class="text-slate-400">Click & Drag to Rotate • Scroll to Zoom • Click Earth to Drop 3D Model</span>
+    </div>
+    <div class="font-mono text-slate-400 text-[11px]">
+      Powered by Three.js & GLTF Models
+    </div>
+  </footer>
+
+  <!-- WebGL 3D Geospatial Engine Script -->
+  <script>
+    // Global Engine State
+    let scene, camera, renderer, controls;
+    let earthMesh, cloudsMesh, atmosphereMesh, gridMesh, dirLight, ambientLight;
+    let raycaster, mouse;
+    let activeModels = [];
+    let satellites = [];
+    let selectedModelType = 'duck'; // default spawner model
+    let selectedObject = null;
+
+    const EARTH_RADIUS = 5;
+    const GLTF_BASE_URL = '/models/';
+
+    // Initialize 3D Engine
+    function init() {
+      const container = document.getElementById('canvas-container');
+
+      // 1. Scene
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x030712);
+      scene.fog = new THREE.FogExp2(0x030712, 0.015);
+
+      // 2. Camera
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 5, 14);
+
+      // 3. Renderer
+      renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      container.appendChild(renderer.domElement);
+
+      // 4. Controls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.minDistance = 6.2;
+      controls.maxDistance = 35;
+
+      // 5. Lighting
+      ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+      scene.add(ambientLight);
+
+      dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      dirLight.position.set(10, 5, 10);
+      dirLight.castShadow = true;
+      dirLight.shadow.mapSize.width = 2048;
+      dirLight.shadow.mapSize.height = 2048;
+      scene.add(dirLight);
+
+      // 6. Build Procedural Earth, Atmosphere, Stars, and Grid
+      buildStars();
+      buildEarth();
+      buildAtmosphere();
+      buildLatLonGrid();
+      buildSatellites();
+
+      // 7. Raycasting & Interaction
+      raycaster = new THREE.Raycaster();
+      mouse = new THREE.Vector2();
+
+      // 8. Load Initial 3D GLTF Preset Models
+      loadPresetModels();
+
+      // 9. Event Listeners
+      window.addEventListener('resize', onWindowResize);
+      renderer.domElement.addEventListener('pointerdown', onPointerDown);
+      renderer.domElement.addEventListener('pointermove', onPointerMove);
+
+      setupUI();
+      animate();
+    }
+
+    // Generate Procedural Starfield
+    function buildStars() {
+      const starsGeo = new THREE.BufferGeometry();
+      const count = 3000;
+      const positions = new Float32Array(count * 3);
+      for (let i = 0; i < count * 3; i += 3) {
+        positions[i] = (Math.random() - 0.5) * 400;
+        positions[i+1] = (Math.random() - 0.5) * 400;
+        positions[i+2] = (Math.random() - 0.5) * 400;
+      }
+      starsGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const starsMat = new THREE.PointsMaterial({ color: 0x94a3b8, size: 0.7, transparent: true, opacity: 0.8 });
+      const starField = new THREE.Points(starsGeo, starsMat);
+      scene.add(starField);
+    }
+
+    // Procedural Earth Texture Generator using Canvas 2D
+    function createEarthTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 2048;
+      canvas.height = 1024;
+      const ctx = canvas.getContext('2d');
+
+      // Ocean Background
+      ctx.fillStyle = '#0b192c';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Landmasses (Procedural Continents Drawing)
+      ctx.fillStyle = '#1e3a5f';
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+
+      // Draw stylized continent shapes on canvas
+      const continents = [
+        // North America
+        [[300, 200], [550, 180], [650, 300], [500, 450], [380, 420], [300, 280]],
+        // South America
+        [[520, 480], [640, 520], [600, 750], [530, 850], [500, 650]],
+        // Europe & Asia
+        [[900, 180], [1400, 150], [1700, 280], [1500, 450], [1200, 420], [1000, 350], [880, 250]],
+        // Africa
+        [[950, 380], [1150, 400], [1200, 600], [1080, 750], [960, 600]],
+        // Australia
+        [[1500, 620], [1700, 600], [1720, 720], [1550, 750]],
+        // Antarctica
+        [[200, 950], [1800, 950], [1800, 1020], [200, 1020]]
+      ];
+
+      continents.forEach(poly => {
+        ctx.beginPath();
+        ctx.moveTo(poly[0][0], poly[0][1]);
+        for (let i = 1; i < poly.length; i++) {
+          ctx.lineTo(poly[i][0], poly[i][1]);
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      });
+
+      // City Lights Dots
+      ctx.fillStyle = '#fbbf24';
+      for (let i = 0; i < 400; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        ctx.beginPath();
+        ctx.arc(x, y, Math.random() * 2 + 1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    // Build Earth Sphere Mesh
+    function buildEarth() {
+      const earthGeo = new THREE.SphereGeometry(EARTH_RADIUS, 64, 64);
+      const earthTex = createEarthTexture();
+
+      const earthMat = new THREE.MeshStandardMaterial({
+        map: earthTex,
+        roughness: 0.6,
+        metalness: 0.1
+      });
+
+      earthMesh = new THREE.Mesh(earthGeo, earthMat);
+      earthMesh.receiveShadow = true;
+      earthMesh.castShadow = true;
+      scene.add(earthMesh);
+
+      // Cloud Layer
+      const cloudGeo = new THREE.SphereGeometry(EARTH_RADIUS * 1.015, 64, 64);
+      const cloudCanvas = document.createElement('canvas');
+      cloudCanvas.width = 1024;
+      cloudCanvas.height = 512;
+      const cctx = cloudCanvas.getContext('2d');
+      cctx.fillStyle = 'rgba(255,255,255,0)';
+      cctx.fillRect(0,0,1024,512);
+      cctx.fillStyle = 'rgba(255,255,255,0.35)';
+      for (let i = 0; i < 150; i++) {
+        cctx.beginPath();
+        cctx.arc(Math.random()*1024, Math.random()*512, Math.random()*40 + 20, 0, Math.PI*2);
+        cctx.fill();
+      }
+      const cloudTex = new THREE.CanvasTexture(cloudCanvas);
+      const cloudMat = new THREE.MeshStandardMaterial({
+        map: cloudTex,
+        transparent: true,
+        opacity: 0.5,
+        blending: THREE.AdditiveBlending
+      });
+      cloudsMesh = new THREE.Mesh(cloudGeo, cloudMat);
+      scene.add(cloudsMesh);
+    }
+
+    // Atmosphere Glow Shader
+    function buildAtmosphere() {
+      const atmosGeo = new THREE.SphereGeometry(EARTH_RADIUS * 1.15, 64, 64);
+      const atmosMat = new THREE.ShaderMaterial({
+        vertexShader: `
+          varying vec3 vNormal;
+          void main() {
+            vNormal = normalize(normalMatrix * normal);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          varying vec3 vNormal;
+          void main() {
+            float intensity = pow(0.6 - dot(vNormal, vec3(0, 0, 1.0)), 2.5);
+            gl_FragColor = vec4(0.2, 0.6, 1.0, 1.0) * intensity;
+          }
+        `,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide,
+        transparent: true
+      });
+      atmosphereMesh = new THREE.Mesh(atmosGeo, atmosMat);
+      scene.add(atmosphereMesh);
+    }
+
+    // Lat / Lon Wireframe Grid Lines
+    function buildLatLonGrid() {
+      gridMesh = new THREE.Group();
+      const lineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.18 });
+
+      // Latitude Circles
+      for (let lat = -80; lat <= 80; lat += 20) {
+        const rad = (90 - Math.abs(lat)) * Math.PI / 180;
+        const r = EARTH_RADIUS * 1.002 * Math.cos(lat * Math.PI / 180);
+        const y = EARTH_RADIUS * 1.002 * Math.sin(lat * Math.PI / 180);
+
+        const points = [];
+        for (let lon = 0; lon <= 360; lon += 5) {
+          const theta = lon * Math.PI / 180;
+          points.push(new THREE.Vector3(r * Math.cos(theta), y, r * Math.sin(theta)));
+        }
+        const geo = new THREE.BufferGeometry().setFromPoints(points);
+        gridMesh.add(new THREE.Line(geo, lineMat));
+      }
+
+      scene.add(gridMesh);
+    }
+
+    // Orbiting Satellites Simulation
+    function buildSatellites() {
+      const satGroup = new THREE.Group();
+      for (let i = 0; i < 4; i++) {
+        const satMesh = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 0.12, 0.25),
+          new THREE.MeshStandardMaterial({ color: 0x38bdf8, metalness: 0.8, roughness: 0.2 })
+        );
+        const orbitRadius = EARTH_RADIUS + 1.2 + i * 0.4;
+        satellites.push({ mesh: satMesh, radius: orbitRadius, speed: 0.2 + i * 0.05, angle: i * 1.5 });
+        scene.add(satMesh);
+      }
+    }
+
+    // Convert Lat/Lon to 3D Sphere Position Vector
+    function latLonToVector3(lat, lon, radius = EARTH_RADIUS) {
+      const phi = (90 - lat) * (Math.PI / 180);
+      const theta = (lon + 180) * (Math.PI / 180);
+      return new THREE.Vector3(
+        -(radius * Math.sin(phi) * Math.cos(theta)),
+        radius * Math.cos(phi),
+        radius * Math.sin(phi) * Math.sin(theta)
+      );
+    }
+
+    // Convert 3D Sphere Point back to Lat/Lon
+    function vector3ToLatLon(vector) {
+      const norm = vector.clone().normalize();
+      const lat = 90 - (Math.acos(norm.y) * 180 / Math.PI);
+      const lon = ((Math.atan2(norm.z, -norm.x) * 180 / Math.PI) - 180);
+      return { lat: parseFloat(lat.toFixed(4)), lon: parseFloat(lon.toFixed(4)) };
+    }
+
+    // Load Initial Preset 3D GLTF Models & Markers
+    function loadPresetModels() {
+      const presets = [
+        { lat: 35.6762, lon: 139.6503, name: "Tokyo Duck Landmark", type: "duck", icon: "🦆" },
+        { lat: 40.7128, lon: -74.0060, name: "New York CesiumMan", type: "astronaut", icon: "👨‍🚀" },
+        { lat: 48.8566, lon: 2.3522, name: "Paris Animated Fox", type: "fox", icon: "🦊" },
+        { lat: -33.8688, lon: 151.2093, name: "Sydney Barramundi Fish", type: "fish", icon: "🐟" },
+        { lat: 30.0444, lon: 31.2357, name: "Cairo Rover Truck", type: "milktruck", icon: "🚚" }
+      ];
+
+      presets.forEach(p => spawnModelAtLatLon(p.lat, p.lon, p.type, p.name, p.icon));
+    }
+
+    // GLTF Model Loader & Spawner
+    function spawnModelAtLatLon(lat, lon, modelType, customName = null, customIcon = null) {
+      const pos = latLonToVector3(lat, lon, EARTH_RADIUS * 1.02);
+
+      if (modelType === 'beacon') {
+        // Procedural Holo-Beacon
+        const beaconGroup = new THREE.Group();
+        const cylinder = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.04, 0.04, 0.6, 16),
+          new THREE.MeshStandardMaterial({ color: 0x38bdf8, emissive: 0x0284c7, emissiveIntensity: 0.8 })
+        );
+        cylinder.position.y = 0.3;
+        beaconGroup.add(cylinder);
+
+        const ring = new THREE.Mesh(
+          new THREE.RingGeometry(0.1, 0.18, 32),
+          new THREE.MeshBasicMaterial({ color: 0x38bdf8, side: THREE.DoubleSide, transparent: true, opacity: 0.8 })
+        );
+        ring.rotation.x = Math.PI / 2;
+        ring.position.y = 0.02;
+        beaconGroup.add(ring);
+
+        beaconGroup.position.copy(pos);
+        beaconGroup.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), pos.clone().normalize());
+
+        beaconGroup.userData = {
+          name: customName || `Beacon (${lat}°, ${lon}°)`,
+          type: 'Procedural Holo-Beacon',
+          lat, lon, alt: 120, icon: '📡'
+        };
+
+        scene.add(beaconGroup);
+        activeModels.push(beaconGroup);
+        updateActiveCount();
+        return;
+      }
+
+      // Load Real GLTF / GLB Model from /models/
+      const loader = new THREE.GLTFLoader();
+      const modelFile = `${GLTF_BASE_URL}${modelType}.glb`;
+
+      loader.load(modelFile, (gltf) => {
+        const modelScene = gltf.scene;
+
+        // Auto-scale models appropriately for the Earth globe
+        const scaleMap = { duck: 0.003, fox: 0.002, astronaut: 0.25, milktruck: 0.15, fish: 0.00015 };
+        const s = scaleMap[modelType] || 0.1;
+        modelScene.scale.set(s, s, s);
+
+        modelScene.position.copy(pos);
+        modelScene.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), pos.clone().normalize());
+
+        modelScene.userData = {
+          name: customName || `${modelType.toUpperCase()} Asset (${lat}°, ${lon}°)`,
+          type: `3D GLTF Model (${modelType}.glb)`,
+          lat, lon, alt: 80, icon: customIcon || '📍'
+        };
+
+        scene.add(modelScene);
+        activeModels.push(modelScene);
+        updateActiveCount();
+      }, undefined, (err) => {
+        console.warn(`Failed loading GLB ${modelFile}, spawning procedural marker fallback`, err);
+        spawnModelAtLatLon(lat, lon, 'beacon', customName, customIcon);
+      });
+    }
+
+    // Raycasting Click Interaction to Select / Spawn 3D Models
+    function onPointerDown(event) {
+      if (event.button !== 0) return; // Only primary click
+
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+
+      // Check click on active models first
+      const modelHits = raycaster.intersectObjects(activeModels, true);
+      if (modelHits.length > 0) {
+        let topObj = modelHits[0].object;
+        while (topObj.parent && !activeModels.includes(topObj)) {
+          topObj = topObj.parent;
+        }
+        inspectObject(topObj);
+        return;
+      }
+
+      // Check click on Earth sphere to spawn selected 3D model
+      const earthHits = raycaster.intersectObject(earthMesh);
+      if (earthHits.length > 0) {
+        const point = earthHits[0].point;
+        const coords = vector3ToLatLon(point);
+        spawnModelAtLatLon(coords.lat, coords.lon, selectedModelType);
+      }
+    }
+
+    function onPointerMove(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const hits = raycaster.intersectObject(earthMesh);
+      if (hits.length > 0) {
+        const coords = vector3ToLatLon(hits[0].point);
+        document.getElementById('latlon-display').innerText = `LAT: ${coords.lat}° | LON: ${coords.lon}°`;
+      }
+    }
+
+    // UI Inspector Controls
+    function inspectObject(obj) {
+      selectedObject = obj;
+      const data = obj.userData;
+      document.getElementById('insp-icon').innerText = data.icon || '📍';
+      document.getElementById('insp-title').innerText = data.name || '3D Model';
+      document.getElementById('insp-type').innerText = data.type || 'GLTF Asset';
+      document.getElementById('insp-lat').innerText = `${data.lat}°`;
+      document.getElementById('insp-lon').innerText = `${data.lon}°`;
+      document.getElementById('insp-alt').innerText = `${data.alt || 100} m`;
+
+      document.getElementById('object-inspector').classList.remove('hidden');
+
+      document.getElementById('btn-focus-obj').onclick = () => {
+        flyToLocation(data.lat, data.lon, data.name);
+      };
+      document.getElementById('btn-delete-obj').onclick = () => {
+        scene.remove(obj);
+        activeModels = activeModels.filter(m => m !== obj);
+        closeInspector();
+        updateActiveCount();
+      };
+    }
+
+    function closeInspector() {
+      document.getElementById('object-inspector').classList.add('hidden');
+      selectedObject = null;
+    }
+
+    function updateActiveCount() {
+      document.getElementById('active-count-badge').innerText = `${activeModels.length} Assets`;
+    }
+
+    function selectSpawnModel(type) {
+      selectedModelType = type;
+      document.querySelectorAll('.model-select-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-600/30', 'border-blue-500');
+        btn.classList.add('bg-slate-900/60', 'border-slate-800');
+      });
+      const activeBtn = document.getElementById(`btn-model-${type}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-900/60', 'border-slate-800');
+        activeBtn.classList.add('bg-blue-600/30', 'border-blue-500');
+      }
+    }
+
+    // Camera Fly-To Animation Function
+    function flyToLocation(lat, lon, label) {
+      const targetPos = latLonToVector3(lat, lon, EARTH_RADIUS + 4.5);
+      const startPos = camera.position.clone();
+      const startTime = performance.now();
+      const duration = 1500; // 1.5s animation
+
+      function step(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / duration, 1);
+        const easeT = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // Smooth EaseInOut
+
+        camera.position.lerpVectors(startPos, targetPos, easeT);
+        controls.update();
+
+        if (t < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    function resetCamera() {
+      flyToLocation(20, 0, 'Reset');
+    }
+
+    function setupUI() {
+      // Sun Position Slider
+      const sunSlider = document.getElementById('sun-slider');
+      sunSlider.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        const rad = val * Math.PI / 180;
+        dirLight.position.x = Math.cos(rad) * 15;
+        dirLight.position.z = Math.sin(rad) * 15;
+        const hours = Math.floor((val / 360) * 24);
+        const mins = Math.floor((((val / 360) * 24) % 1) * 60);
+        document.getElementById('sun-time-text').innerText = `${String(hours).padStart(2,'0')}:${String(mins).padStart(2,'0')} UTC`;
+      });
+
+      // Layer Toggles
+      document.getElementById('toggle-atmosphere').addEventListener('change', (e) => {
+        atmosphereMesh.visible = e.target.checked;
+      });
+      document.getElementById('toggle-grid').addEventListener('change', (e) => {
+        gridMesh.visible = e.target.checked;
+      });
+      document.getElementById('toggle-clouds').addEventListener('change', (e) => {
+        cloudsMesh.visible = e.target.checked;
+      });
+      document.getElementById('toggle-satellites').addEventListener('change', (e) => {
+        satellites.forEach(s => s.mesh.visible = e.target.checked);
+      });
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    // Main Render Loop
+    function animate(time = 0) {
+      requestAnimationFrame(animate);
+
+      // Slow rotation for clouds
+      if (cloudsMesh && cloudsMesh.visible) {
+        cloudsMesh.rotation.y += 0.0003;
+      }
+
+      // Rotate Satellites in Orbit
+      satellites.forEach(s => {
+        s.angle += s.speed * 0.01;
+        s.mesh.position.x = Math.cos(s.angle) * s.radius;
+        s.mesh.position.z = Math.sin(s.angle) * s.radius;
+        s.mesh.position.y = Math.sin(s.angle * 2) * 0.5;
+      });
+
+      // Gently rotate placed 3D assets
+      activeModels.forEach(m => {
+        if (m.userData.type.includes('Beacon')) {
+          m.rotation.y += 0.02;
+        }
+      });
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    // Start application on load
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
