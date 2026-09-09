@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside Prisca's Mind — UNRN AI Agents & Solar System Milestones</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
+    #canvas-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 0; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+    }
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+    .custom-scroll::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.5); border-radius: 9999px; }
+  </style>
+</head>
+<body class="h-full bg-[#030712] text-[#f8fafc] antialiased overflow-hidden">
+  <div id="canvas-container"></div>
+
+  <!-- Header -->
+  <header class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between glass-card rounded-2xl p-4 shadow-2xl">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-600 to-amber-400 flex items-center justify-center text-xl shadow-lg">
+        🪐
+      </div>
+      <div>
+        <h1 class="font-bold text-base leading-tight">UNRN AI AGENTS & SOLAR SYSTEM MILESTONES</h1>
+        <p class="text-xs text-purple-400 font-mono">1,000 Agents • 10 Solar Worlds • Real-Time Local Clock Sync</p>
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <!-- Real-Time Local Clock Indicator -->
+      <div class="px-3 py-1.5 rounded-xl bg-purple-950/80 border border-purple-500/40 text-xs font-mono text-purple-300 flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span id="local-clock">Syncing...</span>
+      </div>
+
+      <button onclick="toggleMusic()" id="btn-audio" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-amber-500 text-white text-xs font-bold shadow-lg hover:opacity-90 transition">
+        <span id="audio-label">▶️ Play Afro Synth</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Sidebar Explorer -->
+  <aside class="absolute top-24 left-4 z-10 w-96 glass-card rounded-2xl p-4 shadow-2xl space-y-4 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scroll">
+    <!-- View Modes -->
+    <div>
+      <h3 class="text-xs font-bold text-purple-300 uppercase tracking-wider mb-2">Modern 3D View Modes</h3>
+      <div class="grid grid-cols-2 gap-1.5 text-xs font-semibold">
+        <button onclick="setViewMode('orbit')" id="btn-view-orbit" class="p-2 rounded-xl bg-purple-600 text-white border border-purple-500">🛸 Orbital Drone</button>
+        <button onclick="setViewMode('fpv')" id="btn-view-fpv" class="p-2 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300">👁️ FPV WASD Walk</button>
+        <button onclick="setViewMode('iso')" id="btn-view-iso" class="p-2 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300">📐 Isometric</button>
+        <button onclick="setViewMode('cyber')" id="btn-view-cyber" class="p-2 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300">🕶️ Cyber Neon</button>
+      </div>
+    </div>
+
+    <!-- Open Source 3D Worlds -->
+    <div>
+      <h3 class="text-xs font-bold text-purple-300 uppercase tracking-wider mb-2">Open Source 3D Environments</h3>
+      <div class="space-y-1.5 text-xs">
+        <div onclick="loadWorld('spacebase')" class="p-2.5 rounded-xl bg-slate-900/70 border border-purple-500/40 hover:border-purple-400 cursor-pointer flex justify-between items-center">
+          <span class="font-bold text-white flex items-center gap-2">🪐 Spacebase Colony</span>
+          <span class="text-[10px] font-mono text-purple-400 font-bold">LOAD</span>
+        </div>
+        <div onclick="loadWorld('forest')" class="p-2.5 rounded-xl bg-slate-900/70 border border-emerald-500/40 hover:border-emerald-400 cursor-pointer flex justify-between items-center">
+          <span class="font-bold text-white flex items-center gap-2">🌲 Forest Sanctuary</span>
+          <span class="text-[10px] font-mono text-emerald-400 font-bold">LOAD</span>
+        </div>
+        <div onclick="loadWorld('earth')" class="p-2.5 rounded-xl bg-slate-900/70 border border-cyan-500/40 hover:border-cyan-400 cursor-pointer flex justify-between items-center">
+          <span class="font-bold text-white flex items-center gap-2">🌍 Geospatial Earth</span>
+          <span class="text-[10px] font-mono text-cyan-400 font-bold">LOAD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Tracking & Key Milestone Summary -->
+    <div class="pt-2 border-t border-slate-800">
+      <h3 class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2 flex items-center justify-between">
+        <span>📊 UNRN Progress & Milestones</span>
+        <span class="text-[10px] text-emerald-400 font-mono">98.2% DONE</span>
+      </h3>
+
+      <div class="space-y-2 text-xs">
+        <!-- Progress Bar 1 -->
+        <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="flex justify-between font-mono text-[11px] mb-1">
+            <span class="text-purple-300 font-semibold">1. Road Network & GIS</span>
+            <span class="text-emerald-400 font-bold">99.1%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-500 to-emerald-400 h-full w-[99.1%]"></div>
+          </div>
+        </div>
+
+        <!-- Progress Bar 2 -->
+        <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="flex justify-between font-mono text-[11px] mb-1">
+            <span class="text-purple-300 font-semibold">2. LCMS 3D & Roughness (IRI)</span>
+            <span class="text-emerald-400 font-bold">98.4%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-500 to-emerald-400 h-full w-[98.4%]"></div>
+          </div>
+        </div>
+
+        <!-- Progress Bar 3 -->
+        <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="flex justify-between font-mono text-[11px] mb-1">
+            <span class="text-purple-300 font-semibold">3. Weighbridges & Nile Bridges</span>
+            <span class="text-emerald-400 font-bold">97.8%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-500 to-emerald-400 h-full w-[97.8%]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Training Log Feed -->
+      <div class="mt-3 p-2.5 rounded-xl bg-purple-950/40 border border-purple-800/50 font-mono text-[10px] space-y-1 text-purple-200">
+        <div class="text-amber-400 font-bold">⚡ Live AI Agent Activity Log</div>
+        <div id="live-log-line">Agent #208: Loss = 0.0078 | Epoch 94/100</div>
+      </div>
+    </div>
+
+    <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between text-xs font-mono">
+      <span class="text-slate-400">Environment:</span>
+      <span id="active-tag" class="text-purple-300 font-bold">SPACEBASE GLB</span>
+    </div>
+  </aside>
+
+  <script>
+    let scene, camera, renderer, controls, worldMesh;
+    let viewMode = 'orbit';
+    let audioCtx, isPlaying = false;
+    let gltfLoader;
+    const keys = { w: false, a: false, s: false, d: false };
+
+    // Real-Time Local Clock Sync
+    function updateClock() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById('local-clock').innerText = `Local: ${timeStr}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Live AI Log Animation
+    const logMessages = [
+      "Agent #104: Pavement Roughness IRI 2.1 m/km · SN 4.25 (Epoch 92/100)",
+      "Agent #208: Weighbridge #WB-03 Compliance 99.1% (Epoch 96/100)",
+      "Agent #312: LCMS 3D Crack Depth Scan 4.2mm (Epoch 88/100)",
+      "Agent #416: Nile Bridge Joint Rating 8/10 (Epoch 95/100)",
+      "Agent #520: GIS 60m Road Reserve Boundary Validated (Epoch 91/100)"
+    ];
+    let logIdx = 0;
+    setInterval(() => {
+      logIdx = (logIdx + 1) % logMessages.length;
+      document.getElementById('live-log-line').innerText = logMessages[logIdx];
+    }, 2800);
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    function playNote(freq) {
+      initAudio();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine'; osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.6);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.6);
+    }
+
+    function toggleMusic() {
+      isPlaying = !isPlaying;
+      document.getElementById('audio-label').innerText = isPlaying ? "⏸️ Pause Synth" : "▶️ Play Afro Synth";
+      if (isPlaying) loop();
+    }
+
+    function loop() {
+      if (!isPlaying) return;
+      playNote([220, 261.63, 329.63, 392.00][Math.floor(Math.random()*4)]);
+      setTimeout(loop, 450);
+    }
+
+    function setViewMode(mode) {
+      viewMode = mode;
+      if (mode === 'orbit') { camera.position.set(0, 10, 25); controls.autoRotate = true; }
+      if (mode === 'fpv') { camera.position.set(0, 2, 8); controls.autoRotate = false; }
+      if (mode === 'iso') { camera.position.set(20, 25, 20); controls.autoRotate = false; }
+      if (mode === 'cyber') { camera.position.set(0, 5, 15); controls.autoRotate = true; }
+      controls.update();
+      playNote(440);
+    }
+
+    function loadWorld(key) {
+      if (worldMesh) scene.remove(worldMesh);
+      document.getElementById('active-tag').innerText = key.toUpperCase();
+
+      if (key === 'spacebase' || key === 'forest') {
+        gltfLoader.load(`./assets/${key}.glb`, (gltf) => {
+          worldMesh = gltf.scene;
+          scene.add(worldMesh);
+        }, undefined, () => buildFallback(key));
+      } else {
+        buildFallback(key);
+      }
+      playNote(523.25);
+    }
+
+    function buildFallback(key) {
+      const g = new THREE.Group();
+      g.add(new THREE.Mesh(
+        new THREE.SphereGeometry(4, 32, 32),
+        new THREE.MeshStandardMaterial({ color: key === 'earth' ? 0x0284c7 : 0xa855f7, wireframe: true })
+      ));
+      worldMesh = g;
+      scene.add(worldMesh);
+    }
+
+    function init() {
+      const container = document.getElementById('canvas-container');
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x030712);
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 10, 25);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true; controls.autoRotate = true;
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+      const light = new THREE.DirectionalLight(0xc084fc, 1.5);
+      light.position.set(15, 20, 15);
+      scene.add(light);
+
+      gltfLoader = new THREE.GLTFLoader();
+      loadWorld('spacebase');
+
+      window.addEventListener('keydown', (e) => { if (keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = true; });
+      window.addEventListener('keyup', (e) => { if (keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = false; });
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (viewMode === 'fpv') {
+        if (keys.w) camera.translateZ(-0.15);
+        if (keys.s) camera.translateZ(0.15);
+        if (keys.a) camera.translateX(-0.15);
+        if (keys.d) camera.translateX(0.15);
+      }
+      if (worldMesh && viewMode !== 'fpv') worldMesh.rotation.y += 0.003;
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
