@@ -673,64 +673,64 @@ const ROLES = [
 
 const PLANET_CITIZENS = {
   mercury: {
-    culture: 'dTIMS & Heavy Pavement AI Guild',
-    projects: ['UNRA Asset Management System', 'dTIMS Investment Strategy', 'HDM-4 Deterioration Models', 'Heavy Traffic Load Analysis', 'Polypave Pavement Lab'],
-    roles: ['dTIMS Model Analyst', 'Pavement Life-Cycle AI', 'Structural Load Optimizer', 'HDM-4 Calibration Engine', 'Asphalt Fatigue Specialist'],
-    tasks: ['Optimizing dTIMS 10-Year Maintenance Investment Strategy', 'Modeling HDM-4 Pavement Roughness (IRI) Deterioration', 'Calibrating Polypave Heavy Axle Stress Curves', 'Simulating UNRA Network Investment Scenarios']
+    culture: 'Asset Management & dTIMS AI Guild',
+    projects: ['Asset Management System', 'dTIMS', 'HDM4', 'Shared Documents - HDM4 - DATA REQUIREMENTS', 'RED', 'Investment plans', 'Maintenance Strategy', 'Accounts', 'Budgets', 'Procurements', 'Old Procurement RMS'],
+    roles: ['dTIMS Investment Strategist', 'HDM-4 Deterioration Analyst', 'Pavement Life-Cycle Modeler', 'Budget Allocator', 'Financial Risk Optimizer'],
+    tasks: ['Optimizing dTIMS 10-Year Maintenance Investment Strategy', 'Modeling HDM-4 Pavement Roughness (IRI) Deterioration', 'Calibrating Investment Plan Allocation Models', 'Simulating UNRA Network Capital Scenarios']
   },
   venus: {
-    culture: 'OPRC Contract Performance AI Alliance',
-    projects: ['OPRC Contract Management', 'Contract Performance Appraisal', 'Procurements & Bids Engine', 'DNPE Technical Briefs', 'NERAMP Maintenance Plan'],
-    roles: ['OPRC Performance Auditor', 'Contract Compliance AI', 'Procurement Strategy Analyst', 'NERAMP Network Inspector', 'Risk Mitigation Specialist'],
+    culture: 'OPRC & Contract Performance AI Alliance',
+    projects: ['CONTRACT MANAGEMENT PLAN', 'OPRC DESIGN', 'OPRC Scoping', 'DNPE TECHNICAL BRIEFS', 'NP TEHNICAL BRIEFS', 'Bids - Marvin', 'Annual National Road Network Performance Monitoring', 'PERFORMANCE APPRAISAL', 'Commited Projects', 'NERAMP'],
+    roles: ['OPRC Performance Auditor', 'Contract Compliance Engineer', 'Procurement Strategy Analyst', 'NERAMP Network Inspector', 'Performance Appraisal Evaluator'],
     tasks: ['Auditing OPRC Contract Performance Service Levels', 'Analyzing National Road Maintenance Expenditure', 'Reviewing Procurement & Bid Technical Criteria', 'Synthesizing DNPE Technical Performance Briefs']
   },
   terra: {
     culture: 'UNRA National Road Network AI Directorate',
-    projects: ['Uganda National Road Network', 'KCCA Urban Corridor', 'KJE Expressway Corridor', 'National Bridge Inventory', 'Departmental Infrastructure'],
-    roles: ['National Network Strategist', 'Corridor Capacity Planner', 'Bridge Structural Auditor', 'Traffic Flow Optimizer', 'Infrastructure AI Director'],
-    tasks: ['Mapping Uganda National Road Network Spatial Inventory', 'Analyzing KJE Expressway Traffic Capacity Models', 'Evaluating National Bridge Inspection Reports', 'Optimizing Urban Traffic Corridors']
+    projects: ['Uganda National Road Network Repository', 'National Road Network', 'UNRA Network', 'UNRA Asset Management Systems', 'KCCA', 'KJE', 'EAC', 'Uganda', 'DCC 2021-2024', 'KFO LOT 1', 'Departmental reports', 'MIPD'],
+    roles: ['National Network Strategist', 'Corridor Capacity Planner', 'Regional Highway Engineer', 'Urban Corridor Director', 'Infrastructure AI Architect'],
+    tasks: ['Mapping Uganda National Road Network Spatial Inventory', 'Analyzing KJE Expressway Traffic Capacity Models', 'Evaluating Regional Highway Network Briefs', 'Optimizing Urban Traffic Corridors']
   },
   moon: {
     culture: 'LCMS & Laser Geodesy AI Observatory',
-    roles: ['LCMS 3D Laser Analyst', 'Crack Depth AI Inspector', 'GRIP Tester Friction Engine', 'GSSI Ground Radar Specialist', 'Pavement Rutting Surveyor'],
-    projects: ['LCMS Laser Crack System', 'ROMDAS Road Inspection', 'GRIP Tester Friction Base', 'GSSI Ground Penetrating Radar', 'Roadroid Mobile Survey'],
+    projects: ['LCMS upgrade', 'ROMDAS', 'ROMDAS_x64', 'GRIP TESTER', 'GSSI', 'Roadroid', 'ROMAPS', 'Road Condition and Traffic files', 'Software', 'Standards', 'TECHNICAL NEEDS'],
+    roles: ['LCMS 3D Laser Analyst', 'Crack Depth AI Inspector', 'GRIP Tester Friction Engine', 'GSSI Ground Radar Specialist', 'ROMDAS Inspection Surveyor'],
     tasks: ['Processing LCMS 3D High-Speed Laser Crack Scans', 'Analyzing ROMDAS Pavement Roughness Data', 'Calculating GRIP Tester Surface Friction Index', 'Inspecting GSSI Subsurface Radar Layers']
   },
   mars: {
     culture: '2026 ATC & Traffic Intelligence AI Republic',
-    roles: ['Automated Traffic Count AI', 'Origin-Destination Analyst', 'Axle Load Weighbridge AI', 'Corridor Volume Modeler', 'Traffic Station Inspector'],
-    projects: ['2026 ATC Data Repository', 'ADB Traffic Count System', 'KJE-NOWO Origin-Destination', 'Weighbridge System Reports', 'Traffic Count Stations'],
+    projects: ['2026 ATC DATA - Marvin', 'ATC', 'ADB Traffic', 'ADB TRAFFIC COUNTS', 'Traffic Count Stations', 'OD surveys', 'KJE-NOWO TRAFFIC COUNTS', "Weighbridges's 2020 System Reports(Jan-Oct)", 'Data requests'],
+    roles: ['Automated Traffic Count AI', 'Origin-Destination Analyst', 'Axle Load Weighbridge Inspector', 'Corridor Volume Modeler', 'Traffic Survey Station Lead'],
     tasks: ['Processing 2026 Automated Traffic Count (ATC) Datasets', 'Modeling Origin-Destination (OD) Travel Matrices', 'Auditing Axle Load Weighbridge Overload Violations', 'Analyzing ADB Traffic Corridor Growth Rates']
   },
   jupiter: {
-    culture: 'Bridge Engineering & Subsurface AI',
-    roles: ['Bridge Structure Auditor', 'Subsurface Geophysics AI', 'KUAB FWD Deflection Analyst', 'Abutment Integrity Inspector', 'Scour Protection Engineer'],
-    projects: ['National Bridge Inventory', 'KUAB FWD Deflection Base', 'GSSI Subsurface Geophysics', 'Bridge Maintenance System', 'Structure Repair Hub'],
+    culture: 'Bridge Engineering & Heavy Structure AI',
+    projects: ['Bridge stuff', 'KUAB FWD', 'FWD', 'Polypave', 'Project level', 'Horus', 'MOBICAP'],
+    roles: ['Bridge Structure Auditor', 'KUAB FWD Deflection Analyst', 'Heavy Pavement Modulus Engine', 'Abutment Integrity Inspector', 'Scour Protection Specialist'],
     tasks: ['Inspecting National Bridge Bearing & Expansion Joints', 'Analyzing KUAB Heavy Deflectometer Basin Curves', 'Evaluating Subsurface Foundation Integrity', 'Modeling Bridge Scour & Hydraulic Risks']
   },
   saturn: {
-    culture: 'FWD Deflection & Structural AI',
-    roles: ['FWD Deflection Specialist', 'Pavement Layer Stiffness AI', 'Subgrade Modulus Engineer', 'Bearing Capacity Analyst', 'Structural Overlay Modeler'],
-    projects: ['FWD Structural Deflection', 'KUAB FWD Testing Base', 'Pavement Layer Modulus Lab', 'Overlay Design Center', 'Structural Rating Hub'],
-    tasks: ['Calculating FWD Pavement Structural Deflection Baselines', 'Back-calculating Subgrade Resilient Modulus', 'Designing Pavement Overlay Thickness Requirements', 'Rating Heavy Vehicle Pavement Structural Capacity']
+    culture: 'Training, Competence & Expressway OJT Guild',
+    projects: ['COMPETENCE TRAINING', 'DATA COLLECTION TRAINING', 'GRADUATE TRAINING', 'Graduates', 'OJT - EXPRESSWAY MANUALS 2025', 'IN-HOUSE SCHEDULE', 'Learning', 'Exhibitions', 'National Science Week Exhibition', 'Presentation material'],
+    roles: ['Expressway OJT Specialist', 'Graduate Competence Mentor', 'Data Collection Master', 'Technical Exhibition Director', 'Training Curriculum Lead'],
+    tasks: ['Formulating OJT Expressway Operating Manuals 2025', 'Evaluating Graduate Engineering Competence Benchmarks', 'Conducting Data Collection Field Training Modules', 'Preparing National Science Week Exhibition Demonstrations']
   },
   uranus: {
-    culture: 'GIS & Mobile Mapping AI Directorate',
-    roles: ['ArcGIS Field App Developer', 'Survey123 Form Specialist', 'Mobile Mapping AI Operator', 'Google Earth Spatial Analyst', 'Geodatabase Architect'],
-    projects: ['ArcGIS Field Apps System', 'Survey123 Data Collection', 'Mobile Mapping Sample Data', 'Google Earth Spatial Repository', 'Map Layouts Engine'],
+    culture: 'GIS, Survey123 & Mobile Mapping Directorate',
+    projects: ['ArcGIS', 'ArcGIS Field apps', 'ArcPad Setup', 'Survey 123', 'Survey123', 'Mobile mapping - Sample data', 'Google Earth files', 'Map Layouts', 'Index', 'Rspace'],
+    roles: ['ArcGIS Field App Developer', 'Survey123 Form Architect', 'Mobile Mapping AI Specialist', 'Google Earth Spatial Analyst', 'Geodatabase Administrator'],
     tasks: ['Building Survey123 Mobile Inspection Forms', 'Processing Mobile Mapping Point Clouds & Imagery', 'Updating UNRA ArcGIS Spatial Geodatabase', 'Rendering National Road Network Map Layouts']
   },
   neptune: {
-    culture: 'Drainage & Road Reserve AI',
-    roles: ['Road Reserve Inspector', 'Hydraulic Drainage Modeler', 'Culvert Structural Auditor', 'Encroachment Control AI', 'Erosion Protection Engineer'],
-    projects: ['Road Reserve Management', 'Hydraulic & Drainage Systems', 'Culvert & Catchment Hub', 'Corridor Protection Base', 'Environmental Reserve'],
-    tasks: ['Auditing Road Reserve Encroachment Boundaries', 'Simulating Culvert Catchment Runoff & Discharge', 'Inspecting Drainage Channel Hydraulic Capacities', 'Modeling Environmental Road Corridor Buffers']
+    culture: 'Road Reserve & Environmental Research AI',
+    projects: ['Road reserve management', 'Research project - Raw  Data', 'INVENTORY DATA SURVEYS', 'Photos request', 'Attachments', 'Imports', 'Recordings', 'KEE', 'KEE_temp_repo'],
+    roles: ['Road Reserve Inspector', 'Inventory Survey Auditor', 'Research Data Analyst', 'Encroachment Control AI', 'Corridor Protection Officer'],
+    tasks: ['Auditing Road Reserve Encroachment Boundaries', 'Processing Research Project Raw Datasets', 'Inspecting Inventory Data Survey Quadrants', 'Cataloging Environmental Corridor Records']
   },
   pluto: {
-    culture: 'DNPE National Performance & Strategy AI',
-    roles: ['Annual Performance Auditor', 'NERAMP Strategy Analyst', 'Competence Training AI', 'Research Project Data Analyst', 'Executive Briefing Director'],
-    projects: ['Annual Network Performance', 'NERAMP Executive Strategy', 'DNPE Technical Briefing', 'Research Project Raw Data', 'Graduate Competence Hub'],
-    tasks: ['Evaluating Annual National Road Performance Indicators', 'Synthesizing NERAMP Long-Term Maintenance Strategy', 'Processing Research Project Raw Datasets', 'Generating Executive Technical Briefs']
+    culture: 'Personal & Creative Executive Media Hub',
+    projects: ['Entertainment', 'Music', 'Personal files - prisca', 'Dinah', 'Naava Maria', 'Pictures', 'Videos', 'WALLPAPERS', 'Microsoft Copilot Chat Files', 'Microsoft Teams Chat Files'],
+    roles: ['Creative Media Director', 'Audio Synth Curator', 'Personal Archive Manager', 'Executive Document Lead', 'Media Synthesis AI'],
+    tasks: ['Curating Audio Synth Frequency Waveforms', 'Cataloging Media & Document Repositories', 'Managing Personal Engineering Archive Files', 'Synthesizing Executive Communication Records']
   }
 }
 
