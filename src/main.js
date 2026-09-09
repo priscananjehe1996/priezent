@@ -734,6 +734,19 @@ const PLANET_CITIZENS = {
   }
 }
 
+const DATA_POINTS = [
+  'Data Point #DP-104: Pavement Roughness IRI 2.1 m/km · Structural SN 4.25',
+  'Data Point #DP-208: 2026 Automated Traffic Count (ATC) Station #14 · 34,200 vpd',
+  'Data Point #DP-312: LCMS High-Speed 3D Crack Depth Scan 4.2mm · Raveling 0.14',
+  'Data Point #DP-416: KUAB Heavy Deflectometer Center Peak D0 = 240 µm',
+  'Data Point #DP-520: dTIMS 10-Year Network Maintenance Priority Node #84',
+  'Data Point #DP-624: National Bridge Inventory #B-108 Nile Crossing Joint Rating 8/10',
+  'Data Point #DP-728: OPRC Contract Performance Service Level Metric 98.6%',
+  'Data Point #DP-832: ArcGIS Spatial Geodatabase Feature #S123-994 · Right-Of-Way 60m',
+  'Data Point #DP-936: GSSI Ground Penetrating Radar Subgrade Moisture Layer 12%',
+  'Data Point #DP-040: Weighbridge Station #WB-03 Axle Load Compliance 99.1%'
+]
+
 function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 1000) {
   const pData = PLANET_CITIZENS[planetKey] || PLANET_CITIZENS.moon
   const list = []
@@ -742,6 +755,9 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
     const role = pData.roles[i % pData.roles.length]
     const project = pData.projects[i % pData.projects.length]
     const task = pData.tasks[i % pData.tasks.length]
+    const dataPoint = DATA_POINTS[i % DATA_POINTS.length]
+    const epoch = (i * 7) % 100 + 1
+    const loss = (0.012 + (i % 10) * 0.003).toFixed(4)
     const statusIdx = i % 5
     list.push({
       id: `${planetKey}-ai-agent-${i + 1}`,
@@ -749,14 +765,15 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
       project: project,
       projectPath: `D:\\OneDrive\\${project}`,
       harness: 'antigravity-ai',
-      harnessName: `AI Agent (Trained on D:\\OneDrive)`,
-      task: task,
-      running: statusIdx === 0,
+      harnessName: `AI Agent (Training Epoch ${epoch}/100)`,
+      task: `${task} | ${dataPoint}`,
+      trainingState: `Active Training Epoch ${epoch}/100 (Loss: ${loss})`,
+      running: statusIdx !== 1, // Active training
       hasError: statusIdx === 1,
       prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
       unread: statusIdx === 3,
-      lastActivityAt: Date.now() - (i * 30000),
-      createdAt: Date.now() - (i * 60000),
+      lastActivityAt: Date.now() - (i * 10000),
+      createdAt: Date.now() - (i * 30000),
     })
   }
   return list

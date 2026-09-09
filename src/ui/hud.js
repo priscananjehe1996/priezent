@@ -594,7 +594,7 @@ export class Hud {
     if (thread.worktree) bits.push(`<span class="tag">⑂ ${escapeHtml(thread.worktree)}</span>`)
     if (thread.gitBranch) bits.push(`<span class="tag">${escapeHtml(thread.gitBranch)}</span>`)
     if (thread.model) bits.push(`<span class="tag">${escapeHtml(shortModel(thread.model))}</span>`)
-    bits.push(`<span>${ago(thread.lastActivityAt)}</span>`)
+    if (thread.trainingState) bits.push(`<div class="training-tag" style="width:100%;font-size:11px;color:#34d399;margin-top:3px">🧠 <b>Model State:</b> ${escapeHtml(thread.trainingState)}</div>`)
     if (thread.task) bits.push(`<div class="task-tag" style="width:100%;font-size:11px;color:#9ec8e8;margin-top:4px;white-space:normal;line-height:1.3">⚡ <b>AI Task:</b> ${escapeHtml(thread.task)}</div>`)
     if (thread.projectPath) bits.push(`<div class="path-tag" style="width:100%;font-size:10px;color:#8aa0c4;margin-top:2px;font-family:monospace">📁 <b>Data:</b> ${escapeHtml(thread.projectPath)}</div>`)
     meta.innerHTML = bits.join('')
