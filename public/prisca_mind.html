@@ -164,6 +164,24 @@
     </div>
   </div>
 
+  <!-- Character Profile Card Modal -->
+  <div id="char-card" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-72 glass-panel rounded-3xl p-5 shadow-2xl space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span id="char-emoji" class="text-3xl">🙂</span>
+        <div>
+          <h3 id="char-name" class="font-bold text-sm text-white">Character</h3>
+          <p id="char-role" class="text-[10px] text-purple-400 font-mono">Role</p>
+        </div>
+      </div>
+      <button onclick="closeCharCard()" class="p-1 text-slate-400 hover:text-white rounded-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div id="char-stats" class="space-y-2 text-xs"></div>
+    <div id="char-status" class="text-[10px] text-slate-400 font-mono pt-1 border-t border-slate-800"></div>
+  </div>
+
   <!-- Bottom HUD Status Bar -->
   <footer class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between glass-panel rounded-2xl px-5 py-3 text-xs">
     <div class="flex items-center space-x-4">
@@ -188,6 +206,172 @@
     let isMusicPlaying = false;
     let currentMood = 'celestial';
     let totalModelCount = 1250;
+
+    // ---- 1,000 Character System ----
+    let charMesh = null;
+    const CHAR_COUNT = 1000;
+    const chars = [];
+    const dummy = new THREE.Object3D();
+
+    // Seeded PRNG (mulberry32) for deterministic character profiles
+    function mulberry32(a) {
+      return function() {
+        a |= 0; a = a + 0x6D2B79F5 | 0;
+        var t = Math.imul(a ^ a >>> 15, 1 | a);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    const NAMES = [
+      'Amara','Zuri','Kione','Tendai','Naledi','Ife','Chidinma','Kofi','Ayana','Jelani',
+      'Nia','Kwame','Zola','Emeka','Nala','Omari','Sade','Jabari','Imani','Kato',
+      'Amina','Thabo','Asha','Dayo','Liya','Obinna','Makena','Sekou','Fola','Nandi',
+      'Abeo','Chike','Hadiza','Idris','Jomo','Kamara','Lamine','Mansa','Ngozi','Olumide',
+      'Penda','Rashidi','Sanaa','Tariku','Uzoma','Wanjiru','Xolani','Yemi','Zawadi','Bintu',
+      'Dalila','Effia','Goma','Habiba','Issa','Jahia','Keza','Ludo','Morowa','Nyah',
+      'Oni','Pio','Quorra','Rudo','Sola','Taji','Uma','Vanna','Winta','Xena',
+      'Yara','Zena','Afeni','Binta','Chidi','Deka','Ekon','Femi','Genet','Heru',
+      'Iniko','Jahi','Kali','Lekan','Mosi','Nuru','Osei','Pili','Rafa','Suki',
+      'Tau','Udo','Vusi','Wole','Xhosa','Yolanda','Zaire','Adaeze','Bakari','Chisomo'
+    ];
+
+    const ROLES = [
+      'Dream Architect','Sound Weaver','Light Sculptor','Mood Alchemist','Beat Crafter',
+      'Rhythm Oracle','Pixel Wanderer','Star Navigator','Crystal Guardian','Harmonic Sage',
+      'Aura Painter','Cloud Walker','Neon Scribe','Soul Engineer','Vibe Curator',
+      'Echo Mapper','Prism Keeper','Wave Dancer','Glow Smith','Night Watcher',
+      'Pulse Reader','Flame Tender','Code Poet','Sky Fisher','Root Singer',
+      'Dusk Warden','Mist Caller','Bloom Keeper','Tide Listener','Storm Painter',
+      'Silk Weaver','Iron Dreamer','Wind Chaser','Ash Gardener','Void Seeker',
+      'Frost Singer','Moon Binder','Sun Catcher','Reef Walker','Dust Poet',
+      'Horn Blower','Loom Master','Clay Shaper','Glass Turner','Thread Spinner',
+      'Ink Diver','Stone Reader','Leaf Catcher','Rain Dancer','Bone Carver'
+    ];
+
+    const STATUS_ICONS = ['💭','🎵','✨','🔮','💫','🌟','🎧','🎨','🎹','🧘','📡','🌀','⚡','🦋','🌸'];
+
+    function buildCharacters() {
+      const geo = new THREE.CylinderGeometry(0.12, 0.12, 0.45, 6);
+      const mat = new THREE.MeshStandardMaterial({ color: 0xc084fc, emissive: 0x7e22ce, emissiveIntensity: 0.3 });
+      charMesh = new THREE.InstancedMesh(geo, mat, CHAR_COUNT);
+
+      // Assign per-instance colors
+      const palette = [0xf472b6, 0xa78bfa, 0x38bdf8, 0x34d399, 0xfbbf24, 0xfb923c, 0xf87171, 0x818cf8, 0x22d3ee, 0xc084fc];
+
+      for (var i = 0; i < CHAR_COUNT; i++) {
+        var rng = mulberry32(i * 7 + 31);
+        var radius = 5 + rng() * 16;
+        var angle = rng() * Math.PI * 2;
+        var x = Math.cos(angle) * radius;
+        var z = Math.sin(angle) * radius;
+
+        chars.push({
+          seed: i * 7 + 31,
+          pos: new THREE.Vector3(x, -1.75, z),
+          heading: rng() * Math.PI * 2,
+          speed: 0.3 + rng() * 0.6,
+          state: 'idle',
+          idleT: 1 + rng() * 4,
+          statusIcon: null,
+          statusTimer: 2 + rng() * 5
+        });
+
+        dummy.position.set(x, -1.75, z);
+        dummy.rotation.y = chars[i].heading;
+        dummy.updateMatrix();
+        charMesh.setMatrixAt(i, dummy.matrix);
+
+        var c = new THREE.Color(palette[Math.floor(rng() * palette.length)]);
+        charMesh.setColorAt(i, c);
+      }
+
+      charMesh.instanceMatrix.needsUpdate = true;
+      charMesh.instanceColor.needsUpdate = true;
+      scene.add(charMesh);
+
+      totalModelCount += CHAR_COUNT;
+      document.getElementById('total-3d-count').innerText = totalModelCount.toLocaleString() + ' Models';
+    }
+
+    function updateCharacters(dt) {
+      for (var i = 0; i < CHAR_COUNT; i++) {
+        var c = chars[i];
+
+        if (c.state === 'idle') {
+          c.idleT -= dt;
+          if (c.idleT <= 0) {
+            // Pick a new random target and walk toward it
+            var angle = Math.random() * Math.PI * 2;
+            var dist = 2 + Math.random() * 5;
+            c.targetX = c.pos.x + Math.cos(angle) * dist;
+            c.targetZ = c.pos.z + Math.sin(angle) * dist;
+            // Clamp within world bounds
+            var maxR = 22;
+            var d = Math.sqrt(c.targetX * c.targetX + c.targetZ * c.targetZ);
+            if (d > maxR) { c.targetX *= maxR / d; c.targetZ *= maxR / d; }
+            c.state = 'walking';
+          }
+        } else if (c.state === 'walking') {
+          var dx = c.targetX - c.pos.x;
+          var dz = c.targetZ - c.pos.z;
+          var dist2 = Math.sqrt(dx * dx + dz * dz);
+          if (dist2 < 0.15) {
+            c.state = 'idle';
+            c.idleT = 1 + Math.random() * 4;
+          } else {
+            c.heading = Math.atan2(dx, dz);
+            c.pos.x += Math.sin(c.heading) * c.speed * dt;
+            c.pos.z += Math.cos(c.heading) * c.speed * dt;
+          }
+        }
+
+        // Status icon timer
+        c.statusTimer -= dt;
+        if (c.statusTimer <= 0) {
+          c.statusIcon = Math.random() < 0.4 ? STATUS_ICONS[Math.floor(Math.random() * STATUS_ICONS.length)] : null;
+          c.statusTimer = 4 + Math.random() * 6;
+        }
+
+        dummy.position.copy(c.pos);
+        dummy.rotation.y = c.heading;
+        dummy.updateMatrix();
+        charMesh.setMatrixAt(i, dummy.matrix);
+      }
+      charMesh.instanceMatrix.needsUpdate = true;
+    }
+
+    // Click-to-inspect character
+    function onCharClick(instanceId) {
+      var c = chars[instanceId];
+      var rng = mulberry32(c.seed);
+      var name = NAMES[Math.floor(rng() * NAMES.length)];
+      var role = ROLES[Math.floor(rng() * ROLES.length)];
+      var energy = Math.floor(rng() * 60 + 40);
+      var creativity = Math.floor(rng() * 60 + 40);
+      var charisma = Math.floor(rng() * 60 + 40);
+      var moodEmoji = ['🙂','😄','🤔','😌','🥳'][Math.floor(rng() * 5)];
+
+      document.getElementById('char-emoji').innerText = moodEmoji;
+      document.getElementById('char-name').innerText = name;
+      document.getElementById('char-role').innerText = role + ' \u00b7 Character #' + (instanceId + 1);
+      document.getElementById('char-stats').innerHTML = [
+        ['Energy', energy, 'from-red-500 to-amber-400'],
+        ['Creativity', creativity, 'from-pink-500 to-purple-400'],
+        ['Charisma', charisma, 'from-amber-400 to-yellow-300']
+      ].map(function(s) {
+        return '<div><div class="flex justify-between text-slate-400 mb-0.5"><span>' + s[0] + '</span><span>' + s[1] + '</span></div>' +
+          '<div class="h-1.5 rounded-full bg-slate-800 overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r ' + s[2] + '" style="width:' + s[1] + '%"></div></div></div>';
+      }).join('');
+      document.getElementById('char-status').innerText = 'Status: ' + c.state + (c.statusIcon ? '  ' + c.statusIcon : '');
+      document.getElementById('char-card').classList.remove('hidden');
+
+      playNote(523.25 + instanceId % 12 * 30, 'triangle', 0.6);
+    }
+
+    function closeCharCard() {
+      document.getElementById('char-card').classList.add('hidden');
+    }
 
     // Web Audio Synthesizer Setup
     function initAudio() {
@@ -301,6 +485,7 @@
       buildInstancedCity(350);
       buildInstancedCrystals(300);
       buildMindThoughtNodes();
+      buildCharacters();
 
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector2();
@@ -423,6 +608,17 @@
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
+
+      // Check character clicks first
+      if (charMesh) {
+        var charHits = raycaster.intersectObject(charMesh);
+        if (charHits.length > 0 && charHits[0].instanceId !== undefined) {
+          onCharClick(charHits[0].instanceId);
+          return;
+        }
+      }
+
+      // Then check thought nodes
       const hits = raycaster.intersectObjects(activeNodes, true);
 
       if (hits.length > 0) {
@@ -512,8 +708,13 @@
     }
 
     // Animation Loop
+    let lastTime = performance.now();
     function animate() {
       requestAnimationFrame(animate);
+
+      var now = performance.now();
+      var dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
 
       if (mindCore) {
         mindCore.rotation.y += 0.008;
@@ -523,6 +724,8 @@
       activeNodes.forEach(n => {
         n.rotation.y += 0.015;
       });
+
+      if (charMesh) updateCharacters(dt);
 
       drawVisualizer();
       controls.update();
