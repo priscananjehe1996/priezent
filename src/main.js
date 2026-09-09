@@ -672,9 +672,16 @@ const ROLES = [
 ]
 
 const PROJECTS = [
-  'Priezent-Studio','Mindscape-Core','Harmonic-Synth','Geospatial-Realm','Cyber-City-3D',
-  'Sanctuary-Biome','Infinite-Horizon','Quantum-Audio','Astro-Engine','Neural-Colony',
-  'Bio-Realm','Cosmic-Vision','Sound-Weaver','Pixel-Art','Code-Poet'
+  'Prisca Capital City',
+  'Harmonic Music Village',
+  'Sanctuary Nature Village',
+  'Cyberpunk Metropolis',
+  'North Star Citadel',
+  'Quantum Tech District',
+  'Emerald Eco Village',
+  'Cosmic Vision City',
+  'Sunset Beach Village',
+  'Highland Haven'
 ]
 
 function generateSyntheticThreads(count = 1000) {
@@ -688,15 +695,15 @@ function generateSyntheticThreads(count = 1000) {
       id: `prisca-astronaut-${i + 1}`,
       title: `${name} — ${role}`,
       project: project,
-      projectPath: `/projects/${project.toLowerCase()}`,
+      projectPath: `/projects/${project.toLowerCase().replace(/\s+/g, '-')}`,
       harness: 'antigravity',
       harnessName: 'Antigravity AI',
       running: statusIdx === 0,
       hasError: statusIdx === 1,
       prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
       unread: statusIdx === 3,
-      lastActivityAt: Date.now() - (i * 1800000),
-      createdAt: Date.now() - (i * 3600000),
+      lastActivityAt: Date.now() - (i * 30000),
+      createdAt: Date.now() - (i * 60000),
     })
   }
   return list

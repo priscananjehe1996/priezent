@@ -132,7 +132,7 @@ const DEFAULTS = {
    * opened, and the few repos actually being worked in get lost among them. It is reversible in
    * one click and a folded repo returns to the same ground the moment a thread wakes up.
    */
-  hideDormant: true,
+  hideDormant: false,
   timeOfDay: 0.32, // 0..1 — 0 is midnight, 0.5 is noon
   autoTime: false,
   /** Sky follows this machine's own clock. Wins over `autoTime`; both off is manual. */
