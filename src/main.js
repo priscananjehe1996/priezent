@@ -673,78 +673,80 @@ const ROLES = [
 
 const PLANET_CITIZENS = {
   mercury: {
-    culture: 'Asset Management & dTIMS AI Guild',
-    projects: ['Asset Management System', 'dTIMS', 'HDM4', 'Shared Documents - HDM4 - DATA REQUIREMENTS', 'RED', 'Investment plans', 'Maintenance Strategy', 'Accounts', 'Budgets', 'Procurements', 'Old Procurement RMS'],
-    roles: ['dTIMS Investment Strategist', 'HDM-4 Deterioration Analyst', 'Pavement Life-Cycle Modeler', 'Budget Allocator', 'Financial Risk Optimizer'],
-    tasks: ['Optimizing dTIMS 10-Year Maintenance Investment Strategy', 'Modeling HDM-4 Pavement Roughness (IRI) Deterioration', 'Calibrating Investment Plan Allocation Models', 'Simulating UNRA Network Capital Scenarios']
+    culture: 'UNRN Axle Load & Weighbridge AI Center',
+    projects: ['4.Weighbridge Data', '11.Axle Load Data', '2.Vehicle Fleet', 'Weighbridges\'s 2020 System Reports(Jan-Oct)', '3.Traffic'],
+    roles: ['Weighbridge Station Auditor', 'Axle Load Spectra Analyst', 'Heavy Commercial Fleet Modeler', 'ESAL Equivalency Engineer', 'Overload Penalty Auditor'],
+    tasks: ['Auditing Axle Load Weighbridge Compliance Rates', 'Calculating Equivalent Single Axle Load (ESAL) Factors', 'Modeling Commercial Heavy Truck Fleet Growth', 'Processing 2020 Weighbridge System Overload Reports']
   },
   venus: {
-    culture: 'OPRC & Contract Performance AI Alliance',
-    projects: ['CONTRACT MANAGEMENT PLAN', 'OPRC DESIGN', 'OPRC Scoping', 'DNPE TECHNICAL BRIEFS', 'NP TEHNICAL BRIEFS', 'Bids - Marvin', 'Annual National Road Network Performance Monitoring', 'PERFORMANCE APPRAISAL', 'Commited Projects', 'NERAMP'],
-    roles: ['OPRC Performance Auditor', 'Contract Compliance Engineer', 'Procurement Strategy Analyst', 'NERAMP Network Inspector', 'Performance Appraisal Evaluator'],
-    tasks: ['Auditing OPRC Contract Performance Service Levels', 'Analyzing National Road Maintenance Expenditure', 'Reviewing Procurement & Bid Technical Criteria', 'Synthesizing DNPE Technical Performance Briefs']
+    culture: 'UNRN Engineering Manuals & Standards Observatory',
+    projects: ['0. Manuals', 'docs', 'Annual National Road Network Performance Monitoring', 'IMPROVEMENTS_GUIDE.md', 'MOWT_FULL_NETWORK_REPORT_2026.md'],
+    roles: ['Highway Design Manual Auditor', 'Pavement Specification Engineer', 'MOWT Master Report Analyst', 'Performance Guide Evaluator', 'Standards Compliance Lead'],
+    tasks: ['Validating Class 1 Paved Trunk Highway Design Speed Manuals', 'Synthesizing MOWT Full Network Report 2026 Metrics', 'Evaluating Road Network Improvements Guide Criteria', 'Auditing Pavement Standard Specification Guidelines']
   },
   terra: {
-    culture: 'UNRA National Road Network AI Directorate',
-    projects: ['Uganda National Road Network Repository', 'National Road Network', 'UNRA Network', 'UNRA Asset Management Systems', 'KCCA', 'KJE', 'EAC', 'Uganda', 'DCC 2021-2024', 'KFO LOT 1', 'Departmental reports', 'MIPD'],
-    roles: ['National Network Strategist', 'Corridor Capacity Planner', 'Regional Highway Engineer', 'Urban Corridor Director', 'Infrastructure AI Architect'],
-    tasks: ['Mapping Uganda National Road Network Spatial Inventory', 'Analyzing KJE Expressway Traffic Capacity Models', 'Evaluating Regional Highway Network Briefs', 'Optimizing Urban Traffic Corridors']
+    culture: 'UNRA Uganda National Road Network Master Directorate',
+    projects: ['1.Road Network', 'uganda_nrms_frontend', 'uganda_nrms_backend', 'Annual National Road Network Performance Monitoring', 'MOWT_FULL_NETWORK_REPORT_2026.md'],
+    roles: ['National Road Network Director', 'NRMS Backend Architect', 'NRMS Frontend Engineer', 'Network Performance Auditor', 'Corridor Infrastructure Director'],
+    tasks: ['Mapping 21,000 km Classified National Road Network', 'Deploying National Road Management System (NRMS) Frontend', 'Compiling Annual National Road Network Performance Reports', 'Optimizing Trunk & Feeder Corridor Connections']
   },
   moon: {
-    culture: 'LCMS & Laser Geodesy AI Observatory',
-    projects: ['LCMS upgrade', 'ROMDAS', 'ROMDAS_x64', 'GRIP TESTER', 'GSSI', 'Roadroid', 'ROMAPS', 'Road Condition and Traffic files', 'Software', 'Standards', 'TECHNICAL NEEDS'],
-    roles: ['LCMS 3D Laser Analyst', 'Crack Depth AI Inspector', 'GRIP Tester Friction Engine', 'GSSI Ground Radar Specialist', 'ROMDAS Inspection Surveyor'],
-    tasks: ['Processing LCMS 3D High-Speed Laser Crack Scans', 'Analyzing ROMDAS Pavement Roughness Data', 'Calculating GRIP Tester Surface Friction Index', 'Inspecting GSSI Subsurface Radar Layers']
+    culture: 'UNRN Road Condition & Pavement PCI Observatory',
+    projects: ['5.Road Condition Data', '6.Road Inventory Data', 'ugnrms', 'Survey Data', 'processed'],
+    roles: ['Pavement Condition PCI Analyst', 'Road Roughness (IRI) Specialist', 'Road Inventory Surveyor', 'Crack & Rutting Depth AI Evaluator', 'Pavement Quality Auditor'],
+    tasks: ['Evaluating Pavement Condition Index (PCI) Metrics', 'Analyzing International Roughness Index (IRI) Surveys', 'Processing Road Inventory Carriageway & Shoulder Widths', 'Scanning High-Speed Pavement Distress Scans']
   },
   mars: {
-    culture: '2026 ATC & Traffic Intelligence AI Republic',
-    projects: ['2026 ATC DATA - Marvin', 'ATC', 'ADB Traffic', 'ADB TRAFFIC COUNTS', 'Traffic Count Stations', 'OD surveys', 'KJE-NOWO TRAFFIC COUNTS', "Weighbridges's 2020 System Reports(Jan-Oct)", 'Data requests'],
-    roles: ['Automated Traffic Count AI', 'Origin-Destination Analyst', 'Axle Load Weighbridge Inspector', 'Corridor Volume Modeler', 'Traffic Survey Station Lead'],
-    tasks: ['Processing 2026 Automated Traffic Count (ATC) Datasets', 'Modeling Origin-Destination (OD) Travel Matrices', 'Auditing Axle Load Weighbridge Overload Violations', 'Analyzing ADB Traffic Corridor Growth Rates']
+    culture: 'UNRN Traffic & ATC Processing Republic',
+    projects: ['3.Traffic', 'uganda_atc', 'traffic-spatial-worktree', 'traffic_platform_unified.db', 'uganda_atc'],
+    roles: ['Automated Traffic Count AI Lead', 'AADT Flow Modeler', 'Traffic Database Architect', 'Peak Hour Volume Analyst', 'Corridor Traffic Surveyor'],
+    tasks: ['Processing Automated Traffic Count (ATC) Station Datasets', 'Modeling Annual Average Daily Traffic (AADT) Flow Maps', 'Querying Unified Traffic Database Spatial Worktrees', 'Calculating Peak Hour Volume Coefficients']
   },
   jupiter: {
-    culture: 'Bridge Engineering & Heavy Structure AI',
-    projects: ['Bridge stuff', 'KUAB FWD', 'FWD', 'Polypave', 'Project level', 'Horus', 'MOBICAP'],
-    roles: ['Bridge Structure Auditor', 'KUAB FWD Deflection Analyst', 'Heavy Pavement Modulus Engine', 'Abutment Integrity Inspector', 'Scour Protection Specialist'],
-    tasks: ['Inspecting National Bridge Bearing & Expansion Joints', 'Analyzing KUAB Heavy Deflectometer Basin Curves', 'Evaluating Subsurface Foundation Integrity', 'Modeling Bridge Scour & Hydraulic Risks']
+    culture: 'UNRN National Bridge Management System (UGNBMS)',
+    projects: ['7.Bridge Inventory and Condition Data', 'ugnbms', 'bmc', 'codex_tmp_nbms_serve', 'Structure Repair Hub'],
+    roles: ['Bridge Structure Inspector', 'UGNBMS System Architect', 'Abutment & Pier Integrity Auditor', 'Scour Risk Engineer', 'Expansion Joint Specialist'],
+    tasks: ['Inspecting National Bridge Bearing & Expansion Joint Seals', 'Deploying National Bridge Management System (UGNBMS)', 'Evaluating Pier Scour Hydraulic & Structural Clearance', 'Auditing Structural Bridge Repair Schedules']
   },
   saturn: {
-    culture: 'Training, Competence & Expressway OJT Guild',
-    projects: ['COMPETENCE TRAINING', 'DATA COLLECTION TRAINING', 'GRADUATE TRAINING', 'Graduates', 'OJT - EXPRESSWAY MANUALS 2025', 'IN-HOUSE SCHEDULE', 'Learning', 'Exhibitions', 'National Science Week Exhibition', 'Presentation material'],
-    roles: ['Expressway OJT Specialist', 'Graduate Competence Mentor', 'Data Collection Master', 'Technical Exhibition Director', 'Training Curriculum Lead'],
-    tasks: ['Formulating OJT Expressway Operating Manuals 2025', 'Evaluating Graduate Engineering Competence Benchmarks', 'Conducting Data Collection Field Training Modules', 'Preparing National Science Week Exhibition Demonstrations']
+    culture: 'UNRN GIS Shapefiles & Dynamic Mapping Guild',
+    projects: ['8. Shapefiles', '9.Map Layouts', '13.Dynamic Maps(Google Earth Files)', 'uggis', 'traffic-spatial-worktree'],
+    roles: ['GIS Shapefile Analyst', 'Map Layout Cartographer', 'Google Earth KML/KMZ Specialist', 'Spatial Database Architect', 'Geodesy Mapping Engineer'],
+    tasks: ['Processing National Road Network GIS Spatial Shapefiles', 'Rendering High-Resolution Print Map Layouts', 'Building Dynamic Google Earth KML/KMZ Corridor Overlays', 'Managing Spatial Geodatabase Features']
   },
   uranus: {
-    culture: 'GIS, Survey123 & Mobile Mapping Directorate',
-    projects: ['ArcGIS', 'ArcGIS Field apps', 'ArcPad Setup', 'Survey 123', 'Survey123', 'Mobile mapping - Sample data', 'Google Earth files', 'Map Layouts', 'Index', 'Rspace'],
-    roles: ['ArcGIS Field App Developer', 'Survey123 Form Architect', 'Mobile Mapping AI Specialist', 'Google Earth Spatial Analyst', 'Geodatabase Administrator'],
-    tasks: ['Building Survey123 Mobile Inspection Forms', 'Processing Mobile Mapping Point Clouds & Imagery', 'Updating UNRA ArcGIS Spatial Geodatabase', 'Rendering National Road Network Map Layouts']
+    culture: 'UNRN Vehicle Fleet & Transport Information System (NTIS)',
+    projects: ['2.Vehicle Fleet', 'uganda_ntis', 'uganda_ntis_main_work', 'ugroads', 'ugroads-build'],
+    roles: ['Vehicle Fleet Specialist', 'NTIS Platform Engineer', 'Transport Fleet Analyst', 'Vehicle Growth Modeler', 'System Build Architect'],
+    tasks: ['Modeling Commercial & Passenger Vehicle Fleet Growth Rates', 'Building National Transportation Information System (NTIS)', 'Compiling Transport System Build Artifacts', 'Analyzing Vehicle Axle Load Factors']
   },
   neptune: {
-    culture: 'Road Reserve & Environmental Research AI',
-    projects: ['Road reserve management', 'Research project - Raw  Data', 'INVENTORY DATA SURVEYS', 'Photos request', 'Attachments', 'Imports', 'Recordings', 'KEE', 'KEE_temp_repo'],
-    roles: ['Road Reserve Inspector', 'Inventory Survey Auditor', 'Research Data Analyst', 'Encroachment Control AI', 'Corridor Protection Officer'],
-    tasks: ['Auditing Road Reserve Encroachment Boundaries', 'Processing Research Project Raw Datasets', 'Inspecting Inventory Data Survey Quadrants', 'Cataloging Environmental Corridor Records']
+    culture: 'UNRN Ferries & Inland Waterway Base',
+    projects: ['10.Ferries', '12.Media', 'Reports', 'outputs', 'ugfix'],
+    roles: ['Inland Ferry Operator', 'Waterway Crossing Architect', 'Vessel Logistics Coordinator', 'Aerial Video Surveyor', 'Media Asset Curator'],
+    tasks: ['Managing Lake Victoria & Nile Inland Ferry Crossing Schedules', 'Coordinating Vessel Cargo Capacity & Tonnage Standards', 'Processing Aerial Drone Corridor Video Surveys', 'Cataloging Network Inspection Media Outputs']
   },
   pluto: {
-    culture: 'Personal & Creative Executive Media Hub',
-    projects: ['Entertainment', 'Music', 'Personal files - prisca', 'Dinah', 'Naava Maria', 'Pictures', 'Videos', 'WALLPAPERS', 'Microsoft Copilot Chat Files', 'Microsoft Teams Chat Files'],
-    roles: ['Creative Media Director', 'Audio Synth Curator', 'Personal Archive Manager', 'Executive Document Lead', 'Media Synthesis AI'],
-    tasks: ['Curating Audio Synth Frequency Waveforms', 'Cataloging Media & Document Repositories', 'Managing Personal Engineering Archive Files', 'Synthesizing Executive Communication Records']
+    culture: 'UNRN Road Reserve Management & Encroachment Observatory',
+    projects: ['14.Road Reserve Management', 'Reports', 'docs', 'Claude outputs', 'Archived_Builds'],
+    roles: ['Road Reserve Inspector', 'Right-Of-Way Surveyor', 'Encroachment Control Officer', 'Corridor Boundary Auditor', 'Executive Report Analyst'],
+    tasks: ['Auditing 60m Road Reserve Right-Of-Way Boundaries', 'Processing Land Encroachment Survey Reports', 'Enforcing Corridor Protection Standards', 'Generating Executive Boundary Compliance Reports']
   }
 }
 
-const DATA_POINTS = [
-  'Data Point #DP-104: Pavement Roughness IRI 2.1 m/km · Structural SN 4.25',
-  'Data Point #DP-208: 2026 Automated Traffic Count (ATC) Station #14 · 34,200 vpd',
-  'Data Point #DP-312: LCMS High-Speed 3D Crack Depth Scan 4.2mm · Raveling 0.14',
-  'Data Point #DP-416: KUAB Heavy Deflectometer Center Peak D0 = 240 µm',
-  'Data Point #DP-520: dTIMS 10-Year Network Maintenance Priority Node #84',
-  'Data Point #DP-624: National Bridge Inventory #B-108 Nile Crossing Joint Rating 8/10',
-  'Data Point #DP-728: OPRC Contract Performance Service Level Metric 98.6%',
-  'Data Point #DP-832: ArcGIS Spatial Geodatabase Feature #S123-994 · Right-Of-Way 60m',
-  'Data Point #DP-936: GSSI Ground Penetrating Radar Subgrade Moisture Layer 12%',
-  'Data Point #DP-040: Weighbridge Station #WB-03 Axle Load Compliance 99.1%'
+const UNRN_DATA_POINTS = [
+  'UNRN Node #01.RN-104: 21,000 km Classified Network (6,000 km Paved Trunk, 15,000 km Unpaved Feeder)',
+  'UNRN Node #02.VF-208: Heavy Commercial Vehicle Fleet Ratio 28.4% · Axle Multipliers 2.4 ESAL',
+  'UNRN Node #03.TR-312: 2026 ATC Station #104 Traffic Vol 34,200 vpd (Peak Hour Flow 3,850 vph)',
+  'UNRN Node #04.WB-416: Weighbridge Station #WB-03 Axle Overload Penalty Compliance Rate 99.1%',
+  'UNRN Node #05.RC-520: Pavement Roughness IRI 2.1 m/km · Pavement Condition Index PCI 84/100',
+  'UNRN Node #06.RI-624: Road Inventory Section #RI-84 · 7.0m Carriageway + 2.0m Sealed Shoulders',
+  'UNRN Node #07.BR-728: National Bridge Inventory #B-108 Nile Crossing Joint Rating 8/10',
+  'UNRN Node #08.SH-832: GIS Shapefile Feature #SHP-994 Road Reserve Centerline Alignment Offset 30m',
+  'UNRN Node #09.MP-936: Dynamic KML Map Layout #KMZ-402 · Regional Corridor High-Resolution Overlay',
+  'UNRN Node #10.FR-040: Inland Ferry #MV-Kabalega Vessel Crossing Schedule · 250 Ton Cargo Rating',
+  'UNRN Node #11.AL-114: Axle Load Spectra Spectrum #AL-88 · Equivalent Single Axle Load ESAL 2.45',
+  'UNRN Node #14.RR-224: Road Reserve Right-Of-Way Boundary Survey #RR-60 · 60m Corridor Reserve'
 ]
 
 function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 1000) {
@@ -755,20 +757,20 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
     const role = pData.roles[i % pData.roles.length]
     const project = pData.projects[i % pData.projects.length]
     const task = pData.tasks[i % pData.tasks.length]
-    const dataPoint = DATA_POINTS[i % DATA_POINTS.length]
+    const dataPoint = UNRN_DATA_POINTS[i % UNRN_DATA_POINTS.length]
     const epoch = (i * 7) % 100 + 1
-    const loss = (0.012 + (i % 10) * 0.003).toFixed(4)
+    const loss = (0.008 + (i % 10) * 0.002).toFixed(4)
     const statusIdx = i % 5
     list.push({
       id: `${planetKey}-ai-agent-${i + 1}`,
-      title: `${name} — ${role} [AI Agent]`,
+      title: `${name} — ${role} [UNRN AI Agent]`,
       project: project,
-      projectPath: `D:\\OneDrive\\${project}`,
+      projectPath: `D:\\OneDrive\\Uganda National Road Network Repository\\${project}`,
       harness: 'antigravity-ai',
-      harnessName: `AI Agent (Training Epoch ${epoch}/100)`,
+      harnessName: `UNRN AI Knowledge Module (Training Epoch ${epoch}/100)`,
       task: `${task} | ${dataPoint}`,
-      trainingState: `Active Training Epoch ${epoch}/100 (Loss: ${loss})`,
-      running: statusIdx !== 1, // Active training
+      trainingState: `Building Knowledge: Epoch ${epoch}/100 (Loss: ${loss})`,
+      running: statusIdx !== 1, // Active learning & building
       hasError: statusIdx === 1,
       prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
       unread: statusIdx === 3,
