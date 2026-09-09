@@ -8,7 +8,7 @@ import { Hud } from './ui/hud.js'
 import { PLANETS } from './world/planet.js'
 import { loadKit } from './world/kit.js'
 import { crewRig, loadCrew } from './agents/crew.js'
-import { TIMES } from './world/sky.js'
+import { TIMES, systemTimeOfDay } from './world/sky.js'
 import {
   fetchThreads,
   fetchState,
@@ -42,6 +42,9 @@ app.insertAdjacentHTML(
 
 const settings = new Settings()
 if (!hasStoredSettings()) settings.applyPreset(DEFAULT_PRESET)
+if (settings.get('clockTime')) {
+  settings.set('timeOfDay', systemTimeOfDay())
+}
 
 const engine = new Engine(settings).mount(app)
 const rig = new CameraRig(engine.camera, engine.canvas, settings)
