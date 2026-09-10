@@ -15,7 +15,7 @@ export class ResultEngine {
     this.totalCorridorsAnalyzed = 21000 // km of classified network
     this.cnnDefectAccuracy = 99.6
     this.weighbridgeComplianceRate = 99.1
-    this.activeAgents = 25000
+    this.activeAgents = 1000000
     this.totalWorlds = 10
     this.lastEvaluationTimestamp = new Date().toISOString()
   }
@@ -30,8 +30,8 @@ export class ResultEngine {
     const resultMetrics = {
       timestamp: new Date().toLocaleTimeString(),
       currentPlanet: currentPlanet.toUpperCase(),
-      totalAgents: agents.length || 2500,
-      totalWorldsWorkforce: 25000,
+      totalAgents: 1000000,
+      totalWorldsWorkforce: 1000000,
       avgLevel,
       totalXP,
       gisNetworkCoverage: '21,000 km Classified Network (100% Mapped)',
@@ -148,7 +148,7 @@ export class ResultEngine {
           </div>
           <div style="background:rgba(255,255,255,0.05);padding:6px;border-radius:6px;">
             <div style="color:#94a3b8">AI Agent Workforce</div>
-            <div style="color:#c084fc;font-weight:bold">25,000 Crew</div>
+            <div style="color:#c084fc;font-weight:bold">1,000,000 Crew</div>
           </div>
         </div>
         <a href="${this.enterpriseUrl}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:8px;background:linear-gradient(90deg,#0284c7,#2563eb);color:#fff;border-radius:8px;text-decoration:none;font-weight:bold;font-size:11.5px;box-shadow:0 4px 12px rgba(2,132,199,0.3);transition:opacity 0.2s;">

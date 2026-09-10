@@ -82,25 +82,28 @@
     window.addEventListener('resize', resize);
     resize();
 
-    // Planets Definition
+    // 10 Celestial Bodies & Subsystem Planets Definition
     const planets = [
-      { name: 'PMS Planet', code: 'PMS', color: '#34d399', orbitR: 75, speed: 0.015, size: 10, dataIn: 'PCI 86.2, 15.12M Images', dataOut: 'LRS Link Chainages' },
-      { name: 'TIS Planet', code: 'TIS', color: '#fbbf24', orbitR: 115, speed: 0.012, size: 11, dataIn: 'WIM 99.1%, ATC Counts', dataOut: 'Corridor Load Limits' },
-      { name: 'BMS Planet', code: 'BMS', color: '#60a5fa', orbitR: 155, speed: 0.009, size: 12, dataIn: '450 Bridges, 96.2% Safety', dataOut: 'Bridge LRS Chainages' },
-      { name: 'Socio-Econ', code: 'NDPIV', color: '#c084fc', orbitR: 195, speed: 0.007, size: 11, dataIn: '135 Districts, 18.4% EIRR', dataOut: 'Feeder Topology' },
-      { name: 'Budgets/LCCA', code: 'LCCA', color: '#f472b6', orbitR: 230, speed: 0.005, size: 13, dataIn: '$3.09B Valuation, MYFP', dataOut: 'Decay Trajectories' },
-      { name: 'LiDAR/Satellite', code: 'SAT', color: '#2dd4bf', orbitR: 265, speed: 0.004, size: 10, dataIn: '0.05m DEM, 0.12mm InSAR', dataOut: 'Cadastral Boundaries' }
+      { name: 'PMS Planet', code: 'PMS', color: '#34d399', orbitR: 65, speed: 0.018, size: 9, dataIn: 'PCI 86.2, 15.12M Defect Images', dataOut: 'LRS Link Chainages', agents: '100,000 Agents' },
+      { name: 'TIS Planet', code: 'TIS', color: '#fbbf24', orbitR: 95, speed: 0.015, size: 10, dataIn: 'WIM 99.1%, ATC Counts', dataOut: 'Corridor Load Limits', agents: '100,000 Agents' },
+      { name: 'BMS Planet', code: 'BMS', color: '#60a5fa', orbitR: 125, speed: 0.012, size: 11, dataIn: '450 Bridges, 96.2% Safety', dataOut: 'Bridge LRS Chainages', agents: '100,000 Agents' },
+      { name: 'Socio-Econ', code: 'NDPIV', color: '#c084fc', orbitR: 155, speed: 0.009, size: 10, dataIn: '135 Districts, 18.4% EIRR', dataOut: 'Feeder Network Topology', agents: '100,000 Agents' },
+      { name: 'Budgets/LCCA', code: 'LCCA', color: '#f472b6', orbitR: 185, speed: 0.007, size: 12, dataIn: '$3.09B Asset Val, $220M Budget', dataOut: 'Decay Trajectories', agents: '100,000 Agents' },
+      { name: 'LiDAR/Satellite', code: 'SAT', color: '#2dd4bf', orbitR: 215, speed: 0.005, size: 11, dataIn: '0.05m DEM, 0.12mm InSAR', dataOut: 'Cadastral Boundaries', rings: true, agents: '100,000 Agents' },
+      { name: 'PIARC Global', code: 'PIARC', color: '#1de9b6', orbitR: 245, speed: 0.004, size: 10, dataIn: 'World Bank RMI Benchmarks', dataOut: 'International Standards', agents: '100,000 Agents' },
+      { name: 'PIMS Projects', code: 'PIMS', color: '#2979ff', orbitR: 275, speed: 0.003, size: 11, dataIn: 'Capital Works & Procurement', dataOut: 'NDPIV Project Approvals', agents: '100,000 Agents' },
+      { name: 'Cadastral Reserve', code: 'PLUTO', color: '#cfd8dc', orbitR: 305, speed: 0.002, size: 8, dataIn: '60m Road Reserve Boundary', dataOut: 'Encroachment Radar Alerts', agents: '100,000 Agents' }
     ];
 
     let particles = [];
     let angleOffset = 0;
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 60; i++) {
       particles.push({
         planetIdx: i % planets.length,
         progress: Math.random(),
         direction: Math.random() > 0.5 ? 1 : -1,
-        speed: 0.005 + Math.random() * 0.008
+        speed: 0.004 + Math.random() * 0.008
       });
     }
 
