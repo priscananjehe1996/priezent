@@ -749,7 +749,8 @@ const UNRN_DATA_POINTS = [
   'UNRN Node #09.MP-936: Dynamic KML Map Layout #KMZ-402 · Regional Corridor High-Resolution Overlay',
   'UNRN Node #10.FR-040: Inland Ferry #MV-Kabalega Vessel Crossing Schedule · 250 Ton Cargo Rating',
   'UNRN Node #11.AL-114: Axle Load Spectra Spectrum #AL-88 · Equivalent Single Axle Load ESAL 2.45',
-  'UNRN Node #14.RR-224: Road Reserve Right-Of-Way Boundary Survey #RR-60 · 60m Corridor Reserve'
+  'UNRN Node #14.RR-224: Road Reserve Right-Of-Way Boundary Survey #RR-60 · 60m Corridor Reserve',
+  'UNRN Node #15.CNN-500: PyTorch CNN Pavement Defect Model (PAVE-0 W:, X:, Y:, Z: Survey Images · Loss 2.9369 · Acc 53.1%)'
 ]
 
 let globalTrainingEpochOffset = 0
@@ -878,6 +879,9 @@ settings.onChange((changed, scope) => {
 
 engine.add({
   update(dt, elapsed) {
+    if (settings.get('clockTime')) {
+      settings.set('timeOfDay', systemTimeOfDay())
+    }
     rig.update(dt)
     colony.update(dt, elapsed, rig.target)
     // Whatever the camera is orbiting is what should be in focus.

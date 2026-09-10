@@ -5,7 +5,7 @@
  * 1. Evaluates local environment inputs (loss, epoch, distance, neighbor density, XP, energy).
  * 2. Runs a 2-layer Neural Network forward pass (8 inputs -> 16 hidden (ReLU) -> 4 output actions (Softmax)).
  * 3. Makes autonomous decisions on what structures to build, data to process, or actions to take.
- * 4. Tracks XP, Level progression (Level 1..100), and skill ranks.
+ * 4. Tracks XP, Level progression (Level 1..100), domain certifications, and skill ranks.
  */
 
 export const ACTION_NAMES = [
@@ -22,14 +22,26 @@ export const ACTION_DESCRIPTIONS = {
   COLLABORATE_GUILD: 'Exchanging Spatial Geodatabase Features with Guild'
 }
 
+export const CERTIFICATIONS = [
+  'UNRA Senior GIS Charter',
+  'AASHTO Pavement Design Fellow',
+  'UGNBMS Structural Dynamics Lead',
+  'LCMS 3D Laser Scanning Maestro',
+  'WIM Axle Load Spectra Fellow',
+  'NTIS Multi-Modal Logistics Director',
+  'MOWT 2026 Master Report Principal'
+]
+
 export class AgentBrain {
-  constructor(agentId, initialEpoch = 85) {
+  constructor(agentId, initialEpoch = 92) {
     this.agentId = agentId
-    this.level = Math.min(100, Math.max(1, Math.floor(initialEpoch + (Math.random() * 10 - 5))))
-    this.xp = this.level * 200 + Math.floor(Math.random() * 150)
-    this.learningRate = 0.005
-    this.loss = Math.max(0.004, 0.035 - (this.level / 100) * 0.028).toFixed(4)
-    this.structuresBuilt = Math.floor(this.level / 8) + 1
+    // overnight training boost: agents progress into Level 90-100 master ranks
+    this.level = Math.min(100, Math.max(1, Math.floor(initialEpoch + (Math.random() * 8))))
+    this.xp = this.level * 250 + Math.floor(Math.random() * 200)
+    this.learningRate = 0.002
+    this.loss = Math.max(0.0015, 0.025 - (this.level / 100) * 0.022).toFixed(4)
+    this.structuresBuilt = Math.floor(this.level / 6) + 1
+    this.certifications = this._getCertifications()
     
     // 8 Inputs -> 16 Hidden
     this.W1 = this._initWeights(16, 8)
@@ -43,7 +55,7 @@ export class AgentBrain {
     this.lastHidden = new Float32Array(16)
     this.lastOutputs = new Float32Array(4)
     this.currentAction = ACTION_NAMES[0]
-    this.confidence = 0.85
+    this.confidence = 0.92
   }
 
   _initWeights(rows, cols) {
@@ -59,17 +71,22 @@ export class AgentBrain {
     return w
   }
 
+  _getCertifications() {
+    const count = Math.min(CERTIFICATIONS.length, Math.floor(this.level / 20) + 1)
+    return CERTIFICATIONS.slice(0, count)
+  }
+
   /** Run forward pass and compute autonomous action */
   evaluate(inputs = {}) {
     const x = this.lastInputs
-    x[0] = (inputs.epoch || 85) / 100
-    x[1] = Math.min(1, (inputs.loss || 0.01) * 20)
-    x[2] = (inputs.targetDist || 10) / 100
-    x[3] = Math.min(1, (inputs.density || 3) / 10)
+    x[0] = (inputs.epoch || 92) / 100
+    x[1] = Math.min(1, (inputs.loss || 0.005) * 20)
+    x[2] = (inputs.targetDist || 8) / 100
+    x[3] = Math.min(1, (inputs.density || 4) / 10)
     x[4] = this.level / 100
     x[5] = ((inputs.unrnId || 1) % 14) / 14
-    x[6] = Math.min(1, this.xp / 20000)
-    x[7] = inputs.energy || 0.95
+    x[6] = Math.min(1, this.xp / 25000)
+    x[7] = inputs.energy || 0.98
 
     // Hidden layer (ReLU)
     for (let r = 0; r < 16; r++) {
@@ -112,10 +129,11 @@ export class AgentBrain {
     this.confidence = bestProb
 
     // Incremental learning / growth tick
-    this.xp += Math.floor(1 + Math.random() * 3)
-    if (this.xp >= this.level * 220 && this.level < 100) {
+    this.xp += Math.floor(2 + Math.random() * 4)
+    if (this.xp >= this.level * 250 && this.level < 100) {
       this.level++
-      this.loss = Math.max(0.002, (parseFloat(this.loss) * 0.98)).toFixed(4)
+      this.loss = Math.max(0.0012, (parseFloat(this.loss) * 0.97)).toFixed(4)
+      this.certifications = this._getCertifications()
     }
 
     return {
@@ -124,15 +142,17 @@ export class AgentBrain {
       confidence: (this.confidence * 100).toFixed(1) + '%',
       level: this.level,
       xp: this.xp,
-      loss: this.loss
+      loss: this.loss,
+      certifications: this.certifications
     }
   }
 
   getRankTitle() {
-    if (this.level >= 90) return 'UNRN Master Infrastructure Architect'
-    if (this.level >= 75) return 'Senior GIS Spatial Analyst'
-    if (this.level >= 50) return 'LCMS & Traffic Data Specialist'
-    if (this.level >= 25) return 'Weighbridge & Axle Engineer'
+    if (this.level >= 98) return 'Principal UNRN System Architect & Infrastructure Master'
+    if (this.level >= 90) return 'Senior Infrastructure Fellow & Pavement Modeler'
+    if (this.level >= 80) return 'Lead Spatial Cartographer & Bridge Dynamics Specialist'
+    if (this.level >= 70) return 'Senior Traffic Volumetric & ATC Data Modeler'
+    if (this.level >= 50) return 'LCMS 3D Laser & Weighbridge Specialist'
     return 'Junior Data Collector'
   }
 }
