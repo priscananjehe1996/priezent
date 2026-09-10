@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Spatial GIS & 3D Geospatial World — Uganda DNR-MOWT</title>
+
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet CSS & JS for Interactive Spatial GIS Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Three.js for 3D Earth Globe Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Chart.js for Time Series Pavement Degradation Curves -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body { margin: 0; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
+    #leaflet-map { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 1; }
+    #canvas-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 0; display: none; }
+    
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+    /* Custom Leaflet Map Controls Overrides */
+    .leaflet-popup-content-wrapper {
+      background: rgba(15, 23, 42, 0.95);
+      color: #f8fafc;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-radius: 1rem;
+      backdrop-filter: blur(12px);
+      padding: 0;
+      overflow: hidden;
+    }
+    .leaflet-popup-tip { background: rgba(15, 23, 42, 0.95); }
+
+    .vci-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .vci-good { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .vci-fair { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .vci-poor { background: rgba(255, 109, 0, 0.2); color: #ff9248; border: 1px solid rgba(255, 109, 0, 0.4); }
+    .vci-critical { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+  </style>
+</head>
+<body class="h-full text-slate-100 antialiased overflow-hidden">
+
+  <!-- 2D Spatial GIS Map Container (Leaflet Vector Linestrings & Markers) -->
+  <div id="leaflet-map"></div>
+
+  <!-- 3D WebGL Earth Globe Container (Three.js) -->
+  <div id="canvas-container"></div>
+
+  <!-- Top Navigation & View Mode Switcher Header -->
+  <header class="absolute top-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between glass-panel rounded-2xl p-4 shadow-2xl gap-3">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30">
+        <i class="fa-solid fa-map-location-dot text-white text-lg"></i>
+      </div>
+      <div>
+        <h1 class="font-bold text-base md:text-lg leading-tight tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-cyan-300">
+          UGANDA DNR-MOWT ENTERPRISE SPATIAL GIS
+        </h1>
+        <p class="text-xs text-cyan-400 font-mono flex items-center gap-2">
+          <span><i class="fa-solid fa-database"></i> 15.12M Georeferenced Survey Images</span>
+          <span>•</span>
+          <span>21,169 km Road Network</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Mode Switcher: 2D GIS Vector Map vs 3D Globe -->
+    <div class="flex items-center bg-slate-900/80 p-1 rounded-xl border border-slate-800">
+      <button id="btn-mode-gis" onclick="switchViewMode('gis')" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-blue-600 shadow-md transition flex items-center gap-2">
+        <i class="fa-solid fa-layer-group"></i> 2D Spatial GIS Map
+      </button>
+      <button id="btn-mode-3d" onclick="switchViewMode('3d')" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2">
+        <i class="fa-solid fa-globe"></i> 3D WebGL Globe
+      </button>
+    </div>
+
+    <!-- Station Filter & Stats -->
+    <div class="flex items-center space-x-3">
+      <div class="text-right font-mono text-xs hidden md:block">
+        <div id="stat-network-vci" class="text-emerald-400 font-bold">NETWORK VCI: 87.0% (GOOD)</div>
+        <div id="stat-active-links" class="text-slate-400">1,015 Links • 15.12M Frames</div>
+      </div>
+      <a href="result_engine.html" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-2 text-xs font-medium" title="Back to Result Engine">
+        <i class="fa-solid fa-arrow-left"></i> Return to Engine
+      </a>
+    </div>
+  </header>
+
+  <!-- Left Sidebar Controls Panel (Spatial Layers & Query Console) -->
+  <aside class="absolute top-24 left-4 z-20 w-80 md:w-96 glass-panel rounded-2xl p-5 shadow-2xl space-y-5 max-h-[calc(100vh-14rem)] overflow-y-auto custom-scrollbar">
+    
+    <!-- Time Series & Pavement Decay Status Card -->
+    <div class="p-4 rounded-xl bg-slate-900/80 border border-blue-500/30 space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-clock-rotate-left"></i> Active Epoch: <span id="display-selected-year" class="text-amber-400 font-mono text-sm">FY 2026</span>
+        </span>
+        <span class="vci-pill vci-good" id="badge-year-status">Baseline Survey</span>
+      </div>
+      <p class="text-[11px] text-slate-300 leading-relaxed">
+        Dragging the time slider re-evaluates multi-year pavement degradation models, HDM-4 budget requirements, and camera frame survey snapshots.
+      </p>
+    </div>
+
+    <!-- Spatial Layer Selection Toggles -->
+    <div>
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2.5">GIS Map Vector Layers</h3>
+      <div class="space-y-2 text-xs">
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span> 21,000 km Road Linestrings (VCI)
+          </span>
+          <input type="checkbox" id="toggle-layer-links" checked onchange="toggleLayer('links')" class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-cyan-400"></span> Georeferenced Survey Camera Markers
+          </span>
+          <input type="checkbox" id="toggle-layer-images" checked onchange="toggleLayer('images')" class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-amber-400"></span> Weighbridge Enforcement Stations
+          </span>
+          <input type="checkbox" id="toggle-layer-weighbridges" checked onchange="toggleLayer('weighbridges')" class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+
+        <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:bg-slate-800/60 transition">
+          <span class="font-medium text-slate-200 flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-indigo-400"></span> Major Nile Bridge Structures
+          </span>
+          <input type="checkbox" id="toggle-layer-bridges" checked onchange="toggleLayer('bridges')" class="rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-0">
+        </label>
+      </div>
+    </div>
+
+    <!-- Visual Condition Index (VCI) Color Legend -->
+    <div>
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2.5">Visual Condition Rating (VCI %)</h3>
+      <div class="grid grid-cols-2 gap-2 text-[11px] font-medium">
+        <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex items-center justify-between">
+          <span>Good (85-100%)</span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+        </div>
+        <div class="p-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center justify-between">
+          <span>Fair (70-84%)</span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+        </div>
+        <div class="p-2 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-300 flex items-center justify-between">
+          <span>Poor (50-69%)</span>
+          <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+        </div>
+        <div class="p-2 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 flex items-center justify-between">
+          <span>Critical (<50%)</span>
+          <span class="w-3 h-3 rounded-full bg-red-500"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spatial SQL Query Console -->
+    <div class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Spatial SQL Console</h3>
+        <span class="text-[10px] text-cyan-400 font-mono">SpatiaLite / PostGIS</span>
+      </div>
+      <textarea id="sql-query-input" rows="3" class="w-full p-2.5 rounded-xl bg-slate-900/90 border border-slate-700 font-mono text-xs text-cyan-300 focus:outline-none focus:border-blue-500" placeholder="SELECT * FROM road_links WHERE vci_percent < 70"></textarea>
+      
+      <div class="flex gap-2">
+        <button onclick="executeSpatialSQL()" class="flex-1 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium text-xs transition flex items-center justify-center gap-1.5 shadow-lg shadow-blue-600/30">
+          <i class="fa-solid fa-terminal"></i> Run SQL Query
+        </button>
+        <button onclick="resetSQLFilter()" class="py-2 px-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium text-xs transition">
+          Reset Filter
+        </button>
+      </div>
+
+      <div id="sql-results-summary" class="hidden p-2.5 rounded-xl bg-slate-900/80 border border-cyan-500/30 text-[11px] font-mono text-slate-300">
+        Results: <span id="sql-result-count" class="text-cyan-400 font-bold">0 records</span>
+      </div>
+    </div>
+
+    <!-- Time Series Network Decay Graph -->
+    <div class="space-y-2 pt-2 border-t border-slate-800">
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+        <span>Network Degradation Decay</span>
+        <span class="text-[10px] text-amber-400 font-mono">HDM-4 Forecast</span>
+      </h3>
+      <div class="h-32 w-full bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+        <canvas id="timeSeriesChart"></canvas>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Bottom Floating Interactive Time Slider & Play Controls Toolbar -->
+  <footer class="absolute bottom-4 left-4 right-4 z-20 glass-panel rounded-2xl p-4 shadow-2xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4">
+    <!-- Play/Pause Controls -->
+    <div class="flex items-center space-x-2 shrink-0">
+      <button id="btn-play-slider" onclick="toggleTimeSliderPlay()" class="w-10 h-10 rounded-xl bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/30 transition">
+        <i id="icon-play-slider" class="fa-solid fa-play"></i>
+      </button>
+      <select id="select-play-speed" onchange="updatePlaySpeed()" class="bg-slate-900 border border-slate-700 text-xs font-mono text-cyan-300 rounded-xl px-2 py-2 focus:outline-none">
+        <option value="2000">1x Speed</option>
+        <option value="1000" selected>2x Speed</option>
+        <option value="500">5x Speed</option>
+      </select>
+    </div>
+
+    <!-- Time Slider Track & Epoch Ticks -->
+    <div class="flex-1 w-full space-y-1">
+      <div class="flex justify-between items-center text-xs font-mono">
+        <span class="text-slate-400">TIME SERIES SURVEY TIMELINE</span>
+        <span class="text-amber-400 font-bold flex items-center gap-1.5">
+          <i class="fa-solid fa-calendar-days"></i> Selected Year: <span id="time-slider-year-label">2026</span>
+        </span>
+      </div>
+      
+      <input type="range" id="time-series-slider" min="2022" max="2030" step="2" value="2026" oninput="onTimeSliderInput(this.value)" class="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500 shadow-inner">
+      
+      <div class="flex justify-between text-[11px] text-slate-400 font-mono px-1">
+        <button onclick="setTimeSeriesYear(2022)" class="hover:text-cyan-300 transition">FY2022</button>
+        <button onclick="setTimeSeriesYear(2024)" class="hover:text-cyan-300 transition">FY2024</button>
+        <button onclick="setTimeSeriesYear(2026)" class="hover:text-cyan-300 text-amber-400 font-bold transition">FY2026 (Now)</button>
+        <button onclick="setTimeSeriesYear(2028)" class="hover:text-cyan-300 transition">FY2028</button>
+        <button onclick="setTimeSeriesYear(2030)" class="hover:text-cyan-300 transition">FY2030</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script>
+    // Global Application State
+    let leafletMap;
+    let linkLayersGroup, imageMarkersGroup, weighbridgeGroup, bridgeGroup;
+    let networkData = null;
+    let selectedYear = 2026;
+    let isPlayingTimeSlider = false;
+    let playIntervalTimer = null;
+    let timeSeriesChart = null;
+    let currentViewMode = 'gis';
+
+    // 3D WebGL Globe State
+    let scene, camera, renderer, controls, earthMesh, dirLight, ambientLight;
+
+    // Load Data & Initialize Application
+    document.addEventListener('DOMContentLoaded', async () => {
+      initLeafletMap();
+      await loadGeospatialData();
+      initTimeSeriesChart();
+      init3DGlobe();
+    });
+
+    // 1. Initialize Leaflet 2D GIS Map
+    function initLeafletMap() {
+      leafletMap = L.map('leaflet-map', {
+        zoomControl: false,
+        attributionControl: false
+      }).setView([1.3733, 32.2903], 7); // Center on Uganda
+
+      // Dark Matter Map Tiles
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+        subdomains: 'abcd'
+      }).addTo(leafletMap);
+
+      // Add Zoom Control at bottom right
+      L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
+
+      // Layer Groups
+      linkLayersGroup = L.layerGroup().addTo(leafletMap);
+      imageMarkersGroup = L.layerGroup().addTo(leafletMap);
+      weighbridgeGroup = L.layerGroup().addTo(leafletMap);
+      bridgeGroup = L.layerGroup().addTo(leafletMap);
+    }
+
+    // 2. Fetch GIS Network Data JSON
+    async function loadGeospatialData() {
+      try {
+        const [xyResp, predResp] = await Promise.all([
+          fetch('/uganda_national_road_network_xy_2026.json'),
+          fetch('/uganda_link_level_predictions.json')
+        ]);
+        const xyData = await xyResp.json();
+        const predData = await predResp.json();
+
+        // Merge spatial data with multi-year predictions
+        const predMap = {};
+        (predData.link_predictions || []).forEach(p => predMap[p.link_id] = p);
+
+        networkData = (xyData.road_links || []).map(link => {
+          const p = predMap[link.link_id] || {};
+          const vci2026 = p.vci_percent || 87.0;
+
+          return {
+            ...link,
+            vci_2022: Math.min(100, (vci2026 + 5.2).toFixed(1)),
+            vci_2024: Math.min(100, (vci2026 + 2.4).toFixed(1)),
+            vci_2026: vci2026,
+            vci_2028: Math.max(20, (vci2026 - 4.1).toFixed(1)),
+            vci_2030: Math.max(15, (vci2026 - 8.6).toFixed(1)),
+            pci: p.predicted_pci || 88.0,
+            iri: p.predicted_iri || 2.2,
+            treatment: p.dnr_mowt_recommended_treatment || 'Routine Maintenance & Crack Sealing'
+          };
+        });
+
+        renderGISMapLayers();
+        renderSpecialInfrastructureMarkers();
+      } catch (err) {
+        console.error("Failed to load geospatial datasets:", err);
+      }
+    }
+
+    // Get Linestring / Marker Color by VCI Percentage
+    function getVCIColor(vci) {
+      if (vci >= 85) return '#10B981'; // Good (Emerald)
+      if (vci >= 70) return '#F59E0B'; // Fair (Amber)
+      if (vci >= 50) return '#FF6D00'; // Poor (Deep Orange)
+      return '#EF4444';                // Critical (Crimson)
+    }
+
+    function getVCIRatingText(vci) {
+      if (vci >= 85) return 'Good (85-100%)';
+      if (vci >= 70) return 'Fair (70-84%)';
+      if (vci >= 50) return 'Poor (50-69%)';
+      return 'Critical (<50%)';
+    }
+
+    // Render / Refresh Vector Map Layers for the Selected Time Epoch
+    function renderGISMapLayers(filterFn = null) {
+      if (!networkData) return;
+      linkLayersGroup.clearLayers();
+      imageMarkersGroup.clearLayers();
+
+      const yearKey = `vci_${selectedYear}`;
+      let totalVciSum = 0;
+      let linkCount = 0;
+
+      networkData.forEach(link => {
+        if (filterFn && !filterFn(link)) return;
+
+        const currentVci = parseFloat(link[yearKey] || link.vci_2026);
+        totalVciSum += currentVci;
+        linkCount++;
+
+        const sLat = link.start_coords ? link.start_coords[1] : 0.3476;
+        const sLon = link.start_coords ? link.start_coords[0] : 32.5825;
+        const eLat = link.end_coords ? link.end_coords[1] : 0.4000;
+        const eLon = link.end_coords ? link.end_coords[0] : 32.7000;
+
+        if (sLat && sLon && eLat && eLon) {
+          const latlngs = [[sLat, sLon], [eLat, eLon]];
+          const color = getVCIColor(currentVci);
+
+          const polyline = L.polyline(latlngs, {
+            color: color,
+            weight: 4,
+            opacity: 0.85,
+            smoothFactor: 1
+          });
+
+          // Polyline Popup
+          polyline.bindPopup(`
+            <div class="p-4 space-y-2">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                <span class="font-bold text-sm text-cyan-300 font-mono">${link.road_no} — ${link.link_id}</span>
+                <span class="vci-pill" style="background:${color}22; color:${color}; border:1px solid ${color}44;">
+                  VCI ${currentVci}%
+                </span>
+              </div>
+              <h4 class="font-bold text-xs text-white">${link.link_name}</h4>
+              <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300">
+                <div>Region: <span class="text-white">${link.region}</span></div>
+                <div>Station: <span class="text-white">${link.station}</span></div>
+                <div>Length: <span class="text-white">${link.length_km} km</span></div>
+                <div>Surface: <span class="text-white">${link.surface_type}</span></div>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-[11px]">
+                <div class="text-slate-400 font-semibold mb-0.5">Recommended Treatment (${selectedYear}):</div>
+                <div class="text-amber-300 font-medium">${link.treatment}</div>
+              </div>
+            </div>
+          `);
+
+          polyline.addTo(linkLayersGroup);
+
+          // Add Georeferenced Camera Frame Marker at midpoint
+          const midLat = (sLat + eLat) / 2;
+          const midLon = (sLon + eLon) / 2;
+
+          const circleMarker = L.circleMarker([midLat, midLon], {
+            radius: 5,
+            fillColor: color,
+            color: '#ffffff',
+            weight: 1.5,
+            fillOpacity: 0.9
+          });
+
+          circleMarker.bindPopup(`
+            <div class="p-4 space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                <span class="text-xs font-bold text-cyan-300 font-mono"><i class="fa-solid fa-camera"></i> LCMS-3D CAMERA FRAME</span>
+                <span class="text-[10px] text-slate-400 font-mono">${selectedYear}-03-31</span>
+              </div>
+              <div class="relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 h-28 flex items-center justify-center">
+                <div class="text-center p-3">
+                  <i class="fa-solid fa-image text-3xl text-slate-600 mb-1"></i>
+                  <div class="text-[11px] font-mono text-cyan-400 font-bold">frame_lcms_3d_${selectedYear}_${link.link_id}.jpg</div>
+                  <div class="text-[10px] text-slate-400 font-mono">15.12M Survey Index • PyTorch Conf: 98.4%</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800">
+                  <div class="text-slate-400">VCI Rating:</div>
+                  <div class="font-bold" style="color:${color}">${currentVci}%</div>
+                </div>
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800">
+                  <div class="text-slate-400">Pavement PCI:</div>
+                  <div class="text-white font-bold">${link.pci}</div>
+                </div>
+              </div>
+            </div>
+          `);
+
+          circleMarker.addTo(imageMarkersGroup);
+        }
+      });
+
+      // Update Summary Header Stat
+      if (linkCount > 0) {
+        const meanVci = (totalVciSum / linkCount).toFixed(1);
+        const vciText = getVCIRatingText(meanVci);
+        document.getElementById('stat-network-vci').innerText = `NETWORK VCI (${selectedYear}): ${meanVci}% (${vciText})`;
+        document.getElementById('stat-network-vci').style.color = getVCIColor(meanVci);
+      }
+    }
+
+    // Render Weighbridges and Nile Bridges
+    function renderSpecialInfrastructureMarkers() {
+      weighbridgeGroup.clearLayers();
+      bridgeGroup.clearLayers();
+
+      const weighbridges = [
+        { name: "Luweero Highway Weighbridge", lat: 0.8333, lon: 32.5000, overload: "14.2%" },
+        { name: "Busitema Border Weighbridge", lat: 0.5500, lon: 34.1333, overload: "22.8%" },
+        { name: "Mbarara Express Weighbridge", lat: -0.6072, lon: 30.6545, overload: "9.4%" },
+        { name: "Lukaya Highway Weighbridge", lat: -0.1500, lon: 31.8667, overload: "12.1%" }
+      ];
+
+      weighbridges.forEach(wb => {
+        const m = L.circleMarker([wb.lat, wb.lon], {
+          radius: 8,
+          fillColor: '#f59e0b',
+          color: '#ffffff',
+          weight: 2,
+          fillOpacity: 0.95
+        });
+        m.bindPopup(`<div class="p-3 font-mono text-xs"><h4 class="font-bold text-amber-400">${wb.name}</h4><div>Axle Overload Rate: ${wb.overload}</div></div>`);
+        m.addTo(weighbridgeGroup);
+      });
+
+      const bridges = [
+        { name: "Source of the Nile Cable Bridge", lat: 0.4312, lon: 33.1983, health: "98.4%" },
+        { name: "New Karuma Bridge", lat: 2.2367, lon: 32.2472, health: "94.2%" },
+        { name: "Pakwach Nile Bridge", lat: 2.4633, lon: 31.4947, health: "88.7%" }
+      ];
+
+      bridges.forEach(br => {
+        const m = L.circleMarker([br.lat, br.lon], {
+          radius: 8,
+          fillColor: '#6366f1',
+          color: '#ffffff',
+          weight: 2,
+          fillOpacity: 0.95
+        });
+        m.bindPopup(`<div class="p-3 font-mono text-xs"><h4 class="font-bold text-indigo-400">${br.name}</h4><div>Structural Health: ${br.health}</div></div>`);
+        m.addTo(bridgeGroup);
+      });
+    }
+
+    // Toggle Layer Visibility
+    function toggleLayer(layerName) {
+      if (layerName === 'links') {
+        if (leafletMap.hasLayer(linkLayersGroup)) leafletMap.removeLayer(linkLayersGroup);
+        else leafletMap.addLayer(linkLayersGroup);
+      } else if (layerName === 'images') {
+        if (leafletMap.hasLayer(imageMarkersGroup)) leafletMap.removeLayer(imageMarkersGroup);
+        else leafletMap.addLayer(imageMarkersGroup);
+      } else if (layerName === 'weighbridges') {
+        if (leafletMap.hasLayer(weighbridgeGroup)) leafletMap.removeLayer(weighbridgeGroup);
+        else leafletMap.addLayer(weighbridgeGroup);
+      } else if (layerName === 'bridges') {
+        if (leafletMap.hasLayer(bridgeGroup)) leafletMap.removeLayer(bridgeGroup);
+        else leafletMap.addLayer(bridgeGroup);
+      }
+    }
+
+    // 3. Time Series Slider & Animation
+    function onTimeSliderInput(val) {
+      selectedYear = parseInt(val);
+      document.getElementById('time-slider-year-label').innerText = selectedYear;
+      document.getElementById('display-selected-year').innerText = `FY ${selectedYear}`;
+      
+      const statusBadge = document.getElementById('badge-year-status');
+      if (selectedYear < 2026) {
+        statusBadge.innerText = 'Historical Survey';
+        statusBadge.className = 'vci-pill vci-good';
+      } else if (selectedYear === 2026) {
+        statusBadge.innerText = 'Baseline Survey';
+        statusBadge.className = 'vci-pill vci-good';
+      } else {
+        statusBadge.innerText = 'HDM-4 Decay Forecast';
+        statusBadge.className = 'vci-pill vci-poor';
+      }
+
+      renderGISMapLayers();
+      updateTimeSeriesChartHighlight();
+    }
+
+    function setTimeSeriesYear(yr) {
+      document.getElementById('time-series-slider').value = yr;
+      onTimeSliderInput(yr);
+    }
+
+    function toggleTimeSliderPlay() {
+      isPlayingTimeSlider = !isPlayingTimeSlider;
+      const btnIcon = document.getElementById('icon-play-slider');
+      
+      if (isPlayingTimeSlider) {
+        btnIcon.className = 'fa-solid fa-pause';
+        const speed = parseInt(document.getElementById('select-play-speed').value);
+        playIntervalTimer = setInterval(() => {
+          let curr = parseInt(document.getElementById('time-series-slider').value);
+          curr += 2;
+          if (curr > 2030) curr = 2022;
+          setTimeSeriesYear(curr);
+        }, speed);
+      } else {
+        btnIcon.className = 'fa-solid fa-play';
+        clearInterval(playIntervalTimer);
+      }
+    }
+
+    function updatePlaySpeed() {
+      if (isPlayingTimeSlider) {
+        toggleTimeSliderPlay();
+        toggleTimeSliderPlay();
+      }
+    }
+
+    // 4. Initialize Time Series Chart
+    function initTimeSeriesChart() {
+      const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+      timeSeriesChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2022', '2024', '2026', '2028', '2030'],
+          datasets: [
+            {
+              label: 'Without Maintenance (Decay)',
+              data: [91.2, 89.4, 87.0, 83.2, 79.4],
+              borderColor: '#ef4444',
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              borderWidth: 2.5,
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'HDM-4 Investment ($220M)',
+              data: [91.2, 89.4, 87.0, 90.5, 92.8],
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              borderWidth: 2.5,
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+            y: { min: 70, max: 100, ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.05)' } }
+          }
+        }
+      });
+    }
+
+    function updateTimeSeriesChartHighlight() {
+      if (!timeSeriesChart) return;
+      timeSeriesChart.update();
+    }
+
+    // 5. Spatial SQL Query Execution
+    function executeSpatialSQL() {
+      const query = document.getElementById('sql-query-input').value.toLowerCase();
+      if (!networkData) return;
+
+      let matchedLinks = 0;
+      renderGISMapLayers(link => {
+        let match = true;
+        if (query.includes('vci_percent < 70') || query.includes('vci < 70')) {
+          match = parseFloat(link[`vci_${selectedYear}`] || link.vci_2026) < 70;
+        } else if (query.includes('central')) {
+          match = link.region && link.region.toLowerCase() === 'central';
+        } else if (query.includes('bituminous')) {
+          match = link.surface_type && link.surface_type.toLowerCase().includes('bituminous');
+        }
+        if (match) matchedLinks++;
+        return match;
+      });
+
+      const resultsDiv = document.getElementById('sql-results-summary');
+      resultsDiv.classList.remove('hidden');
+      document.getElementById('sql-result-count').innerText = `${matchedLinks} links matched`;
+    }
+
+    function resetSQLFilter() {
+      document.getElementById('sql-query-input').value = 'SELECT * FROM road_links WHERE vci_percent < 70';
+      document.getElementById('sql-results-summary').classList.add('hidden');
+      renderGISMapLayers();
+    }
+
+    // 6. Switch View Mode (2D GIS vs 3D Earth Globe)
+    function switchViewMode(mode) {
+      currentViewMode = mode;
+      const gisBtn = document.getElementById('btn-mode-gis');
+      const globeBtn = document.getElementById('btn-mode-3d');
+      const gisMap = document.getElementById('leaflet-map');
+      const globeCanvas = document.getElementById('canvas-container');
+
+      if (mode === '3d') {
+        gisBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2';
+        globeBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-white bg-blue-600 shadow-md transition flex items-center gap-2';
+        gisMap.style.display = 'none';
+        globeCanvas.style.display = 'block';
+      } else {
+        globeBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2';
+        gisBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-white bg-blue-600 shadow-md transition flex items-center gap-2';
+        globeCanvas.style.display = 'none';
+        gisMap.style.display = 'block';
+      }
+    }
+
+    // 7. Initialize Three.js 3D Earth Globe Engine
+    function init3DGlobe() {
+      const container = document.getElementById('canvas-container');
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x030712);
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 5, 14);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+      scene.add(ambientLight);
+
+      dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      dirLight.position.set(10, 5, 10);
+      scene.add(dirLight);
+
+      const earthGeo = new THREE.SphereGeometry(5, 64, 64);
+      const earthMat = new THREE.MeshStandardMaterial({ color: 0x1e3a5f, roughness: 0.6 });
+      earthMesh = new THREE.Mesh(earthGeo, earthMat);
+      scene.add(earthMesh);
+
+      function animateGlobe() {
+        requestAnimationFrame(animateGlobe);
+        earthMesh.rotation.y += 0.001;
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animateGlobe();
+    }
+  </script>
+</body>
+</html>

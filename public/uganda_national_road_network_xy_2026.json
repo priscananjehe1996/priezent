@@ -1,0 +1,3649 @@
+{
+  "dataset_name": "Uganda National Road Network XY (FY2026-27 NDPIV)",
+  "source_files": [
+    "National Road Network_FY26-27(NDPIV) - draft.xlsx",
+    "networkXY2026.xlsx"
+  ],
+  "generated_at": "2026-09-10 10:57:39",
+  "summary": {
+    "total_network_km": NaN,
+    "paved_bituminous_km": 6405.05,
+    "unpaved_gravel_km": NaN,
+    "total_road_links": 1022,
+    "maintenance_regions": {
+      "Central": 323,
+      "Eastern": 157,
+      "Southern": 175,
+      "Western": 114,
+      "Northern": 159,
+      "North Eastern": 94
+    },
+    "maintenance_stations": {
+      "Kampala": 164,
+      "Jinja": 67,
+      "Tororo": 40,
+      "Mpigi": 35,
+      "Masaka": 42,
+      "Mbarara": 45,
+      "Kabale": 68,
+      "Mubende": 34,
+      "Fort Portal": 39,
+      "Kasese": 26,
+      "Luwero": 48,
+      "Masindi": 29,
+      "Gulu": 30,
+      "Mbale": 50,
+      "Soroti": 44,
+      "Lira": 44,
+      "Arua": 33,
+      "Hoima": 46,
+      "Ibanda": 36,
+      "Moyo": 22,
+      "Kitgum": 30,
+      "Moroto": 24,
+      "Kotido": 26
+    }
+  },
+  "road_links": [
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link01",
+      "road_class": "A",
+      "link_name": "Kampala - Mukono",
+      "length_km": 17.737,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.6089995,
+        0.32624547
+      ],
+      "end_coords": [
+        32.75137469,
+        0.35829878
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link02",
+      "road_class": "A",
+      "link_name": "Mukono - Lugazi",
+      "length_km": 24.142,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.75137469,
+        0.35829878
+      ],
+      "end_coords": [
+        32.94244842,
+        0.36864272
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link03",
+      "road_class": "A",
+      "link_name": "Lugazi - Njeru",
+      "length_km": 30.113,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.94244842,
+        0.36864272
+      ],
+      "end_coords": [
+        33.18347956,
+        0.44236226
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link04",
+      "road_class": "A",
+      "link_name": "Njeru - Jinja",
+      "length_km": 2.3,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.17827143,
+        0.44014521
+      ],
+      "end_coords": [
+        33.19597808,
+        0.44447786
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link05",
+      "road_class": "A",
+      "link_name": "Jinja - Kakira Junction",
+      "length_km": 11.852,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.19804973,
+        0.44542076
+      ],
+      "end_coords": [
+        33.28486365,
+        0.48610141
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link06",
+      "road_class": "A",
+      "link_name": "Kakira junction - Iganga",
+      "length_km": 26.87,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.28486365,
+        0.48610141
+      ],
+      "end_coords": [
+        33.47814985,
+        0.6150131
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link07",
+      "road_class": "A",
+      "link_name": "Iganga - Nakalama",
+      "length_km": 4.907,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.47814985,
+        0.6150131
+      ],
+      "end_coords": [
+        33.51850709,
+        0.6287347
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link08",
+      "road_class": "A",
+      "link_name": "Nakalama - Bugiri - Namutere",
+      "length_km": 28.425,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.51850709,
+        0.6287347
+      ],
+      "end_coords": [
+        33.7565743,
+        0.56309824
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link09",
+      "road_class": "A",
+      "link_name": "Namutere - Busitema Junction",
+      "length_km": 24.986,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        33.7565743,
+        0.56309824
+      ],
+      "end_coords": [
+        33.96771658,
+        0.52505897
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link10",
+      "road_class": "A",
+      "link_name": "Busitema Junction - Tororo junction",
+      "length_km": 28.29,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        33.96771658,
+        0.52505897
+      ],
+      "end_coords": [
+        34.17312424,
+        0.66001653
+      ]
+    },
+    {
+      "road_no": "A001",
+      "link_id": "A001_Link11",
+      "road_class": "A",
+      "link_name": "Tororo junction - Malaba(Uganda/Kenya border)",
+      "length_km": 11.649,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        34.17312424,
+        0.66001653
+      ],
+      "end_coords": [
+        34.26810836,
+        0.63760627
+      ]
+    },
+    {
+      "road_no": "A001N1",
+      "link_id": "A001N1_Link01",
+      "road_class": "A",
+      "link_name": "Njeru - Jinja (Dual Section)",
+      "length_km": 2.865,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.197701,
+        0.444995
+      ],
+      "end_coords": [
+        33.17523465,
+        0.4387756
+      ]
+    },
+    {
+      "road_no": "A001N2",
+      "link_id": "A001N2_Link01",
+      "road_class": "A",
+      "link_name": "Jinja - Kakira Junction(Dual section)",
+      "length_km": 11.853,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.28447378,
+        0.48589887
+      ],
+      "end_coords": [
+        33.197701,
+        0.444995
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link01",
+      "road_class": "A",
+      "link_name": "Kibuye - Natete - Busega",
+      "length_km": 6.524,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57256123,
+        0.29354004
+      ],
+      "end_coords": [
+        32.51601545,
+        0.30629051
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link02",
+      "road_class": "A",
+      "link_name": "Busega - Mpigi",
+      "length_km": 25.342,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.51601545,
+        0.30629051
+      ],
+      "end_coords": [
+        32.33533678,
+        0.22115178
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link03",
+      "road_class": "A",
+      "link_name": "Mpigi - Buwama",
+      "length_km": 32.081,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.3353378,
+        0.22115455
+      ],
+      "end_coords": [
+        32.10590662,
+        0.06234439
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link04",
+      "road_class": "A",
+      "link_name": "Buwama - Lukaya",
+      "length_km": 30.5,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.10590662,
+        0.06234023
+      ],
+      "end_coords": [
+        31.91392275,
+        -0.12775303
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link05",
+      "road_class": "A",
+      "link_name": "Lukaya - Masaka - bypass",
+      "length_km": 34.0,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.91392689,
+        -0.12775303
+      ],
+      "end_coords": [
+        31.71983472,
+        -0.33657705
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link06",
+      "road_class": "A",
+      "link_name": "Masaka - Lyantonde",
+      "length_km": 67.781,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.71983472,
+        -0.33657705
+      ],
+      "end_coords": [
+        31.15429436,
+        -0.40525643
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link07",
+      "road_class": "A",
+      "link_name": "Lyantonde - Mbarara(Bushenyi junction)",
+      "length_km": 67.306,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        31.15429436,
+        -0.40525643
+      ],
+      "end_coords": [
+        30.64930839,
+        -0.61721859
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link08",
+      "road_class": "A",
+      "link_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+      "length_km": 61.729,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.64930839,
+        -0.61721859
+      ],
+      "end_coords": [
+        30.26537981,
+        -0.88148116
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link09",
+      "road_class": "A",
+      "link_name": "Ntungamo - Rubaale",
+      "length_km": 14.951,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        30.26538343,
+        -0.88146879
+      ],
+      "end_coords": [
+        30.20008273,
+        -0.98598011
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link10",
+      "road_class": "A",
+      "link_name": "Rubaale - Muhanga - Kabale",
+      "length_km": 59.407,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        30.20008273,
+        -0.98598011
+      ],
+      "end_coords": [
+        29.99325894,
+        -1.2597451
+      ]
+    },
+    {
+      "road_no": "A002",
+      "link_id": "A002_Link11",
+      "road_class": "A",
+      "link_name": "Kabale - Katuna",
+      "length_km": 21.697,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        29.99325894,
+        -1.2597451
+      ],
+      "end_coords": [
+        30.01175,
+        -1.42477001
+      ]
+    },
+    {
+      "road_no": "A003",
+      "link_id": "A003_Link01",
+      "road_class": "A",
+      "link_name": "Kibuye - Zana",
+      "length_km": 4.891,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57282196,
+        0.2932329
+      ],
+      "end_coords": [
+        32.56224772,
+        0.25225732
+      ]
+    },
+    {
+      "road_no": "A003",
+      "link_id": "A003_Link02",
+      "road_class": "A",
+      "link_name": "Zana - Entebbe Airport",
+      "length_km": 32.016,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.56224772,
+        0.25225732
+      ],
+      "end_coords": [
+        32.44436208,
+        0.04513618
+      ]
+    },
+    {
+      "road_no": "A003N1",
+      "link_id": "A003N1_Link01",
+      "road_class": "A",
+      "link_name": "Kibuye - Zana(Dual Section)",
+      "length_km": 4.953,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.56202361,
+        0.25232999
+      ],
+      "end_coords": [
+        32.57266124,
+        0.29332227
+      ]
+    },
+    {
+      "road_no": "A003N2",
+      "link_id": "A003N2_Link01",
+      "road_class": "A",
+      "link_name": "Entebbe Airport (Dual)",
+      "length_km": 12.951,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.44434343,
+        0.0452175
+      ],
+      "end_coords": [
+        32.50971273,
+        0.10286242
+      ]
+    },
+    {
+      "road_no": "A003N3",
+      "link_id": "A003N3_Link01",
+      "road_class": "A",
+      "link_name": "Kajjansi (Dual)",
+      "length_km": 0.353,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.54153291,
+        0.21039202
+      ],
+      "end_coords": [
+        32.54232096,
+        0.21324611
+      ]
+    },
+    {
+      "road_no": "A004",
+      "link_id": "A004_Link01",
+      "road_class": "A",
+      "link_name": "Masaka round about - Kyotera",
+      "length_km": 44.248,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.71982029,
+        -0.33659629
+      ],
+      "end_coords": [
+        31.54081004,
+        -0.63551047
+      ]
+    },
+    {
+      "road_no": "A004",
+      "link_id": "A004_Link02",
+      "road_class": "A",
+      "link_name": "Kyotera - Mutukula",
+      "length_km": 44.654,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.54081004,
+        -0.63551047
+      ],
+      "end_coords": [
+        31.41666731,
+        -1.00015209
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link01",
+      "road_class": "A",
+      "link_name": "Busega - Bujuuko",
+      "length_km": 32.23,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.37043248,
+        0.33354164
+      ],
+      "end_coords": [
+        32.2589371,
+        0.37690412
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link02",
+      "road_class": "A",
+      "link_name": "Bujuuko - Mityana",
+      "length_km": 26.736,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.2589371,
+        0.37690412
+      ],
+      "end_coords": [
+        32.03910088,
+        0.40751216
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link03",
+      "road_class": "A",
+      "link_name": "Mityana - Naama - Myanzi",
+      "length_km": 15.842,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        32.03910088,
+        0.40751216
+      ],
+      "end_coords": [
+        31.90378061,
+        0.43556583
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link04",
+      "road_class": "A",
+      "link_name": "Myanzi - Kiganda",
+      "length_km": 27.705,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.90378061,
+        0.43556583
+      ],
+      "end_coords": [
+        31.66853024,
+        0.45663587
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link05",
+      "road_class": "A",
+      "link_name": "Kiganda-Kitenga",
+      "length_km": 20.351,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.66853024,
+        0.45663587
+      ],
+      "end_coords": [
+        31.50718676,
+        0.50400195
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link06",
+      "road_class": "A",
+      "link_name": "Kitenga-Mubende-Lusalira",
+      "length_km": 29.794,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.50718676,
+        0.50400195
+      ],
+      "end_coords": [
+        31.28047681,
+        0.49786632
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link07",
+      "road_class": "A",
+      "link_name": "Lusalira - Nabingoola - Lubaale",
+      "length_km": 16.3,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.28047681,
+        0.49786632
+      ],
+      "end_coords": [
+        31.14621558,
+        0.49239733
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link08",
+      "road_class": "A",
+      "link_name": "Lubaale - Kyegegwa",
+      "length_km": 12.0,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        31.14621558,
+        0.49239733
+      ],
+      "end_coords": [
+        31.04895033,
+        0.48497849
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link09",
+      "road_class": "A",
+      "link_name": "Kyegegwa - Kakabala - Kyenjojo",
+      "length_km": 52.261,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        31.04895033,
+        0.48497849
+      ],
+      "end_coords": [
+        30.6417331,
+        0.61290978
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link10",
+      "road_class": "A",
+      "link_name": "Kyenjojo - Rugombe - Fortportal",
+      "length_km": 49.811,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        30.6417331,
+        0.61290978
+      ],
+      "end_coords": [
+        30.27468306,
+        0.6529176
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link11",
+      "road_class": "A",
+      "link_name": "FortPortal - Rwimi(bridge)",
+      "length_km": 44.681,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        30.27468306,
+        0.6529176
+      ],
+      "end_coords": [
+        30.21134346,
+        0.37328383
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link12",
+      "road_class": "A",
+      "link_name": "Rwimi(bridge)-Hima-Mubuku",
+      "length_km": 17.802,
+      "surface_type": "Bituminous",
+      "station": "Kasese",
+      "region": "Southern",
+      "start_coords": [
+        30.21134346,
+        0.37328383
+      ],
+      "end_coords": [
+        30.12311223,
+        0.26133415
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link13",
+      "road_class": "A",
+      "link_name": "Mubuku - Kasese",
+      "length_km": 11.617,
+      "surface_type": "Bituminous",
+      "station": "Kasese",
+      "region": "Southern",
+      "start_coords": [
+        30.12311223,
+        0.26133415
+      ],
+      "end_coords": [
+        30.08556793,
+        0.17199559
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link14",
+      "road_class": "A",
+      "link_name": "Kasese - Kikorongo",
+      "length_km": 21.956,
+      "surface_type": "Bituminous",
+      "station": "Kasese",
+      "region": "Southern",
+      "start_coords": [
+        30.08556793,
+        0.17199559
+      ],
+      "end_coords": [
+        29.99889731,
+        0.00011878
+      ]
+    },
+    {
+      "road_no": "A005",
+      "link_id": "A005_Link15",
+      "road_class": "A",
+      "link_name": "Kikorongo - Bwera - Mpondwe",
+      "length_km": 38.25,
+      "surface_type": "Bituminous",
+      "station": "Kasese",
+      "region": "Southern",
+      "start_coords": [
+        29.99889731,
+        0.00011878
+      ],
+      "end_coords": [
+        29.72020776,
+        0.04122282
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link01",
+      "road_class": "A",
+      "link_name": "Kampala - Kawempe",
+      "length_km": 7.675,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57167942,
+        0.34036034
+      ],
+      "end_coords": [
+        32.54567572,
+        0.40097277
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link02",
+      "road_class": "A",
+      "link_name": "Kawempe - Matuga",
+      "length_km": 8.591,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.54567572,
+        0.40097277
+      ],
+      "end_coords": [
+        32.52104732,
+        0.46588882
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link03",
+      "road_class": "A",
+      "link_name": "Matuga - Wobulenzi",
+      "length_km": 28.92,
+      "surface_type": "Bituminous",
+      "station": "Luwero",
+      "region": "Central",
+      "start_coords": [
+        32.52104732,
+        0.46588882
+      ],
+      "end_coords": [
+        32.52820666,
+        0.71784714
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link04",
+      "road_class": "A",
+      "link_name": "Wobulenzi - Kasana - Luweero",
+      "length_km": 15.644,
+      "surface_type": "Bituminous",
+      "station": "Luwero",
+      "region": "Central",
+      "start_coords": [
+        32.52820666,
+        0.71784714
+      ],
+      "end_coords": [
+        32.48832156,
+        0.84914136
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link05",
+      "road_class": "A",
+      "link_name": "Luweero - Nakasongola",
+      "length_km": 54.829,
+      "surface_type": "Bituminous",
+      "station": "Luwero",
+      "region": "Central",
+      "start_coords": [
+        32.48832156,
+        0.84914136
+      ],
+      "end_coords": [
+        32.42216022,
+        1.32692645
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link06",
+      "road_class": "A",
+      "link_name": "Nakasongola - Kafu",
+      "length_km": 52.216,
+      "surface_type": "Bituminous",
+      "station": "Luwero",
+      "region": "Central",
+      "start_coords": [
+        32.42216022,
+        1.32692645
+      ],
+      "end_coords": [
+        32.04145866,
+        1.54512622
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link07",
+      "road_class": "A",
+      "link_name": "Kafu - Kigumba",
+      "length_km": 29.676,
+      "surface_type": "Bituminous",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        32.04145866,
+        1.54512622
+      ],
+      "end_coords": [
+        32.01162029,
+        1.80970221
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link08",
+      "road_class": "A",
+      "link_name": "Kigumba - Karuma",
+      "length_km": 56.735,
+      "surface_type": "Bituminous",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        32.01162029,
+        1.80970221
+      ],
+      "end_coords": [
+        32.23982928,
+        2.24252948
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link09",
+      "road_class": "A",
+      "link_name": "Karuma - Kamdini",
+      "length_km": 12.157,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.23982928,
+        2.24252948
+      ],
+      "end_coords": [
+        32.33105173,
+        2.24664132
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link10",
+      "road_class": "A",
+      "link_name": "Kamdini - Minakulu",
+      "length_km": 24.24,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.33105173,
+        2.24664132
+      ],
+      "end_coords": [
+        32.37945624,
+        2.44595938
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link11",
+      "road_class": "A",
+      "link_name": "Minakulu - Bobi - Gulu",
+      "length_km": 37.495,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.37945624,
+        2.44595938
+      ],
+      "end_coords": [
+        32.29745743,
+        2.77164124
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link12",
+      "road_class": "A",
+      "link_name": "Gulu - Atiak",
+      "length_km": 68.164,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.29745743,
+        2.77164124
+      ],
+      "end_coords": [
+        32.12118367,
+        3.2544971
+      ]
+    },
+    {
+      "road_no": "A006",
+      "link_id": "A006_Link13",
+      "road_class": "A",
+      "link_name": "Atiak - Nimule(Uganda/Sudan border)",
+      "length_km": 37.275,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.12118367,
+        3.2544971
+      ],
+      "end_coords": [
+        32.07322101,
+        3.57095368
+      ]
+    },
+    {
+      "road_no": "A006N1",
+      "link_id": "A006N1_Link01",
+      "road_class": "A",
+      "link_name": "Bwaise (Dual)",
+      "length_km": 0.721,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.5627628,
+        0.35455528
+      ],
+      "end_coords": [
+        32.56386189,
+        0.34836558
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link01",
+      "road_class": "A",
+      "link_name": "Malaba junction - Tororo",
+      "length_km": 3.751,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        34.17301452,
+        0.66000923
+      ],
+      "end_coords": [
+        34.18081564,
+        0.69299599
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link02",
+      "road_class": "A",
+      "link_name": "Tororo - Magodes - Nabumali",
+      "length_km": 33.7,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        34.18081564,
+        0.69299599
+      ],
+      "end_coords": [
+        34.16706613,
+        0.98350443
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link03",
+      "road_class": "A",
+      "link_name": "Nabumali - Mbale",
+      "length_km": 10.228,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.16706613,
+        0.98350443
+      ],
+      "end_coords": [
+        34.17539237,
+        1.07005472
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link04",
+      "road_class": "A",
+      "link_name": "Mbale - Namunsi - Kumi",
+      "length_km": 54.686,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.17539237,
+        1.07005472
+      ],
+      "end_coords": [
+        33.93875259,
+        1.48668086
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link05",
+      "road_class": "A",
+      "link_name": "Kumi - Soroti",
+      "length_km": 46.745,
+      "surface_type": "Bituminous",
+      "station": "Soroti",
+      "region": "North Eastern",
+      "start_coords": [
+        33.93875259,
+        1.48668086
+      ],
+      "end_coords": [
+        33.62124567,
+        1.71532775
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link06",
+      "road_class": "A",
+      "link_name": "Soroti - Dokolo",
+      "length_km": 67.444,
+      "surface_type": "Bituminous",
+      "station": "Soroti",
+      "region": "North Eastern",
+      "start_coords": [
+        33.62124567,
+        1.71532775
+      ],
+      "end_coords": [
+        33.17587849,
+        1.91650279
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link07",
+      "road_class": "A",
+      "link_name": "Dokolo - Agwata",
+      "length_km": 23.493,
+      "surface_type": "Bituminous",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        33.17587849,
+        1.91650279
+      ],
+      "end_coords": [
+        32.9830533,
+        1.97498811
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link08",
+      "road_class": "A",
+      "link_name": "Agwata - Lira",
+      "length_km": 31.149,
+      "surface_type": "Bituminous",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.9830533,
+        1.97498811
+      ],
+      "end_coords": [
+        32.89343863,
+        2.23700128
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link09",
+      "road_class": "A",
+      "link_name": "Lira - Ayer",
+      "length_km": 27.084,
+      "surface_type": "Bituminous",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.89343863,
+        2.23700128
+      ],
+      "end_coords": [
+        32.68705853,
+        2.31619584
+      ]
+    },
+    {
+      "road_no": "A007",
+      "link_id": "A007_Link10",
+      "road_class": "A",
+      "link_name": "Ayer - Kamdini",
+      "length_km": 43.956,
+      "surface_type": "Bituminous",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.68705013,
+        2.31619568
+      ],
+      "end_coords": [
+        32.33082693,
+        2.24664318
+      ]
+    },
+    {
+      "road_no": "A007N1",
+      "link_id": "A007N1_Link01",
+      "road_class": "A",
+      "link_name": "Mbale(Dual Section)",
+      "length_km": 0.75,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.17861303,
+        1.0769692
+      ],
+      "end_coords": [
+        34.17501683,
+        1.07095853
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link01",
+      "road_class": "A",
+      "link_name": "Karuma - Olwiyo",
+      "length_km": 51.633,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.24283829,
+        2.25497346
+      ],
+      "end_coords": [
+        31.88545107,
+        2.53695431
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link02",
+      "road_class": "A",
+      "link_name": "Olwiyo - Packwach",
+      "length_km": 54.406,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        31.88545107,
+        2.53695431
+      ],
+      "end_coords": [
+        31.5078894,
+        2.45859217
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link03",
+      "road_class": "A",
+      "link_name": "Packwach - Nebbi",
+      "length_km": 53.49,
+      "surface_type": "Bituminous",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        31.5078894,
+        2.45859217
+      ],
+      "end_coords": [
+        31.08999887,
+        2.47887436
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link04",
+      "road_class": "A",
+      "link_name": "Nebbi - Eruba",
+      "length_km": 63.79,
+      "surface_type": "Bituminous",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        31.08999887,
+        2.47887436
+      ],
+      "end_coords": [
+        30.96349715,
+        2.94603039
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link05",
+      "road_class": "A",
+      "link_name": "Eruba - Arua - Manibe",
+      "length_km": 18.82,
+      "surface_type": "Bituminous",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        30.96349715,
+        2.94603039
+      ],
+      "end_coords": [
+        30.92830646,
+        3.06039737
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link06",
+      "road_class": "A",
+      "link_name": "Manibe - Maracha - Koboko",
+      "length_km": 49.903,
+      "surface_type": "Bituminous",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        30.92830646,
+        3.06039737
+      ],
+      "end_coords": [
+        30.96000274,
+        3.41521113
+      ]
+    },
+    {
+      "road_no": "A008",
+      "link_id": "A008_Link07",
+      "road_class": "A",
+      "link_name": "Koboko - Oraba(Uganda/Sudan border)",
+      "length_km": 18.845,
+      "surface_type": "Bituminous",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        30.96000274,
+        3.41521113
+      ],
+      "end_coords": [
+        30.88348709,
+        3.53965391
+      ]
+    },
+    {
+      "road_no": "A009",
+      "link_id": "A009_Link01",
+      "road_class": "A",
+      "link_name": "Kampala - Nansana",
+      "length_km": 5.305,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.56052993,
+        0.32463391
+      ],
+      "end_coords": [
+        32.53226068,
+        0.35882451
+      ]
+    },
+    {
+      "road_no": "A009",
+      "link_id": "A009_Link02",
+      "road_class": "A",
+      "link_name": "Nansana - Busunju",
+      "length_km": 45.559,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.53226068,
+        0.35882451
+      ],
+      "end_coords": [
+        32.20856603,
+        0.56499892
+      ]
+    },
+    {
+      "road_no": "A009",
+      "link_id": "A009_Link03",
+      "road_class": "A",
+      "link_name": "Busunju - Kiboga - Lwamata",
+      "length_km": 50.0,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.20856603,
+        0.56499892
+      ],
+      "end_coords": [
+        31.89871963,
+        0.82997911
+      ]
+    },
+    {
+      "road_no": "A009",
+      "link_id": "A009_Link04",
+      "road_class": "A",
+      "link_name": "Lwamata - Hoima",
+      "length_km": 96.5,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.89871963,
+        0.82997911
+      ],
+      "end_coords": [
+        31.35009164,
+        1.43676
+      ]
+    },
+    {
+      "road_no": "A009N1",
+      "link_id": "A009N1_Link01",
+      "road_class": "A",
+      "link_name": "Kasubi (Dual)",
+      "length_km": 1.365,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.55397224,
+        0.33272672
+      ],
+      "end_coords": [
+        32.56052993,
+        0.32463391
+      ]
+    },
+    {
+      "road_no": "A009N2",
+      "link_id": "A009N2_Link01",
+      "road_class": "A",
+      "link_name": "Namungoona (Dual)",
+      "length_km": 0.519,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.54059504,
+        0.34781499
+      ],
+      "end_coords": [
+        32.5431861,
+        0.34424904
+      ]
+    },
+    {
+      "road_no": "A010",
+      "link_id": "A010_Link01",
+      "road_class": "A",
+      "link_name": "Nsambya-Kabalagala-Gaba",
+      "length_km": 9.144,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.58313377,
+        0.30690963
+      ],
+      "end_coords": [
+        32.63677955,
+        0.25615212
+      ]
+    },
+    {
+      "road_no": "A012",
+      "link_id": "A012_Link01",
+      "road_class": "A",
+      "link_name": "Nakalama - Namutumba - Mpologoma bridge",
+      "length_km": 46.333,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.51802663,
+        0.62846184
+      ],
+      "end_coords": [
+        33.73783885,
+        0.96721762
+      ]
+    },
+    {
+      "road_no": "A012",
+      "link_id": "A012_Link02",
+      "road_class": "A",
+      "link_name": "Mpologoma bridge - Tirinyi",
+      "length_km": 4.748,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        33.73783885,
+        0.96721762
+      ],
+      "end_coords": [
+        33.76269341,
+        1.0010514
+      ]
+    },
+    {
+      "road_no": "A012",
+      "link_id": "A012_Link03",
+      "road_class": "A",
+      "link_name": "Tirinyi - Budaka - Kamonkoli",
+      "length_km": 38.859,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        33.76269341,
+        1.0010514
+      ],
+      "end_coords": [
+        34.09528484,
+        1.07503808
+      ]
+    },
+    {
+      "road_no": "A012",
+      "link_id": "A012_Link04",
+      "road_class": "A",
+      "link_name": "Kamonkoli - Mbale",
+      "length_km": 9.395,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.09528484,
+        1.07503808
+      ],
+      "end_coords": [
+        34.174884,
+        1.07138816
+      ]
+    },
+    {
+      "road_no": "B100",
+      "link_id": "B100_Link01",
+      "road_class": "B",
+      "link_name": "Kubiri round about - Gayaza",
+      "length_km": 13.346,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57145823,
+        0.34074591
+      ],
+      "end_coords": [
+        32.61200043,
+        0.44811615
+      ]
+    },
+    {
+      "road_no": "B100",
+      "link_id": "B100_Link02",
+      "road_class": "B",
+      "link_name": "Gayaza - Kalagi",
+      "length_km": 20.154,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.61200043,
+        0.44811615
+      ],
+      "end_coords": [
+        32.74901789,
+        0.5039739
+      ]
+    },
+    {
+      "road_no": "B100N1",
+      "link_id": "B100N1_Link01",
+      "road_class": "B",
+      "link_name": "Kalerwe (Dual)",
+      "length_km": 1.725,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57298093,
+        0.35589033
+      ],
+      "end_coords": [
+        32.57183223,
+        0.34082557
+      ]
+    },
+    {
+      "road_no": "B101",
+      "link_id": "B101_Link01",
+      "road_class": "B",
+      "link_name": "Mukono - Kalagi",
+      "length_km": 17.866,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.75124926,
+        0.35836158
+      ],
+      "end_coords": [
+        32.74938888,
+        0.50427735
+      ]
+    },
+    {
+      "road_no": "B101",
+      "link_id": "B101_Link02",
+      "road_class": "B",
+      "link_name": "Kalagi - Bukoloto - Kayunga",
+      "length_km": 31.673,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.74938888,
+        0.50427735
+      ],
+      "end_coords": [
+        32.90449274,
+        0.70102048
+      ]
+    },
+    {
+      "road_no": "B101",
+      "link_id": "B101_Link03",
+      "road_class": "B",
+      "link_name": "Kayunga - Busana - Isimba",
+      "length_km": 20.157,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.90447928,
+        0.70101869
+      ],
+      "end_coords": [
+        33.0484082,
+        0.7756279
+      ]
+    },
+    {
+      "road_no": "B101",
+      "link_id": "B101_Link04",
+      "road_class": "B",
+      "link_name": "Isimba - Mbulamuti - Kamuli",
+      "length_km": 13.531,
+      "surface_type": "Unsealed",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.04354014,
+        0.7758733
+      ],
+      "end_coords": [
+        33.10869079,
+        0.9145497
+      ]
+    },
+    {
+      "road_no": "B102",
+      "link_id": "B102_Link01",
+      "road_class": "B",
+      "link_name": "Njeru - Bukoloto",
+      "length_km": 42.591,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.17827145,
+        0.44014524
+      ],
+      "end_coords": [
+        32.91226804,
+        0.68734357
+      ]
+    },
+    {
+      "road_no": "B103",
+      "link_id": "B103_Link01",
+      "road_class": "B",
+      "link_name": "Nyendo - Villa Maria",
+      "length_km": 10.113,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.75639191,
+        -0.30876222
+      ],
+      "end_coords": [
+        31.7375164,
+        -0.23115846
+      ]
+    },
+    {
+      "road_no": "B103",
+      "link_id": "B103_Link02",
+      "road_class": "B",
+      "link_name": "Villa Maria - Sembabule",
+      "length_km": 36.0,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.7375164,
+        -0.23115846
+      ],
+      "end_coords": [
+        31.46148275,
+        -0.08193461
+      ]
+    },
+    {
+      "road_no": "B103",
+      "link_id": "nan",
+      "road_class": "B",
+      "link_name": "Sembabule - Lwemiyaga junction - Nkonge",
+      "length_km": 59.3,
+      "surface_type": "Unsealed",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        NaN,
+        NaN
+      ],
+      "end_coords": [
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "road_no": "B103",
+      "link_id": "B103_Link03",
+      "road_class": "B",
+      "link_name": "Nkonge - Kibula - Magege - Kasambya",
+      "length_km": 18.8,
+      "surface_type": "Unsealed",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.18628445,
+        0.23455342
+      ],
+      "end_coords": [
+        31.22792873,
+        0.38068667
+      ]
+    },
+    {
+      "road_no": "B103",
+      "link_id": "B103_Link04",
+      "road_class": "B",
+      "link_name": "Kasambya - Lusalira",
+      "length_km": 17.289,
+      "surface_type": "Unsealed",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.22792873,
+        0.38068667
+      ],
+      "end_coords": [
+        31.28617838,
+        0.49727108
+      ]
+    },
+    {
+      "road_no": "B150",
+      "link_id": "B150_Link01",
+      "road_class": "B",
+      "link_name": "Ishanyu - Bwizibwera",
+      "length_km": 18.949,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.60991175,
+        -0.59819257
+      ],
+      "end_coords": [
+        30.57413118,
+        -0.4398736
+      ]
+    },
+    {
+      "road_no": "B150",
+      "link_id": "B150_Link02",
+      "road_class": "B",
+      "link_name": "Bwizibwera - Ibanda",
+      "length_km": 45.806,
+      "surface_type": "Bituminous",
+      "station": "Ibanda",
+      "region": "Southern",
+      "start_coords": [
+        30.57413118,
+        -0.4398736
+      ],
+      "end_coords": [
+        30.5006984,
+        -0.13074205
+      ]
+    },
+    {
+      "road_no": "B150",
+      "link_id": "B150_Link03",
+      "road_class": "B",
+      "link_name": "Ibanda - Muziza - Kamwenge",
+      "length_km": 44.461,
+      "surface_type": "Bituminous",
+      "station": "Ibanda",
+      "region": "Southern",
+      "start_coords": [
+        30.5006984,
+        -0.13074205
+      ],
+      "end_coords": [
+        30.45341823,
+        0.18574067
+      ]
+    },
+    {
+      "road_no": "B150",
+      "link_id": "B150_Link04",
+      "road_class": "B",
+      "link_name": "Kamwenge - Fortportal",
+      "length_km": 64.78,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        30.45280301,
+        0.18540196
+      ],
+      "end_coords": [
+        30.27798418,
+        0.65658214
+      ]
+    },
+    {
+      "road_no": "B151",
+      "link_id": "B151_Link01",
+      "road_class": "B",
+      "link_name": "Mbarara - Ishanyu",
+      "length_km": 4.934,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.64849215,
+        -0.61733631
+      ],
+      "end_coords": [
+        30.60989631,
+        -0.5981851
+      ]
+    },
+    {
+      "road_no": "B151",
+      "link_id": "B151_Link02",
+      "road_class": "B",
+      "link_name": "Ishanyu - Kabwohe",
+      "length_km": 26.171,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.60989631,
+        -0.5981851
+      ],
+      "end_coords": [
+        30.37830445,
+        -0.58009605
+      ]
+    },
+    {
+      "road_no": "B151",
+      "link_id": "B151_Link03",
+      "road_class": "B",
+      "link_name": "Kabwohe - Ishaka",
+      "length_km": 28.078,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.37830445,
+        -0.58009605
+      ],
+      "end_coords": [
+        30.13900309,
+        -0.54504758
+      ]
+    },
+    {
+      "road_no": "B152",
+      "link_id": "B152_Link01",
+      "road_class": "B",
+      "link_name": "Ntungamo - Kagamba",
+      "length_km": 15.229,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        30.26541001,
+        -0.88133001
+      ],
+      "end_coords": [
+        30.15991876,
+        -0.81796157
+      ]
+    },
+    {
+      "road_no": "B152",
+      "link_id": "B152_Link02",
+      "road_class": "B",
+      "link_name": "Kagamba - Ishaka",
+      "length_km": 35.906,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        30.15991876,
+        -0.81796157
+      ],
+      "end_coords": [
+        30.13850218,
+        -0.5451867
+      ]
+    },
+    {
+      "road_no": "B152",
+      "link_id": "B152_Link03",
+      "road_class": "B",
+      "link_name": "Ishaka - Buhinda - Rugazi",
+      "length_km": 39.3,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        30.13850218,
+        -0.5451867
+      ],
+      "end_coords": [
+        30.09106903,
+        -0.2550689
+      ]
+    },
+    {
+      "road_no": "B152",
+      "link_id": "B152_Link04",
+      "road_class": "B",
+      "link_name": "Rugazi - Katunguru - Kikorongo",
+      "length_km": 33.1,
+      "surface_type": "Bituminous",
+      "station": "Kasese",
+      "region": "Southern",
+      "start_coords": [
+        30.09106903,
+        -0.2550689
+      ],
+      "end_coords": [
+        29.99901399,
+        0.00028099
+      ]
+    },
+    {
+      "road_no": "B153",
+      "link_id": "B153_Link01",
+      "road_class": "B",
+      "link_name": "Kabale - Ikumba - Muko",
+      "length_km": 41.999,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        29.97401709,
+        -1.24476438
+      ],
+      "end_coords": [
+        29.80256547,
+        -1.20519874
+      ]
+    },
+    {
+      "road_no": "B153",
+      "link_id": "B153_Link02",
+      "road_class": "B",
+      "link_name": "Muko - Nyakabande - Kisoro",
+      "length_km": 33.845,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        29.80256547,
+        -1.20519874
+      ],
+      "end_coords": [
+        29.68805359,
+        -1.28343733
+      ]
+    },
+    {
+      "road_no": "B153",
+      "link_id": "B153_Link03",
+      "road_class": "B",
+      "link_name": "Kisoro - Bunagana",
+      "length_km": 12.026,
+      "surface_type": "Bituminous",
+      "station": "Kabale",
+      "region": "Southern",
+      "start_coords": [
+        29.68805359,
+        -1.28343733
+      ],
+      "end_coords": [
+        29.59818224,
+        -1.29568028
+      ]
+    },
+    {
+      "road_no": "B200",
+      "link_id": "B200_Link01",
+      "road_class": "B",
+      "link_name": "Kafu - Masindi",
+      "length_km": 43.263,
+      "surface_type": "Bituminous",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        32.04145866,
+        1.54512622
+      ],
+      "end_coords": [
+        31.70284307,
+        1.68065608
+      ]
+    },
+    {
+      "road_no": "B201",
+      "link_id": "B201_Link01",
+      "road_class": "B",
+      "link_name": "Kigumba - Masindi",
+      "length_km": 39.058,
+      "surface_type": "Bituminous",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        32.0114663,
+        1.80943804
+      ],
+      "end_coords": [
+        31.71476301,
+        1.6900827
+      ]
+    },
+    {
+      "road_no": "B202",
+      "link_id": "B202_Link01",
+      "road_class": "B",
+      "link_name": "Kyenjojo - Katoke - R. Muzizi",
+      "length_km": 37.9,
+      "surface_type": "Bituminous",
+      "station": "Fort Portal",
+      "region": "Western",
+      "start_coords": [
+        30.64347879,
+        0.61180212
+      ],
+      "end_coords": [
+        30.73068207,
+        0.87315673
+      ]
+    },
+    {
+      "road_no": "B202",
+      "link_id": "B202_Link02",
+      "road_class": "B",
+      "link_name": "R. Muzizi - Muhooro - Kagadi",
+      "length_km": 15.0,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        30.80900746,
+        0.938118
+      ],
+      "end_coords": [
+        30.73068207,
+        0.87315673
+      ]
+    },
+    {
+      "road_no": "B202",
+      "link_id": "B202_Link03",
+      "road_class": "B",
+      "link_name": "Kagadi - Mabale - Kabwoya",
+      "length_km": 49.704,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.083591470000002,
+        1.24623753
+      ],
+      "end_coords": [
+        30.80900746,
+        0.938118
+      ]
+    },
+    {
+      "road_no": "B202",
+      "link_id": "B202_Link04",
+      "road_class": "B",
+      "link_name": "Kabwoya - Kiziranfumbi - Buhimba",
+      "length_km": 31.503,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.083591470000002,
+        1.24623753
+      ],
+      "end_coords": [
+        31.31238866,
+        1.34680677
+      ]
+    },
+    {
+      "road_no": "B202",
+      "link_id": "B202_Link05",
+      "road_class": "B",
+      "link_name": "Buhimba - Hoima",
+      "length_km": 10.573,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.31238866,
+        1.34680677
+      ],
+      "end_coords": [
+        31.35385614,
+        1.43252309
+      ]
+    },
+    {
+      "road_no": "B203",
+      "link_id": "B203_Link01",
+      "road_class": "B",
+      "link_name": "Mubende - Kiboyo - Kakumiro",
+      "length_km": 30.499,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.389098,
+        0.56165897
+      ],
+      "end_coords": [
+        31.32358396,
+        0.78177968
+      ]
+    },
+    {
+      "road_no": "B203",
+      "link_id": "B203_Link02",
+      "road_class": "B",
+      "link_name": "Kakumiro - Nkondo - Kijaguza - Bulamagi- Kabaale swamp",
+      "length_km": 77.0,
+      "surface_type": "Bituminous",
+      "station": "Mubende",
+      "region": "Central",
+      "start_coords": [
+        31.32358396,
+        0.78177968
+      ],
+      "end_coords": [
+        31.28967,
+        1.2102045
+      ]
+    },
+    {
+      "road_no": "B203",
+      "link_id": "B203_Link03",
+      "road_class": "B",
+      "link_name": "Kabaale Swamp - Buhimba",
+      "length_km": 16.0,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.28964535,
+        1.21021146
+      ],
+      "end_coords": [
+        31.31217739,
+        1.34674749
+      ]
+    },
+    {
+      "road_no": "B204",
+      "link_id": "B204_Link01",
+      "road_class": "B",
+      "link_name": "Masindi - Kisalizi",
+      "length_km": 31.469,
+      "surface_type": "Bituminous",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        31.70284307,
+        1.68065608
+      ],
+      "end_coords": [
+        31.51670457,
+        1.50366405
+      ]
+    },
+    {
+      "road_no": "B204",
+      "link_id": "B204_Link02",
+      "road_class": "B",
+      "link_name": "Kisalizi - Hoima",
+      "length_km": 20.3,
+      "surface_type": "Bituminous",
+      "station": "Hoima",
+      "region": "Western",
+      "start_coords": [
+        31.51670457,
+        1.50366405
+      ],
+      "end_coords": [
+        31.37138892,
+        1.42169365
+      ]
+    },
+    {
+      "road_no": "B250",
+      "link_id": "B250_Link01",
+      "road_class": "B",
+      "link_name": "Atiak - Moyo",
+      "length_km": 64.878,
+      "surface_type": "Bituminous",
+      "station": "Moyo",
+      "region": "Northern",
+      "start_coords": [
+        31.81112986,
+        3.54538264
+      ],
+      "end_coords": [
+        31.72354098,
+        3.65374128
+      ]
+    },
+    {
+      "road_no": "B250",
+      "link_id": "nan",
+      "road_class": "B",
+      "link_name": "Laropi - Moyo",
+      "length_km": 26.702,
+      "surface_type": "Unsealed",
+      "station": "Moyo",
+      "region": "Northern",
+      "start_coords": [
+        NaN,
+        NaN
+      ],
+      "end_coords": [
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "road_no": "B250",
+      "link_id": "B250_Link02",
+      "road_class": "B",
+      "link_name": "Moyo - Yumbe",
+      "length_km": 65.954,
+      "surface_type": "Unsealed",
+      "station": "Moyo",
+      "region": "Northern",
+      "start_coords": [
+        31.72354098,
+        3.65374128
+      ],
+      "end_coords": [
+        31.24756612,
+        3.46995197
+      ]
+    },
+    {
+      "road_no": "B250",
+      "link_id": "B250_Link03",
+      "road_class": "B",
+      "link_name": "Yumbe - Manibe",
+      "length_km": 77.123,
+      "surface_type": "Unsealed",
+      "station": "Arua",
+      "region": "Northern",
+      "start_coords": [
+        31.24756612,
+        3.46995197
+      ],
+      "end_coords": [
+        30.92916092,
+        3.06109017
+      ]
+    },
+    {
+      "road_no": "B251",
+      "link_id": "B251_Link01",
+      "road_class": "B",
+      "link_name": "Gulu - Olwiyo",
+      "length_km": 61.808,
+      "surface_type": "Bituminous",
+      "station": "Gulu",
+      "region": "Northern",
+      "start_coords": [
+        32.27922901,
+        2.76120334
+      ],
+      "end_coords": [
+        31.88576803,
+        2.53687683
+      ]
+    },
+    {
+      "road_no": "B252",
+      "link_id": "B252_Link01",
+      "road_class": "B",
+      "link_name": "Lira - Puranga Bridge",
+      "length_km": 42.9,
+      "surface_type": "Unsealed",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.90063672,
+        2.24869997
+      ],
+      "end_coords": [
+        32.94252467,
+        2.60646202
+      ]
+    },
+    {
+      "road_no": "B252",
+      "link_id": "B252_Link02",
+      "road_class": "B",
+      "link_name": "Puranga Bridge - Corner Kilak - Pejule - Acholibur",
+      "length_km": 61.6,
+      "surface_type": "Unsealed",
+      "station": "Kitgum",
+      "region": "Northern",
+      "start_coords": [
+        32.94252467,
+        2.60646202
+      ],
+      "end_coords": [
+        32.9138638,
+        3.14378822
+      ]
+    },
+    {
+      "road_no": "B252",
+      "link_id": "B252_Link03",
+      "road_class": "B",
+      "link_name": "Acholibur - Kitgum",
+      "length_km": 19.755,
+      "surface_type": "Bituminous",
+      "station": "Kitgum",
+      "region": "Northern",
+      "start_coords": [
+        32.9138638,
+        3.14378822
+      ],
+      "end_coords": [
+        32.88013009,
+        3.30340249
+      ]
+    },
+    {
+      "road_no": "B252",
+      "link_id": "B252_Link04",
+      "road_class": "B",
+      "link_name": "Kitgum - Madi Opei",
+      "length_km": 45.456,
+      "surface_type": "Bituminous",
+      "station": "Kitgum",
+      "region": "Northern",
+      "start_coords": [
+        32.88013009,
+        3.30340249
+      ],
+      "end_coords": [
+        33.09189994,
+        3.62227937
+      ]
+    },
+    {
+      "road_no": "B252",
+      "link_id": "B252_Link05",
+      "road_class": "B",
+      "link_name": "Madi Opei - Uganda/Sudan border",
+      "length_km": 20.512,
+      "surface_type": "Bituminous",
+      "station": "Kitgum",
+      "region": "Northern",
+      "start_coords": [
+        33.09189994,
+        3.62227937
+      ],
+      "end_coords": [
+        33.19711473,
+        3.77104648
+      ]
+    },
+    {
+      "road_no": "B253",
+      "link_id": "B253_Link01",
+      "road_class": "B",
+      "link_name": "Rwekunye - Masindi Port",
+      "length_km": 7.343,
+      "surface_type": "Unsealed",
+      "station": "Masindi",
+      "region": "Western",
+      "start_coords": [
+        32.02853449,
+        1.70986435
+      ],
+      "end_coords": [
+        32.09261207,
+        1.69528443
+      ]
+    },
+    {
+      "road_no": "B253",
+      "link_id": "B253_Link02",
+      "road_class": "B",
+      "link_name": "Masindi Port-Akokoro-Apac-Aduku",
+      "length_km": 103.421,
+      "surface_type": "Unsealed",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.09293314,
+        1.69539757
+      ],
+      "end_coords": [
+        32.71504008,
+        1.99714268
+      ]
+    },
+    {
+      "road_no": "B253",
+      "link_id": "B253_Link03",
+      "road_class": "B",
+      "link_name": "Aduku - Lira",
+      "length_km": 35.018,
+      "surface_type": "Unsealed",
+      "station": "Lira",
+      "region": "Northern",
+      "start_coords": [
+        32.71504008,
+        1.99714268
+      ],
+      "end_coords": [
+        32.89385732,
+        2.2381396
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link01",
+      "road_class": "B",
+      "link_name": "Namunsi - Sironko",
+      "length_km": 21.805,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.16845329,
+        1.12456098
+      ],
+      "end_coords": [
+        34.27233648,
+        1.24590291
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link02",
+      "road_class": "B",
+      "link_name": "Sironko - Muyembe",
+      "length_km": 10.46,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.27233648,
+        1.24590291
+      ],
+      "end_coords": [
+        34.29582497,
+        1.33348611
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link03",
+      "road_class": "B",
+      "link_name": "Muyembe - Namalu",
+      "length_km": 71.655,
+      "surface_type": "Unsealed",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.29582497,
+        1.33348611
+      ],
+      "end_coords": [
+        34.58220895,
+        1.84061408
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link04",
+      "road_class": "B",
+      "link_name": "Namalu - Chosan - Lokapel",
+      "length_km": 58.791,
+      "surface_type": "Bituminous",
+      "station": "Moroto",
+      "region": "North Eastern",
+      "start_coords": [
+        34.5822172,
+        1.84061194
+      ],
+      "end_coords": [
+        34.69351824,
+        2.14866024
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link05",
+      "road_class": "B",
+      "link_name": "Lokapel - Ariamoi",
+      "length_km": 45.803,
+      "surface_type": "Bituminous",
+      "station": "Moroto",
+      "region": "North Eastern",
+      "start_coords": [
+        34.69351824,
+        2.14866024
+      ],
+      "end_coords": [
+        34.564887,
+        2.50397007
+      ]
+    },
+    {
+      "road_no": "B300",
+      "link_id": "B300_Link06",
+      "road_class": "B",
+      "link_name": "Ariamoi - Moroto",
+      "length_km": 10.997,
+      "surface_type": "Bituminous",
+      "station": "Moroto",
+      "region": "North Eastern",
+      "start_coords": [
+        34.564887,
+        2.50397007
+      ],
+      "end_coords": [
+        34.65769638,
+        2.53300401
+      ]
+    },
+    {
+      "road_no": "B301",
+      "link_id": "B301_Link01",
+      "road_class": "B",
+      "link_name": "Ariamoi - Kaladonapal - Kaperimoru",
+      "length_km": 83.373,
+      "surface_type": "Unsealed",
+      "station": "Kotido",
+      "region": "North Eastern",
+      "start_coords": [
+        34.54974368,
+        2.49894747
+      ],
+      "end_coords": [
+        34.19055967,
+        2.97123132
+      ]
+    },
+    {
+      "road_no": "B301",
+      "link_id": "B301_Link02",
+      "road_class": "B",
+      "link_name": "Kapelimoru - Kotido",
+      "length_km": 19.038,
+      "surface_type": "Unsealed",
+      "station": "Kotido",
+      "region": "North Eastern",
+      "start_coords": [
+        34.19055967,
+        2.97123132
+      ],
+      "end_coords": [
+        34.0779252,
+        3.0100664
+      ]
+    },
+    {
+      "road_no": "B301",
+      "link_id": "B301_Link03",
+      "road_class": "B",
+      "link_name": "Kotido - Apaan - Kabong",
+      "length_km": 98.98,
+      "surface_type": "Unsealed",
+      "station": "Kotido",
+      "region": "North Eastern",
+      "start_coords": [
+        34.0779252,
+        3.0100664
+      ],
+      "end_coords": [
+        33.94980522,
+        3.685653
+      ]
+    },
+    {
+      "road_no": "B302",
+      "link_id": "B302_Link01",
+      "road_class": "B",
+      "link_name": "Kotido - Abim",
+      "length_km": 63.821,
+      "surface_type": "Unsealed",
+      "station": "Kotido",
+      "region": "North Eastern",
+      "start_coords": [
+        34.07791912,
+        3.0100608
+      ],
+      "end_coords": [
+        33.65981205,
+        2.71144792
+      ]
+    },
+    {
+      "road_no": "B302",
+      "link_id": "B302_Link02",
+      "road_class": "B",
+      "link_name": "Abim - Kilak",
+      "length_km": 83.189,
+      "surface_type": "Unsealed",
+      "station": "Kitgum",
+      "region": "Northern",
+      "start_coords": [
+        33.65981205,
+        2.71144792
+      ],
+      "end_coords": [
+        32.9588015,
+        2.7670978
+      ]
+    },
+    {
+      "road_no": "B303",
+      "link_id": "B303_Link01",
+      "road_class": "B",
+      "link_name": "Soroti - Arapai",
+      "length_km": 7.999,
+      "surface_type": "Bituminous",
+      "station": "Soroti",
+      "region": "North Eastern",
+      "start_coords": [
+        33.61667791,
+        1.7153539
+      ],
+      "end_coords": [
+        33.628701,
+        1.77988952
+      ]
+    },
+    {
+      "road_no": "B303",
+      "link_id": "B303_Link02",
+      "road_class": "B",
+      "link_name": "Arapai - Katakwi - Iriri",
+      "length_km": 81.862,
+      "surface_type": "Bituminous",
+      "station": "Soroti",
+      "region": "North Eastern",
+      "start_coords": [
+        33.628701,
+        1.77988952
+      ],
+      "end_coords": [
+        34.19595253,
+        2.09217086
+      ]
+    },
+    {
+      "road_no": "B303",
+      "link_id": "B303_Link03",
+      "road_class": "B",
+      "link_name": "Iriri - Akisim (Lorengechora) - Ariamoi - Nadunget",
+      "length_km": 68.814,
+      "surface_type": "Bituminous",
+      "station": "Moroto",
+      "region": "North Eastern",
+      "start_coords": [
+        34.19595253,
+        2.09217086
+      ],
+      "end_coords": [
+        34.56498747,
+        2.5042688
+      ]
+    },
+    {
+      "road_no": "B304",
+      "link_id": "B304_Link01",
+      "road_class": "B",
+      "link_name": "Muyembe - Kaserem - Kapchorwa",
+      "length_km": 24.68,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.29736477,
+        1.33582303
+      ],
+      "end_coords": [
+        34.4307983,
+        1.39068463
+      ]
+    },
+    {
+      "road_no": "B304",
+      "link_id": "B304_Link02",
+      "road_class": "B",
+      "link_name": "Kapchorwa-Suam",
+      "length_km": 80.7,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        34.4307983,
+        1.39068463
+      ],
+      "end_coords": [
+        34.73281499,
+        1.21637678
+      ]
+    },
+    {
+      "road_no": "B305",
+      "link_id": "B305_Link01",
+      "road_class": "B",
+      "link_name": "Tirinyi - Pallisa",
+      "length_km": 19.765,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        33.76249323,
+        1.00091566
+      ],
+      "end_coords": [
+        33.71174922,
+        1.16724102
+      ]
+    },
+    {
+      "road_no": "B305",
+      "link_id": "B305_Link02",
+      "road_class": "B",
+      "link_name": "Pallisa - Kanyago Bridge",
+      "length_km": 21.681,
+      "surface_type": "Bituminous",
+      "station": "Mbale",
+      "region": "Eastern",
+      "start_coords": [
+        33.71174922,
+        1.16724102
+      ],
+      "end_coords": [
+        33.87270264,
+        1.26562001
+      ]
+    },
+    {
+      "road_no": "B305",
+      "link_id": "B305_Link03",
+      "road_class": "B",
+      "link_name": "Kanyago Bridge - Kumi",
+      "length_km": 25.882,
+      "surface_type": "Bituminous",
+      "station": "Soroti",
+      "region": "North Eastern",
+      "start_coords": [
+        33.8726799,
+        1.26554103
+      ],
+      "end_coords": [
+        33.93070649,
+        1.48709846
+      ]
+    },
+    {
+      "road_no": "B306",
+      "link_id": "B306_Link01",
+      "road_class": "B",
+      "link_name": "Tororo(Malaba junction) - Busia",
+      "length_km": 24.235,
+      "surface_type": "Unsealed",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        34.17194358,
+        0.66001651
+      ],
+      "end_coords": [
+        34.08873977,
+        0.46641433
+      ]
+    },
+    {
+      "road_no": "B307",
+      "link_id": "B307_Link01",
+      "road_class": "B",
+      "link_name": "Jinja(kubiri round about)-Buwenge",
+      "length_km": 23.16,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.21921344,
+        0.45585513
+      ],
+      "end_coords": [
+        33.17149662,
+        0.64942529
+      ]
+    },
+    {
+      "road_no": "B307",
+      "link_id": "B307_Link02",
+      "road_class": "B",
+      "link_name": "Buwenge - Kamuli",
+      "length_km": 32.633,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.17149662,
+        0.64942529
+      ],
+      "end_coords": [
+        33.11136345,
+        0.93158757
+      ]
+    },
+    {
+      "road_no": "B307",
+      "link_id": "B307_Link03",
+      "road_class": "B",
+      "link_name": "Kamuli - Nawantale",
+      "length_km": 15.86,
+      "surface_type": "Unsealed",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.11136345,
+        0.93158757
+      ],
+      "end_coords": [
+        33.09367265,
+        1.07302761
+      ]
+    },
+    {
+      "road_no": "B307",
+      "link_id": "B307_Link04",
+      "road_class": "B",
+      "link_name": "Nawantale - Bukungu",
+      "length_km": 51.319,
+      "surface_type": "Unsealed",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.09367265,
+        1.07302761
+      ],
+      "end_coords": [
+        32.86878297,
+        1.43720818
+      ]
+    },
+    {
+      "road_no": "B308",
+      "link_id": "B308_Link01",
+      "road_class": "B",
+      "link_name": "Namutere - Busia",
+      "length_km": 16.905,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        33.96771658,
+        0.52505897
+      ],
+      "end_coords": [
+        34.09851349,
+        0.46545324
+      ]
+    },
+    {
+      "road_no": "C001",
+      "link_id": "C001_Link01",
+      "road_class": "C",
+      "link_name": "Nsambya- Cape town Villa",
+      "length_km": 2.767,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.62826868,
+        0.25806416
+      ],
+      "end_coords": [
+        32.62092886,
+        0.23925838
+      ]
+    },
+    {
+      "road_no": "C002",
+      "link_id": "C002_Link01",
+      "road_class": "C",
+      "link_name": "Seeta-Namilyango",
+      "length_km": 3.825,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.7135142,
+        0.36895606
+      ],
+      "end_coords": [
+        32.71811999,
+        0.33963187
+      ]
+    },
+    {
+      "road_no": "C003",
+      "link_id": "C003_Link01",
+      "road_class": "C",
+      "link_name": "Nazigo-Kireku-Nkokonjeru-Kitimbwa",
+      "length_km": 41.578,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.9330196,
+        0.82415707
+      ],
+      "end_coords": [
+        32.98864545,
+        0.77473462
+      ]
+    },
+    {
+      "road_no": "C005",
+      "link_id": "C005_Link01",
+      "road_class": "C",
+      "link_name": "Salaama Road",
+      "length_km": 12.2,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57166585,
+        0.29163641
+      ],
+      "end_coords": [
+        32.62059419,
+        0.2395552
+      ]
+    },
+    {
+      "road_no": "C006",
+      "link_id": "C006_Link01",
+      "road_class": "C",
+      "link_name": "Kirongo-Kulwe",
+      "length_km": 20.295,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.21732727,
+        0.28367027
+      ],
+      "end_coords": [
+        33.30717342,
+        0.14547711
+      ]
+    },
+    {
+      "road_no": "C007",
+      "link_id": "C007_Link01",
+      "road_class": "C",
+      "link_name": "Kyerima-Bulawula",
+      "length_km": 10.202,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.9330196,
+        0.82415707
+      ],
+      "end_coords": [
+        32.9330196,
+        0.82415707
+      ]
+    },
+    {
+      "road_no": "C011",
+      "link_id": "C011_Link01",
+      "road_class": "C",
+      "link_name": "Walwanda-Kirongo",
+      "length_km": 19.49,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.26105389,
+        0.22015388
+      ],
+      "end_coords": [
+        33.38953259,
+        0.27646824
+      ]
+    },
+    {
+      "road_no": "C022",
+      "link_id": "C022_Link01",
+      "road_class": "C",
+      "link_name": "Mbuya/SilverSprings-Kireka",
+      "length_km": 4.634,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.62890392,
+        0.31799221
+      ],
+      "end_coords": [
+        32.64796555,
+        0.3462878
+      ]
+    },
+    {
+      "road_no": "C023",
+      "link_id": "C023_Link01",
+      "road_class": "C",
+      "link_name": "Old Njeru - Jinja",
+      "length_km": 1.756,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.18347956,
+        0.44236226
+      ],
+      "end_coords": [
+        33.19804973,
+        0.44542076
+      ]
+    },
+    {
+      "road_no": "C024",
+      "link_id": "C024_Link01",
+      "road_class": "C",
+      "link_name": "Mukono-Kyetume-Kisoga-Katosi",
+      "length_km": 26.643,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.76157619,
+        0.3511041
+      ],
+      "end_coords": [
+        32.80262794,
+        0.15225417
+      ]
+    },
+    {
+      "road_no": "C025",
+      "link_id": "C025_Link01",
+      "road_class": "C",
+      "link_name": "Kisoga - Lugasa",
+      "length_km": 27.926,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.81738225,
+        0.25311744
+      ],
+      "end_coords": [
+        33.03146623,
+        0.26987099
+      ]
+    },
+    {
+      "road_no": "C025",
+      "link_id": "C025_Link02",
+      "road_class": "C",
+      "link_name": "Lugasa - Najja",
+      "length_km": 10.408,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.03141652,
+        0.2699207
+      ],
+      "end_coords": [
+        33.10206931,
+        0.31198432
+      ]
+    },
+    {
+      "road_no": "C026",
+      "link_id": "C026_Link01",
+      "road_class": "C",
+      "link_name": "Bulumagi - Nyenga",
+      "length_km": 4.05,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.13323044,
+        0.41061962
+      ],
+      "end_coords": [
+        33.15082284,
+        0.37992137
+      ]
+    },
+    {
+      "road_no": "C027",
+      "link_id": "C027_Link01",
+      "road_class": "C",
+      "link_name": "Lugazi - Buikwe",
+      "length_km": 10.804,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.94223604,
+        0.36875144
+      ],
+      "end_coords": [
+        33.02939976,
+        0.34423305
+      ]
+    },
+    {
+      "road_no": "C028",
+      "link_id": "C028_Link01",
+      "road_class": "C",
+      "link_name": "Najja - Nyenga",
+      "length_km": 9.791,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.10206931,
+        0.31198432
+      ],
+      "end_coords": [
+        33.14622124,
+        0.3791549
+      ]
+    },
+    {
+      "road_no": "C029",
+      "link_id": "C029_Link01",
+      "road_class": "C",
+      "link_name": "Njeru-Nyenga-Buikwe",
+      "length_km": 9.8,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.18402093,
+        0.43801518
+      ],
+      "end_coords": [
+        33.14556832,
+        0.37935686
+      ]
+    },
+    {
+      "road_no": "C029",
+      "link_id": "C029_Link02",
+      "road_class": "C",
+      "link_name": "Nyenga-Buikwe",
+      "length_km": 14.709,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.14556832,
+        0.37935686
+      ],
+      "end_coords": [
+        33.02939976,
+        0.34423305
+      ]
+    },
+    {
+      "road_no": "C030",
+      "link_id": "C030_Link01",
+      "road_class": "C",
+      "link_name": "Buikwe - Najja",
+      "length_km": 9.029,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.02947819,
+        0.33873506
+      ],
+      "end_coords": [
+        33.10207955,
+        0.3119825
+      ]
+    },
+    {
+      "road_no": "C030",
+      "link_id": "C030_Link02",
+      "road_class": "C",
+      "link_name": "Najja - Kiyindi",
+      "length_km": 7.83,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.10220039,
+        0.31201707
+      ],
+      "end_coords": [
+        33.15287496,
+        0.27144454
+      ]
+    },
+    {
+      "road_no": "C034",
+      "link_id": "C034_Link01",
+      "road_class": "C",
+      "link_name": "Bugungu Prisons Access",
+      "length_km": 3.523,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.173761,
+        0.39589257
+      ],
+      "end_coords": [
+        33.19954939,
+        0.39216122
+      ]
+    },
+    {
+      "road_no": "C035",
+      "link_id": "C035_Link01",
+      "road_class": "C",
+      "link_name": "Buvuma Women's prison Access",
+      "length_km": 0.931,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.64262048,
+        0.30554216
+      ],
+      "end_coords": [
+        32.63687997,
+        0.30075005
+      ]
+    },
+    {
+      "road_no": "C036",
+      "link_id": "C036_Link01",
+      "road_class": "C",
+      "link_name": "Nambole - Kampala Industrial Park - Mukono",
+      "length_km": 13.692,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.66183593,
+        0.34802052
+      ],
+      "end_coords": [
+        32.74637147,
+        0.36061583
+      ]
+    },
+    {
+      "road_no": "C037",
+      "link_id": "C037_Link01",
+      "road_class": "C",
+      "link_name": "Mukono Railway access off Mukono - Kyetu",
+      "length_km": 2.202,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.78004606,
+        0.29991683
+      ],
+      "end_coords": [
+        32.79705787,
+        0.30172316
+      ]
+    },
+    {
+      "road_no": "C038",
+      "link_id": "C038_Link01",
+      "road_class": "C",
+      "link_name": "Kisoga - Kibanga Port",
+      "length_km": 10.573,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.81749729,
+        0.25238908
+      ],
+      "end_coords": [
+        32.87214316,
+        0.18898728
+      ]
+    },
+    {
+      "road_no": "C039",
+      "link_id": "C039_Link01",
+      "road_class": "C",
+      "link_name": "Nyenga - Railway station Access",
+      "length_km": 1.733,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.15188866,
+        0.37992404
+      ],
+      "end_coords": [
+        33.15278827,
+        0.3662991
+      ]
+    },
+    {
+      "road_no": "C040",
+      "link_id": "C040_Link01",
+      "road_class": "C",
+      "link_name": "Lugasa - Buikwe",
+      "length_km": 8.723,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.03146623,
+        0.26987099
+      ],
+      "end_coords": [
+        33.02939976,
+        0.34423305
+      ]
+    },
+    {
+      "road_no": "C041",
+      "link_id": "C041_Link01",
+      "road_class": "C",
+      "link_name": "Namataba - Kyampisi",
+      "length_km": 40.806,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.86527123,
+        0.38327715
+      ],
+      "end_coords": [
+        32.92949037,
+        0.6724373
+      ]
+    },
+    {
+      "road_no": "C042",
+      "link_id": "C042_Link01",
+      "road_class": "C",
+      "link_name": "Kawolo Railway access",
+      "length_km": 0.859,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.94069568,
+        0.36905135
+      ],
+      "end_coords": [
+        32.93868264,
+        0.36288104
+      ]
+    },
+    {
+      "road_no": "C043",
+      "link_id": "C043_Link01",
+      "road_class": "C",
+      "link_name": "Access to Kituuza Agriculture Research C",
+      "length_km": 5.409,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.98140667,
+        0.36051872
+      ],
+      "end_coords": [
+        33.00995765,
+        0.35067431
+      ]
+    },
+    {
+      "road_no": "C044",
+      "link_id": "C044_Link01",
+      "road_class": "C",
+      "link_name": "Buikwe - Lugasa(Makindu)",
+      "length_km": 6.949,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.04573785,
+        0.33420159
+      ],
+      "end_coords": [
+        33.08138358,
+        0.28743669
+      ]
+    },
+    {
+      "road_no": "C045",
+      "link_id": "C045_Link01",
+      "road_class": "C",
+      "link_name": "Kabimbiri - Misindye",
+      "length_km": 38.549,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.82835986,
+        0.63027158
+      ],
+      "end_coords": [
+        32.70150274,
+        0.396484
+      ]
+    },
+    {
+      "road_no": "C046",
+      "link_id": "C046_Link01",
+      "road_class": "C",
+      "link_name": "Zirobwe - Lwajjali - Kasawo - Kabimbiri",
+      "length_km": 22.974,
+      "surface_type": "Unsealed",
+      "station": "Luwero",
+      "region": "Central",
+      "start_coords": [
+        32.83461597,
+        0.63527363
+      ],
+      "end_coords": [
+        32.70093826,
+        0.68292583
+      ]
+    },
+    {
+      "road_no": "C047",
+      "link_id": "C047_Link01",
+      "road_class": "C",
+      "link_name": "Kasana - Bugobero",
+      "length_km": 7.63,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.08765148,
+        0.75560275
+      ],
+      "end_coords": [
+        33.06981845,
+        0.78077817
+      ]
+    },
+    {
+      "road_no": "C140",
+      "link_id": "C140_Link01",
+      "road_class": "C",
+      "link_name": "Kasana - Mbulamuti ferry access",
+      "length_km": 1.272,
+      "surface_type": "Unsealed",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.03291022,
+        0.78141557
+      ],
+      "end_coords": [
+        33.03609633,
+        0.79102821
+      ]
+    }
+  ]
+}

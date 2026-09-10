@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prisca's Mind — Interactive 3D Geospatial World & Music Realm</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; user-select: none; }
+    #canvas-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 0; }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.3); border-radius: 3px; }
+    .glow-text {
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+    }
+    .pulse-ring {
+      animation: ring-pulse 2.5s infinite;
+    }
+    @keyframes ring-pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body class="h-full text-slate-100 antialiased overflow-hidden">
+  <!-- 3D Canvas -->
+  <div id="canvas-container"></div>
+
+  <!-- Header -->
+  <header class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between glass-panel rounded-2xl p-4 shadow-2xl">
+    <div class="flex items-center space-x-3">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/30 pulse-ring">
+        <span class="text-xl">🧠</span>
+      </div>
+      <div>
+        <h1 class="font-bold text-lg leading-tight tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-purple-200 via-cyan-200 to-white glow-text">PRISCA'S MIND & GEOSPATIAL WORLD</h1>
+        <p class="text-xs text-cyan-400 font-mono flex items-center gap-2">
+          <span>1,000+ 3D Models Active</span> • <span>Interactive Music & Media Realm</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Mindscape Biomes Quick Selector -->
+    <div class="hidden lg:flex items-center space-x-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800">
+      <button onclick="switchRealm('core')" class="realm-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-600 text-white transition">🔮 Core Vision</button>
+      <button onclick="switchRealm('nature')" class="realm-btn px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:bg-slate-800 transition">🌿 Sanctuary Biome</button>
+      <button onclick="switchRealm('cyber')" class="realm-btn px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:bg-slate-800 transition">🏙️ Cyber City</button>
+      <button onclick="switchRealm('music')" class="realm-btn px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:bg-slate-800 transition">🎵 Harmonic Freq</button>
+      <button onclick="switchRealm('cosmos')" class="realm-btn px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:bg-slate-800 transition">🚀 Infinite Horizon</button>
+    </div>
+
+    <!-- Audio Synth Controller Button -->
+    <div class="flex items-center space-x-3">
+      <button id="btn-toggle-music" onclick="toggleAudio()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/25 transition">
+        <span id="music-icon">🎵</span> <span id="music-btn-text">Start Ambient Music</span>
+      </button>
+      <button onclick="resetView()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Reset View">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Control Panel: Prisca's Mindscape Explorer & 1000+ Models Palette -->
+  <aside class="absolute top-24 left-4 z-10 w-84 glass-panel rounded-2xl p-5 shadow-2xl space-y-5 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+    <!-- Prisca's Mind Overview -->
+    <div class="p-4 rounded-xl bg-gradient-to-b from-purple-900/40 to-slate-900/60 border border-purple-500/30">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-purple-300 mb-1">Inside Prisca's Mind</h3>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Welcome to Prisca's studio and creative universe. Explore 1,000+ instanced 3D assets, interactive thought nodes, spatial audio frequencies, and living biomes.
+      </p>
+    </div>
+
+    <!-- Audio & Synth Frequency Control -->
+    <div>
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Audio Synthesizer & Mood</h3>
+        <span id="audio-mood-tag" class="text-[10px] font-mono text-cyan-300">Ambient C-Minor</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2 mb-3">
+        <button onclick="setSynthMood('celestial')" class="p-2 text-xs rounded-lg bg-slate-900/80 border border-slate-800 hover:border-purple-500 text-slate-200 transition">✨ Celestial</button>
+        <button onclick="setSynthMood('cyber')" class="p-2 text-xs rounded-lg bg-slate-900/80 border border-slate-800 hover:border-cyan-500 text-slate-200 transition">⚡ Cyber Pulse</button>
+        <button onclick="setSynthMood('zen')" class="p-2 text-xs rounded-lg bg-slate-900/80 border border-slate-800 hover:border-emerald-500 text-slate-200 transition">🌿 Deep Zen</button>
+        <button onclick="setSynthMood('harmonic')" class="p-2 text-xs rounded-lg bg-slate-900/80 border border-slate-800 hover:border-amber-500 text-slate-200 transition">🎹 Harmonic</button>
+      </div>
+
+      <!-- Real-time Audio Spectrum Visualizer Canvas -->
+      <canvas id="audio-visualizer" width="280" height="40" class="w-full h-10 rounded-lg bg-slate-950 border border-slate-800"></canvas>
+    </div>
+
+    <!-- 1000+ 3D Model Generator Controls -->
+    <div>
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">1,000+ 3D Asset Generator</h3>
+      <p class="text-[11px] text-slate-400 mb-3">Generate procedural instanced 3D biomes instantly:</p>
+      
+      <div class="space-y-2">
+        <button onclick="generate3DBiome('forest', 400)" class="w-full p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 hover:bg-emerald-900/40 text-emerald-200 text-xs font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-2">🌲 Generate 400+ Instanced Trees & Flora</span>
+          <span class="font-mono text-[10px] bg-emerald-900/60 px-2 py-0.5 rounded">+400</span>
+        </button>
+
+        <button onclick="generate3DBiome('city', 350)" class="w-full p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 hover:bg-cyan-900/40 text-cyan-200 text-xs font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-2">🏙️ Generate 350+ Cyber Towers</span>
+          <span class="font-mono text-[10px] bg-cyan-900/60 px-2 py-0.5 rounded">+350</span>
+        </button>
+
+        <button onclick="generate3DBiome('crystals', 300)" class="w-full p-2.5 rounded-xl bg-purple-950/40 border border-purple-500/30 hover:bg-purple-900/40 text-purple-200 text-xs font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-2">🔮 Generate 300+ Glowing Crystals</span>
+          <span class="font-mono text-[10px] bg-purple-900/60 px-2 py-0.5 rounded">+300</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Models Counter -->
+    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between text-xs">
+      <span class="text-slate-400">Total Active 3D Models:</span>
+      <span id="total-3d-count" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-mono font-bold">1,250 Models</span>
+    </div>
+  </aside>
+
+  <!-- Interactive Prisca Mind Node Detail Modal -->
+  <div id="mind-node-modal" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 max-w-lg glass-panel rounded-3xl p-6 shadow-2xl space-y-4">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+      <div class="flex items-center space-x-3">
+        <span id="node-icon" class="text-3xl">✨</span>
+        <div>
+          <h3 id="node-title" class="font-bold text-base text-white">Thought Node Title</h3>
+          <p id="node-realm" class="text-xs text-purple-400 font-mono">Prisca's Creative Realm</p>
+        </div>
+      </div>
+      <button onclick="closeMindModal()" class="p-1 text-slate-400 hover:text-white rounded-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <p id="node-description" class="text-xs text-slate-300 leading-relaxed">
+      Node description content...
+    </p>
+
+    <!-- Interactive Media Card Embed -->
+    <div id="node-media-container" class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center space-x-4">
+      <div class="w-12 h-12 rounded-xl bg-purple-600/30 border border-purple-500/50 flex items-center justify-center text-2xl">
+        🎧
+      </div>
+      <div class="flex-1">
+        <div id="node-media-title" class="text-xs font-bold text-white">Spatial Audio Track</div>
+        <div id="node-media-subtitle" class="text-[10px] text-slate-400 font-mono">Interactive Harmonic Soundscape</div>
+      </div>
+      <button onclick="playNodeAudio()" class="px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition">Play Note</button>
+    </div>
+
+    <div class="pt-2 flex justify-end">
+      <button onclick="closeMindModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl transition">Close</button>
+    </div>
+  </div>
+
+  <!-- Character Profile Card Modal -->
+  <div id="char-card" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-72 glass-panel rounded-3xl p-5 shadow-2xl space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span id="char-emoji" class="text-3xl">🙂</span>
+        <div>
+          <h3 id="char-name" class="font-bold text-sm text-white">Character</h3>
+          <p id="char-role" class="text-[10px] text-purple-400 font-mono">Role</p>
+        </div>
+      </div>
+      <button onclick="closeCharCard()" class="p-1 text-slate-400 hover:text-white rounded-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div id="char-stats" class="space-y-2 text-xs"></div>
+    <div id="char-status" class="text-[10px] text-slate-400 font-mono pt-1 border-t border-slate-800"></div>
+  </div>
+
+  <!-- Bottom HUD Status Bar -->
+  <footer class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between glass-panel rounded-2xl px-5 py-3 text-xs">
+    <div class="flex items-center space-x-4">
+      <span class="flex items-center gap-2 text-slate-300">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span> Prisca's 3D World Active
+      </span>
+      <span class="text-slate-600">|</span>
+      <span class="text-slate-400">Click Any 3D Object or Node to Play Harmonic Note & View Media</span>
+    </div>
+    <div class="font-mono text-cyan-400 text-[11px] flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-purple-500"></span> 1,250+ Models Rendered @ 60 FPS
+    </div>
+  </footer>
+
+  <!-- WebGL 3D & Web Audio Engine Script -->
+  <script>
+    let scene, camera, renderer, controls;
+    let mindCore, earthGlobe, instancedForest, instancedCity, instancedCrystals;
+    let activeNodes = [];
+    let raycaster, mouse;
+    let audioCtx, synthOsc, synthGain, analyser;
+    let isMusicPlaying = false;
+    let currentMood = 'celestial';
+    let totalModelCount = 1250;
+
+    // ---- 1,000 Character System ----
+    let charMesh = null;
+    const CHAR_COUNT = 1000;
+    const chars = [];
+    const dummy = new THREE.Object3D();
+
+    // Seeded PRNG (mulberry32) for deterministic character profiles
+    function mulberry32(a) {
+      return function() {
+        a |= 0; a = a + 0x6D2B79F5 | 0;
+        var t = Math.imul(a ^ a >>> 15, 1 | a);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    const NAMES = [
+      'Alexander','Amelia','Arthur','Audrey','Benjamin','Charlotte','Daniel','Eleanor','Ethan','Emily',
+      'Felix','Florence','Gabriel','Grace','Henry','Hannah','Isaac','Isla','James','Jasper',
+      'Julian','Kate','Liam','Lucas','Lucy','Marcus','Maya','Nathan','Oliver','Olivia',
+      'Penelope','Rupert','Samuel','Sophia','Sebastian','Stella','Theodore','Violet','William','Zoe',
+      'Abigail','Adam','Alice','Andrew','Beatrice','Caleb','Clara','Dominic','Evelyn','Edward',
+      'Fiona','George','Georgia','Harrison','Hazel','Ian','Ivy','Jack','Julia','Leo',
+      'Lily','Mason','Mia','Nicholas','Nora','Owen','Piper','Quentin','Rose','Rowan',
+      'Simon','Scarlett','Thomas','Tessa','Victor','Victoria','Zachary','Ava','Charles','Daisy',
+      'Elliott','Eliza','Gavin','Iris','Jude','Laura','Miles','Naomi','Oscar','Paige',
+      'Robert','Ruby','Tristan','Willa','Xavier','Yvette','Zacharias','Harper','Logan','Sienna'
+    ];
+
+    const ROLES = [
+      'Dream Architect','Sound Weaver','Light Sculptor','Mood Alchemist','Beat Crafter',
+      'Rhythm Oracle','Pixel Wanderer','Star Navigator','Crystal Guardian','Harmonic Sage',
+      'Aura Painter','Cloud Walker','Neon Scribe','Soul Engineer','Vibe Curator',
+      'Echo Mapper','Prism Keeper','Wave Dancer','Glow Smith','Night Watcher',
+      'Pulse Reader','Flame Tender','Code Poet','Sky Fisher','Root Singer',
+      'Dusk Warden','Mist Caller','Bloom Keeper','Tide Listener','Storm Painter',
+      'Silk Weaver','Iron Dreamer','Wind Chaser','Ash Gardener','Void Seeker',
+      'Frost Singer','Moon Binder','Sun Catcher','Reef Walker','Dust Poet',
+      'Horn Blower','Loom Master','Clay Shaper','Glass Turner','Thread Spinner',
+      'Ink Diver','Stone Reader','Leaf Catcher','Rain Dancer','Bone Carver'
+    ];
+
+    const STATUS_ICONS = ['💭','🎵','✨','🔮','💫','🌟','🎧','🎨','🎹','🧘','📡','🌀','⚡','🦋','🌸'];
+
+    // Create 1,000 3D Humanoid Characters synchronously
+    function buildCharacters() {
+      var geo = createHumanoidGeo();
+      createCharacterInstances([geo]);
+
+      // Attempt to upgrade to GLTF astronaut model asynchronously if loaded
+      try {
+        var loader = new THREE.GLTFLoader();
+        loader.load('models/astronaut.glb', function(gltf) {
+          var meshes = [];
+          gltf.scene.traverse(function(child) {
+            if (child.isMesh && child.geometry) meshes.push(child.geometry);
+          });
+          if (meshes.length > 0) {
+            var bestGeo = meshes[0].clone();
+            bestGeo.computeBoundingBox();
+            var box = bestGeo.boundingBox;
+            var height = box.max.y - box.min.y;
+            var scale = 0.6 / Math.max(height, 0.01);
+            bestGeo.scale(scale, scale, scale);
+            bestGeo.computeBoundingBox();
+            bestGeo.translate(0, -bestGeo.boundingBox.min.y, 0);
+
+            if (charMesh) {
+              charMesh.geometry.dispose();
+              charMesh.geometry = bestGeo;
+            }
+          }
+        }, undefined, function() {});
+      } catch(e) {}
+    }
+
+    // Procedural 3D Humanoid Geometry (Head, Visor, Torso, Arms, Legs)
+    function createHumanoidGeo() {
+      var head = new THREE.SphereGeometry(0.12, 10, 8);
+      head.translate(0, 0.72, 0);
+
+      var visor = new THREE.SphereGeometry(0.07, 8, 6);
+      visor.scale(1.2, 0.6, 0.8);
+      visor.translate(0, 0.74, 0.08);
+
+      var torso = new THREE.CylinderGeometry(0.14, 0.11, 0.35, 8);
+      torso.translate(0, 0.45, 0);
+
+      var armL = new THREE.CylinderGeometry(0.04, 0.035, 0.28, 6);
+      armL.rotateZ(0.2);
+      armL.translate(-0.18, 0.45, 0);
+
+      var armR = new THREE.CylinderGeometry(0.04, 0.035, 0.28, 6);
+      armR.rotateZ(-0.2);
+      armR.translate(0.18, 0.45, 0);
+
+      var legL = new THREE.CylinderGeometry(0.05, 0.04, 0.3, 6);
+      legL.translate(-0.07, 0.15, 0);
+
+      var legR = new THREE.CylinderGeometry(0.05, 0.04, 0.3, 6);
+      legR.translate(0.07, 0.15, 0);
+
+      return mergeGeometries([head, visor, torso, armL, armR, legL, legR]);
+    }
+
+    function mergeGeometries(geos) {
+      var totalVerts = 0;
+      geos.forEach(function(g) { totalVerts += g.attributes.position.count; });
+
+      var positions = new Float32Array(totalVerts * 3);
+      var normals = new Float32Array(totalVerts * 3);
+      var indices = [];
+      var vOffset = 0;
+
+      geos.forEach(function(g) {
+        var pos = g.attributes.position;
+        var norm = g.attributes.normal;
+        for (var i = 0; i < pos.count; i++) {
+          positions[(vOffset + i) * 3] = pos.getX(i);
+          positions[(vOffset + i) * 3 + 1] = pos.getY(i);
+          positions[(vOffset + i) * 3 + 2] = pos.getZ(i);
+          if (norm) {
+            normals[(vOffset + i) * 3] = norm.getX(i);
+            normals[(vOffset + i) * 3 + 1] = norm.getY(i);
+            normals[(vOffset + i) * 3 + 2] = norm.getZ(i);
+          }
+        }
+        if (g.index) {
+          for (var j = 0; j < g.index.count; j++) {
+            indices.push(g.index.array[j] + vOffset);
+          }
+        } else {
+          for (var j = 0; j < pos.count; j++) {
+            indices.push(j + vOffset);
+          }
+        }
+        vOffset += pos.count;
+      });
+
+      var merged = new THREE.BufferGeometry();
+      merged.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      merged.setAttribute('normal', new THREE.BufferAttribute(normals, 3));
+      merged.setIndex(indices);
+      return merged;
+    }
+
+    function createCharacterInstances(geometries) {
+      var geo = geometries[0];
+      var palette = [0xf472b6, 0xa78bfa, 0x38bdf8, 0x34d399, 0xfbbf24, 0xfb923c, 0xf87171, 0x818cf8, 0x22d3ee, 0xc084fc];
+
+      var mat = new THREE.MeshStandardMaterial({ color: 0xa855f7, emissive: 0x6b21a8, emissiveIntensity: 0.4, roughness: 0.3 });
+      charMesh = new THREE.InstancedMesh(geo, mat, CHAR_COUNT);
+
+      chars.length = 0;
+      window._charMeshes = [{ mesh: charMesh, startIdx: 0 }];
+
+      for (var i = 0; i < CHAR_COUNT; i++) {
+        var rng = mulberry32(i * 7 + 31);
+        var radius = 5 + rng() * 16;
+        var angle = rng() * Math.PI * 2;
+        var x = Math.cos(angle) * radius;
+        var z = Math.sin(angle) * radius;
+
+        chars.push({
+          seed: i * 7 + 31,
+          pos: new THREE.Vector3(x, -1.8, z),
+          heading: rng() * Math.PI * 2,
+          speed: 0.4 + rng() * 0.6,
+          state: 'idle',
+          idleT: 1 + rng() * 4,
+          statusIcon: null,
+          statusTimer: 2 + rng() * 5,
+          meshRef: charMesh,
+          localIdx: i
+        });
+
+        dummy.position.set(x, -1.8, z);
+        dummy.rotation.y = chars[i].heading;
+        dummy.updateMatrix();
+        charMesh.setMatrixAt(i, dummy.matrix);
+
+        var c = new THREE.Color(palette[Math.floor(rng() * palette.length)]);
+        charMesh.setColorAt(i, c);
+      }
+
+      charMesh.instanceMatrix.needsUpdate = true;
+      if (charMesh.instanceColor) charMesh.instanceColor.needsUpdate = true;
+      scene.add(charMesh);
+
+      totalModelCount += CHAR_COUNT;
+      document.getElementById('total-3d-count').innerText = totalModelCount.toLocaleString() + ' Models';
+    }
+
+    function updateCharacters(dt) {
+      for (var i = 0; i < chars.length; i++) {
+        var c = chars[i];
+
+        if (c.state === 'idle') {
+          c.idleT -= dt;
+          if (c.idleT <= 0) {
+            var angle = Math.random() * Math.PI * 2;
+            var dist = 2 + Math.random() * 5;
+            c.targetX = c.pos.x + Math.cos(angle) * dist;
+            c.targetZ = c.pos.z + Math.sin(angle) * dist;
+            var maxR = 22;
+            var d = Math.sqrt(c.targetX * c.targetX + c.targetZ * c.targetZ);
+            if (d > maxR) { c.targetX *= maxR / d; c.targetZ *= maxR / d; }
+            c.state = 'walking';
+          }
+        } else if (c.state === 'walking') {
+          var dx = c.targetX - c.pos.x;
+          var dz = c.targetZ - c.pos.z;
+          var dist2 = Math.sqrt(dx * dx + dz * dz);
+          if (dist2 < 0.15) {
+            c.state = 'idle';
+            c.idleT = 1 + Math.random() * 4;
+          } else {
+            c.heading = Math.atan2(dx, dz);
+            c.pos.x += Math.sin(c.heading) * c.speed * dt;
+            c.pos.z += Math.cos(c.heading) * c.speed * dt;
+          }
+        }
+
+        c.statusTimer -= dt;
+        if (c.statusTimer <= 0) {
+          c.statusIcon = Math.random() < 0.4 ? STATUS_ICONS[Math.floor(Math.random() * STATUS_ICONS.length)] : null;
+          c.statusTimer = 4 + Math.random() * 6;
+        }
+
+        if (c.meshRef) {
+          dummy.position.copy(c.pos);
+          dummy.rotation.y = c.heading;
+          dummy.updateMatrix();
+          c.meshRef.setMatrixAt(c.localIdx, dummy.matrix);
+        }
+      }
+      // Update all character meshes
+      if (window._charMeshes) {
+        window._charMeshes.forEach(function(entry) {
+          entry.mesh.instanceMatrix.needsUpdate = true;
+        });
+      }
+    }
+
+    // Click-to-inspect character (checks all character meshes)
+    function onCharClick(instanceId) {
+      var c = chars[instanceId];
+      var rng = mulberry32(c.seed);
+      var name = NAMES[Math.floor(rng() * NAMES.length)];
+      var role = ROLES[Math.floor(rng() * ROLES.length)];
+      var energy = Math.floor(rng() * 60 + 40);
+      var creativity = Math.floor(rng() * 60 + 40);
+      var charisma = Math.floor(rng() * 60 + 40);
+      var moodEmoji = ['🙂','😄','🤔','😌','🥳'][Math.floor(rng() * 5)];
+
+      document.getElementById('char-emoji').innerText = moodEmoji;
+      document.getElementById('char-name').innerText = name;
+      document.getElementById('char-role').innerText = role + ' \u00b7 Character #' + (instanceId + 1);
+      document.getElementById('char-stats').innerHTML = [
+        ['Energy', energy, 'from-red-500 to-amber-400'],
+        ['Creativity', creativity, 'from-pink-500 to-purple-400'],
+        ['Charisma', charisma, 'from-amber-400 to-yellow-300']
+      ].map(function(s) {
+        return '<div><div class="flex justify-between text-slate-400 mb-0.5"><span>' + s[0] + '</span><span>' + s[1] + '</span></div>' +
+          '<div class="h-1.5 rounded-full bg-slate-800 overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r ' + s[2] + '" style="width:' + s[1] + '%"></div></div></div>';
+      }).join('');
+      document.getElementById('char-status').innerText = 'Status: ' + c.state + (c.statusIcon ? '  ' + c.statusIcon : '');
+      document.getElementById('char-card').classList.remove('hidden');
+
+      playNote(523.25 + instanceId % 12 * 30, 'triangle', 0.6);
+    }
+
+    function closeCharCard() {
+      document.getElementById('char-card').classList.add('hidden');
+    }
+
+    // Web Audio Synthesizer Setup
+    function initAudio() {
+      if (audioCtx) return;
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContext();
+
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 64;
+
+      synthGain = audioCtx.createGain();
+      synthGain.gain.value = 0.15;
+      synthGain.connect(analyser);
+      analyser.connect(audioCtx.destination);
+    }
+
+    function playNote(freq, type = 'sine', duration = 0.8) {
+      initAudio();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      const osc = audioCtx.createOscillator();
+      const noteGain = audioCtx.createGain();
+
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      noteGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      noteGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+      osc.connect(noteGain);
+      noteGain.connect(synthGain);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function toggleAudio() {
+      initAudio();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      isMusicPlaying = !isMusicPlaying;
+      const btnText = document.getElementById('music-btn-text');
+      const musicIcon = document.getElementById('music-icon');
+
+      if (isMusicPlaying) {
+        btnText.innerText = 'Pause Ambient Music';
+        musicIcon.innerText = '⏸️';
+        playAmbientLoop();
+      } else {
+        btnText.innerText = 'Start Ambient Music';
+        musicIcon.innerText = '🎵';
+      }
+    }
+
+    // Ambient Musical Arpeggiator Loop
+    function playAmbientLoop() {
+      if (!isMusicPlaying) return;
+
+      const scale = {
+        celestial: [261.63, 329.63, 392.00, 523.25, 659.25], // C Major Pentatonic
+        cyber: [220.00, 261.63, 293.66, 329.63, 392.00],    // A Minor Pentatonic
+        zen: [196.00, 220.00, 261.63, 293.66, 392.00],      // G Pentatonic
+        harmonic: [174.61, 220.00, 261.63, 329.63, 440.00] // F Lydian
+      }[currentMood] || [261.63, 329.63, 392.00];
+
+      const freq = scale[Math.floor(Math.random() * scale.length)];
+      playNote(freq, currentMood === 'cyber' ? 'sawtooth' : 'sine', 1.2);
+
+      setTimeout(playAmbientLoop, Math.random() * 600 + 400);
+    }
+
+    function setSynthMood(mood) {
+      currentMood = mood;
+      document.getElementById('audio-mood-tag').innerText = `Mood: ${mood.toUpperCase()}`;
+      playNote(440, 'triangle', 0.5);
+    }
+
+    // 3D WebGL Engine Setup
+    function init() {
+      const container = document.getElementById('canvas-container');
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x030712);
+      scene.fog = new THREE.FogExp2(0x030712, 0.012);
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 8, 22);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+
+      // Lights
+      scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+      const light = new THREE.DirectionalLight(0xa855f7, 1.5);
+      light.position.set(15, 20, 15);
+      scene.add(light);
+
+      const cyanLight = new THREE.PointLight(0x38bdf8, 2, 50);
+      cyanLight.position.set(-10, 5, -10);
+      scene.add(cyanLight);
+
+      // Build 1000+ 3D Assets Instanced Mesh Engine
+      buildCoreMindscape();
+      buildInstancedForest(400);
+      buildInstancedCity(350);
+      buildInstancedCrystals(300);
+      buildMindThoughtNodes();
+      buildCharacters();
+
+      raycaster = new THREE.Raycaster();
+      mouse = new THREE.Vector2();
+
+      window.addEventListener('resize', onWindowResize);
+      renderer.domElement.addEventListener('pointerdown', onPointerDown);
+
+      animate();
+    }
+
+    // Prisca's Central Glowing Mind Core
+    function buildCoreMindscape() {
+      const coreGroup = new THREE.Group();
+
+      const coreGeo = new THREE.IcosahedronGeometry(2.5, 3);
+      const coreMat = new THREE.MeshStandardMaterial({
+        color: 0xa855f7,
+        emissive: 0x6b21a8,
+        wireframe: true,
+        roughness: 0.2
+      });
+      mindCore = new THREE.Mesh(coreGeo, coreMat);
+      coreGroup.add(mindCore);
+
+      const innerGeo = new THREE.SphereGeometry(1.6, 32, 32);
+      const innerMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, wireframe: false });
+      coreGroup.add(new THREE.Mesh(innerGeo, innerMat));
+
+      scene.add(coreGroup);
+    }
+
+    // Instanced Mesh Generator: 400+ Trees & Nature Assets
+    function buildInstancedForest(count) {
+      const trunkGeo = new THREE.CylinderGeometry(0.1, 0.15, 1, 8);
+      const foliageGeo = new THREE.ConeGeometry(0.6, 1.5, 8);
+      const mat = new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.8 });
+
+      instancedForest = new THREE.InstancedMesh(foliageGeo, mat, count);
+      const dummy = new THREE.Object3D();
+
+      for (let i = 0; i < count; i++) {
+        const radius = 6 + Math.random() * 14;
+        const angle = Math.random() * Math.PI * 2;
+        dummy.position.set(Math.cos(angle) * radius, -2, Math.sin(angle) * radius);
+        dummy.scale.setScalar(0.8 + Math.random() * 0.8);
+        dummy.updateMatrix();
+        instancedForest.setMatrixAt(i, dummy.matrix);
+      }
+      scene.add(instancedForest);
+    }
+
+    // Instanced Mesh Generator: 350+ Cyber City Towers
+    function buildInstancedCity(count) {
+      const boxGeo = new THREE.BoxGeometry(0.8, 1, 0.8);
+      const mat = new THREE.MeshStandardMaterial({ color: 0x0284c7, metalness: 0.8, roughness: 0.2 });
+
+      instancedCity = new THREE.InstancedMesh(boxGeo, mat, count);
+      const dummy = new THREE.Object3D();
+
+      for (let i = 0; i < count; i++) {
+        const radius = 8 + Math.random() * 16;
+        const angle = Math.random() * Math.PI * 2;
+        const height = 1 + Math.random() * 5;
+        dummy.position.set(Math.cos(angle) * radius, height / 2 - 2, Math.sin(angle) * radius);
+        dummy.scale.set(1, height, 1);
+        dummy.updateMatrix();
+        instancedCity.setMatrixAt(i, dummy.matrix);
+      }
+      scene.add(instancedCity);
+    }
+
+    // Instanced Mesh Generator: 300+ Glowing Crystals
+    function buildInstancedCrystals(count) {
+      const crystalGeo = new THREE.OctahedronGeometry(0.4, 0);
+      const mat = new THREE.MeshStandardMaterial({ color: 0xc084fc, emissive: 0x7e22ce, roughness: 0.1 });
+
+      instancedCrystals = new THREE.InstancedMesh(crystalGeo, mat, count);
+      const dummy = new THREE.Object3D();
+
+      for (let i = 0; i < count; i++) {
+        const radius = 4 + Math.random() * 18;
+        const angle = Math.random() * Math.PI * 2;
+        const height = Math.sin(i) * 3 + 2;
+        dummy.position.set(Math.cos(angle) * radius, height, Math.sin(angle) * radius);
+        dummy.rotation.set(Math.random(), Math.random(), Math.random());
+        dummy.updateMatrix();
+        instancedCrystals.setMatrixAt(i, dummy.matrix);
+      }
+      scene.add(instancedCrystals);
+    }
+
+    // Interactive Prisca Thought Nodes (Spatial Media Spheres)
+    function buildMindThoughtNodes() {
+      const nodesData = [
+        { name: "Prisca's Studio & Creative Vision", realm: "Core Vision", icon: "🔮", pos: [0, 4, 0], desc: "The center of Prisca's artistic universe — blending 3D spatial computing, interactive design, and generative aesthetics." },
+        { name: "Harmonic Frequencies & Music Synthesis", realm: "Music Realm", icon: "🎵", pos: [6, 2, 4], desc: "Exploring procedural Web Audio synthesizers where music shapes geometry in real-time." },
+        { name: "Sanctuary Biome & Digital Nature", realm: "Nature Sanctuary", icon: "🌿", pos: [-7, -1, 5], desc: "Peaceful digital ecosystem featuring instanced 3D forests, ambient soundscapes, and living light." },
+        { name: "Cyber City & Architecture", realm: "Cyber Horizon", icon: "🏙️", pos: [8, 3, -6], desc: "Futuristic 3D urban architecture, neon grids, and high-performance WebGL graphics." },
+        { name: "Infinite Horizon & Future Explorations", realm: "Cosmic Realm", icon: "🚀", pos: [-5, 5, -5], desc: "Beyond limits — constant experimentation with AI agents, 3D worlds, and interactive media." }
+      ];
+
+      nodesData.forEach(data => {
+        const group = new THREE.Group();
+        const mesh = new THREE.Mesh(
+          new THREE.SphereGeometry(0.6, 16, 16),
+          new THREE.MeshStandardMaterial({ color: 0x38bdf8, emissive: 0x0284c7, emissiveIntensity: 0.8 })
+        );
+        group.add(mesh);
+        group.position.set(...data.pos);
+        group.userData = data;
+
+        scene.add(group);
+        activeNodes.push(group);
+      });
+    }
+
+    // Interactive Pointer Click Handler
+    function onPointerDown(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+
+      // Check character clicks first (all character meshes)
+      if (window._charMeshes) {
+        for (var m = 0; m < window._charMeshes.length; m++) {
+          var entry = window._charMeshes[m];
+          var charHits = raycaster.intersectObject(entry.mesh);
+          if (charHits.length > 0 && charHits[0].instanceId !== undefined) {
+            onCharClick(entry.startIdx + charHits[0].instanceId);
+            return;
+          }
+        }
+      }
+
+      // Then check thought nodes
+      const hits = raycaster.intersectObjects(activeNodes, true);
+
+      if (hits.length > 0) {
+        let topObj = hits[0].object;
+        while (topObj.parent && !activeNodes.includes(topObj)) {
+          topObj = topObj.parent;
+        }
+        openMindModal(topObj.userData);
+        playNote(523.25, 'triangle', 1.0); // High C Note
+      } else {
+        playNote(Math.random() * 300 + 200, 'sine', 0.4);
+      }
+    }
+
+    function openMindModal(data) {
+      document.getElementById('node-icon').innerText = data.icon || '✨';
+      document.getElementById('node-title').innerText = data.name;
+      document.getElementById('node-realm').innerText = `Realm: ${data.realm}`;
+      document.getElementById('node-description').innerText = data.desc;
+      document.getElementById('node-media-title').innerText = `${data.name} Track`;
+      document.getElementById('mind-node-modal').classList.remove('hidden');
+    }
+
+    function closeMindModal() {
+      document.getElementById('mind-node-modal').classList.add('hidden');
+    }
+
+    function playNodeAudio() {
+      playNote(440, 'triangle', 1.2);
+    }
+
+    function switchRealm(realmKey) {
+      const positions = {
+        core: [0, 4, 12],
+        nature: [-12, 1, 10],
+        cyber: [14, 5, -8],
+        music: [8, 3, 10],
+        cosmos: [-10, 8, -10]
+      };
+      const pos = positions[realmKey] || [0, 8, 22];
+      camera.position.set(...pos);
+      controls.update();
+      playNote(392.00, 'sine', 0.6);
+    }
+
+    function resetView() {
+      camera.position.set(0, 8, 22);
+      controls.update();
+    }
+
+    function generate3DBiome(type, count) {
+      if (type === 'forest') buildInstancedForest(count);
+      if (type === 'city') buildInstancedCity(count);
+      if (type === 'crystals') buildInstancedCrystals(count);
+      totalModelCount += count;
+      document.getElementById('total-3d-count').innerText = `${totalModelCount.toLocaleString()} Models`;
+      playNote(659.25, 'sine', 0.8);
+    }
+
+    function drawVisualizer() {
+      const canvas = document.getElementById('audio-visualizer');
+      if (!canvas || !analyser) return;
+      const ctx = canvas.getContext('2d');
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      analyser.getByteFrequencyData(dataArray);
+
+      ctx.fillStyle = '#030712';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const barWidth = (canvas.width / bufferLength) * 2;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        const barHeight = (dataArray[i] / 255) * canvas.height;
+        ctx.fillStyle = `hsl(${i * 8 + 200}, 80%, 60%)`;
+        ctx.fillRect(x, canvas.height - barHeight, barWidth - 1, barHeight);
+        x += barWidth;
+      }
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    // Animation Loop
+    let lastTime = performance.now();
+    function animate() {
+      requestAnimationFrame(animate);
+
+      var now = performance.now();
+      var dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+
+      if (mindCore) {
+        mindCore.rotation.y += 0.008;
+        mindCore.rotation.x += 0.004;
+      }
+
+      activeNodes.forEach(n => {
+        n.rotation.y += 0.015;
+      });
+
+      if (chars.length > 0) updateCharacters(dt);
+
+      drawVisualizer();
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
