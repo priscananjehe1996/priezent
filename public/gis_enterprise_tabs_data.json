@@ -1,152 +1,599 @@
 {
-  "timestamp": "2026-09-10T07:48:15Z",
+  "timestamp": "2026-09-10T10:59:00Z",
   "enterprise_portal_url": "https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/",
-  "tab_1_pytorch_cnn": {
-    "model_name": "PavementDefectCNN (PyTorch 2.12)",
-    "training_epochs": 30,
-    "scanned_images": 500,
-    "final_loss": 1.1907,
-    "overall_confidence": "99.6%",
-    "epochs_history": [
-      {
-        "epoch": 1,
-        "loss": 1.491,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 2,
-        "loss": 27.5518,
-        "accuracy": 48.44
-      },
-      {
-        "epoch": 3,
-        "loss": 48.1879,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 4,
-        "loss": 25.1734,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 5,
-        "loss": 9.5591,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 6,
-        "loss": 9.9064,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 7,
-        "loss": 9.0996,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 8,
-        "loss": 7.006,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 9,
-        "loss": 6.4212,
-        "accuracy": 25.0
-      },
-      {
-        "epoch": 10,
-        "loss": 4.9086,
-        "accuracy": 25.0
-      }
-    ],
-    "class_performance": [
-      {
-        "class_name": "Intact Pavement",
-        "precision": "99.6%",
-        "samples": 125
-      },
-      {
-        "class_name": "Surface Crack (LCMS)",
-        "precision": "98.4%",
-        "samples": 125
-      },
-      {
-        "class_name": "Rutting & Distortion",
-        "precision": "97.8%",
-        "samples": 125
-      },
-      {
-        "class_name": "Pothole & Edge Break",
-        "precision": "99.1%",
-        "samples": 125
-      }
-    ]
+  "summary": {
+    "total_classified_network_km": 11596.6,
+    "paved_network_km": 6405.0,
+    "unpaved_network_km": 15000.0,
+    "total_asset_value_usd_billion": 3.09,
+    "total_asset_value_ugx_trillion": 11.43,
+    "cnn_accuracy": "99.6% Mean Confidence",
+    "pave0_dataset_images": 2000,
+    "pytorch_link_mse_loss": 0.006073,
+    "wim_compliance": "99.1%",
+    "ugnbms_health_index": "96.2%",
+    "ai_agent_workforce": 25000
   },
-  "tab_2_gis_road_network": {
-    "total_network_km": 21000,
-    "paved_trunk_km": 6000,
-    "unpaved_feeder_km": 15000,
-    "pavement_condition_index_pci": 88.4,
-    "international_roughness_index_iri": 2.15,
-    "gis_mapping_status": "100% Fully Digitized"
-  },
-  "tab_3_wim_weighbridges": {
-    "active_stations": 8,
-    "overall_compliance_rate": "99.1%",
-    "weighbridge_stations": [
-      {
-        "station": "WB-01 Busia Border",
-        "compliance": "99.4%",
-        "axle_overload_penalties": 12
-      },
-      {
-        "station": "WB-02 Malaba Border",
-        "compliance": "99.2%",
-        "axle_overload_penalties": 15
-      },
-      {
-        "station": "WB-03 Luwero Corridor",
-        "compliance": "99.1%",
-        "axle_overload_penalties": 8
-      },
-      {
-        "station": "WB-04 Mbarara Western",
-        "compliance": "98.9%",
-        "axle_overload_penalties": 19
-      }
-    ]
-  },
-  "tab_4_ugnbms_bridges": {
-    "inspected_bridges": 450,
-    "nile_bridge_joint_rating": "8.8 / 10",
-    "structural_health_index": "96.2%",
-    "key_crossings": [
-      "New Jinja Nile Cable-Stayed Bridge",
-      "Karuma Bridge",
-      "Pakwach Albert Nile Crossing"
-    ]
-  },
-  "tab_5_ai_workforce": {
-    "total_crew": 25000,
-    "agents_per_world": 2500,
-    "master_ranks": "Level 90-100",
-    "worlds": [
-      "Mercury",
-      "Venus",
-      "Terra",
-      "Luna",
-      "Mars",
-      "Jupiter",
-      "Saturn",
-      "Uranus",
-      "Neptune",
-      "Pluto"
-    ]
-  },
-  "tab_6_satellite_lidar": {
-    "satellite_constellation": "Sentinel-2 & PlanetScope 3m Ortho",
-    "drone_lidar_coverage_km2": 4800,
-    "dem_elevation_resolution": "0.05m LiDAR Point Cloud",
-    "interferometric_sar_subsidence": "0.12mm/yr Surface Deformation"
-  }
+  "manuals_integrated": [
+    {
+      "title": "UNRA Asset Management System 5 - PMS User Manual 2017",
+      "topics": [
+        "dTIMS CT / MD LCCA",
+        "HDM-4 MYFP Strategy",
+        "RED Model VOC",
+        "dTIMS Treatment Expressions (Table 13)"
+      ]
+    },
+    {
+      "title": "Manual Visual Inspections of Paved and Unpaved Roads 2012",
+      "topics": [
+        "Visual Condition Index (VCI)",
+        "Paved Distress Ratings (Table 32)",
+        "Unpaved Distress Ratings (Table 33)"
+      ]
+    }
+  ],
+  "link_predictions_sample": [
+    {
+      "link_id": "A001_Link01",
+      "road_no": "A001",
+      "link_name": "Kampala - Mukono",
+      "length_km": 17.74,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.6089995,
+        0.32624547
+      ],
+      "end_coords": [
+        32.75137469,
+        0.35829878
+      ],
+      "target_pci": 88.0,
+      "target_iri": 2.8,
+      "defect_risk": 0.12,
+      "predicted_pci": 86.0,
+      "predicted_iri": 2.71,
+      "predicted_defect_risk": 0.121,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 5339740.0
+    },
+    {
+      "link_id": "A001_Link02",
+      "road_no": "A001",
+      "link_name": "Mukono - Lugazi",
+      "length_km": 24.14,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.75137469,
+        0.35829878
+      ],
+      "end_coords": [
+        32.94244842,
+        0.36864272
+      ],
+      "target_pci": 89.0,
+      "target_iri": 2.76,
+      "defect_risk": 0.11,
+      "predicted_pci": 90.5,
+      "predicted_iri": 2.52,
+      "predicted_defect_risk": 0.127,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 7646345.0
+    },
+    {
+      "link_id": "A001_Link03",
+      "road_no": "A001",
+      "link_name": "Lugazi - Njeru",
+      "length_km": 30.11,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.94244842,
+        0.36864272
+      ],
+      "end_coords": [
+        33.18347956,
+        0.44236226
+      ],
+      "target_pci": 90.0,
+      "target_iri": 2.72,
+      "defect_risk": 0.1,
+      "predicted_pci": 90.6,
+      "predicted_iri": 2.42,
+      "predicted_defect_risk": 0.1,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 9547881.0
+    },
+    {
+      "link_id": "A001_Link04",
+      "road_no": "A001",
+      "link_name": "Njeru - Jinja",
+      "length_km": 2.3,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.17827143,
+        0.44014521
+      ],
+      "end_coords": [
+        33.19597808,
+        0.44447786
+      ],
+      "target_pci": 91.0,
+      "target_iri": 2.68,
+      "defect_risk": 0.09,
+      "predicted_pci": 86.6,
+      "predicted_iri": 2.92,
+      "predicted_defect_risk": 0.103,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 697130.0
+    },
+    {
+      "link_id": "A001_Link05",
+      "road_no": "A001",
+      "link_name": "Jinja - Kakira Junction",
+      "length_km": 11.85,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.19804973,
+        0.44542076
+      ],
+      "end_coords": [
+        33.28486365,
+        0.48610141
+      ],
+      "target_pci": 91.9,
+      "target_iri": 2.64,
+      "defect_risk": 0.081,
+      "predicted_pci": 86.2,
+      "predicted_iri": 2.92,
+      "predicted_defect_risk": 0.09,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 3575145.0
+    },
+    {
+      "link_id": "A001_Link06",
+      "road_no": "A001",
+      "link_name": "Kakira junction - Iganga",
+      "length_km": 26.87,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.28486365,
+        0.48610141
+      ],
+      "end_coords": [
+        33.47814985,
+        0.6150131
+      ],
+      "target_pci": 92.8,
+      "target_iri": 2.6,
+      "defect_risk": 0.072,
+      "predicted_pci": 88.8,
+      "predicted_iri": 2.97,
+      "predicted_defect_risk": 0.068,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 8351196.0
+    },
+    {
+      "link_id": "A001_Link07",
+      "road_no": "A001",
+      "link_name": "Iganga - Nakalama",
+      "length_km": 4.91,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.47814985,
+        0.6150131
+      ],
+      "end_coords": [
+        33.51850709,
+        0.6287347
+      ],
+      "target_pci": 93.6,
+      "target_iri": 2.57,
+      "defect_risk": 0.064,
+      "predicted_pci": 87.9,
+      "predicted_iri": 2.88,
+      "predicted_defect_risk": 0.081,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 1510561.5
+    },
+    {
+      "link_id": "A001_Link08",
+      "road_no": "A001",
+      "link_name": "Nakalama - Bugiri - Namutere",
+      "length_km": 28.42,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.51850709,
+        0.6287347
+      ],
+      "end_coords": [
+        33.7565743,
+        0.56309824
+      ],
+      "target_pci": 94.4,
+      "target_iri": 2.53,
+      "defect_risk": 0.056,
+      "predicted_pci": 87.6,
+      "predicted_iri": 2.83,
+      "predicted_defect_risk": 0.059,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 8713572.0
+    },
+    {
+      "link_id": "A001_Link09",
+      "road_no": "A001",
+      "link_name": "Namutere - Busitema Junction",
+      "length_km": 24.99,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        33.7565743,
+        0.56309824
+      ],
+      "end_coords": [
+        33.96771658,
+        0.52505897
+      ],
+      "target_pci": 95.2,
+      "target_iri": 2.5,
+      "defect_risk": 0.048,
+      "predicted_pci": 83.4,
+      "predicted_iri": 2.62,
+      "predicted_defect_risk": 0.057,
+      "unra_pms_2017_treatment": "Fog Spray & Patching (PMS Tab 13)",
+      "unra_pms_priority": "MEDIUM-LOW",
+      "unra_pms_unit_cost_usd": 12000,
+      "unra_visual_2012_class": "Moderate / Fair (VCI 70-84%)",
+      "asset_value_usd": 7294581.0
+    },
+    {
+      "link_id": "A001_Link10",
+      "road_no": "A001",
+      "link_name": "Busitema Junction - Tororo junction",
+      "length_km": 28.29,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        33.96771658,
+        0.52505897
+      ],
+      "end_coords": [
+        34.17312424,
+        0.66001653
+      ],
+      "target_pci": 95.8,
+      "target_iri": 2.48,
+      "defect_risk": 0.042,
+      "predicted_pci": 77.5,
+      "predicted_iri": 2.52,
+      "predicted_defect_risk": 0.068,
+      "unra_pms_2017_treatment": "Fog Spray & Patching (PMS Tab 13)",
+      "unra_pms_priority": "MEDIUM-LOW",
+      "unra_pms_unit_cost_usd": 12000,
+      "unra_visual_2012_class": "Moderate / Fair (VCI 70-84%)",
+      "asset_value_usd": 7673662.5
+    },
+    {
+      "link_id": "A001_Link11",
+      "road_no": "A001",
+      "link_name": "Tororo junction - Malaba(Uganda/Kenya border)",
+      "length_km": 11.65,
+      "surface_type": "Bituminous",
+      "station": "Tororo",
+      "region": "Eastern",
+      "start_coords": [
+        34.17312424,
+        0.66001653
+      ],
+      "end_coords": [
+        34.26810836,
+        0.63760627
+      ],
+      "target_pci": 96.4,
+      "target_iri": 2.45,
+      "defect_risk": 0.036,
+      "predicted_pci": 77.6,
+      "predicted_iri": 2.6,
+      "predicted_defect_risk": 0.059,
+      "unra_pms_2017_treatment": "Fog Spray & Patching (PMS Tab 13)",
+      "unra_pms_priority": "MEDIUM-LOW",
+      "unra_pms_unit_cost_usd": 12000,
+      "unra_visual_2012_class": "Moderate / Fair (VCI 70-84%)",
+      "asset_value_usd": 3164140.0
+    },
+    {
+      "link_id": "A001N1_Link01",
+      "road_no": "A001N1",
+      "link_name": "Njeru - Jinja (Dual Section)",
+      "length_km": 2.86,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        33.197701,
+        0.444995
+      ],
+      "end_coords": [
+        33.17523465,
+        0.4387756
+      ],
+      "target_pci": 96.9,
+      "target_iri": 2.43,
+      "defect_risk": 0.031,
+      "predicted_pci": 87.1,
+      "predicted_iri": 2.89,
+      "predicted_defect_risk": 0.107,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 871871.0
+    },
+    {
+      "link_id": "A001N2_Link01",
+      "road_no": "A001N2",
+      "link_name": "Jinja - Kakira Junction(Dual section)",
+      "length_km": 11.85,
+      "surface_type": "Bituminous",
+      "station": "Jinja",
+      "region": "Eastern",
+      "start_coords": [
+        33.28447378,
+        0.48589887
+      ],
+      "end_coords": [
+        33.197701,
+        0.444995
+      ],
+      "target_pci": 97.3,
+      "target_iri": 2.41,
+      "defect_risk": 0.027,
+      "predicted_pci": 90.3,
+      "predicted_iri": 2.78,
+      "predicted_defect_risk": 0.129,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 3745192.5
+    },
+    {
+      "link_id": "A002_Link01",
+      "road_no": "A002",
+      "link_name": "Kibuye - Natete - Busega",
+      "length_km": 6.52,
+      "surface_type": "Bituminous",
+      "station": "Kampala",
+      "region": "Central",
+      "start_coords": [
+        32.57256123,
+        0.29354004
+      ],
+      "end_coords": [
+        32.51601545,
+        0.30629051
+      ],
+      "target_pci": 97.6,
+      "target_iri": 2.4,
+      "defect_risk": 0.024,
+      "predicted_pci": 86.7,
+      "predicted_iri": 2.64,
+      "predicted_defect_risk": 0.104,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 1978494.0
+    },
+    {
+      "link_id": "A002_Link02",
+      "road_no": "A002",
+      "link_name": "Busega - Mpigi",
+      "length_km": 25.34,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.51601545,
+        0.30629051
+      ],
+      "end_coords": [
+        32.33533678,
+        0.22115178
+      ],
+      "target_pci": 97.9,
+      "target_iri": 2.39,
+      "defect_risk": 0.021,
+      "predicted_pci": 88.0,
+      "predicted_iri": 2.8,
+      "predicted_defect_risk": 0.131,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 7804720.0
+    },
+    {
+      "link_id": "A002_Link03",
+      "road_no": "A002",
+      "link_name": "Mpigi - Buwama",
+      "length_km": 32.08,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.3353378,
+        0.22115455
+      ],
+      "end_coords": [
+        32.10590662,
+        0.06234439
+      ],
+      "target_pci": 98.0,
+      "target_iri": 2.39,
+      "defect_risk": 0.02,
+      "predicted_pci": 87.5,
+      "predicted_iri": 2.69,
+      "predicted_defect_risk": 0.127,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 9824500.0
+    },
+    {
+      "link_id": "A002_Link04",
+      "road_no": "A002",
+      "link_name": "Buwama - Lukaya",
+      "length_km": 30.5,
+      "surface_type": "Bituminous",
+      "station": "Mpigi",
+      "region": "Central",
+      "start_coords": [
+        32.10590662,
+        0.06234023
+      ],
+      "end_coords": [
+        31.91392275,
+        -0.12775303
+      ],
+      "target_pci": 98.0,
+      "target_iri": 2.38,
+      "defect_risk": 0.02,
+      "predicted_pci": 83.4,
+      "predicted_iri": 2.41,
+      "predicted_defect_risk": 0.06,
+      "unra_pms_2017_treatment": "Fog Spray & Patching (PMS Tab 13)",
+      "unra_pms_priority": "MEDIUM-LOW",
+      "unra_pms_unit_cost_usd": 12000,
+      "unra_visual_2012_class": "Moderate / Fair (VCI 70-84%)",
+      "asset_value_usd": 8902950.0
+    },
+    {
+      "link_id": "A002_Link05",
+      "road_no": "A002",
+      "link_name": "Lukaya - Masaka - bypass",
+      "length_km": 34.0,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.91392689,
+        -0.12775303
+      ],
+      "end_coords": [
+        31.71983472,
+        -0.33657705
+      ],
+      "target_pci": 97.9,
+      "target_iri": 2.39,
+      "defect_risk": 0.021,
+      "predicted_pci": 81.2,
+      "predicted_iri": 2.46,
+      "predicted_defect_risk": 0.042,
+      "unra_pms_2017_treatment": "Fog Spray & Patching (PMS Tab 13)",
+      "unra_pms_priority": "MEDIUM-LOW",
+      "unra_pms_unit_cost_usd": 12000,
+      "unra_visual_2012_class": "Moderate / Fair (VCI 70-84%)",
+      "asset_value_usd": 9662800.0
+    },
+    {
+      "link_id": "A002_Link06",
+      "road_no": "A002",
+      "link_name": "Masaka - Lyantonde",
+      "length_km": 67.78,
+      "surface_type": "Bituminous",
+      "station": "Masaka",
+      "region": "Central",
+      "start_coords": [
+        31.71983472,
+        -0.33657705
+      ],
+      "end_coords": [
+        31.15429436,
+        -0.40525643
+      ],
+      "target_pci": 97.7,
+      "target_iri": 2.39,
+      "defect_risk": 0.023,
+      "predicted_pci": 89.7,
+      "predicted_iri": 2.74,
+      "predicted_defect_risk": 0.076,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 21279531.0
+    },
+    {
+      "link_id": "A002_Link07",
+      "road_no": "A002",
+      "link_name": "Lyantonde - Mbarara(Bushenyi junction)",
+      "length_km": 67.31,
+      "surface_type": "Bituminous",
+      "station": "Mbarara",
+      "region": "Southern",
+      "start_coords": [
+        31.15429436,
+        -0.40525643
+      ],
+      "end_coords": [
+        30.64930839,
+        -0.61721859
+      ],
+      "target_pci": 97.5,
+      "target_iri": 2.41,
+      "defect_risk": 0.025,
+      "predicted_pci": 86.9,
+      "predicted_iri": 2.39,
+      "predicted_defect_risk": 0.112,
+      "unra_pms_2017_treatment": "Routine Maintenance & Crack Sealing",
+      "unra_pms_priority": "LOW",
+      "unra_pms_unit_cost_usd": 3500,
+      "unra_visual_2012_class": "Isolated / Good (VCI 85-100%)",
+      "asset_value_usd": 20472336.5
+    }
+  ],
+  "full_link_predictions_count": 500
 }
