@@ -77,6 +77,9 @@
       <button onclick="switchGISTab('tab-worlds')" id="tab-btn-worlds" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
         <span>🪐 Tab 5: 10 Worlds AI Workforce</span>
       </button>
+      <button onclick="switchGISTab('tab-sat')" id="tab-btn-sat" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
+        <span>🛰️ Tab 6: Satellite Remote Sensing & LiDAR</span>
+      </button>
     </div>
 
     <!-- Tab 1: PyTorch CNN Defect Model Results -->
@@ -320,6 +323,28 @@
       </div>
     </div>
 
+    <!-- Tab 6: Satellite Remote Sensing & Drone LiDAR Survey -->
+    <div id="pane-tab-sat" class="tab-pane hidden space-y-6">
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <h2 class="text-base font-bold text-teal-300 flex items-center justify-between">
+          <span>🛰️ Satellite Remote Sensing & Drone LiDAR Elevation Survey</span>
+          <span class="text-xs font-mono text-teal-400">Sentinel-2 & PlanetScope 3m Ortho</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+            <div class="text-cyan-300 font-bold">Drone LiDAR Survey Area: 4,800 km²</div>
+            <div class="text-slate-300">DEM Resolution: 0.05m Point Cloud Elevation</div>
+            <div class="text-slate-400 text-[11px]">3D Digital Surface Models & Pavement Deflection Profiles</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+            <div class="text-purple-300 font-bold">InSAR Satellite Deformation Radar</div>
+            <div class="text-slate-300">Surface Subsidence: 0.12 mm/yr Stability</div>
+            <div class="text-slate-400 text-[11px]">Subsurface Moisture & Embankment Settlement Radar Monitoring</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Enterprise Portal Link Banner -->
     <div class="glass-card rounded-2xl p-6 text-center space-y-4 border-cyan-500/40">
       <h3 class="text-lg font-bold text-white">Uganda GIS Enterprise Core Portal Integration</h3>
@@ -354,7 +379,7 @@
       const activePane = document.getElementById('pane-' + tabId);
       if (activePane) activePane.classList.remove('hidden');
 
-      const tabBtns = ['tab-btn-cnn', 'tab-btn-network', 'tab-btn-wim', 'tab-btn-bridges', 'tab-btn-worlds'];
+      const tabBtns = ['tab-btn-cnn', 'tab-btn-network', 'tab-btn-wim', 'tab-btn-bridges', 'tab-btn-worlds', 'tab-btn-sat'];
       tabBtns.forEach(btnId => {
         const btn = document.getElementById(btnId);
         if (btn) {
@@ -366,7 +391,8 @@
         'tab-network': 'tab-btn-network',
         'tab-wim': 'tab-btn-wim',
         'tab-bridges': 'tab-btn-bridges',
-        'tab-worlds': 'tab-btn-worlds'
+        'tab-worlds': 'tab-btn-worlds',
+        'tab-sat': 'tab-btn-sat'
       };
       const activeBtn = document.getElementById(activeBtnMap[tabId]);
       if (activeBtn) {

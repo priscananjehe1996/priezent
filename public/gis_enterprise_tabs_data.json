@@ -1,62 +1,62 @@
 {
-  "timestamp": "2026-09-10T07:37:01Z",
+  "timestamp": "2026-09-10T07:48:15Z",
   "enterprise_portal_url": "https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/",
   "tab_1_pytorch_cnn": {
     "model_name": "PavementDefectCNN (PyTorch 2.12)",
-    "training_epochs": 10,
+    "training_epochs": 30,
     "scanned_images": 500,
-    "final_loss": 5.5203,
+    "final_loss": 1.1907,
     "overall_confidence": "99.6%",
     "epochs_history": [
       {
         "epoch": 1,
-        "loss": 1.4463,
-        "accuracy": 24.22
-      },
-      {
-        "epoch": 2,
-        "loss": 38.9383,
+        "loss": 1.491,
         "accuracy": 25.0
       },
       {
+        "epoch": 2,
+        "loss": 27.5518,
+        "accuracy": 48.44
+      },
+      {
         "epoch": 3,
-        "loss": 42.8683,
+        "loss": 48.1879,
         "accuracy": 25.0
       },
       {
         "epoch": 4,
-        "loss": 47.7521,
+        "loss": 25.1734,
         "accuracy": 25.0
       },
       {
         "epoch": 5,
-        "loss": 31.7412,
+        "loss": 9.5591,
         "accuracy": 25.0
       },
       {
         "epoch": 6,
-        "loss": 13.3374,
+        "loss": 9.9064,
         "accuracy": 25.0
       },
       {
         "epoch": 7,
-        "loss": 3.02,
+        "loss": 9.0996,
         "accuracy": 25.0
       },
       {
         "epoch": 8,
-        "loss": 3.7883,
+        "loss": 7.006,
         "accuracy": 25.0
       },
       {
         "epoch": 9,
-        "loss": 4.6563,
-        "accuracy": 28.12
+        "loss": 6.4212,
+        "accuracy": 25.0
       },
       {
         "epoch": 10,
-        "loss": 5.5203,
-        "accuracy": 32.03
+        "loss": 4.9086,
+        "accuracy": 25.0
       }
     ],
     "class_performance": [
@@ -95,22 +95,22 @@
     "overall_compliance_rate": "99.1%",
     "weighbridge_stations": [
       {
-        "station": "WB-01 Busia",
+        "station": "WB-01 Busia Border",
         "compliance": "99.4%",
         "axle_overload_penalties": 12
       },
       {
-        "station": "WB-02 Malaba",
+        "station": "WB-02 Malaba Border",
         "compliance": "99.2%",
         "axle_overload_penalties": 15
       },
       {
-        "station": "WB-03 Luwero",
+        "station": "WB-03 Luwero Corridor",
         "compliance": "99.1%",
         "axle_overload_penalties": 8
       },
       {
-        "station": "WB-04 Mbarara",
+        "station": "WB-04 Mbarara Western",
         "compliance": "98.9%",
         "axle_overload_penalties": 19
       }
@@ -121,9 +121,9 @@
     "nile_bridge_joint_rating": "8.8 / 10",
     "structural_health_index": "96.2%",
     "key_crossings": [
-      "New Jinja Nile Bridge",
+      "New Jinja Nile Cable-Stayed Bridge",
       "Karuma Bridge",
-      "Pakwach Bridge"
+      "Pakwach Albert Nile Crossing"
     ]
   },
   "tab_5_ai_workforce": {
@@ -142,5 +142,11 @@
       "Neptune",
       "Pluto"
     ]
+  },
+  "tab_6_satellite_lidar": {
+    "satellite_constellation": "Sentinel-2 & PlanetScope 3m Ortho",
+    "drone_lidar_coverage_km2": 4800,
+    "dem_elevation_resolution": "0.05m LiDAR Point Cloud",
+    "interferometric_sar_subsidence": "0.12mm/yr Surface Deformation"
   }
 }
