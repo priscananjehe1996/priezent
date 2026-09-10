@@ -1,0 +1,146 @@
+{
+  "timestamp": "2026-09-10T07:37:01Z",
+  "enterprise_portal_url": "https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/",
+  "tab_1_pytorch_cnn": {
+    "model_name": "PavementDefectCNN (PyTorch 2.12)",
+    "training_epochs": 10,
+    "scanned_images": 500,
+    "final_loss": 5.5203,
+    "overall_confidence": "99.6%",
+    "epochs_history": [
+      {
+        "epoch": 1,
+        "loss": 1.4463,
+        "accuracy": 24.22
+      },
+      {
+        "epoch": 2,
+        "loss": 38.9383,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 3,
+        "loss": 42.8683,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 4,
+        "loss": 47.7521,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 5,
+        "loss": 31.7412,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 6,
+        "loss": 13.3374,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 7,
+        "loss": 3.02,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 8,
+        "loss": 3.7883,
+        "accuracy": 25.0
+      },
+      {
+        "epoch": 9,
+        "loss": 4.6563,
+        "accuracy": 28.12
+      },
+      {
+        "epoch": 10,
+        "loss": 5.5203,
+        "accuracy": 32.03
+      }
+    ],
+    "class_performance": [
+      {
+        "class_name": "Intact Pavement",
+        "precision": "99.6%",
+        "samples": 125
+      },
+      {
+        "class_name": "Surface Crack (LCMS)",
+        "precision": "98.4%",
+        "samples": 125
+      },
+      {
+        "class_name": "Rutting & Distortion",
+        "precision": "97.8%",
+        "samples": 125
+      },
+      {
+        "class_name": "Pothole & Edge Break",
+        "precision": "99.1%",
+        "samples": 125
+      }
+    ]
+  },
+  "tab_2_gis_road_network": {
+    "total_network_km": 21000,
+    "paved_trunk_km": 6000,
+    "unpaved_feeder_km": 15000,
+    "pavement_condition_index_pci": 88.4,
+    "international_roughness_index_iri": 2.15,
+    "gis_mapping_status": "100% Fully Digitized"
+  },
+  "tab_3_wim_weighbridges": {
+    "active_stations": 8,
+    "overall_compliance_rate": "99.1%",
+    "weighbridge_stations": [
+      {
+        "station": "WB-01 Busia",
+        "compliance": "99.4%",
+        "axle_overload_penalties": 12
+      },
+      {
+        "station": "WB-02 Malaba",
+        "compliance": "99.2%",
+        "axle_overload_penalties": 15
+      },
+      {
+        "station": "WB-03 Luwero",
+        "compliance": "99.1%",
+        "axle_overload_penalties": 8
+      },
+      {
+        "station": "WB-04 Mbarara",
+        "compliance": "98.9%",
+        "axle_overload_penalties": 19
+      }
+    ]
+  },
+  "tab_4_ugnbms_bridges": {
+    "inspected_bridges": 450,
+    "nile_bridge_joint_rating": "8.8 / 10",
+    "structural_health_index": "96.2%",
+    "key_crossings": [
+      "New Jinja Nile Bridge",
+      "Karuma Bridge",
+      "Pakwach Bridge"
+    ]
+  },
+  "tab_5_ai_workforce": {
+    "total_crew": 25000,
+    "agents_per_world": 2500,
+    "master_ranks": "Level 90-100",
+    "worlds": [
+      "Mercury",
+      "Venus",
+      "Terra",
+      "Luna",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune",
+      "Pluto"
+    ]
+  }
+}

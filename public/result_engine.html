@@ -60,8 +60,24 @@
       </div>
     </div>
 
-    <!-- Main Results Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- GIS Enterprise Multi-Tab Navigation Bar -->
+    <div class="glass-card rounded-2xl p-2 flex flex-wrap gap-2 text-xs font-mono font-bold">
+      <button onclick="switchGISTab('tab-cnn')" id="tab-btn-cnn" class="px-4 py-2.5 rounded-xl bg-cyan-600 text-white border border-cyan-400 flex items-center gap-1.5 shadow-lg">
+        <span>🧠 Tab 1: PyTorch CNN Defect Results</span>
+      </button>
+      <button onclick="switchGISTab('tab-network')" id="tab-btn-network" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
+        <span>🌍 Tab 2: 21,000 km GIS Network</span>
+      </button>
+      <button onclick="switchGISTab('tab-wim')" id="tab-btn-wim" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
+        <span>⚖️ Tab 3: WIM Weighbridges</span>
+      </button>
+      <button onclick="switchGISTab('tab-bridges')" id="tab-btn-bridges" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
+        <span>🌉 Tab 4: UGNBMS Nile Bridges</span>
+      </button>
+      <button onclick="switchGISTab('tab-worlds')" id="tab-btn-worlds" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5">
+        <span>🪐 Tab 5: 10 Worlds AI Workforce</span>
+      </button>
+    </div>
 
       <!-- Sector Analysis Card -->
       <div class="glass-card rounded-2xl p-6 space-y-4">
@@ -116,6 +132,98 @@
         </div>
       </div>
 
+    <!-- 10 Solar System Worlds Analytics Table -->
+    <div class="glass-card rounded-2xl p-6 space-y-4">
+      <h2 class="text-base font-bold text-purple-300 flex items-center justify-between">
+        <span>🪐 10 Solar Worlds Spatial Analytics & Gravity Roster</span>
+        <span class="text-xs font-mono text-purple-400">2,500 Agents / World</span>
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left font-mono text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400">
+              <th class="py-2 px-3">World</th>
+              <th class="py-2 px-3">Master Lead</th>
+              <th class="py-2 px-3">Gravity ($g$)</th>
+              <th class="py-2 px-3">Workload Bulk Focus</th>
+              <th class="py-2 px-3 text-right">Workload Score</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-slate-200">
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-amber-400">🪐 Mercury</td>
+              <td class="py-2.5 px-3 text-purple-300">Alexander (L100)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.38g</td>
+              <td class="py-2.5 px-3">Weighbridge Data & Axle Load Spectra</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">780 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-amber-400">♀️ Venus</td>
+              <td class="py-2.5 px-3 text-purple-300">Amelia (L98)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.90g</td>
+              <td class="py-2.5 px-3">MOWT Engineering Manuals & Standards</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">820 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-emerald-400">🌍 Terra (Earth)</td>
+              <td class="py-2.5 px-3 text-purple-300">Arthur (L100)</td>
+              <td class="py-2.5 px-3 text-cyan-300">1.00g</td>
+              <td class="py-2.5 px-3">21,000 km Classified Network Master</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">980 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-slate-300">🌙 Luna (Moon)</td>
+              <td class="py-2.5 px-3 text-purple-300">Audrey (L99)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.165g</td>
+              <td class="py-2.5 px-3">LCMS 3D Laser & Road Condition Scans</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">940 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-red-400">♂️ Mars</td>
+              <td class="py-2.5 px-3 text-purple-300">Benjamin (L97)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.38g</td>
+              <td class="py-2.5 px-3">Traffic Volumetrics & ATC Counts</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">860 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-cyan-400">♃ Jupiter (Europa)</td>
+              <td class="py-2.5 px-3 text-purple-300">Charlotte (L100)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.134g</td>
+              <td class="py-2.5 px-3">UGNBMS Nile Bridge Management</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">920 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-amber-300">♄ Saturn (Titan)</td>
+              <td class="py-2.5 px-3 text-purple-300">Daniel (L99)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.14g</td>
+              <td class="py-2.5 px-3">GIS Shapefiles & Cartography Guild</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">900 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-teal-300">♅ Uranus (Titania)</td>
+              <td class="py-2.5 px-3 text-purple-300">Eleanor (L96)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.89g</td>
+              <td class="py-2.5 px-3">NTIS Transport Information System</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">840 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-blue-400">♆ Neptune (Triton)</td>
+              <td class="py-2.5 px-3 text-purple-300">Ethan (L98)</td>
+              <td class="py-2.5 px-3 text-cyan-300">1.12g</td>
+              <td class="py-2.5 px-3">Inland Waterway Ferries & Marine Media</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">810 / 1000</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40">
+              <td class="py-2.5 px-3 font-bold text-purple-400">♇ Pluto</td>
+              <td class="py-2.5 px-3 text-purple-300">Emily (L100)</td>
+              <td class="py-2.5 px-3 text-cyan-300">0.063g</td>
+              <td class="py-2.5 px-3">60m Road Reserve Cadastral Observatory</td>
+              <td class="py-2.5 px-3 text-right font-bold text-emerald-400">800 / 1000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Enterprise Portal Link Banner -->
@@ -145,6 +253,28 @@
     import { globalResultEngine } from './src/engine/resultEngine.js';
     window.downloadReport = function(format) {
       globalResultEngine.downloadReport(format);
+    };
+
+    window.switchGISTab = function(tabId) {
+      console.log('Switched to GIS Tab:', tabId);
+      const tabBtns = ['tab-btn-cnn', 'tab-btn-network', 'tab-btn-wim', 'tab-btn-bridges', 'tab-btn-worlds'];
+      tabBtns.forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.className = 'px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1.5';
+        }
+      });
+      const activeBtnMap = {
+        'tab-cnn': 'tab-btn-cnn',
+        'tab-network': 'tab-btn-network',
+        'tab-wim': 'tab-btn-wim',
+        'tab-bridges': 'tab-btn-bridges',
+        'tab-worlds': 'tab-btn-worlds'
+      };
+      const activeBtn = document.getElementById(activeBtnMap[tabId]);
+      if (activeBtn) {
+        activeBtn.className = 'px-4 py-2.5 rounded-xl bg-cyan-600 text-white border border-cyan-400 flex items-center gap-1.5 shadow-lg';
+      }
     };
   </script>
 </body>
