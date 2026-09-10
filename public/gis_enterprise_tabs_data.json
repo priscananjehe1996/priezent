@@ -13,7 +13,7 @@
     "wim_compliance": "99.1%",
     "ugnbms_health_index": "96.2%",
     "ai_agent_workforce": 25000,
-    "total_survey_images_scanned": 12793733,
+    "total_survey_images_scanned": 15123080,
     "drive_w_images": 3565642,
     "drive_x_images": 7086734,
     "drive_y_images": 1439858,
@@ -22,8 +22,13 @@
       "W:",
       "X:",
       "Y:",
-      "Z:"
-    ]
+      "Z:",
+      "C:",
+      "F:",
+      "G:",
+      "D:\\OneDrive"
+    ],
+    "total_paved_corridor_folders": 2964
   },
   "manuals_integrated": [
     {

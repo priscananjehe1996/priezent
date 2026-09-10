@@ -20,7 +20,7 @@ export const BOT_CROSSING_OUTPUTS = {
     totalLinkSections: 1022,
     pytorchCnnAccuracy: '99.85%',
     pytorchLinkMseLoss: 0.006073,
-    surveyImagesScanned: '12.79 Million Images',
+    surveyImagesScanned: '15.12 Million Images',
     scannedDrives: ['W:', 'X:', 'Y:', 'Z:'],
     weighbridgeCompliance: '99.1%',
     ugnbmsBridgeSafetyScore: '96.2%',
@@ -143,7 +143,7 @@ export function renderBotCrossingLinksCardHTML() {
           🚀 BOT CROSSING — GIS ENTERPRISE OUTPUTS
         </span>
         <span style="padding:3px 10px;border-radius:9999px;background:rgba(16,185,129,0.2);color:#34d399;font-size:10px;font-weight:bold;font-family:monospace;">
-          12.79M SCANNED
+          15.12M SCANNED
         </span>
       </div>
 
