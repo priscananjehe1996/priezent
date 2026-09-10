@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNR-MOWT Solar Architecture — RMS Sun Core & Orbiting Planets Interlinks</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body { background: #030712; color: #f8fafc; font-family: monospace; }
+    canvas { background: transparent; display: block; }
+    .glass-box {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  </style>
+</head>
+<body class="p-4 flex flex-col items-center justify-center min-h-screen">
+  <div class="max-w-4xl w-full glass-box rounded-2xl p-6 space-y-4 shadow-2xl">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+      <div>
+        <h1 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+          <span>☀️ DNR-MOWT SOLAR SYSTEM ARCHITECTURE</span>
+        </h1>
+        <p class="text-xs text-slate-400 mt-0.5">RMS is the Central Gravitational Sun Core • Subsystems Orbit as Interlinked Planets</p>
+      </div>
+      <a href="https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/" target="_blank" class="px-4 py-2 rounded-xl bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold hover:bg-cyan-900 transition">
+        🌐 Enterprise GIS Portal ↗
+      </a>
+    </div>
+
+    <!-- Canvas Visualizer -->
+    <div class="relative w-full h-[480px] bg-slate-950/80 rounded-xl overflow-hidden border border-slate-800">
+      <canvas id="solarCanvas" class="w-full h-full"></canvas>
+      <div id="tooltip" class="absolute hidden p-3 rounded-xl glass-box text-xs space-y-1 pointer-events-none shadow-xl border-cyan-500/50"></div>
+    </div>
+
+    <!-- Interlink Data Exchange Summary -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-emerald-400 font-bold">🪐 PMS ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> PCI 86.2, 15.12M Defect Scans</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> 1,022 Link LRS Coordinates</div>
+      </div>
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-amber-400 font-bold">🚦 TIS ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> WIM 99.1% Compliance, ATC Counts</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> Axle Load Corridor Limits</div>
+      </div>
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-blue-400 font-bold">🌉 BMS ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> 450 Bridges, 96.2% Safety Score</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> River Crossing LRS Chainages</div>
+      </div>
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-purple-400 font-bold">🌾 Socio-Econ ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> 135 Districts, 18.4% EIRR</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> Feeder Network Topology</div>
+      </div>
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-cyan-400 font-bold">💰 Budgets ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> $3.09B Valuation, MYFP Costs</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> Condition Decay Trajectories</div>
+      </div>
+      <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+        <div class="text-teal-400 font-bold">🛰️ LiDAR ⇄ ☀️ RMS</div>
+        <div class="text-[11px] text-slate-300"><b>Feeds:</b> 0.05m DEM, 0.12mm InSAR</div>
+        <div class="text-[10px] text-slate-500"><b>Receives:</b> 21,000 km Cadastral Boundaries</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('solarCanvas');
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('tooltip');
+
+    function resize() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Planets Definition
+    const planets = [
+      { name: 'PMS Planet', code: 'PMS', color: '#34d399', orbitR: 75, speed: 0.015, size: 10, dataIn: 'PCI 86.2, 15.12M Images', dataOut: 'LRS Link Chainages' },
+      { name: 'TIS Planet', code: 'TIS', color: '#fbbf24', orbitR: 115, speed: 0.012, size: 11, dataIn: 'WIM 99.1%, ATC Counts', dataOut: 'Corridor Load Limits' },
+      { name: 'BMS Planet', code: 'BMS', color: '#60a5fa', orbitR: 155, speed: 0.009, size: 12, dataIn: '450 Bridges, 96.2% Safety', dataOut: 'Bridge LRS Chainages' },
+      { name: 'Socio-Econ', code: 'NDPIV', color: '#c084fc', orbitR: 195, speed: 0.007, size: 11, dataIn: '135 Districts, 18.4% EIRR', dataOut: 'Feeder Topology' },
+      { name: 'Budgets/LCCA', code: 'LCCA', color: '#f472b6', orbitR: 230, speed: 0.005, size: 13, dataIn: '$3.09B Valuation, MYFP', dataOut: 'Decay Trajectories' },
+      { name: 'LiDAR/Satellite', code: 'SAT', color: '#2dd4bf', orbitR: 265, speed: 0.004, size: 10, dataIn: '0.05m DEM, 0.12mm InSAR', dataOut: 'Cadastral Boundaries' }
+    ];
+
+    let particles = [];
+    let angleOffset = 0;
+
+    for (let i = 0; i < 40; i++) {
+      particles.push({
+        planetIdx: i % planets.length,
+        progress: Math.random(),
+        direction: Math.random() > 0.5 ? 1 : -1,
+        speed: 0.005 + Math.random() * 0.008
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      angleOffset += 0.002;
+
+      // 1. Sun Core
+      const sunGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 45);
+      sunGlow.addColorStop(0, '#fbbf24');
+      sunGlow.addColorStop(0.4, 'rgba(245, 158, 11, 0.8)');
+      sunGlow.addColorStop(1, 'rgba(245, 158, 11, 0)');
+      
+      ctx.beginPath();
+      ctx.arc(cx, cy, 45, 0, Math.PI * 2);
+      ctx.fillStyle = sunGlow;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+      ctx.fillStyle = '#f59e0b';
+      ctx.shadowColor = '#fbbf24';
+      ctx.shadowBlur = 20;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      ctx.fillStyle = '#030712';
+      ctx.font = 'bold 11px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('RMS SUN', cx, cy - 2);
+      ctx.font = '9px monospace';
+      ctx.fillText('LRS HUB', cx, cy + 9);
+
+      // 2. Orbital Rings & Planets
+      planets.forEach((p, idx) => {
+        const currentAngle = angleOffset * (p.speed * 100) + (idx * (Math.PI / 3));
+        const px = cx + Math.cos(currentAngle) * p.orbitR;
+        const py = cy + Math.sin(currentAngle) * (p.orbitR * 0.65);
+
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, p.orbitR, p.orbitR * 0.65, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(px, py);
+        ctx.strokeStyle = p.color;
+        ctx.globalAlpha = 0.25;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+
+        ctx.beginPath();
+        ctx.arc(px, py, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        ctx.fillStyle = '#f8fafc';
+        ctx.font = 'bold 10px monospace';
+        ctx.fillText(p.code, px, py + p.size + 12);
+
+        p.currentX = px;
+        p.currentY = py;
+      });
+
+      // 3. Energy Particles
+      particles.forEach(part => {
+        const p = planets[part.planetIdx];
+        part.progress += part.speed;
+        if (part.progress > 1) part.progress = 0;
+
+        const currentAngle = angleOffset * (p.speed * 100) + (part.planetIdx * (Math.PI / 3));
+        const px = cx + Math.cos(currentAngle) * p.orbitR;
+        const py = cy + Math.sin(currentAngle) * (p.orbitR * 0.65);
+
+        let fx, fy;
+        if (part.direction === 1) {
+          fx = px + (cx - px) * part.progress;
+          fy = py + (cy - py) * part.progress;
+        } else {
+          fx = cx + (px - cx) * part.progress;
+          fy = cy + (py - cy) * part.progress;
+        }
+
+        ctx.beginPath();
+        ctx.arc(fx, fy, part.direction === 1 ? 2.5 : 2.0, 0, Math.PI * 2);
+        ctx.fillStyle = part.direction === 1 ? p.color : '#fbbf24';
+        ctx.shadowColor = ctx.fillStyle;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+
+      let hovered = null;
+      planets.forEach(p => {
+        const dist = Math.hypot(mx - p.currentX, my - p.currentY);
+        if (dist < p.size + 8) hovered = p;
+      });
+
+      if (hovered) {
+        tooltip.style.left = (mx + 15) + 'px';
+        tooltip.style.top = (my + 15) + 'px';
+        tooltip.classList.remove('hidden');
+        tooltip.innerHTML = `
+          <div class="font-bold text-sm" style="color:${hovered.color}">${hovered.name}</div>
+          <div class="text-[11px] text-emerald-400"><b>Feeds Sun:</b> ${hovered.dataIn}</div>
+          <div class="text-[11px] text-amber-300"><b>Receives Sun:</b> ${hovered.dataOut}</div>
+        `;
+      } else {
+        tooltip.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
