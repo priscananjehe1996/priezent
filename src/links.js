@@ -2,7 +2,7 @@
  * links.js — Uganda National Road Network (UNRN) Official System Themes & Enterprise GIS Core
  * 
  * Organizes all network analytics, PyTorch predictions, and GIS outputs into
- * UNRA's 6 Official System Themes:
+ * DNR-MOWT's 6 Official System Themes:
  *   1. Road Management System (RMS)
  *   2. Pavement Management System (PMS)
  *   3. Traffic Information System (TIS)
@@ -13,7 +13,7 @@
 
 export const ENTERPRISE_GIS_PORTAL_URL = 'https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/'
 
-export const UNRA_OFFICIAL_THEMES = {
+export const DNR-MOWT_OFFICIAL_THEMES = {
   theme1_rms: {
     code: 'RMS',
     name: 'Road Management System (RMS)',
@@ -22,7 +22,7 @@ export const UNRA_OFFICIAL_THEMES = {
     pavedCorridorsKm: 6502.2,
     unpavedFeedersKm: 15000.0,
     totalDigitizedLinks: 1022,
-    manualReference: 'UNRA RMS User Manual 2017'
+    manualReference: 'DNR-MOWT RMS User Manual 2017'
   },
   theme2_pms: {
     code: 'PMS',
@@ -33,7 +33,7 @@ export const UNRA_OFFICIAL_THEMES = {
     pytorchLinkMseLoss: 0.006073,
     meanPci: 86.2,
     meanIriMkm: 2.71,
-    manualReference: 'UNRA PMS User Manual 2017 & Visual Inspection Manual 2012'
+    manualReference: 'DNR-MOWT PMS User Manual 2017 & Visual Inspection Manual 2012'
   },
   theme3_tis: {
     code: 'TIS',
@@ -83,32 +83,32 @@ export function getBotCrossingLinks() {
   }
 }
 
-/** Get summary of UNRA's 6 official core system themes */
-export function getUNRAThemesSummary() {
-  return UNRA_OFFICIAL_THEMES
+/** Get summary of DNR-MOWT's 6 official core system themes */
+export function getDNR-MOWTThemesSummary() {
+  return DNR-MOWT_OFFICIAL_THEMES
 }
 
 /** Export JSON or CSV formatted Bot Crossing analytics report */
 export function exportBotCrossingReport(format = 'json') {
   if (format === 'csv') {
     const headers = ['ThemeCode', 'ThemeName', 'Scope', 'KeyMetric']
-    const rows = Object.values(UNRA_OFFICIAL_THEMES).map(t => [
+    const rows = Object.values(DNR-MOWT_OFFICIAL_THEMES).map(t => [
       t.code, `"${t.name}"`, `"${t.scope}"`, `"${t.classifiedNetworkKm || t.pytorchCnnAccuracy || t.wimComplianceRate || t.structuralSafetyScore || t.replacementAssetValueUsd}"`
     ].join(','))
     return [headers.join(','), ...rows].join('\n')
   }
-  return JSON.stringify(UNRA_OFFICIAL_THEMES, null, 2)
+  return JSON.stringify(DNR-MOWT_OFFICIAL_THEMES, null, 2)
 }
 
 /** Render HTML Card Component for HUD / Modal UI */
 export function renderBotCrossingLinksCardHTML() {
-  const t2 = UNRA_OFFICIAL_THEMES.theme2_pms
-  const t6 = UNRA_OFFICIAL_THEMES.theme6_budgetsMaintenance
+  const t2 = DNR-MOWT_OFFICIAL_THEMES.theme2_pms
+  const t6 = DNR-MOWT_OFFICIAL_THEMES.theme6_budgetsMaintenance
   return `
     <div class="bot-crossing-links-card" style="padding:14px;background:rgba(15,23,42,0.92);border:1px solid rgba(56,189,248,0.35);border-radius:14px;color:#f8fafc;font-family:sans-serif;font-size:12px;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
         <span style="font-weight:bold;color:#38bdf8;font-size:13.5px;display:flex;align-items:center;gap:6px;">
-          🇺🇬 UNRA OFFICIAL SYSTEM THEMES & GIS CORE
+          🇺🇬 DNR-MOWT OFFICIAL SYSTEM THEMES & GIS CORE
         </span>
         <span style="padding:3px 10px;border-radius:9999px;background:rgba(16,185,129,0.2);color:#34d399;font-size:10px;font-weight:bold;font-family:monospace;">
           15.12M SCANNED
