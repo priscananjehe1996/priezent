@@ -12,7 +12,18 @@
     "pytorch_link_mse_loss": 0.006073,
     "wim_compliance": "99.1%",
     "ugnbms_health_index": "96.2%",
-    "ai_agent_workforce": 25000
+    "ai_agent_workforce": 25000,
+    "total_survey_images_scanned": 12793733,
+    "drive_w_images": 3565642,
+    "drive_x_images": 7086734,
+    "drive_y_images": 1439858,
+    "drive_z_images": 701499,
+    "scanned_drives": [
+      "W:",
+      "X:",
+      "Y:",
+      "Z:"
+    ]
   },
   "manuals_integrated": [
     {
