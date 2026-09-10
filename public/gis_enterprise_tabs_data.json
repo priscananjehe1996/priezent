@@ -102,6 +102,15 @@
       "metrics": {
         "total_asset_value_usd": "$3.09 Billion",
         "total_asset_value_ugx": "UGX 11.43 Trillion",
+        "hdm4_5year_required_budget_usd": "$220.53 Million",
+        "hdm4_5year_required_budget_ugx": "UGX 815.96 Billion",
+        "treatment_breakdown_usd": {
+          "routine_maintenance_85_100_vci": "$41.07M USD (16,427 km)",
+          "fog_spray_patching_70_84_vci": "$37.99M USD (3,166 km)",
+          "reseal_surface_dressing_50_69_vci": "$53.50M USD (1,189 km)",
+          "asphalt_overlay_30_49_vci": "$24.78M USD (207.5 km)",
+          "full_reconstruction_0_29_vci": "$63.20M USD (180.6 km)"
+        },
         "treatment_hierarchy": [
           "Routine Maintenance & Crack Sealing",
           "Fog Spray & Patching",

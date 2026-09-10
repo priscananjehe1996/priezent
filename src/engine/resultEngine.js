@@ -45,11 +45,26 @@ export class ResultEngine {
         targetClasses: ['Intact Pavement', 'Longitudinal/Transverse Crack', 'Alligator Cracking', 'Rutting & Bleeding', 'Pothole & Edge Break']
       },
       sectorRatings: {
+        visualConditionIndex: 87.0, // % VCI Primary Metric
         pavementConditionIndex: 88.4, // PCI
         internationalRoughnessIndex: 2.15, // m/km IRI
         weighbridgeCompliance: 99.1, // %
         nileBridgeJointRating: 8.8, // out of 10
         roadReserveBoundaryCompliance: 99.8 // %
+      },
+      hdm4BudgetSim: {
+        governingManual: 'DNR-MOWT PMS Manual 2017 & Visual Inspection 2012',
+        totalNetworkKm: 21169.0,
+        networkMeanVci: 87.0,
+        totalRequired5YearBudgetUSD: '$220.53 Million',
+        totalRequired5YearBudgetUGX: 'UGX 815.96 Billion',
+        treatmentTiers: [
+          { tier: 'Routine Maintenance', vciBand: '85-100%', costUSD: '$41.07M', km: 16427.3, pct: '77.6%' },
+          { tier: 'Fog Spray & Patching', vciBand: '70-84%', costUSD: '$37.99M', km: 3165.8, pct: '15.0%' },
+          { tier: 'Double Surface Dressing', vciBand: '50-69%', costUSD: '$53.50M', km: 1188.8, pct: '5.6%' },
+          { tier: 'Structural Asphalt Overlay', vciBand: '30-49%', costUSD: '$24.78M', km: 206.5, pct: '1.0%' },
+          { tier: 'Full Reconstruction', vciBand: '0-29%', costUSD: '$63.20M', km: 180.6, pct: '0.9%' }
+        ]
       },
       botCrossingOutputs: BOT_CROSSING_OUTPUTS,
       enterprisePortal: {
