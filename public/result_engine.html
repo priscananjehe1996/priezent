@@ -119,19 +119,33 @@
     </div>
 
     <!-- Enterprise Portal Link Banner -->
-    <div class="glass-card rounded-2xl p-6 text-center space-y-3 border-cyan-500/40">
+    <div class="glass-card rounded-2xl p-6 text-center space-y-4 border-cyan-500/40">
       <h3 class="text-lg font-bold text-white">Uganda GIS Enterprise Core Portal Integration</h3>
       <p class="text-xs text-slate-300 max-w-2xl mx-auto">
         Access comprehensive spatial layers, multi-modal logistics, bridge dynamics, traffic volumetrics, and national infrastructure GIS maps.
       </p>
-      <div class="pt-2">
-        <a href="https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-sm shadow-2xl hover:scale-105 transition transform">
-          <span>🌐 Access Uganda GIS Enterprise Portal (https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/)</span>
+      
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-sm shadow-2xl hover:scale-105 transition transform">
+          <span>🌐 Launch Uganda GIS Enterprise Portal</span>
           <span>↗</span>
         </a>
+        <button onclick="downloadReport('json')" class="px-5 py-3 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold hover:bg-cyan-900/50 transition">
+          📥 Export JSON Analytics
+        </button>
+        <button onclick="downloadReport('csv')" class="px-5 py-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 font-mono text-xs font-bold hover:bg-purple-900/50 transition">
+          📊 Export CSV Report
+        </button>
       </div>
     </div>
 
   </div>
+
+  <script type="module">
+    import { globalResultEngine } from './src/engine/resultEngine.js';
+    window.downloadReport = function(format) {
+      globalResultEngine.downloadReport(format);
+    };
+  </script>
 </body>
 </html>
