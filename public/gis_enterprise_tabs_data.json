@@ -35,7 +35,16 @@
           "Alligator Cracking",
           "Rutting & Bleeding",
           "Pothole & Edge Break"
-        ]
+        ],
+        "primary_metric": "Visual Condition Index (VCI %)",
+        "mean_vci_percent": 86.8,
+        "vci_breakdown": {
+          "good_85_100_percent": "78.4% of network",
+          "fair_70_84_percent": "14.2% of network",
+          "poor_50_69_percent": "5.6% of network",
+          "severe_30_49_percent": "1.4% of network",
+          "critical_0_29_percent": "0.4% of network"
+        }
       }
     },
     "theme_3_tis": {

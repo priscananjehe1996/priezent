@@ -32,7 +32,7 @@ export const SOLAR_SYSTEM_ARCHITECTURE = {
       code: 'PMS',
       name: 'Pavement Management System (PMS)',
       focus: 'PyTorch CNN Defect Model (15.12M images), PCI/IRI Decay, HDM-4 LCCA',
-      metric: '99.85% Accuracy | PCI 86.2 | IRI 2.71 m/km',
+      metric: '99.85% Accuracy | VCI 86.8% (Primary Metric) | PCI 86.2 | IRI 2.71 m/km',
       manualReference: 'DNR-MOWT PMS User Manual 2017 & Visual Inspection Manual 2012'
     },
     {
@@ -131,7 +131,7 @@ export function renderBotCrossingLinksCardHTML() {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-family:monospace;font-size:10px;margin-bottom:12px;">
         <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
           <div style="color:#34d399;font-weight:bold;">🪐 PMS Planet</div>
-          <div style="color:#94a3b8;font-size:9px;">99.85% PyTorch CNN</div>
+          <div style="color:#94a3b8;font-size:9px;">VCI 86.8% | 99.85% PyTorch CNN</div>
         </div>
         <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
           <div style="color:#fbbf24;font-weight:bold;">🚦 TIS Planet</div>

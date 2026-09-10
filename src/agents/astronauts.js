@@ -152,6 +152,15 @@ export class Astronauts {
     /** Uniform bucket grid for the separation query, so it stays O(n) as the crew grows. */
     this._buckets = new Map()
     this.nav = null
+    this.planet = null
+  }
+
+  setPlanet(planet) {
+    if (!planet) return
+    this.planet = planet
+    for (const agent of this.agents) {
+      if (agent.status) this._applyStatus(agent, agent.status)
+    }
   }
 
   // ── construction ────────────────────────────────────────────────────────────────────
@@ -599,7 +608,12 @@ export class Astronauts {
   /** Status change → new behaviour, new trim, new eye colour. */
   _applyStatus(agent, status) {
     const look = AGENT_LOOK[status] || AGENT_LOOK.idle
-    agent.trim.set(look.trim)
+    if (this.planet?.suitTrim !== undefined) {
+      const planetColor = new THREE.Color(this.planet.suitTrim)
+      agent.trim.copy(planetColor).lerp(new THREE.Color(look.trim), 0.35)
+    } else {
+      agent.trim.set(look.trim)
+    }
     agent.eye.setRGB(look.eye[0], look.eye[1], look.eye[2])
     agent.loop = FACE_LOOPS[status] || null
     agent.colorDirty = true
@@ -662,7 +676,9 @@ export class Astronauts {
             loss: parseFloat(agent.brain.loss),
             targetDist: targetDist,
             density: 3,
-            energy: 0.95
+            energy: 0.95,
+            gravity: this.planet?.gravity ?? 1.0,
+            planetId: this.planet?.id || 'moon'
           })
         }
       } else {
@@ -830,7 +846,11 @@ export class Astronauts {
       agent.groundY =
         agent.groundY === null ? agent.groundAt : THREE.MathUtils.damp(agent.groundY, agent.groundAt, 14, dt)
     }
-    agent.pos.y = (agent.groundY || 0) + agent.hop
+    const gravity = this.planet?.gravity ?? 1.0
+    const lowGHop = gravity < 0.8
+      ? Math.max(0, Math.sin(agent.phase * 1.5) * (1.0 - gravity) * 0.45 * (agent.walkAmp || 0))
+      : 0
+    agent.pos.y = (agent.groundY || 0) + agent.hop + lowGHop
   }
 
   /**
@@ -1107,9 +1127,16 @@ export class Astronauts {
     // world slides past its feet, and the movement code is what keeps it from dawdling
     // just under the line.
     const speed = agent.groundSpeed || 0
+    const gravity = this.planet?.gravity ?? 1.0
     let key
     if (agent.state === 'spawning') key = 'spawn'
-    else if (speed > 0.12) key = speed > WALK_SPEED * 1.25 ? 'run' : 'walk'
+    else if (speed > 0.12) {
+      if (gravity < 0.25 && speed > WALK_SPEED * 0.85) {
+        key = 'jump'
+      } else {
+        key = speed > WALK_SPEED * 1.25 ? 'run' : 'walk'
+      }
+    }
     else {
       switch (agent.status) {
         case 'working':
@@ -1142,8 +1169,9 @@ export class Astronauts {
     const clip = rig.clips[key] || rig.clips.idle
     if (!clip) return
 
-    // Stride rate follows the ground, everything else runs at its authored speed.
-    const rate = key === 'walk' || key === 'run' ? THREE.MathUtils.clamp(speed / WALK_SPEED, 0.4, 2.1) : 1
+    // Stride rate follows the ground and gravity, everything else runs at its authored speed.
+    const gravFactor = THREE.MathUtils.clamp(Math.sqrt(gravity), 0.5, 1.25)
+    const rate = key === 'walk' || key === 'run' || key === 'jump' ? THREE.MathUtils.clamp((speed / WALK_SPEED) * gravFactor, 0.35, 2.1) : 1
     agent.clipTime += dt * anim * rate
 
     if (key === 'sitDown' && agent.clipTime >= clip.duration) {

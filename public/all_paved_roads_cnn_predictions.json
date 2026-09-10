@@ -21,7 +21,9 @@
       "cnn_confidence": 99.72,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 5600989.86
+      "replacement_asset_val_usd": 5600989.86,
+      "vci_percent": 81.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A001_Link02",
@@ -37,7 +39,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8274911.92
+      "replacement_asset_val_usd": 8274911.92,
+      "vci_percent": 88.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link03",
@@ -53,7 +57,9 @@
       "cnn_confidence": 99.78,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10149887.78
+      "replacement_asset_val_usd": 10149887.78,
+      "vci_percent": 86.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link04",
@@ -69,7 +75,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 689582.31
+      "replacement_asset_val_usd": 689582.31,
+      "vci_percent": 77.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A001_Link05",
@@ -85,7 +93,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4048880.24
+      "replacement_asset_val_usd": 4048880.24,
+      "vci_percent": 88.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link06",
@@ -101,7 +111,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8556482.8
+      "replacement_asset_val_usd": 8556482.8,
+      "vci_percent": 82.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A001_Link07",
@@ -117,7 +129,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1663276.72
+      "replacement_asset_val_usd": 1663276.72,
+      "vci_percent": 87.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link08",
@@ -133,7 +147,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8651988.41
+      "replacement_asset_val_usd": 8651988.41,
+      "vci_percent": 78.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A001_Link09",
@@ -149,7 +165,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8915653.78
+      "replacement_asset_val_usd": 8915653.78,
+      "vci_percent": 92.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link10",
@@ -165,7 +183,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9879433.8
+      "replacement_asset_val_usd": 9879433.8,
+      "vci_percent": 90.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001_Link11",
@@ -181,7 +201,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3895425.6
+      "replacement_asset_val_usd": 3895425.6,
+      "vci_percent": 86.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A001N1_Link01",
@@ -197,7 +219,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 892704.1
+      "replacement_asset_val_usd": 892704.1,
+      "vci_percent": 80.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A001N2_Link01",
@@ -213,7 +237,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4103271.54
+      "replacement_asset_val_usd": 4103271.54,
+      "vci_percent": 89.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link01",
@@ -229,7 +255,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2342768.4
+      "replacement_asset_val_usd": 2342768.4,
+      "vci_percent": 92.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link02",
@@ -245,7 +273,9 @@
       "cnn_confidence": 99.82,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8840303.28
+      "replacement_asset_val_usd": 8840303.28,
+      "vci_percent": 90.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link03",
@@ -261,7 +291,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9569762.3
+      "replacement_asset_val_usd": 9569762.3,
+      "vci_percent": 76.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A002_Link04",
@@ -277,7 +309,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10477360.0
+      "replacement_asset_val_usd": 10477360.0,
+      "vci_percent": 88.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link05",
@@ -293,7 +327,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11640920.0
+      "replacement_asset_val_usd": 11640920.0,
+      "vci_percent": 88.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link06",
@@ -309,7 +345,9 @@
       "cnn_confidence": 99.66,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 23953805.4
+      "replacement_asset_val_usd": 23953805.4,
+      "vci_percent": 91.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link07",
@@ -325,7 +363,9 @@
       "cnn_confidence": 99.7,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 23658059.0
+      "replacement_asset_val_usd": 23658059.0,
+      "vci_percent": 90.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link08",
@@ -341,7 +381,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 21932313.7
+      "replacement_asset_val_usd": 21932313.7,
+      "vci_percent": 91.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link09",
@@ -357,7 +399,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 4681457.12
+      "replacement_asset_val_usd": 4681457.12,
+      "vci_percent": 80.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A002_Link10",
@@ -373,7 +417,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 19910850.12
+      "replacement_asset_val_usd": 19910850.12,
+      "vci_percent": 86.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A002_Link11",
@@ -389,7 +435,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7337925.4
+      "replacement_asset_val_usd": 7337925.4,
+      "vci_percent": 87.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A003_Link01",
@@ -405,7 +453,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1773085.32
+      "replacement_asset_val_usd": 1773085.32,
+      "vci_percent": 93.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A003_Link02",
@@ -421,7 +471,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10511493.12
+      "replacement_asset_val_usd": 10511493.12,
+      "vci_percent": 84.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A003N1_Link01",
@@ -437,7 +489,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1530179.82
+      "replacement_asset_val_usd": 1530179.82,
+      "vci_percent": 79.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A003N2_Link01",
@@ -453,7 +507,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4734257.89
+      "replacement_asset_val_usd": 4734257.89,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A003N3_Link01",
@@ -469,7 +525,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 107909.32
+      "replacement_asset_val_usd": 107909.32,
+      "vci_percent": 78.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A004_Link01",
@@ -485,7 +543,9 @@
       "cnn_confidence": 99.44,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 13468206.24
+      "replacement_asset_val_usd": 13468206.24,
+      "vci_percent": 78.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A004_Link02",
@@ -501,7 +561,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 14779580.92
+      "replacement_asset_val_usd": 14779580.92,
+      "vci_percent": 85.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link01",
@@ -517,7 +579,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 10165225.14
+      "replacement_asset_val_usd": 10165225.14,
+      "vci_percent": 81.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A005_Link01",
@@ -533,7 +597,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11475681.87
+      "replacement_asset_val_usd": 11475681.87,
+      "vci_percent": 91.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link02",
@@ -549,7 +615,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8747484.48
+      "replacement_asset_val_usd": 8747484.48,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A005_Link03",
@@ -565,7 +633,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 4834027.88
+      "replacement_asset_val_usd": 4834027.88,
+      "vci_percent": 78.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A005_Link04",
@@ -581,7 +651,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8969770.8
+      "replacement_asset_val_usd": 8969770.8,
+      "vci_percent": 83.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A005_Link05",
@@ -597,7 +669,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 6828574.54
+      "replacement_asset_val_usd": 6828574.54,
+      "vci_percent": 86.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link06",
@@ -613,7 +687,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10812242.6
+      "replacement_asset_val_usd": 10812242.6,
+      "vci_percent": 93.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link07",
@@ -629,7 +705,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5840942.0
+      "replacement_asset_val_usd": 5840942.0,
+      "vci_percent": 92.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link08",
@@ -645,7 +723,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4058400.0
+      "replacement_asset_val_usd": 4058400.0,
+      "vci_percent": 87.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link09",
@@ -661,7 +741,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 17476078.4
+      "replacement_asset_val_usd": 17476078.4,
+      "vci_percent": 86.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link10",
@@ -677,7 +759,9 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 18227837.34
+      "replacement_asset_val_usd": 18227837.34,
+      "vci_percent": 94.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link11",
@@ -693,7 +777,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 16231713.68
+      "replacement_asset_val_usd": 16231713.68,
+      "vci_percent": 93.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link12",
@@ -709,7 +795,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 6230343.96
+      "replacement_asset_val_usd": 6230343.96,
+      "vci_percent": 90.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link13",
@@ -725,7 +813,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4154006.86
+      "replacement_asset_val_usd": 4154006.86,
+      "vci_percent": 92.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A005_Link14",
@@ -741,7 +831,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7091788.0
+      "replacement_asset_val_usd": 7091788.0,
+      "vci_percent": 83.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A005_Link15",
@@ -757,7 +849,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 13139640.0
+      "replacement_asset_val_usd": 13139640.0,
+      "vci_percent": 88.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link01",
@@ -773,7 +867,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2779424.5
+      "replacement_asset_val_usd": 2779424.5,
+      "vci_percent": 93.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link02",
@@ -789,7 +885,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3137261.38
+      "replacement_asset_val_usd": 3137261.38,
+      "vci_percent": 94.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link03",
@@ -805,7 +903,9 @@
       "cnn_confidence": 99.6,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10264286.4
+      "replacement_asset_val_usd": 10264286.4,
+      "vci_percent": 91.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link04",
@@ -821,7 +921,9 @@
       "cnn_confidence": 99.62,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5451308.24
+      "replacement_asset_val_usd": 5451308.24,
+      "vci_percent": 89.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link05",
@@ -837,7 +939,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 16897201.22
+      "replacement_asset_val_usd": 16897201.22,
+      "vci_percent": 79.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link06",
@@ -853,7 +957,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 16627663.04
+      "replacement_asset_val_usd": 16627663.04,
+      "vci_percent": 82.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link07",
@@ -869,7 +975,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9190657.2
+      "replacement_asset_val_usd": 9190657.2,
+      "vci_percent": 79.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link08",
@@ -885,7 +993,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 18411642.2
+      "replacement_asset_val_usd": 18411642.2,
+      "vci_percent": 83.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link09",
@@ -901,7 +1011,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3654151.06
+      "replacement_asset_val_usd": 3654151.06,
+      "vci_percent": 77.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link10",
@@ -917,7 +1029,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 7516339.2
+      "replacement_asset_val_usd": 7516339.2,
+      "vci_percent": 80.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A006_Link11",
@@ -933,7 +1047,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 12595320.4
+      "replacement_asset_val_usd": 12595320.4,
+      "vci_percent": 86.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link12",
@@ -949,7 +1065,9 @@
       "cnn_confidence": 99.66,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 22638627.68
+      "replacement_asset_val_usd": 22638627.68,
+      "vci_percent": 85.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006_Link13",
@@ -965,7 +1083,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 13215478.5
+      "replacement_asset_val_usd": 13215478.5,
+      "vci_percent": 91.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A006N1_Link01",
@@ -981,7 +1101,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 237917.51
+      "replacement_asset_val_usd": 237917.51,
+      "vci_percent": 85.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A007_Link01",
@@ -997,7 +1119,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1140304.0
+      "replacement_asset_val_usd": 1140304.0,
+      "vci_percent": 78.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link02",
@@ -1013,7 +1137,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11000354.0
+      "replacement_asset_val_usd": 11000354.0,
+      "vci_percent": 84.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link03",
@@ -1029,7 +1155,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3198704.72
+      "replacement_asset_val_usd": 3198704.72,
+      "vci_percent": 80.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link04",
@@ -1045,7 +1173,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 17892165.48
+      "replacement_asset_val_usd": 17892165.48,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link05",
@@ -1061,7 +1191,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 14725609.9
+      "replacement_asset_val_usd": 14725609.9,
+      "vci_percent": 81.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link06",
@@ -1077,7 +1209,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 24116625.52
+      "replacement_asset_val_usd": 24116625.52,
+      "vci_percent": 92.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A007_Link07",
@@ -1093,7 +1227,9 @@
       "cnn_confidence": 99.44,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 7275782.1
+      "replacement_asset_val_usd": 7275782.1,
+      "vci_percent": 79.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link08",
@@ -1109,7 +1245,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9635008.68
+      "replacement_asset_val_usd": 9635008.68,
+      "vci_percent": 79.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link09",
@@ -1125,7 +1263,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8099741.04
+      "replacement_asset_val_usd": 8099741.04,
+      "vci_percent": 77.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007_Link10",
@@ -1141,7 +1281,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 13746799.44
+      "replacement_asset_val_usd": 13746799.44,
+      "vci_percent": 80.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A007N1_Link01",
@@ -1157,7 +1299,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 247950.0
+      "replacement_asset_val_usd": 247950.0,
+      "vci_percent": 85.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link01",
@@ -1173,7 +1317,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 18659133.54
+      "replacement_asset_val_usd": 18659133.54,
+      "vci_percent": 93.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link02",
@@ -1189,7 +1335,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 19785285.96
+      "replacement_asset_val_usd": 19785285.96,
+      "vci_percent": 93.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link03",
@@ -1205,7 +1353,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 19350542.4
+      "replacement_asset_val_usd": 19350542.4,
+      "vci_percent": 93.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link04",
@@ -1221,7 +1371,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 22955469.4
+      "replacement_asset_val_usd": 22955469.4,
+      "vci_percent": 92.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link05",
@@ -1237,7 +1389,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6071708.4
+      "replacement_asset_val_usd": 6071708.4,
+      "vci_percent": 83.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A008_Link06",
@@ -1253,7 +1407,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 16554821.22
+      "replacement_asset_val_usd": 16554821.22,
+      "vci_percent": 85.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A008_Link07",
@@ -1269,7 +1425,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 5678752.3
+      "replacement_asset_val_usd": 5678752.3,
+      "vci_percent": 77.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A009_Link01",
@@ -1285,7 +1443,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1933248.1
+      "replacement_asset_val_usd": 1933248.1,
+      "vci_percent": 94.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A009_Link02",
@@ -1301,7 +1461,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 15511928.32
+      "replacement_asset_val_usd": 15511928.32,
+      "vci_percent": 87.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A009_Link03",
@@ -1317,7 +1479,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 17309000.0
+      "replacement_asset_val_usd": 17309000.0,
+      "vci_percent": 89.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A009_Link04",
@@ -1333,7 +1497,9 @@
       "cnn_confidence": 99.62,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 32636300.0
+      "replacement_asset_val_usd": 32636300.0,
+      "vci_percent": 87.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A009N1_Link01",
@@ -1349,7 +1515,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 426439.07
+      "replacement_asset_val_usd": 426439.07,
+      "vci_percent": 80.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A009N2_Link01",
@@ -1365,7 +1533,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 182079.75
+      "replacement_asset_val_usd": 182079.75,
+      "vci_percent": 90.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A010_Link01",
@@ -1381,7 +1551,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3182843.52
+      "replacement_asset_val_usd": 3182843.52,
+      "vci_percent": 89.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A012_Link01",
@@ -1397,7 +1569,9 @@
       "cnn_confidence": 99.65,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 14243690.86
+      "replacement_asset_val_usd": 14243690.86,
+      "vci_percent": 79.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "A012_Link02",
@@ -1413,7 +1587,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1739287.36
+      "replacement_asset_val_usd": 1739287.36,
+      "vci_percent": 94.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A012_Link03",
@@ -1429,7 +1605,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 13142113.8
+      "replacement_asset_val_usd": 13142113.8,
+      "vci_percent": 87.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "A012_Link04",
@@ -1445,7 +1623,9 @@
       "cnn_confidence": 99.86,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3405875.4
+      "replacement_asset_val_usd": 3405875.4,
+      "vci_percent": 93.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B100_Link01",
@@ -1461,7 +1641,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4366544.28
+      "replacement_asset_val_usd": 4366544.28,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B100_Link02",
@@ -1477,7 +1659,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6211059.72
+      "replacement_asset_val_usd": 6211059.72,
+      "vci_percent": 79.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B100N1_Link01",
@@ -1493,7 +1677,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 582153.49
+      "replacement_asset_val_usd": 582153.49,
+      "vci_percent": 87.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B101_Link01",
@@ -1509,7 +1695,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5865765.12
+      "replacement_asset_val_usd": 5865765.12,
+      "vci_percent": 84.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B101_Link02",
@@ -1525,7 +1713,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10964559.14
+      "replacement_asset_val_usd": 10964559.14,
+      "vci_percent": 89.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B101_Link03",
@@ -1541,7 +1731,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7100504.82
+      "replacement_asset_val_usd": 7100504.82,
+      "vci_percent": 90.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B102_Link01",
@@ -1557,7 +1749,9 @@
       "cnn_confidence": 99.41,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 13514124.3
+      "replacement_asset_val_usd": 13514124.3,
+      "vci_percent": 81.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B103_Link01",
@@ -1573,7 +1767,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3105095.52
+      "replacement_asset_val_usd": 3105095.52,
+      "vci_percent": 79.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B103_Link02",
@@ -1589,7 +1785,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 12188880.0
+      "replacement_asset_val_usd": 12188880.0,
+      "vci_percent": 87.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B150_Link01",
@@ -1605,7 +1803,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 6768582.8
+      "replacement_asset_val_usd": 6768582.8,
+      "vci_percent": 92.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B150_Link02",
@@ -1621,7 +1821,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 14551650.08
+      "replacement_asset_val_usd": 14551650.08,
+      "vci_percent": 81.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B150_Link03",
@@ -1637,7 +1839,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 14242636.74
+      "replacement_asset_val_usd": 14242636.74,
+      "vci_percent": 82.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B150_Link04",
@@ -1653,7 +1857,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 19619270.8
+      "replacement_asset_val_usd": 19619270.8,
+      "vci_percent": 78.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B151_Link01",
@@ -1669,7 +1875,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1799923.2
+      "replacement_asset_val_usd": 1799923.2,
+      "vci_percent": 94.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B151_Link02",
@@ -1685,7 +1893,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8284168.34
+      "replacement_asset_val_usd": 8284168.34,
+      "vci_percent": 81.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B151_Link03",
@@ -1701,7 +1911,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8439685.24
+      "replacement_asset_val_usd": 8439685.24,
+      "vci_percent": 77.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B152_Link01",
@@ -1717,7 +1929,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4953689.12
+      "replacement_asset_val_usd": 4953689.12,
+      "vci_percent": 83.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B152_Link02",
@@ -1733,7 +1947,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11747725.08
+      "replacement_asset_val_usd": 11747725.08,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B152_Link03",
@@ -1749,7 +1965,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 11678388.0
+      "replacement_asset_val_usd": 11678388.0,
+      "vci_percent": 76.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B152_Link04",
@@ -1765,7 +1983,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10729034.0
+      "replacement_asset_val_usd": 10729034.0,
+      "vci_percent": 83.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B153_Link01",
@@ -1781,7 +2001,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 13086888.4
+      "replacement_asset_val_usd": 13086888.4,
+      "vci_percent": 80.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B153_Link02",
@@ -1797,7 +2019,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 12128017.3
+      "replacement_asset_val_usd": 12128017.3,
+      "vci_percent": 92.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B153_Link03",
@@ -1813,7 +2037,9 @@
       "cnn_confidence": 99.7,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4222569.12
+      "replacement_asset_val_usd": 4222569.12,
+      "vci_percent": 90.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B200_Link01",
@@ -1829,7 +2055,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 14565786.84
+      "replacement_asset_val_usd": 14565786.84,
+      "vci_percent": 86.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B201_Link01",
@@ -1845,7 +2073,9 @@
       "cnn_confidence": 99.62,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 13981201.68
+      "replacement_asset_val_usd": 13981201.68,
+      "vci_percent": 92.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B202_Link01",
@@ -1861,7 +2091,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 12169690.0
+      "replacement_asset_val_usd": 12169690.0,
+      "vci_percent": 82.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B202_Link02",
@@ -1877,7 +2109,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5232600.0
+      "replacement_asset_val_usd": 5232600.0,
+      "vci_percent": 90.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B202_Link03",
@@ -1893,7 +2127,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 17395405.92
+      "replacement_asset_val_usd": 17395405.92,
+      "vci_percent": 90.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B202_Link04",
@@ -1909,7 +2145,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11025419.94
+      "replacement_asset_val_usd": 11025419.94,
+      "vci_percent": 90.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B202_Link05",
@@ -1925,7 +2163,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3688285.32
+      "replacement_asset_val_usd": 3688285.32,
+      "vci_percent": 90.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B203_Link01",
@@ -1941,7 +2181,9 @@
       "cnn_confidence": 99.7,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9121030.94
+      "replacement_asset_val_usd": 9121030.94,
+      "vci_percent": 77.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B203_Link02",
@@ -1957,7 +2199,9 @@
       "cnn_confidence": 99.82,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 23378740.0
+      "replacement_asset_val_usd": 23378740.0,
+      "vci_percent": 78.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B203_Link03",
@@ -1973,7 +2217,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 5101120.0
+      "replacement_asset_val_usd": 5101120.0,
+      "vci_percent": 82.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B204_Link01",
@@ -1989,7 +2235,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10355818.52
+      "replacement_asset_val_usd": 10355818.52,
+      "vci_percent": 84.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B204_Link02",
@@ -2005,7 +2253,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7312872.0
+      "replacement_asset_val_usd": 7312872.0,
+      "vci_percent": 92.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B250_Link01",
@@ -2021,7 +2271,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 19772350.84
+      "replacement_asset_val_usd": 19772350.84,
+      "vci_percent": 78.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B250_Link01",
@@ -2037,7 +2289,9 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 20709195.39
+      "replacement_asset_val_usd": 20709195.39,
+      "vci_percent": 82.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B251_Link01",
@@ -2053,7 +2307,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 20128393.28
+      "replacement_asset_val_usd": 20128393.28,
+      "vci_percent": 84.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B252_Link03",
@@ -2069,7 +2325,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 5975492.4
+      "replacement_asset_val_usd": 5975492.4,
+      "vci_percent": 78.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B252_Link04",
@@ -2085,7 +2343,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 14595921.6
+      "replacement_asset_val_usd": 14595921.6,
+      "vci_percent": 82.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B252_Link05",
@@ -2101,7 +2361,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6259031.68
+      "replacement_asset_val_usd": 6259031.68,
+      "vci_percent": 78.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B300_Link01",
@@ -2117,7 +2379,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7134159.9
+      "replacement_asset_val_usd": 7134159.9,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B300_Link02",
@@ -2133,7 +2397,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3470000.4
+      "replacement_asset_val_usd": 3470000.4,
+      "vci_percent": 85.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B300_Link04",
@@ -2149,7 +2415,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 18207456.47
+      "replacement_asset_val_usd": 18207456.47,
+      "vci_percent": 79.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B300_Link05",
@@ -2165,7 +2433,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 15595005.44
+      "replacement_asset_val_usd": 15595005.44,
+      "vci_percent": 87.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B300_Link06",
@@ -2181,7 +2451,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3389055.46
+      "replacement_asset_val_usd": 3389055.46,
+      "vci_percent": 79.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B303_Link01",
@@ -2197,7 +2469,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2711341.04
+      "replacement_asset_val_usd": 2711341.04,
+      "vci_percent": 87.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B303_Link02",
@@ -2213,7 +2487,9 @@
       "cnn_confidence": 99.42,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 27996804.0
+      "replacement_asset_val_usd": 27996804.0,
+      "vci_percent": 88.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B303_Link03",
@@ -2229,7 +2505,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 23795881.2
+      "replacement_asset_val_usd": 23795881.2,
+      "vci_percent": 89.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B304_Link01",
@@ -2245,7 +2523,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9022020.8
+      "replacement_asset_val_usd": 9022020.8,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B304_Link02",
@@ -2261,7 +2541,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 29500692.0
+      "replacement_asset_val_usd": 29500692.0,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B305_Link01",
@@ -2277,7 +2559,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6339030.8
+      "replacement_asset_val_usd": 6339030.8,
+      "vci_percent": 82.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B305_Link02",
@@ -2293,7 +2577,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7068873.24
+      "replacement_asset_val_usd": 7068873.24,
+      "vci_percent": 84.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B305_Link03",
@@ -2309,7 +2595,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9254885.56
+      "replacement_asset_val_usd": 9254885.56,
+      "vci_percent": 92.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B307_Link01",
@@ -2325,7 +2613,9 @@
       "cnn_confidence": 99.78,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 7392672.0
+      "replacement_asset_val_usd": 7392672.0,
+      "vci_percent": 82.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "B307_Link02",
@@ -2341,7 +2631,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11346494.1
+      "replacement_asset_val_usd": 11346494.1,
+      "vci_percent": 89.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "B308_Link01",
@@ -2357,7 +2649,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5942107.5
+      "replacement_asset_val_usd": 5942107.5,
+      "vci_percent": 90.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C001_Link01",
@@ -2373,7 +2667,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 872711.8
+      "replacement_asset_val_usd": 872711.8,
+      "vci_percent": 81.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C002_Link01",
@@ -2389,7 +2685,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1140997.5
+      "replacement_asset_val_usd": 1140997.5,
+      "vci_percent": 76.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C005_Link01",
@@ -2405,7 +2703,9 @@
       "cnn_confidence": 99.72,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4353204.0
+      "replacement_asset_val_usd": 4353204.0,
+      "vci_percent": 92.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C022_Link01",
@@ -2421,7 +2721,9 @@
       "cnn_confidence": 99.9,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1694005.04
+      "replacement_asset_val_usd": 1694005.04,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C023_Link01",
@@ -2437,7 +2739,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 578531.76
+      "replacement_asset_val_usd": 578531.76,
+      "vci_percent": 85.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C024_Link01",
@@ -2453,7 +2757,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8625937.68
+      "replacement_asset_val_usd": 8625937.68,
+      "vci_percent": 83.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C025_Link01",
@@ -2469,7 +2775,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9678034.56
+      "replacement_asset_val_usd": 9678034.56,
+      "vci_percent": 89.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C025_Link02",
@@ -2485,7 +2793,9 @@
       "cnn_confidence": 99.65,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3171942.08
+      "replacement_asset_val_usd": 3171942.08,
+      "vci_percent": 78.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C028_Link01",
@@ -2501,7 +2811,9 @@
       "cnn_confidence": 99.41,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3556874.48
+      "replacement_asset_val_usd": 3556874.48,
+      "vci_percent": 93.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C029_Link01",
@@ -2517,7 +2829,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3388840.0
+      "replacement_asset_val_usd": 3388840.0,
+      "vci_percent": 89.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C035_Link01",
@@ -2533,7 +2847,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 291868.5
+      "replacement_asset_val_usd": 291868.5,
+      "vci_percent": 80.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C152_Link01",
@@ -2549,7 +2865,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5252584.58
+      "replacement_asset_val_usd": 5252584.58,
+      "vci_percent": 91.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C154_Link01",
@@ -2565,7 +2883,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 12484600.56
+      "replacement_asset_val_usd": 12484600.56,
+      "vci_percent": 81.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C157_Link01",
@@ -2581,7 +2901,9 @@
       "cnn_confidence": 99.62,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1097494.72
+      "replacement_asset_val_usd": 1097494.72,
+      "vci_percent": 83.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C158_Link01",
@@ -2597,7 +2919,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 476732.42
+      "replacement_asset_val_usd": 476732.42,
+      "vci_percent": 81.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C161_Link01",
@@ -2613,7 +2937,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1248808.44
+      "replacement_asset_val_usd": 1248808.44,
+      "vci_percent": 93.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C162_Link01",
@@ -2629,7 +2955,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 19918408.32
+      "replacement_asset_val_usd": 19918408.32,
+      "vci_percent": 87.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C162_Link02",
@@ -2645,7 +2973,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4005717.94
+      "replacement_asset_val_usd": 4005717.94,
+      "vci_percent": 91.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C162_Link03",
@@ -2661,7 +2991,9 @@
       "cnn_confidence": 99.51,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 6573041.64
+      "replacement_asset_val_usd": 6573041.64,
+      "vci_percent": 86.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C166_Link01",
@@ -2677,7 +3009,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6997433.24
+      "replacement_asset_val_usd": 6997433.24,
+      "vci_percent": 81.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C166_Link02",
@@ -2693,7 +3027,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6861688.12
+      "replacement_asset_val_usd": 6861688.12,
+      "vci_percent": 80.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C168_Link01",
@@ -2709,7 +3045,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 642361.5
+      "replacement_asset_val_usd": 642361.5,
+      "vci_percent": 80.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C170_Link01",
@@ -2725,7 +3063,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 691984.18
+      "replacement_asset_val_usd": 691984.18,
+      "vci_percent": 86.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C198_Link01",
@@ -2741,7 +3081,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1104840.88
+      "replacement_asset_val_usd": 1104840.88,
+      "vci_percent": 76.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C199_Link01",
@@ -2757,7 +3099,9 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 533468.32
+      "replacement_asset_val_usd": 533468.32,
+      "vci_percent": 92.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C210_Link01",
@@ -2773,7 +3117,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1733297.8
+      "replacement_asset_val_usd": 1733297.8,
+      "vci_percent": 82.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C211_Link01",
@@ -2789,7 +3135,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9804352.64
+      "replacement_asset_val_usd": 9804352.64,
+      "vci_percent": 82.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C211_Link02",
@@ -2805,7 +3153,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1572067.22
+      "replacement_asset_val_usd": 1572067.22,
+      "vci_percent": 80.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C212_Link01",
@@ -2821,7 +3171,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1793634.96
+      "replacement_asset_val_usd": 1793634.96,
+      "vci_percent": 92.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C214_Link02",
@@ -2837,7 +3189,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5560593.58
+      "replacement_asset_val_usd": 5560593.58,
+      "vci_percent": 88.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C231_Link01",
@@ -2853,7 +3207,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1482570.0
+      "replacement_asset_val_usd": 1482570.0,
+      "vci_percent": 85.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C232_Link01",
@@ -2869,7 +3225,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 438181.8
+      "replacement_asset_val_usd": 438181.8,
+      "vci_percent": 85.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C235_Link01",
@@ -2885,7 +3243,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 337588.3
+      "replacement_asset_val_usd": 337588.3,
+      "vci_percent": 84.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C268_Link01",
@@ -2901,7 +3261,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2347836.46
+      "replacement_asset_val_usd": 2347836.46,
+      "vci_percent": 81.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C302_Link01",
@@ -2917,7 +3279,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9596563.32
+      "replacement_asset_val_usd": 9596563.32,
+      "vci_percent": 80.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C308_Link01",
@@ -2933,7 +3297,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3937842.72
+      "replacement_asset_val_usd": 3937842.72,
+      "vci_percent": 79.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C309_Link01",
@@ -2949,7 +3315,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2005948.56
+      "replacement_asset_val_usd": 2005948.56,
+      "vci_percent": 77.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C335_Link01",
@@ -2965,7 +3333,9 @@
       "cnn_confidence": 99.51,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 525920.0
+      "replacement_asset_val_usd": 525920.0,
+      "vci_percent": 84.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C350_Link01",
@@ -2981,7 +3351,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9957860.1
+      "replacement_asset_val_usd": 9957860.1,
+      "vci_percent": 83.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C350_Link02",
@@ -2997,7 +3369,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 7244747.12
+      "replacement_asset_val_usd": 7244747.12,
+      "vci_percent": 79.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C354_Link01",
@@ -3013,7 +3387,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 986725.1
+      "replacement_asset_val_usd": 986725.1,
+      "vci_percent": 93.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C355_Link01",
@@ -3029,7 +3405,9 @@
       "cnn_confidence": 99.48,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 9862592.96
+      "replacement_asset_val_usd": 9862592.96,
+      "vci_percent": 76.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C355_Link02",
@@ -3045,7 +3423,9 @@
       "cnn_confidence": 99.51,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 10830592.8
+      "replacement_asset_val_usd": 10830592.8,
+      "vci_percent": 80.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C356_Link01",
@@ -3061,7 +3441,9 @@
       "cnn_confidence": 99.9,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11572743.06
+      "replacement_asset_val_usd": 11572743.06,
+      "vci_percent": 92.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C360_Link01",
@@ -3077,7 +3459,9 @@
       "cnn_confidence": 99.42,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1967982.0
+      "replacement_asset_val_usd": 1967982.0,
+      "vci_percent": 83.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C362_Link01",
@@ -3093,7 +3477,9 @@
       "cnn_confidence": 99.72,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2360750.0
+      "replacement_asset_val_usd": 2360750.0,
+      "vci_percent": 85.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C374_Link01",
@@ -3109,7 +3495,9 @@
       "cnn_confidence": 99.66,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1639656.3
+      "replacement_asset_val_usd": 1639656.3,
+      "vci_percent": 91.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C383_Link01",
@@ -3125,7 +3513,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2694397.6
+      "replacement_asset_val_usd": 2694397.6,
+      "vci_percent": 80.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C390_Link01",
@@ -3141,7 +3531,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 4415600.0
+      "replacement_asset_val_usd": 4415600.0,
+      "vci_percent": 81.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C390N1_Link01",
@@ -3157,7 +3549,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 4516680.0
+      "replacement_asset_val_usd": 4516680.0,
+      "vci_percent": 83.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C410_Link01",
@@ -3173,7 +3567,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7554753.4
+      "replacement_asset_val_usd": 7554753.4,
+      "vci_percent": 94.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C410_Link02",
@@ -3189,7 +3585,9 @@
       "cnn_confidence": 99.72,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4630084.92
+      "replacement_asset_val_usd": 4630084.92,
+      "vci_percent": 85.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C412_Link01",
@@ -3205,7 +3603,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3532708.0
+      "replacement_asset_val_usd": 3532708.0,
+      "vci_percent": 92.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C417_Link01",
@@ -3221,7 +3621,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4877289.36
+      "replacement_asset_val_usd": 4877289.36,
+      "vci_percent": 92.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C417_Link02",
@@ -3237,7 +3639,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5891083.76
+      "replacement_asset_val_usd": 5891083.76,
+      "vci_percent": 94.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C417_Link03",
@@ -3253,7 +3657,9 @@
       "cnn_confidence": 99.55,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1833864.8
+      "replacement_asset_val_usd": 1833864.8,
+      "vci_percent": 78.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C419_Link02",
@@ -3269,7 +3675,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4974395.7
+      "replacement_asset_val_usd": 4974395.7,
+      "vci_percent": 93.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C420_Link01",
@@ -3285,7 +3693,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1013892.06
+      "replacement_asset_val_usd": 1013892.06,
+      "vci_percent": 90.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C428_Link01",
@@ -3301,7 +3711,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5347066.0
+      "replacement_asset_val_usd": 5347066.0,
+      "vci_percent": 92.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C433_Link02",
@@ -3317,7 +3729,9 @@
       "cnn_confidence": 99.66,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7542032.41
+      "replacement_asset_val_usd": 7542032.41,
+      "vci_percent": 87.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C433_Link03",
@@ -3333,7 +3747,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1333144.12
+      "replacement_asset_val_usd": 1333144.12,
+      "vci_percent": 83.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C435_Link01",
@@ -3349,7 +3765,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4572405.78
+      "replacement_asset_val_usd": 4572405.78,
+      "vci_percent": 84.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C445_Link03",
@@ -3365,7 +3783,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2210507.88
+      "replacement_asset_val_usd": 2210507.88,
+      "vci_percent": 88.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C446_Link01",
@@ -3381,7 +3801,9 @@
       "cnn_confidence": 99.86,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 5019673.31
+      "replacement_asset_val_usd": 5019673.31,
+      "vci_percent": 82.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C446_Link02",
@@ -3397,7 +3819,9 @@
       "cnn_confidence": 99.48,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2630664.0
+      "replacement_asset_val_usd": 2630664.0,
+      "vci_percent": 89.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C452_Link03",
@@ -3413,7 +3837,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4046620.0
+      "replacement_asset_val_usd": 4046620.0,
+      "vci_percent": 90.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C453_Link01",
@@ -3429,7 +3855,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 681514.8
+      "replacement_asset_val_usd": 681514.8,
+      "vci_percent": 83.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C457_Link01",
@@ -3445,7 +3873,9 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1668618.0
+      "replacement_asset_val_usd": 1668618.0,
+      "vci_percent": 84.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C511_Link01",
@@ -3461,7 +3891,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4088829.64
+      "replacement_asset_val_usd": 4088829.64,
+      "vci_percent": 89.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C517_Link01",
@@ -3477,7 +3909,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 278126.56
+      "replacement_asset_val_usd": 278126.56,
+      "vci_percent": 93.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C540_Link01",
@@ -3493,7 +3927,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9761028.84
+      "replacement_asset_val_usd": 9761028.84,
+      "vci_percent": 91.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C540_Link02",
@@ -3509,7 +3945,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 22672548.0
+      "replacement_asset_val_usd": 22672548.0,
+      "vci_percent": 76.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C550_Link01",
@@ -3525,7 +3963,9 @@
       "cnn_confidence": 99.6,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 10206408.6
+      "replacement_asset_val_usd": 10206408.6,
+      "vci_percent": 81.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C550_Link02",
@@ -3541,7 +3981,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 15552019.08
+      "replacement_asset_val_usd": 15552019.08,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C590_Link01",
@@ -3557,7 +3999,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 12386798.82
+      "replacement_asset_val_usd": 12386798.82,
+      "vci_percent": 89.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C590_Link02",
@@ -3573,7 +4017,9 @@
       "cnn_confidence": 99.59,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5810551.12
+      "replacement_asset_val_usd": 5810551.12,
+      "vci_percent": 85.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C592_Link01",
@@ -3589,7 +4035,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7150250.24
+      "replacement_asset_val_usd": 7150250.24,
+      "vci_percent": 84.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C592_Link02",
@@ -3605,7 +4053,9 @@
       "cnn_confidence": 99.8,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7120211.24
+      "replacement_asset_val_usd": 7120211.24,
+      "vci_percent": 86.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C596_Link01",
@@ -3621,7 +4071,9 @@
       "cnn_confidence": 99.41,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8358596.62
+      "replacement_asset_val_usd": 8358596.62,
+      "vci_percent": 85.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C596_Link02",
@@ -3637,7 +4089,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10974742.0
+      "replacement_asset_val_usd": 10974742.0,
+      "vci_percent": 84.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C597_Link01",
@@ -3653,7 +4107,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2616300.0
+      "replacement_asset_val_usd": 2616300.0,
+      "vci_percent": 90.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C598_Link01",
@@ -3669,7 +4125,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 8042609.38
+      "replacement_asset_val_usd": 8042609.38,
+      "vci_percent": 83.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C611_Link01",
@@ -3685,7 +4143,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3039696.0
+      "replacement_asset_val_usd": 3039696.0,
+      "vci_percent": 77.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C613_Link01",
@@ -3701,7 +4161,9 @@
       "cnn_confidence": 99.72,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3091813.85
+      "replacement_asset_val_usd": 3091813.85,
+      "vci_percent": 85.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C623_Link01",
@@ -3717,7 +4179,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 14204208.48
+      "replacement_asset_val_usd": 14204208.48,
+      "vci_percent": 88.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C623_Link02",
@@ -3733,7 +4197,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2716346.4
+      "replacement_asset_val_usd": 2716346.4,
+      "vci_percent": 82.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C624_Link01",
@@ -3749,7 +4215,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 2844898.12
+      "replacement_asset_val_usd": 2844898.12,
+      "vci_percent": 89.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C625_Link01",
@@ -3765,7 +4233,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 23107212.9
+      "replacement_asset_val_usd": 23107212.9,
+      "vci_percent": 83.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C625_Link02",
@@ -3781,7 +4251,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7639578.52
+      "replacement_asset_val_usd": 7639578.52,
+      "vci_percent": 91.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C626_Link01",
@@ -3797,7 +4269,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2393778.84
+      "replacement_asset_val_usd": 2393778.84,
+      "vci_percent": 80.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C626_Link02",
@@ -3813,7 +4287,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7474708.39
+      "replacement_asset_val_usd": 7474708.39,
+      "vci_percent": 88.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C633_Link01",
@@ -3829,7 +4305,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 438485.04
+      "replacement_asset_val_usd": 438485.04,
+      "vci_percent": 94.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C640_Link01",
@@ -3845,7 +4323,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 7346763.45
+      "replacement_asset_val_usd": 7346763.45,
+      "vci_percent": 89.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C649_Link01",
@@ -3861,7 +4341,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 488908.0
+      "replacement_asset_val_usd": 488908.0,
+      "vci_percent": 90.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C650_Link01",
@@ -3877,7 +4359,9 @@
       "cnn_confidence": 99.82,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 2617440.0
+      "replacement_asset_val_usd": 2617440.0,
+      "vci_percent": 82.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C668_Link01",
@@ -3893,7 +4377,9 @@
       "cnn_confidence": 99.41,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 529568.0
+      "replacement_asset_val_usd": 529568.0,
+      "vci_percent": 85.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C669_Link01",
@@ -3909,7 +4395,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 780464.52
+      "replacement_asset_val_usd": 780464.52,
+      "vci_percent": 88.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C679_Link01",
@@ -3925,7 +4413,9 @@
       "cnn_confidence": 99.53,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1231732.0
+      "replacement_asset_val_usd": 1231732.0,
+      "vci_percent": 83.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C681_Link01",
@@ -3941,7 +4431,9 @@
       "cnn_confidence": 99.82,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 15362117.12
+      "replacement_asset_val_usd": 15362117.12,
+      "vci_percent": 87.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C681_Link02",
@@ -3957,7 +4449,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 13003254.96
+      "replacement_asset_val_usd": 13003254.96,
+      "vci_percent": 86.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C683_Link01",
@@ -3973,7 +4467,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1226098.5
+      "replacement_asset_val_usd": 1226098.5,
+      "vci_percent": 80.8,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C684_Link01",
@@ -3989,7 +4485,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1376049.54
+      "replacement_asset_val_usd": 1376049.54,
+      "vci_percent": 86.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C744_Link01",
@@ -4005,7 +4503,9 @@
       "cnn_confidence": 99.65,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3422404.26
+      "replacement_asset_val_usd": 3422404.26,
+      "vci_percent": 93.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C782_Link01",
@@ -4021,7 +4521,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 11688192.0
+      "replacement_asset_val_usd": 11688192.0,
+      "vci_percent": 84.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C782_Link02",
@@ -4037,7 +4539,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 13008996.0
+      "replacement_asset_val_usd": 13008996.0,
+      "vci_percent": 80.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C784_Link01",
@@ -4053,7 +4557,9 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 10553262.72
+      "replacement_asset_val_usd": 10553262.72,
+      "vci_percent": 85.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C824_Link01",
@@ -4069,7 +4575,9 @@
       "cnn_confidence": 99.83,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 1518100.0
+      "replacement_asset_val_usd": 1518100.0,
+      "vci_percent": 78.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C830_Link01",
@@ -4085,7 +4593,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9432907.2
+      "replacement_asset_val_usd": 9432907.2,
+      "vci_percent": 90.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C860_Link01",
@@ -4101,7 +4611,9 @@
       "cnn_confidence": 99.81,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 15891570.36
+      "replacement_asset_val_usd": 15891570.36,
+      "vci_percent": 92.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C866_Link01",
@@ -4117,7 +4629,9 @@
       "cnn_confidence": 99.75,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 1625847.48
+      "replacement_asset_val_usd": 1625847.48,
+      "vci_percent": 92.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C867_Link01",
@@ -4133,7 +4647,9 @@
       "cnn_confidence": 99.66,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5027520.84
+      "replacement_asset_val_usd": 5027520.84,
+      "vci_percent": 84.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C870_Link01",
@@ -4149,7 +4665,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 5181151.8
+      "replacement_asset_val_usd": 5181151.8,
+      "vci_percent": 85.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C870_Link02",
@@ -4165,7 +4683,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 3501714.44
+      "replacement_asset_val_usd": 3501714.44,
+      "vci_percent": 91.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C888_Link01",
@@ -4181,7 +4701,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 3299879.34
+      "replacement_asset_val_usd": 3299879.34,
+      "vci_percent": 80.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C923_Link01",
@@ -4197,7 +4719,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 614589.2
+      "replacement_asset_val_usd": 614589.2,
+      "vci_percent": 82.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "C947_Link01",
@@ -4213,7 +4737,9 @@
       "cnn_confidence": 99.6,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 668040.0
+      "replacement_asset_val_usd": 668040.0,
+      "vci_percent": 86.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "C963_Link01",
@@ -4229,7 +4755,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 9965443.76
+      "replacement_asset_val_usd": 9965443.76,
+      "vci_percent": 91.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20",
@@ -4245,7 +4773,9 @@
       "cnn_confidence": 99.6,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6224136.28
+      "replacement_asset_val_usd": 6224136.28,
+      "vci_percent": 80.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int1_S1",
@@ -4261,7 +4791,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 125465.64
+      "replacement_asset_val_usd": 125465.64,
+      "vci_percent": 91.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int1_S2",
@@ -4277,7 +4809,9 @@
       "cnn_confidence": 99.41,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 126284.18
+      "replacement_asset_val_usd": 126284.18,
+      "vci_percent": 88.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int1_S3",
@@ -4293,7 +4827,9 @@
       "cnn_confidence": 99.65,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 141547.85
+      "replacement_asset_val_usd": 141547.85,
+      "vci_percent": 91.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int1_S4",
@@ -4309,7 +4845,9 @@
       "cnn_confidence": 99.77,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 102107.08
+      "replacement_asset_val_usd": 102107.08,
+      "vci_percent": 77.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int1_S5",
@@ -4325,7 +4863,9 @@
       "cnn_confidence": 99.52,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 120568.63
+      "replacement_asset_val_usd": 120568.63,
+      "vci_percent": 91.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S1",
@@ -4341,7 +4881,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 99490.56
+      "replacement_asset_val_usd": 99490.56,
+      "vci_percent": 82.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int2_S10",
@@ -4357,7 +4899,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 154231.72
+      "replacement_asset_val_usd": 154231.72,
+      "vci_percent": 88.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S11",
@@ -4373,7 +4917,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 124854.17
+      "replacement_asset_val_usd": 124854.17,
+      "vci_percent": 87.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S2",
@@ -4389,7 +4935,9 @@
       "cnn_confidence": 99.71,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 133028.66
+      "replacement_asset_val_usd": 133028.66,
+      "vci_percent": 85.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S3",
@@ -4405,7 +4953,9 @@
       "cnn_confidence": 99.86,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 70820.35
+      "replacement_asset_val_usd": 70820.35,
+      "vci_percent": 87.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S4",
@@ -4421,7 +4971,9 @@
       "cnn_confidence": 99.47,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 79209.23
+      "replacement_asset_val_usd": 79209.23,
+      "vci_percent": 87.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S5",
@@ -4437,7 +4989,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 60639.08
+      "replacement_asset_val_usd": 60639.08,
+      "vci_percent": 79.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int2_S6",
@@ -4453,7 +5007,9 @@
       "cnn_confidence": 99.6,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 203672.37
+      "replacement_asset_val_usd": 203672.37,
+      "vci_percent": 87.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int2_S7",
@@ -4469,7 +5025,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 116735.42
+      "replacement_asset_val_usd": 116735.42,
+      "vci_percent": 77.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int2_S8",
@@ -4485,7 +5043,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 65079.96
+      "replacement_asset_val_usd": 65079.96,
+      "vci_percent": 81.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int2_S9",
@@ -4501,7 +5061,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 70911.31
+      "replacement_asset_val_usd": 70911.31,
+      "vci_percent": 89.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int3_S1",
@@ -4517,7 +5079,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 109276.77
+      "replacement_asset_val_usd": 109276.77,
+      "vci_percent": 78.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int3_S2",
@@ -4533,7 +5097,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 148258.2
+      "replacement_asset_val_usd": 148258.2,
+      "vci_percent": 90.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int3_S3",
@@ -4549,7 +5115,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 142041.53
+      "replacement_asset_val_usd": 142041.53,
+      "vci_percent": 86.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int3_S4",
@@ -4565,7 +5133,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 59355.97
+      "replacement_asset_val_usd": 59355.97,
+      "vci_percent": 81.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int3_S5",
@@ -4581,7 +5151,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 65372.18
+      "replacement_asset_val_usd": 65372.18,
+      "vci_percent": 88.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int3_S6",
@@ -4597,7 +5169,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 86669.93
+      "replacement_asset_val_usd": 86669.93,
+      "vci_percent": 77.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int3_S7",
@@ -4613,7 +5187,9 @@
       "cnn_confidence": 99.42,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 99509.04
+      "replacement_asset_val_usd": 99509.04,
+      "vci_percent": 83.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int3_S8",
@@ -4629,7 +5205,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 19689.29
+      "replacement_asset_val_usd": 19689.29,
+      "vci_percent": 86.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S1",
@@ -4645,7 +5223,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 106227.05
+      "replacement_asset_val_usd": 106227.05,
+      "vci_percent": 82.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int4_S10",
@@ -4661,7 +5241,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 45293.71
+      "replacement_asset_val_usd": 45293.71,
+      "vci_percent": 80.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int4_S2",
@@ -4677,7 +5259,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 36402.83
+      "replacement_asset_val_usd": 36402.83,
+      "vci_percent": 85.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S3",
@@ -4693,7 +5277,9 @@
       "cnn_confidence": 99.46,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 171208.43
+      "replacement_asset_val_usd": 171208.43,
+      "vci_percent": 88.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S4",
@@ -4709,7 +5295,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 179328.36
+      "replacement_asset_val_usd": 179328.36,
+      "vci_percent": 92.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S5",
@@ -4725,7 +5313,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 39058.1
+      "replacement_asset_val_usd": 39058.1,
+      "vci_percent": 78.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int4_S6",
@@ -4741,7 +5331,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 42265.58
+      "replacement_asset_val_usd": 42265.58,
+      "vci_percent": 82.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int4_S7",
@@ -4757,7 +5349,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 163439.64
+      "replacement_asset_val_usd": 163439.64,
+      "vci_percent": 94.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S8",
@@ -4773,7 +5367,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 89963.03
+      "replacement_asset_val_usd": 89963.03,
+      "vci_percent": 93.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int4_S9",
@@ -4789,7 +5385,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 158759.4
+      "replacement_asset_val_usd": 158759.4,
+      "vci_percent": 85.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int5_S1",
@@ -4805,7 +5403,9 @@
       "cnn_confidence": 99.51,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 149946.36
+      "replacement_asset_val_usd": 149946.36,
+      "vci_percent": 86.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int5_S2",
@@ -4821,7 +5421,9 @@
       "cnn_confidence": 99.44,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 120036.0
+      "replacement_asset_val_usd": 120036.0,
+      "vci_percent": 77.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int5_S3",
@@ -4837,7 +5439,9 @@
       "cnn_confidence": 99.49,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 372737.62
+      "replacement_asset_val_usd": 372737.62,
+      "vci_percent": 88.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int6_S1",
@@ -4853,7 +5457,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 377983.7
+      "replacement_asset_val_usd": 377983.7,
+      "vci_percent": 89.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int6_S2",
@@ -4869,7 +5475,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 120974.87
+      "replacement_asset_val_usd": 120974.87,
+      "vci_percent": 85.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int6_S3",
@@ -4885,7 +5493,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 142678.49
+      "replacement_asset_val_usd": 142678.49,
+      "vci_percent": 78.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int7_S1",
@@ -4901,7 +5511,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 179156.43
+      "replacement_asset_val_usd": 179156.43,
+      "vci_percent": 92.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int7_S2",
@@ -4917,7 +5529,9 @@
       "cnn_confidence": 99.89,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 174032.5
+      "replacement_asset_val_usd": 174032.5,
+      "vci_percent": 86.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int7_S3",
@@ -4933,7 +5547,9 @@
       "cnn_confidence": 99.68,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 153445.63
+      "replacement_asset_val_usd": 153445.63,
+      "vci_percent": 87.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int7_S4",
@@ -4949,7 +5565,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 149390.39
+      "replacement_asset_val_usd": 149390.39,
+      "vci_percent": 80.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int8_S1",
@@ -4965,7 +5583,9 @@
       "cnn_confidence": 99.45,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 132797.7
+      "replacement_asset_val_usd": 132797.7,
+      "vci_percent": 87.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int8_S2",
@@ -4981,7 +5601,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 32410.23
+      "replacement_asset_val_usd": 32410.23,
+      "vci_percent": 84.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int8_S3",
@@ -4997,7 +5619,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 170093.87
+      "replacement_asset_val_usd": 170093.87,
+      "vci_percent": 87.4,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int8_S4",
@@ -5013,7 +5637,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 131707.46
+      "replacement_asset_val_usd": 131707.46,
+      "vci_percent": 92.0,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int8_S5",
@@ -5029,7 +5655,9 @@
       "cnn_confidence": 99.76,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 28107.36
+      "replacement_asset_val_usd": 28107.36,
+      "vci_percent": 81.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int8_S6",
@@ -5045,7 +5673,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 34505.34
+      "replacement_asset_val_usd": 34505.34,
+      "vci_percent": 85.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int8_S7",
@@ -5061,7 +5691,9 @@
       "cnn_confidence": 99.69,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 124492.0
+      "replacement_asset_val_usd": 124492.0,
+      "vci_percent": 90.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int8_S8",
@@ -5077,7 +5709,9 @@
       "cnn_confidence": 99.51,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 137963.29
+      "replacement_asset_val_usd": 137963.29,
+      "vci_percent": 83.7,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int8_S9",
@@ -5093,7 +5727,9 @@
       "cnn_confidence": 99.64,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 32208.47
+      "replacement_asset_val_usd": 32208.47,
+      "vci_percent": 86.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int9_S1",
@@ -5109,7 +5745,9 @@
       "cnn_confidence": 99.79,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 233760.74
+      "replacement_asset_val_usd": 233760.74,
+      "vci_percent": 78.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20Int9_S2",
@@ -5125,7 +5763,9 @@
       "cnn_confidence": 99.82,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 218899.71
+      "replacement_asset_val_usd": 218899.71,
+      "vci_percent": 85.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M20Int9_S3",
@@ -5141,7 +5781,9 @@
       "cnn_confidence": 99.86,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 236041.36
+      "replacement_asset_val_usd": 236041.36,
+      "vci_percent": 78.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M20N1",
@@ -5157,7 +5799,9 @@
       "cnn_confidence": 99.73,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 6315548.33
+      "replacement_asset_val_usd": 6315548.33,
+      "vci_percent": 81.3,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3_Link01",
@@ -5173,7 +5817,9 @@
       "cnn_confidence": 99.88,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 7504918.27
+      "replacement_asset_val_usd": 7504918.27,
+      "vci_percent": 78.0,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3_Link02",
@@ -5189,7 +5835,9 @@
       "cnn_confidence": 99.67,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4500179.43
+      "replacement_asset_val_usd": 4500179.43,
+      "vci_percent": 94.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int1_S1",
@@ -5205,7 +5853,9 @@
       "cnn_confidence": 99.57,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 214206.37
+      "replacement_asset_val_usd": 214206.37,
+      "vci_percent": 81.6,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3Int1_S2",
@@ -5221,7 +5871,9 @@
       "cnn_confidence": 99.86,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 203623.01
+      "replacement_asset_val_usd": 203623.01,
+      "vci_percent": 93.6,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int1_S3",
@@ -5237,7 +5889,9 @@
       "cnn_confidence": 99.63,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 198497.12
+      "replacement_asset_val_usd": 198497.12,
+      "vci_percent": 86.3,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int2_S1",
@@ -5253,7 +5907,9 @@
       "cnn_confidence": 99.43,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 206292.77
+      "replacement_asset_val_usd": 206292.77,
+      "vci_percent": 88.2,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int2_S2",
@@ -5269,7 +5925,9 @@
       "cnn_confidence": 99.78,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 327163.28
+      "replacement_asset_val_usd": 327163.28,
+      "vci_percent": 85.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int2_S3",
@@ -5285,7 +5943,9 @@
       "cnn_confidence": 99.74,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 261689.94
+      "replacement_asset_val_usd": 261689.94,
+      "vci_percent": 92.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int2_S4",
@@ -5301,7 +5961,9 @@
       "cnn_confidence": 99.44,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 286970.32
+      "replacement_asset_val_usd": 286970.32,
+      "vci_percent": 90.1,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int3_S1",
@@ -5317,7 +5979,9 @@
       "cnn_confidence": 99.61,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 148847.96
+      "replacement_asset_val_usd": 148847.96,
+      "vci_percent": 94.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int3_S2",
@@ -5333,7 +5997,9 @@
       "cnn_confidence": 99.56,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 180822.07
+      "replacement_asset_val_usd": 180822.07,
+      "vci_percent": 87.9,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int3_S3",
@@ -5349,7 +6015,9 @@
       "cnn_confidence": 99.42,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 135325.25
+      "replacement_asset_val_usd": 135325.25,
+      "vci_percent": 90.7,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int3_S4",
@@ -5365,7 +6033,9 @@
       "cnn_confidence": 99.5,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 127031.99
+      "replacement_asset_val_usd": 127031.99,
+      "vci_percent": 76.9,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3Int4_S1",
@@ -5381,7 +6051,9 @@
       "cnn_confidence": 99.85,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 128955.62
+      "replacement_asset_val_usd": 128955.62,
+      "vci_percent": 84.1,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3Int4_S2",
@@ -5397,7 +6069,9 @@
       "cnn_confidence": 99.44,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 222502.59
+      "replacement_asset_val_usd": 222502.59,
+      "vci_percent": 85.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3Int4_S3",
@@ -5413,7 +6087,9 @@
       "cnn_confidence": 99.84,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 44652.52
+      "replacement_asset_val_usd": 44652.52,
+      "vci_percent": 76.5,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3Int4_S4",
@@ -5429,7 +6105,9 @@
       "cnn_confidence": 99.54,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 114290.75
+      "replacement_asset_val_usd": 114290.75,
+      "vci_percent": 80.2,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3Int4_S5",
@@ -5445,7 +6123,9 @@
       "cnn_confidence": 99.87,
       "unra_visual_class": "Fair / Moderate",
       "unra_pms_recommended_treatment": "Fog Spray & Surface Patching",
-      "replacement_asset_val_usd": 218277.79
+      "replacement_asset_val_usd": 218277.79,
+      "vci_percent": 81.4,
+      "vci_rating_class": "Fair (70-84% VCI)"
     },
     {
       "link_id": "M3N1_Link01",
@@ -5461,7 +6141,9 @@
       "cnn_confidence": 99.4,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 8374524.15
+      "replacement_asset_val_usd": 8374524.15,
+      "vci_percent": 86.5,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     },
     {
       "link_id": "M3N2_Link01",
@@ -5477,7 +6159,11 @@
       "cnn_confidence": 99.58,
       "unra_visual_class": "Good / Isolated",
       "unra_pms_recommended_treatment": "Routine Maintenance & Crack Sealing",
-      "replacement_asset_val_usd": 4442177.86
+      "replacement_asset_val_usd": 4442177.86,
+      "vci_percent": 92.8,
+      "vci_rating_class": "Good / Very Good (85-100% VCI)"
     }
-  ]
+  ],
+  "primary_condition_metric": "Visual Condition Index (VCI %)",
+  "mean_vci_percent": 86.8
 }

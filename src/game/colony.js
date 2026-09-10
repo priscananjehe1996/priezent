@@ -138,6 +138,7 @@ export class Colony {
 
     this.ship = new Ship(scene, shipPosition())
     this.astronauts = new Astronauts(scene, settings)
+    this.astronauts.setPlanet(this.planet)
     this.astronauts.world = this._world()
     // Sized for the largest preset rather than the current one: unlike the astronaut meshes these
     // buffers are never rebuilt, so allocating against today's `maxAgents` means raising quality
@@ -242,6 +243,7 @@ export class Colony {
     if (!planet || planet === this.planet) return
     this.planet = planet
     this.sky.setPlanet(planet)
+    this.astronauts.setPlanet(planet)
     this._buildTerrain()
   }
 
