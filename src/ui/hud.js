@@ -608,8 +608,37 @@ export class Hud {
     meta.innerHTML = bits.join('')
 
     const pct = Math.round((this.actions.progressFor?.(thread.id) ?? 0) * 100)
-    this.$('.thread-pop .progress > i').style.width = `${pct}%`
-    this.$('.thread-pop .progress > i').style.background = hex(agent.trim.getHex())
+    let xpPct = 100
+    let lossOptPct = 95
+    if (agent.brain) {
+      const dec = agent.neuralDecision || agent.brain.evaluate()
+      xpPct = Math.min(100, Math.round((agent.brain.xp % 25000) / 250))
+      lossOptPct = Math.min(100, Math.max(10, Math.round((1 - parseFloat(dec.loss || 0.005)) * 100)))
+    }
+
+    const progressWrap = this.$('.thread-pop .progress')
+    if (progressWrap) {
+      progressWrap.parentElement.querySelectorAll('.progress-group').forEach(el => el.remove())
+      const groupEl = document.createElement('div')
+      groupEl.className = 'progress-group'
+      groupEl.style.cssText = 'display:flex;flex-direction:column;gap:5px;width:100%;margin-top:4px;'
+      groupEl.innerHTML = `
+        <div class="progress-bar-item">
+          <div class="progress-label" style="display:flex;justify-content:space-between;font-size:10px;color:#9ec8e8;font-weight:600"><span>⚡ Task Execution</span><span>${pct}%</span></div>
+          <div class="progress"><i style="width:${pct}%;background:linear-gradient(90deg, #3b82f6, #10b981)"></i></div>
+        </div>
+        <div class="progress-bar-item">
+          <div class="progress-label" style="display:flex;justify-content:space-between;font-size:10px;color:#c084fc;font-weight:600"><span>🏆 Character XP Mastery</span><span>${xpPct}%</span></div>
+          <div class="progress"><i style="width:${xpPct}%;background:linear-gradient(90deg, #8b5cf6, #ec4899)"></i></div>
+        </div>
+        <div class="progress-bar-item">
+          <div class="progress-label" style="display:flex;justify-content:space-between;font-size:10px;color:#34d399;font-weight:600"><span>🧠 Neural Loss Convergence</span><span>${lossOptPct}%</span></div>
+          <div class="progress"><i style="width:${lossOptPct}%;background:linear-gradient(90deg, #10b981, #06b6d4)"></i></div>
+        </div>
+      `
+      progressWrap.replaceWith(groupEl)
+    }
+
     // Measured once per selection rather than per frame: placing the card beside its
     // astronaut needs its size sixty times a second, and asking the layout for it that
     // often is how a HUD starts costing frames.
