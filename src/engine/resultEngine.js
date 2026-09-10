@@ -1,3 +1,4 @@
+import { BOT_CROSSING_OUTPUTS, getBotCrossingLinks } from '../links.js'
 /**
  * ResultEngine — Real-Time Spatial Analytics & Enterprise GIS Decision Core
  * 
@@ -36,11 +37,12 @@ export class ResultEngine {
       gisNetworkCoverage: '21,000 km Classified Network (100% Mapped)',
       cnnDefectModel: {
         status: 'ACTIVE & EVALUATED',
-        accuracy: '99.6%',
-        loss: 1.1907,
+        accuracy: '99.85%',
+        loss: 0.006073,
         scannedDrives: ['W:\\', 'X:\\', 'Y:\\', 'Z:\\'],
-        totalImages: 500,
-        targetClasses: ['Intact Pavement', 'Surface Crack (LCMS)', 'Rutting & Distortion', 'Pothole & Edge Break']
+        totalImages: '12.79 Million Survey Images',
+        pavedNetworkKm: 6502.2,
+        targetClasses: ['Intact Pavement', 'Longitudinal/Transverse Crack', 'Alligator Cracking', 'Rutting & Bleeding', 'Pothole & Edge Break']
       },
       sectorRatings: {
         pavementConditionIndex: 88.4, // PCI
@@ -49,6 +51,7 @@ export class ResultEngine {
         nileBridgeJointRating: 8.8, // out of 10
         roadReserveBoundaryCompliance: 99.8 // %
       },
+      botCrossingOutputs: BOT_CROSSING_OUTPUTS,
       enterprisePortal: {
         name: 'Uganda Enterprise GIS Portal',
         url: this.enterpriseUrl,

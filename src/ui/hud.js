@@ -1,3 +1,4 @@
+import { BOT_CROSSING_OUTPUTS, getBotCrossingLinks, renderBotCrossingLinksCardHTML } from '../links.js'
 import { PRESETS, PLANETS_ORDER } from './hud-data.js'
 import { PLANETS } from '../world/planet.js'
 import { TIMES, systemTimeOfDay } from '../world/sky.js'
@@ -359,7 +360,9 @@ export class Hud {
     on('#btn-home', 'click', () => this.actions.resetView?.())
     on('#btn-next', 'click', () => this.actions.focusStatus?.('waiting'))
     on('#btn-result-engine', 'click', () => {
-      window.open('https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/', '_blank')
+      const links = getBotCrossingLinks()
+      this.toast('⚡ Bot Crossing GIS Enterprise Linked: 12.79M Images Scanned | $3.09B Asset Value')
+      window.open(links.enterprisePortal, '_blank')
     })
     on('#btn-sun-brain', 'click', () => this.actions.focusSunBrain?.())
     on('#btn-orbit', 'click', () => this.setOrbit(this.actions.toggleOrbit?.()))
