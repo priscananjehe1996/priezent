@@ -45,6 +45,7 @@ const ICON = {
   locate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7.6"/><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6"/></svg>`,
   orbit: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10.2" ry="4.6" transform="rotate(-24 12 12)"/><circle cx="21" cy="8.2" r="1.5" fill="currentColor" stroke="none"/></svg>`,
   sunBrain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
+  resultEngine: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
 }
 
 const STAT_DEFS = [
@@ -357,6 +358,9 @@ export class Hud {
     on('#btn-shot', 'click', () => this.actions.screenshot?.())
     on('#btn-home', 'click', () => this.actions.resetView?.())
     on('#btn-next', 'click', () => this.actions.focusStatus?.('waiting'))
+    on('#btn-result-engine', 'click', () => {
+      window.open('https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/', '_blank')
+    })
     on('#btn-sun-brain', 'click', () => this.actions.focusSunBrain?.())
     on('#btn-orbit', 'click', () => this.setOrbit(this.actions.toggleOrbit?.()))
     on('#btn-planet', 'click', () => this.actions.cyclePlanet?.())
@@ -993,6 +997,7 @@ const TEMPLATE = `
   <button class="btn icon" id="btn-home" title="Reset the view (0)">${ICON.home}</button>
   <button class="btn icon" id="btn-next" title="Next astronaut waiting on you (N)">${ICON.next}</button>
   <div class="sep"></div>
+  <button class="btn icon" id="btn-result-engine" title="UNRN Result Engine & Uganda GIS Enterprise Portal (R)">${ICON.resultEngine}</button>
   <button class="btn icon" id="btn-sun-brain" title="Sun Main Brain Orbital Core (B)">${ICON.sunBrain}</button>
   <button class="btn icon" id="btn-orbit" title="Orbit mode — sweep around the colony (O)" aria-pressed="false">${ICON.orbit}</button>
   <button class="btn icon" id="btn-planet" title="Change planet (Tab)">${ICON.globe}</button>
