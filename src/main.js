@@ -775,7 +775,7 @@ setInterval(() => {
   }
 }, 2500)
 
-function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 2500) {
+function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 24) {
   const pData = PLANET_CITIZENS[planetKey] || PLANET_CITIZENS.moon
   const list = []
   for (let i = 0; i < count; i++) {
@@ -814,11 +814,11 @@ async function poll() {
   try {
     const currentPlanet = settings.get('planet') || 'moon'
     const res = await fetchThreads().catch(() => null)
-    threads = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 2500)
+    threads = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 24)
     applyThreads(threads)
     hud.removeBoot()
   } catch (err) {
-    threads = generateSyntheticThreads(settings.get('planet') || 'moon', 2500)
+    threads = generateSyntheticThreads(settings.get('planet') || 'moon', 24)
     applyThreads(threads)
     hud.removeBoot()
   } finally {
