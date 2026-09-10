@@ -18,3 +18,7 @@ assets-src
 
 # Local capture output — not part of the project.
 recordings
+
+# Sub-clones and Claude bundles
+Claude outputs/
+uganda_gis_enterprise/
