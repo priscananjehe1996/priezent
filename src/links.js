@@ -98,6 +98,8 @@ export function getBotCrossingLinks() {
   }
 }
 
+export const BOT_CROSSING_OUTPUTS = getBotCrossingLinks()
+
 export function exportBotCrossingReport(format = 'json') {
   if (format === 'csv') {
     const headers = ['Symbol', 'Code', 'SystemName', 'FocusArea', 'KeyMetric']
