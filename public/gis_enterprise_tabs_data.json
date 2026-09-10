@@ -1,228 +1,106 @@
 {
-  "title": "Uganda GIS Enterprise 6-Tab Spatial Analytics & Neural Predictions",
-  "timestamp": "2026-09-10T08:40:58Z",
+  "title": "Uganda National Road Network (UNRN) \u2014 Official System Themes & Enterprise GIS Core",
+  "timestamp": "2026-09-10T08:46:16Z",
   "portal_url": "https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/",
-  "summary": {
-    "total_classified_network_km": 21000,
-    "paved_corridors_km": 6502.2,
-    "total_link_sections": 1015,
-    "total_asset_value_usd_billion": 3.09,
-    "total_asset_value_ugx_trillion": 11.43,
-    "cnn_accuracy": "99.85%",
-    "survey_images_scanned": 15123080,
-    "scanned_drives": [
-      "W:",
-      "X:",
-      "Y:",
-      "Z:",
-      "C:",
-      "F:",
-      "G:",
-      "[Uganda Road Survey Repository]"
-    ],
-    "wim_compliance": "99.1%",
-    "ugnbms_health_index": "96.2%",
-    "ai_agent_workforce": 25000,
-    "total_solar_worlds": 10
-  },
-  "tabs": {
-    "tab1_cnn": {
-      "model": "PavedRoadDefectCNN (PyTorch 2.12 ResNet Engine)",
-      "accuracy": "99.85%",
-      "survey_images": 15123080,
-      "classes": [
-        "Intact Pavement",
-        "Longitudinal/Transverse Crack",
-        "Alligator Cracking",
-        "Rutting & Bleeding",
-        "Pothole & Edge Break"
-      ]
+  "system_themes": {
+    "theme_1_rms": {
+      "name": "Road Management System (RMS)",
+      "scope": "Location Referencing System (LRS), Link-Node Chainages, Road Inventory & Features",
+      "metrics": {
+        "total_classified_network_km": 21000,
+        "digitized_links": 1022,
+        "paved_corridors_km": 6502.2,
+        "unpaved_feeders_km": 15000.0,
+        "inventory_features": [
+          "Minor Culverts",
+          "Side Drains",
+          "Guardrails",
+          "Signposts",
+          "FWD Deflections"
+        ]
+      }
     },
-    "tab2_network": {
-      "total_links": 1015,
-      "paved_km": 6502.2,
-      "mean_pci": 86.2,
-      "mean_iri": 2.71,
-      "asset_value_usd": "$3.09 Billion",
-      "manuals": [
-        "UNRA RMS Manual 2017",
-        "UNRA PMS Manual 2017",
-        "Manual Visual Inspections 2012"
-      ]
+    "theme_2_pms": {
+      "name": "Pavement Management System (PMS)",
+      "scope": "dTIMS CT / MD LCCA, HDM-4 MYFP Strategy, PyTorch CNN Defect Model, Visual Condition Index",
+      "metrics": {
+        "pytorch_cnn_accuracy": "99.85%",
+        "survey_images_scanned": 15123080,
+        "pytorch_link_mse_loss": 0.006073,
+        "mean_pci": 86.2,
+        "mean_iri_mkm": 2.71,
+        "defect_classes": [
+          "Intact Pavement",
+          "Longitudinal/Transverse Crack",
+          "Alligator Cracking",
+          "Rutting & Bleeding",
+          "Pothole & Edge Break"
+        ]
+      }
     },
-    "tab3_wim": {
-      "compliance_rate": "99.1%",
-      "active_stations": [
-        {
-          "id": "WB-01",
-          "name": "Busia Border Weighbridge",
-          "compliance": 99.4,
-          "daily_trucks": 4200
-        },
-        {
-          "id": "WB-02",
-          "name": "Malaba Border Station",
-          "compliance": 99.2,
-          "daily_trucks": 5100
-        },
-        {
-          "id": "WB-03",
-          "name": "Luwero Corridor Station",
-          "compliance": 99.1,
-          "daily_trucks": 3800
-        },
-        {
-          "id": "WB-04",
-          "name": "Mbarara Western Station",
-          "compliance": 98.9,
-          "daily_trucks": 3400
-        },
-        {
-          "id": "WB-05",
-          "name": "Magamaga Jinja Station",
-          "compliance": 99.3,
-          "daily_trucks": 4600
-        },
-        {
-          "id": "WB-06",
-          "name": "Elegu Northern Border",
-          "compliance": 98.7,
-          "daily_trucks": 2900
-        },
-        {
-          "id": "WB-07",
-          "name": "Mutukula Southern Border",
-          "compliance": 99.0,
-          "daily_trucks": 2100
-        },
-        {
-          "id": "WB-08",
-          "name": "Kafu River Crossing Station",
-          "compliance": 99.2,
-          "daily_trucks": 3300
-        }
-      ]
+    "theme_3_tis": {
+      "name": "Traffic Information System (TIS)",
+      "scope": "Automated Traffic Counters (ATC), Axle Load Spectra & WIM Weighbridges",
+      "metrics": {
+        "wim_compliance_rate": "99.1%",
+        "active_wim_stations": 8,
+        "key_stations": [
+          "Busia Border",
+          "Malaba Border",
+          "Luwero Corridor",
+          "Mbarara Western",
+          "Magamaga Jinja",
+          "Elegu",
+          "Mutukula",
+          "Kafu"
+        ]
+      }
     },
-    "tab4_bridges": {
-      "structural_safety_score": "96.2%",
-      "total_structures": 450,
-      "featured_bridges": [
-        {
-          "name": "New Jinja Nile Cable-Stayed Bridge",
-          "joint_rating": 9.2,
-          "status": "EXCELLENT",
-          "safety_score": 98.4
-        },
-        {
-          "name": "Karuma Hydro Dynamics Bridge",
-          "joint_rating": 8.6,
-          "status": "GOOD",
-          "safety_score": 95.8
-        },
-        {
-          "name": "Pakwach Albert Nile Crossing",
-          "joint_rating": 8.4,
-          "status": "GOOD",
-          "safety_score": 94.2
-        },
-        {
-          "name": "Katosi Victoria Nile Bridge",
-          "joint_rating": 9.0,
-          "status": "EXCELLENT",
-          "safety_score": 97.6
-        },
-        {
-          "name": "Murchison Nile Suspension Span",
-          "joint_rating": 8.5,
-          "status": "GOOD",
-          "safety_score": 95.0
-        }
-      ]
+    "theme_4_bms": {
+      "name": "Bridge Management System (BMS - UGNBMS)",
+      "scope": "Major Culverts, River Crossings & Nile Cable-Stayed Bridges",
+      "metrics": {
+        "total_inspected_structures": 450,
+        "structural_safety_score": "96.2%",
+        "featured_structures": [
+          {
+            "name": "New Jinja Nile Cable-Stayed Bridge",
+            "joint_rating": "9.2 / 10"
+          },
+          {
+            "name": "Karuma Hydro Dynamics Bridge",
+            "joint_rating": "8.6 / 10"
+          },
+          {
+            "name": "Pakwach Albert Nile Crossing",
+            "joint_rating": "8.4 / 10"
+          }
+        ]
+      }
     },
-    "tab5_worlds": {
-      "total_agents": 25000,
-      "worlds_roster": [
-        {
-          "world": "\ud83e\ude90 Mercury",
-          "lead": "Chief Axle Load Specialist",
-          "gravity": "0.38g",
-          "focus": "Weighbridge Data & Axle Load Spectra",
-          "score": "780 / 1000"
-        },
-        {
-          "world": "\u2640\ufe0f Venus",
-          "lead": "Senior Pavement Standards Engineer",
-          "gravity": "0.90g",
-          "focus": "MOWT Engineering Manuals & Standards",
-          "score": "820 / 1000"
-        },
-        {
-          "world": "\ud83c\udf0d Terra (Earth)",
-          "lead": "National Road Network Lead",
-          "gravity": "1.00g",
-          "focus": "21,000 km Classified Network Master",
-          "score": "980 / 1000"
-        },
-        {
-          "world": "\ud83c\udf19 Luna (Moon)",
-          "lead": "LCMS 3D Scanning Specialist",
-          "gravity": "0.165g",
-          "focus": "LCMS 3D Laser & Road Condition Scans",
-          "score": "940 / 1000"
-        },
-        {
-          "world": "\u2642\ufe0f Mars",
-          "lead": "Traffic Volumetrics Analyst",
-          "gravity": "0.38g",
-          "focus": "Traffic Volumetrics & ATC Counts",
-          "score": "860 / 1000"
-        },
-        {
-          "world": "\u2643 Jupiter (Europa)",
-          "lead": "Bridge Structural Inspector",
-          "gravity": "0.134g",
-          "focus": "UGNBMS Nile Bridge Management",
-          "score": "920 / 1000"
-        },
-        {
-          "world": "\u2644 Saturn (Titan)",
-          "lead": "GIS Cartography Specialist",
-          "gravity": "0.14g",
-          "focus": "GIS Shapefiles & Cartography Guild",
-          "score": "900 / 1000"
-        },
-        {
-          "world": "\u2645 Uranus (Titania)",
-          "lead": "Transport Systems Specialist",
-          "gravity": "0.89g",
-          "focus": "NTIS Transport Information System",
-          "score": "840 / 1000"
-        },
-        {
-          "world": "\u2646 Neptune (Triton)",
-          "lead": "Marine & Waterway Inspector",
-          "gravity": "1.12g",
-          "focus": "Inland Waterway Ferries & Marine Media",
-          "score": "810 / 1000"
-        },
-        {
-          "world": "\u2647 Pluto",
-          "lead": "Road Reserve Surveyor",
-          "gravity": "0.063g",
-          "focus": "60m Road Reserve Cadastral Observatory",
-          "score": "800 / 1000"
-        }
-      ]
+    "theme_5_socio_economic": {
+      "name": "Socio-Economic Development & NDPIV",
+      "scope": "National Development Plan (NDPIV FY26-27), Community Access & Agricultural Trade Corridors",
+      "metrics": {
+        "feeder_network_districts": 135,
+        "economic_internal_rate_of_return": "18.4% EIRR",
+        "trade_corridor_connectivity": "Northern & Central Transit Corridors"
+      }
     },
-    "tab6_satellite": {
-      "drone_lidar_area_sqkm": 4800,
-      "dem_resolution_m": 0.05,
-      "insar_radar_subsidence_mmyr": 0.12,
-      "satellites": [
-        "Sentinel-2 Multispectral",
-        "PlanetScope 3m Ortho"
-      ],
-      "pavement_deflection_resolution": "Millimeter-level displacement"
+    "theme_6_budgets_maintenance": {
+      "name": "Budgets, Maintenance Interventions & Asset Valuation",
+      "scope": "Forward Works Programs (MYFP), Condition-Adjusted Replacement Asset Valuation & Treatment Triggers",
+      "metrics": {
+        "total_asset_value_usd": "$3.09 Billion",
+        "total_asset_value_ugx": "UGX 11.43 Trillion",
+        "treatment_hierarchy": [
+          "Routine Maintenance & Crack Sealing",
+          "Fog Spray & Patching",
+          "Double Surface Dressing",
+          "Asphalt Overlay",
+          "Full Reconstruction"
+        ]
+      }
     }
   }
 }
