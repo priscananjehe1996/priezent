@@ -1,145 +1,163 @@
 /**
- * links.js — Uganda National Road Network (UNRN) Official System Themes & Enterprise GIS Core
+ * links.js — DNR-MOWT 8-Planet Solar Architecture & GIS Enterprise Link Registry
  * 
- * Organizes all network analytics, PyTorch predictions, and GIS outputs into
- * DNR-MOWT's 6 Official System Themes:
- *   1. Road Management System (RMS)
- *   2. Pavement Management System (PMS)
- *   3. Traffic Information System (TIS)
- *   4. Bridge Management System (BMS - UGNBMS)
- *   5. Socio-Economic Development & NDPIV
- *   6. Budgets, Maintenance Interventions & Asset Valuation
+ * Architectural Core:
+ *   ☀️ THE SUN = Road Management System (RMS) — Central LRS Gravitational Hub
+ *   🪐 THE 8 PLANETS = Subsystem Modules Revolving around RMS Core:
+ *      1. PMS (Pavement Management System)
+ *      2. TIS (Traffic Information System)
+ *      3. BMS (Bridge Management System - UGNBMS)
+ *      4. Socio-Economic Development (NDPIV)
+ *      5. Budgets & Maintenance Interventions (LCCA)
+ *      6. Geospatial Remote Sensing & LiDAR
+ *      7. Global Case Studies & Asset Benchmarks (PIARC / World Bank)
+ *      8. Projects & Public Investment Management System (PIMS)
  */
 
 export const ENTERPRISE_GIS_PORTAL_URL = 'https://networkengineringmowt-ai.github.io/uganda_gis_enterprise/'
 
-export const DNR-MOWT_OFFICIAL_THEMES = {
-  theme1_rms: {
-    code: 'RMS',
+export const SOLAR_SYSTEM_ARCHITECTURE = {
+  sunCore: {
+    symbol: '☀️',
     name: 'Road Management System (RMS)',
-    scope: 'Location Referencing System (LRS), Link-Node Chainages, Road Inventory & Features',
-    classifiedNetworkKm: 21000,
-    pavedCorridorsKm: 6502.2,
-    unpavedFeedersKm: 15000.0,
+    role: 'Central Gravitational Hub & Location Referencing System (LRS)',
+    description: 'Master Repository of 21,000 km Classified Network Topology, Link-Node Chainages, & Asset Register. All 8 subsystem modules revolve around RMS.',
+    networkCoverageKm: 21000,
     totalDigitizedLinks: 1022,
     manualReference: 'DNR-MOWT RMS User Manual 2017'
   },
-  theme2_pms: {
-    code: 'PMS',
-    name: 'Pavement Management System (PMS)',
-    scope: 'dTIMS CT / MD LCCA, HDM-4 Strategy, PyTorch CNN Defect Model, Visual Condition Index',
-    pytorchCnnAccuracy: '99.85%',
-    surveyImagesScanned: '15.12 Million Images',
-    pytorchLinkMseLoss: 0.006073,
-    meanPci: 86.2,
-    meanIriMkm: 2.71,
-    manualReference: 'DNR-MOWT PMS User Manual 2017 & Visual Inspection Manual 2012'
-  },
-  theme3_tis: {
-    code: 'TIS',
-    name: 'Traffic Information System (TIS)',
-    scope: 'Automated Traffic Counters (ATC), Axle Load Spectra & WIM Weighbridges',
-    wimComplianceRate: '99.1%',
-    activeWimStations: 8,
-    stationList: ['Busia Border', 'Malaba Border', 'Luwero Corridor', 'Mbarara Western', 'Magamaga Jinja', 'Elegu', 'Mutukula', 'Kafu']
-  },
-  theme4_bms: {
-    code: 'BMS',
-    name: 'Bridge Management System (BMS - UGNBMS)',
-    scope: 'Major Culverts, River Crossings & Nile Cable-Stayed Bridges',
-    totalInspectedStructures: 450,
-    structuralSafetyScore: '96.2%',
-    featuredBridges: [
-      { name: 'New Jinja Nile Cable-Stayed Bridge', jointRating: '9.2 / 10' },
-      { name: 'Karuma Hydro Dynamics Bridge', jointRating: '8.6 / 10' },
-      { name: 'Pakwach Albert Nile Crossing', jointRating: '8.4 / 10' }
-    ]
-  },
-  theme5_socioEconomic: {
-    code: 'SOCIO-ECON',
-    name: 'Socio-Economic Development & NDPIV',
-    scope: 'National Development Plan (NDPIV FY26-27), Community Access & Agricultural Trade Corridors',
-    feederNetworkDistricts: 135,
-    economicInternalRateOfReturn: '18.4% EIRR'
-  },
-  theme6_budgetsMaintenance: {
-    code: 'BUDGETS-PMS',
-    name: 'Budgets, Maintenance Interventions & Asset Valuation',
-    scope: 'Forward Works Programs (MYFP), Replacement Asset Valuation & Treatment Triggers',
-    replacementAssetValueUsd: '$3.09 Billion',
-    replacementAssetValueUgx: 'UGX 11.43 Trillion',
-    treatmentHierarchy: ['Routine Maintenance & Crack Sealing', 'Fog Spray & Patching', 'Double Surface Dressing', 'Asphalt Overlay', 'Full Reconstruction']
-  }
+  orbitingPlanets: [
+    {
+      symbol: '🪐',
+      code: 'PMS',
+      name: 'Pavement Management System (PMS)',
+      focus: 'PyTorch CNN Defect Model (15.12M images), PCI/IRI Decay, HDM-4 LCCA',
+      metric: '99.85% Accuracy | PCI 86.2 | IRI 2.71 m/km',
+      manualReference: 'DNR-MOWT PMS User Manual 2017 & Visual Inspection Manual 2012'
+    },
+    {
+      symbol: '🚦',
+      code: 'TIS',
+      name: 'Traffic Information System (TIS)',
+      focus: 'Automated Traffic Counters (ATC), Axle Load Spectra & WIM Weighbridges',
+      metric: '99.1% WIM Compliance | 8 High-Speed Stations'
+    },
+    {
+      symbol: '🌉',
+      code: 'BMS',
+      name: 'Bridge Management System (BMS - UGNBMS)',
+      focus: 'Major Culverts, River Crossings & Nile Cable-Stayed Bridges',
+      metric: '96.2% Structural Safety | 450 Inspected Structures'
+    },
+    {
+      symbol: '🌾',
+      code: 'SOCIO-ECON',
+      name: 'Socio-Economic Development (NDPIV)',
+      focus: '135 District Feeder Networks (15,000 km), Agricultural Trade Corridors',
+      metric: '18.4% EIRR | 135 Districts Connected'
+    },
+    {
+      symbol: '💰',
+      code: 'BUDGETS-LCCA',
+      name: 'Budgets & Maintenance Interventions',
+      focus: 'Multi-Year Forward Programs (MYFP), Replacement Asset Valuation',
+      metric: '$3.09 Billion USD Asset Value (~11.43 Trillion UGX)'
+    },
+    {
+      symbol: '🛰️',
+      code: 'GEOSPATIAL',
+      name: 'Geospatial Remote Sensing & LiDAR',
+      focus: '4,800 km² Drone LiDAR (0.05m DEM), InSAR Radar Deformation',
+      metric: '0.05m DEM | 0.12 mm/yr Stability'
+    },
+    {
+      symbol: '🌍',
+      code: 'GLOBAL-CASE-STUDIES',
+      name: 'Global Case Studies & Benchmarks',
+      focus: 'PIARC World Road Association, World Bank RMI, AASHTO, Climate Resilient Pavements (NZ, UK, SA, Japan)',
+      metric: 'PIARC / WB RMI Benchmarked'
+    },
+    {
+      symbol: '🏗️',
+      code: 'PIMS-PROJECTS',
+      name: 'Projects & Public Investment Management (PIMS)',
+      focus: 'NDPIV Capital Project Pipeline, PIMS Gatekeeper Clearance, Donor Corridors (WB, AfDB, JICA)',
+      metric: 'PIMS Gatekeeper Cleared'
+    }
+  ]
 }
 
-/** Get primary portal and analytics deep links */
 export function getBotCrossingLinks() {
   return {
     enterprisePortal: ENTERPRISE_GIS_PORTAL_URL,
     resultEngineDashboard: './result_engine.html',
     mindscapeDashboard: './prisca_mindscape.html',
     linkPredictionsJson: './uganda_link_level_predictions.json',
-    gisTabsDataJson: './gis_enterprise_tabs_data.json'
+    gisTabsDataJson: './gis_enterprise_tabs_data.json',
+    solarDiagramHtml: './solar_architecture_diagram.html'
   }
 }
 
-/** Get summary of DNR-MOWT's 6 official core system themes */
-export function getDNR-MOWTThemesSummary() {
-  return DNR-MOWT_OFFICIAL_THEMES
-}
-
-/** Export JSON or CSV formatted Bot Crossing analytics report */
 export function exportBotCrossingReport(format = 'json') {
   if (format === 'csv') {
-    const headers = ['ThemeCode', 'ThemeName', 'Scope', 'KeyMetric']
-    const rows = Object.values(DNR-MOWT_OFFICIAL_THEMES).map(t => [
-      t.code, `"${t.name}"`, `"${t.scope}"`, `"${t.classifiedNetworkKm || t.pytorchCnnAccuracy || t.wimComplianceRate || t.structuralSafetyScore || t.replacementAssetValueUsd}"`
+    const headers = ['Symbol', 'Code', 'SystemName', 'FocusArea', 'KeyMetric']
+    const sunRow = [SOLAR_SYSTEM_ARCHITECTURE.sunCore.symbol, 'RMS-SUN', `"${SOLAR_SYSTEM_ARCHITECTURE.sunCore.name}"`, `"${SOLAR_SYSTEM_ARCHITECTURE.sunCore.role}"`, `"${SOLAR_SYSTEM_ARCHITECTURE.sunCore.networkCoverageKm} km"`].join(',')
+    const planetRows = SOLAR_SYSTEM_ARCHITECTURE.orbitingPlanets.map(p => [
+      p.symbol, p.code, `"${p.name}"`, `"${p.focus}"`, `"${p.metric}"`
     ].join(','))
-    return [headers.join(','), ...rows].join('\n')
+    return [headers.join(','), sunRow, ...planetRows].join('\n')
   }
-  return JSON.stringify(DNR-MOWT_OFFICIAL_THEMES, null, 2)
+  return JSON.stringify(SOLAR_SYSTEM_ARCHITECTURE, null, 2)
 }
 
-/** Render HTML Card Component for HUD / Modal UI */
 export function renderBotCrossingLinksCardHTML() {
-  const t2 = DNR-MOWT_OFFICIAL_THEMES.theme2_pms
-  const t6 = DNR-MOWT_OFFICIAL_THEMES.theme6_budgetsMaintenance
+  const sun = SOLAR_SYSTEM_ARCHITECTURE.sunCore
   return `
     <div class="bot-crossing-links-card" style="padding:14px;background:rgba(15,23,42,0.92);border:1px solid rgba(56,189,248,0.35);border-radius:14px;color:#f8fafc;font-family:sans-serif;font-size:12px;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-        <span style="font-weight:bold;color:#38bdf8;font-size:13.5px;display:flex;align-items:center;gap:6px;">
-          🇺🇬 DNR-MOWT OFFICIAL SYSTEM THEMES & GIS CORE
+        <span style="font-weight:bold;color:#fbbf24;font-size:13.5px;display:flex;align-items:center;gap:6px;">
+          ${sun.symbol} ${sun.name} (SUN CORE)
         </span>
-        <span style="padding:3px 10px;border-radius:9999px;background:rgba(16,185,129,0.2);color:#34d399;font-size:10px;font-weight:bold;font-family:monospace;">
-          15.12M SCANNED
+        <span style="padding:3px 10px;border-radius:9999px;background:rgba(251,191,36,0.2);color:#fbbf24;font-size:10px;font-weight:bold;font-family:monospace;">
+          8 PLANETS INTERLINKED
         </span>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:monospace;font-size:11px;margin-bottom:12px;">
-        <div style="background:rgba(255,255,255,0.04);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
-          <div style="color:#94a3b8;font-size:10px;">RMS Network</div>
-          <div style="color:#38bdf8;font-weight:bold;font-size:12px;">21,000 km</div>
+      <div style="background:rgba(255,255,255,0.04);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin-bottom:10px;font-family:monospace;font-size:11px;">
+        <div style="color:#38bdf8;font-weight:bold;">${sun.networkCoverageKm.toLocaleString()} km Classified Network Topology</div>
+        <div style="color:#94a3b8;font-size:10px;margin-top:2px;">Master Link-Node Chainages & DNR-MOWT Asset Register</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-family:monospace;font-size:10px;margin-bottom:12px;">
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#34d399;font-weight:bold;">🪐 PMS Planet</div>
+          <div style="color:#94a3b8;font-size:9px;">99.85% PyTorch CNN</div>
         </div>
-        <div style="background:rgba(255,255,255,0.04);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
-          <div style="color:#94a3b8;font-size:10px;">PMS PyTorch Acc</div>
-          <div style="color:#34d399;font-weight:bold;font-size:12px;">${t2.pytorchCnnAccuracy}</div>
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#fbbf24;font-weight:bold;">🚦 TIS Planet</div>
+          <div style="color:#94a3b8;font-size:9px;">99.1% WIM Compliance</div>
         </div>
-        <div style="background:rgba(255,255,255,0.04);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
-          <div style="color:#94a3b8;font-size:10px;">TIS WIM Compliance</div>
-          <div style="color:#fbbf24;font-weight:bold;font-size:12px;">99.1%</div>
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#60a5fa;font-weight:bold;">🌉 BMS Planet</div>
+          <div style="color:#94a3b8;font-size:9px;">96.2% Safety Score</div>
         </div>
-        <div style="background:rgba(255,255,255,0.04);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);">
-          <div style="color:#94a3b8;font-size:10px;">Asset Valuation</div>
-          <div style="color:#c084fc;font-weight:bold;font-size:12px;">${t6.replacementAssetValueUsd}</div>
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#c084fc;font-weight:bold;">🌍 Global Case Studies</div>
+          <div style="color:#94a3b8;font-size:9px;">PIARC / WB Benchmarks</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#f472b6;font-weight:bold;">🏗️ PIMS Projects</div>
+          <div style="color:#94a3b8;font-size:9px;">NDPIV Capital Pipeline</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);padding:6px;border-radius:6px;">
+          <div style="color:#2dd4bf;font-weight:bold;">🛰️ LiDAR Planet</div>
+          <div style="color:#94a3b8;font-size:9px;">0.05m DEM Elevation</div>
         </div>
       </div>
 
       <div style="display:flex;gap:8px;">
         <a href="${ENTERPRISE_GIS_PORTAL_URL}" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;background:linear-gradient(90deg,#0284c7,#2563eb);color:#fff;border-radius:10px;text-decoration:none;font-weight:bold;font-size:11px;box-shadow:0 4px 14px rgba(2,132,199,0.4);">
-          🌐 Launch GIS Enterprise Portal ↗
-        </a>
-        <a href="./result_engine.html" target="_blank" style="padding:9px 12px;background:rgba(30,41,59,0.8);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);border-radius:10px;text-decoration:none;font-weight:bold;font-size:11px;">
-          📊 6 Themes Engine
+          🌐 Launch Enterprise GIS Portal ↗
         </a>
       </div>
     </div>

@@ -102,5 +102,63 @@
         ]
       }
     }
+  },
+  "solar_system_architecture": {
+    "sun_core": {
+      "symbol": "\u2600\ufe0f",
+      "name": "Road Management System (RMS)",
+      "role": "Central Gravitational Hub & Location Referencing System (LRS)",
+      "description": "Master Repository of 21,000 km Classified Network Topology, Link-Node Chainages, & Asset Register. All subsystem modules revolve around RMS."
+    },
+    "orbiting_planets": [
+      {
+        "symbol": "\ud83e\ude90",
+        "code": "PMS",
+        "name": "Pavement Management System Planet",
+        "focus": "PyTorch CNN Pavement Defect Model (15.12M images), PCI/IRI Decay Trajectories, HDM-4 LCCA"
+      },
+      {
+        "symbol": "\ud83d\udea6",
+        "code": "TIS",
+        "name": "Traffic Information System Planet",
+        "focus": "Automated Traffic Counters (ATC), Axle Load Spectra, 8 WIM Weighbridges (99.1% Compliance)"
+      },
+      {
+        "symbol": "\ud83c\udf09",
+        "code": "BMS",
+        "name": "Bridge Management System Planet (UGNBMS)",
+        "focus": "450 Inspected Bridges & Major Culverts (New Jinja Nile, Karuma, Pakwach), 96.2% Structural Safety Score"
+      },
+      {
+        "symbol": "\ud83c\udf3e",
+        "code": "SOCIO-ECON",
+        "name": "Socio-Economic Development Planet (NDPIV)",
+        "focus": "135 District Feeder Networks (15,000 km), 18.4% EIRR, Agricultural Trade Corridors"
+      },
+      {
+        "symbol": "\ud83d\udcb0",
+        "code": "BUDGETS-LCCA",
+        "name": "Budgets & Maintenance Interventions Planet",
+        "focus": "Multi-Year Forward Programs (MYFP), $3.09 Billion USD Replacement Valuation, 5-Tier Treatment Triggers"
+      },
+      {
+        "symbol": "\ud83d\udef0\ufe0f",
+        "code": "GEOSPATIAL",
+        "name": "Geospatial Remote Sensing & LiDAR Planet",
+        "focus": "4,800 km\u00b2 Drone LiDAR (0.05m DEM), Sentinel-2 Multispectral, InSAR Radar Deformation (0.12 mm/yr)"
+      },
+      {
+        "symbol": "\ud83c\udf0d",
+        "code": "GLOBAL-BENCHMARKS",
+        "name": "Global Case Studies & Asset Benchmarks Planet",
+        "focus": "PIARC World Road Association, World Bank RMI, AASHTO standards, Climate-Resilient Pavements (NZ, UK, SA, Japan)"
+      },
+      {
+        "symbol": "\ud83c\udfd7\ufe0f",
+        "code": "PIMS-PROJECTS",
+        "name": "Projects & Public Investment Management System (PIMS) Planet",
+        "focus": "NDPIV Capital Project Pipeline, Gatekeeper Reviews, WB/AfDB/JICA Donor Corridors, Procurement & Budget Allocation"
+      }
+    ]
   }
 }
