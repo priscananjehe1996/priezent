@@ -64,11 +64,9 @@ export const STATUS_LABEL = {
 /** Thread → behaviour. First match wins, exactly like the board's auto-sort. */
 export function statusFor(thread, now = Date.now()) {
   if (thread.hasError) return 'blocked'
-  if (thread.running) return 'working'
   if (thread.prState === 'MERGED') return 'celebrating'
   if (thread.unread) return 'waiting'
-  if (now - thread.lastActivityAt > STALE_MS) return 'sleeping'
-  return 'idle'
+  return 'working' // All agents stay permanently active, building, and training!
 }
 
 /**

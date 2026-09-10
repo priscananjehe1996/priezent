@@ -814,11 +814,11 @@ function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', 
       predictedPCI: parseFloat(pci),
       predictedIRI: parseFloat(iri),
       recommendedTreatment: treatment,
-      running: statusIdx !== 1, // Active learning & building
-      hasError: statusIdx === 1,
-      prState: statusIdx === 2 ? 'MERGED' : 'OPEN',
-      unread: statusIdx === 3,
-      lastActivityAt: Date.now() - (i * 10000),
+      running: true, // All agents stay permanently active, building, and training!
+      hasError: false,
+      prState: 'OPEN',
+      unread: false,
+      lastActivityAt: Date.now(),
       createdAt: Date.now() - (i * 30000),
     })
   }
