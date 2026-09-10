@@ -612,6 +612,8 @@ export class Hud {
     }
     if (thread.task) bits.push(`<div class="task-tag" style="width:100%;font-size:11px;color:#9ec8e8;margin-top:4px;white-space:normal;line-height:1.3">⚡ <b>AI Task:</b> ${escapeHtml(thread.task)}</div>`)
     if (thread.projectPath) bits.push(`<div class="path-tag" style="width:100%;font-size:10px;color:#8aa0c4;margin-top:2px;font-family:monospace">📁 <b>Data:</b> ${escapeHtml(thread.projectPath)}</div>`)
+    const activePlanet = PLANETS[this.settings.get('planet')] || PLANETS.moon
+    bits.push(`<div class="planet-domain-tag" style="width:100%;font-size:10px;color:#f59e0b;margin-top:3px">🪐 <b>${escapeHtml(activePlanet.name)} Domain (${escapeHtml(activePlanet.gravityLabel)}):</b> ${escapeHtml(activePlanet.bulkOfWork || '')}</div>`)
     meta.innerHTML = bits.join('')
 
     const pct = Math.round((this.actions.progressFor?.(thread.id) ?? 0) * 100)

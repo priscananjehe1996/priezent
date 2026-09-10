@@ -98,7 +98,9 @@ const actions = {
     const ids = Object.keys(PLANETS)
     const next = ids[(ids.indexOf(settings.get('planet')) + 1) % ids.length]
     settings.set('planet', next)
-    hud.hint(`${PLANETS[next].name} — ${PLANETS[next].blurb}`)
+    const p = PLANETS[next]
+    hud.hint(`🪐 ${p.name} (${p.gravityLabel}) — ${p.blurb}`)
+    hud.toast(`🪐 Switched to ${p.name} [${p.gravityLabel}]: ${p.bulkOfWork || p.blurb}`)
   },
 
   cycleTime: () => {

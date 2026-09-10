@@ -64,7 +64,7 @@ export function loadKit() {
     const loader = new GLTFLoader()
     loading = Promise.all(
       Object.values(KITS).map((kit) =>
-        loader.loadAsync(`${import.meta.env.BASE_URL}assets/${kit.file}`).then((gltf) => {
+        loader.loadAsync(`${import.meta.env?.BASE_URL || '/'}assets/${kit.file}`).then((gltf) => {
           gltf.scene.updateMatrixWorld(true)
           for (const node of gltf.scene.children) harvest(node, kit)
           kit.atlas = findAtlas(gltf.scene)

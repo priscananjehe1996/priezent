@@ -343,8 +343,8 @@ export class Astronauts {
         .replace(
           '#include <emissivemap_fragment>',
           `#include <emissivemap_fragment>
-           // A cool rim right at the cut, so the screen reads as set into a bezel.
-           totalEmissiveRadiance += vec3( 0.16, 0.22, 0.34 ) * bezel;`
+           // A cool rim and planetary environment glowing visor tint derived from instance color.
+           totalEmissiveRadiance += vColor.rgb * (0.45 + bezel * 0.85);`
         )
     }
     return mat
@@ -605,7 +605,7 @@ export class Astronauts {
     }
   }
 
-  /** Status change → new behaviour, new trim, new eye colour. */
+  /** Status change → new behaviour, new trim, new eye colour, and glowing visor. */
   _applyStatus(agent, status) {
     const look = AGENT_LOOK[status] || AGENT_LOOK.idle
     if (this.planet?.suitTrim !== undefined) {
@@ -613,6 +613,11 @@ export class Astronauts {
       agent.trim.copy(planetColor).lerp(new THREE.Color(look.trim), 0.35)
     } else {
       agent.trim.set(look.trim)
+    }
+    if (this.planet?.visorColor !== undefined) {
+      agent.visorColor = new THREE.Color(this.planet.visorColor)
+    } else {
+      agent.visorColor = new THREE.Color(agent.trim)
     }
     agent.eye.setRGB(look.eye[0], look.eye[1], look.eye[2])
     agent.loop = FACE_LOOPS[status] || null
@@ -848,7 +853,7 @@ export class Astronauts {
     }
     const gravity = this.planet?.gravity ?? 1.0
     const lowGHop = gravity < 0.8
-      ? Math.max(0, Math.sin(agent.phase * 1.5) * (1.0 - gravity) * 0.45 * (agent.walkAmp || 0))
+      ? Math.max(0, Math.sin(agent.phase * 1.5) * (1.0 - gravity) * 0.55 * (agent.walkAmp || 0))
       : 0
     agent.pos.y = (agent.groundY || 0) + agent.hop + lowGHop
   }
@@ -1131,7 +1136,9 @@ export class Astronauts {
     let key
     if (agent.state === 'spawning') key = 'spawn'
     else if (speed > 0.12) {
-      if (gravity < 0.25 && speed > WALK_SPEED * 0.85) {
+      if (gravity < 0.4 && speed > WALK_SPEED * 0.45) {
+        key = 'jump'
+      } else if (gravity < 0.8 && speed > WALK_SPEED * 0.75) {
         key = 'jump'
       } else {
         key = speed > WALK_SPEED * 1.25 ? 'run' : 'walk'
@@ -1169,9 +1176,9 @@ export class Astronauts {
     const clip = rig.clips[key] || rig.clips.idle
     if (!clip) return
 
-    // Stride rate follows the ground and gravity, everything else runs at its authored speed.
-    const gravFactor = THREE.MathUtils.clamp(Math.sqrt(gravity), 0.5, 1.25)
-    const rate = key === 'walk' || key === 'run' || key === 'jump' ? THREE.MathUtils.clamp((speed / WALK_SPEED) * gravFactor, 0.35, 2.1) : 1
+    // Stride rate follows the ground and gravity (Math.sqrt(gravity)), everything else runs at its authored speed.
+    const gravFactor = THREE.MathUtils.clamp(Math.sqrt(gravity), 0.25, 1.25)
+    const rate = key === 'walk' || key === 'run' || key === 'jump' ? THREE.MathUtils.clamp((speed / WALK_SPEED) * gravFactor, 0.25, 2.1) : 1
     agent.clipTime += dt * anim * rate
 
     if (key === 'sitDown' && agent.clipTime >= clip.duration) {
@@ -1263,6 +1270,7 @@ export class Astronauts {
         agent.colorDirty = false
         crew?.setColorAt(i, c.setHex(agent.suit))
         helmet.setColorAt(i, c.setHex(agent.suit))
+        visor.setColorAt(i, agent.visorColor || agent.trim)
         pack.setColorAt(i, agent.trim)
         face.setColorAt(i, agent.eye)
         staticDirty = true
