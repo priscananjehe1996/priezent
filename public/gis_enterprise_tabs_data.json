@@ -18,7 +18,7 @@
       "C:",
       "F:",
       "G:",
-      "D:\\OneDrive"
+      "[Uganda Road Survey Repository]"
     ],
     "wim_compliance": "99.1%",
     "ugnbms_health_index": "96.2%",
@@ -144,70 +144,70 @@
       "worlds_roster": [
         {
           "world": "\ud83e\ude90 Mercury",
-          "lead": "Alexander (L100)",
+          "lead": "Chief Axle Load Specialist",
           "gravity": "0.38g",
           "focus": "Weighbridge Data & Axle Load Spectra",
           "score": "780 / 1000"
         },
         {
           "world": "\u2640\ufe0f Venus",
-          "lead": "Amelia (L98)",
+          "lead": "Senior Pavement Standards Engineer",
           "gravity": "0.90g",
           "focus": "MOWT Engineering Manuals & Standards",
           "score": "820 / 1000"
         },
         {
           "world": "\ud83c\udf0d Terra (Earth)",
-          "lead": "Arthur (L100)",
+          "lead": "National Road Network Lead",
           "gravity": "1.00g",
           "focus": "21,000 km Classified Network Master",
           "score": "980 / 1000"
         },
         {
           "world": "\ud83c\udf19 Luna (Moon)",
-          "lead": "Audrey (L99)",
+          "lead": "LCMS 3D Scanning Specialist",
           "gravity": "0.165g",
           "focus": "LCMS 3D Laser & Road Condition Scans",
           "score": "940 / 1000"
         },
         {
           "world": "\u2642\ufe0f Mars",
-          "lead": "Benjamin (L97)",
+          "lead": "Traffic Volumetrics Analyst",
           "gravity": "0.38g",
           "focus": "Traffic Volumetrics & ATC Counts",
           "score": "860 / 1000"
         },
         {
           "world": "\u2643 Jupiter (Europa)",
-          "lead": "Charlotte (L100)",
+          "lead": "Bridge Structural Inspector",
           "gravity": "0.134g",
           "focus": "UGNBMS Nile Bridge Management",
           "score": "920 / 1000"
         },
         {
           "world": "\u2644 Saturn (Titan)",
-          "lead": "Daniel (L99)",
+          "lead": "GIS Cartography Specialist",
           "gravity": "0.14g",
           "focus": "GIS Shapefiles & Cartography Guild",
           "score": "900 / 1000"
         },
         {
           "world": "\u2645 Uranus (Titania)",
-          "lead": "Eleanor (L96)",
+          "lead": "Transport Systems Specialist",
           "gravity": "0.89g",
           "focus": "NTIS Transport Information System",
           "score": "840 / 1000"
         },
         {
           "world": "\u2646 Neptune (Triton)",
-          "lead": "Ethan (L98)",
+          "lead": "Marine & Waterway Inspector",
           "gravity": "1.12g",
           "focus": "Inland Waterway Ferries & Marine Media",
           "score": "810 / 1000"
         },
         {
           "world": "\u2647 Pluto",
-          "lead": "Emily (L100)",
+          "lead": "Road Reserve Surveyor",
           "gravity": "0.063g",
           "focus": "60m Road Reserve Cadastral Observatory",
           "score": "800 / 1000"
