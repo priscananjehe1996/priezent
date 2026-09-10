@@ -88,6 +88,12 @@ const actions = {
     return on
   },
 
+  focusSunBrain: () => {
+    rig.focus(new THREE.Vector3(0, 120, 0), { distance: 450 })
+    hud.toast('☀️ Sun Main Brain Core: Emitting Solar Knowledge Pulse across 10 Planetary Worlds!')
+    hud.hint('☀️ Sun Main Brain — Central Orbital AI Neural Hub')
+  },
+
   cyclePlanet: () => {
     const ids = Object.keys(PLANETS)
     const next = ids[(ids.indexOf(settings.get('planet')) + 1) % ids.length]
@@ -767,7 +773,7 @@ setInterval(() => {
   }
 }, 2500)
 
-function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 1000) {
+function generateSyntheticThreads(planetKey = settings.get('planet') || 'moon', count = 2500) {
   const pData = PLANET_CITIZENS[planetKey] || PLANET_CITIZENS.moon
   const list = []
   for (let i = 0; i < count; i++) {
@@ -806,11 +812,11 @@ async function poll() {
   try {
     const currentPlanet = settings.get('planet') || 'moon'
     const res = await fetchThreads().catch(() => null)
-    threads = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 1000)
+    threads = (res && res.threads && res.threads.length > 0) ? res.threads : generateSyntheticThreads(currentPlanet, 2500)
     applyThreads(threads)
     hud.removeBoot()
   } catch (err) {
-    threads = generateSyntheticThreads(settings.get('planet') || 'moon', 1000)
+    threads = generateSyntheticThreads(settings.get('planet') || 'moon', 2500)
     applyThreads(threads)
     hud.removeBoot()
   } finally {
