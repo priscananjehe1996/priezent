@@ -56,7 +56,7 @@ const DECK_SKIRT = 0.4
 const DECK_HEIGHT = DECK_TOP + DECK_SKIRT
 /** Building slots per cell: one in the middle and six around it. */
 const SLOTS_PER_CELL = 7
-const MAX_CELLS = 9
+const MAX_CELLS = 24
 /** The lattice cell the ship owns. Nothing else may be placed there. */
 const SHIP_CELL = { q: -2, r: 1 }
 
